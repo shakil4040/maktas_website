@@ -1,0 +1,427 @@
+.preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-image: url('./../images/spinner.gif');
+    background-repeat: no-repeat;
+    background-color: #FFF;
+    background-position: center;
+}
+
+.tree,
+.tree ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.tree ul {
+    margin-right: 1em;
+    position: relative
+}
+
+.tree ul ul {
+    margin-left: .5em
+}
+
+.tree ul:before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -9px;
+    border-left: 1px solid
+}
+
+.tree li {
+    margin: 0;
+    padding: 0 1em;
+    line-height: 2em;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+    text-align: right;
+}
+
+.tree ul li:before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 0;
+    border-top: 1px solid;
+    margin-top: -1px;
+    position: absolute;
+    top: 1em;
+    right: -8px;
+}
+
+.tree ul li:last-child:before {
+    background: #fff;
+    height: auto;
+    top: 1em;
+    bottom: 0;
+    right: -9px;
+}
+
+.indicator {
+    margin-right: 5px;
+}
+
+.tree li a {
+    text-decoration: none;
+    color: #369;
+}
+
+.tree li button,
+.tree li button:active,
+.tree li button:focus {
+    text-decoration: none;
+    color: black;
+    border: none;
+    background: transparent;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    outline: 0;
+}
+
+.container {
+    font-family: jameel Noori Nastaleeq;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: right;
+    direction: rtl;
+    padding: unset !important;
+    max-width: 100%;
+}
+
+.close {
+    float: left !important;
+    margin: 2px 12px 0px 0px;
+    line-height: 10px;
+}
+
+.filter-option-inner-inner {
+    float: right !important;
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+}
+
+.detail1 {
+    cursor: pointer;
+}
+
+.table td {
+    text-align: center;
+}
+
+.detail2 {
+    position: fixed;
+    left: 5px;
+    top: 20px;
+    width: 49%;
+    height: 95vh;
+    overflow: auto;
+    z-index: 100;
+    background-color: hsl(102deg 51% 70%);
+    border-radius: 4%;
+}
+
+.detail3 {
+    position: fixed;
+    right: 5px;
+    top: 20px;
+    width: 49%;
+    height: 95vh;
+    overflow: auto;
+    z-index: 100;
+    background-color: hsl(102deg 51% 70%);
+    border-radius: 4%;
+}
+
+.card {
+    border: unset;
+}
+
+.tree li {
+    position: relative;
+}
+
+.active {
+    background-color: hsl(164deg 72% 23%);
+    border-radius: 15px;
+    color: white;
+}
+
+.list:hover {
+    background-color: rgb(163 218 139);
+    color: black;
+    border-radius: 15px;
+}
+
+.list {
+    width: 41%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title {
+    background-color: hsl(164deg 72% 23%);
+    color: white;
+    border-radius: 25px;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+.stopic {
+    background-color: hsl(220deg 11% 95%);
+    padding: 0px 4px;
+    width: 110px;
+    margin: 5px 13px;
+    line-height: 29px;
+    border-radius: 12px;
+    /* text-align: center; */
+    color: black;
+    border: 1px solid hsl(164deg 72% 23%);
+}
+
+.ltopic {
+    background-color: hsl(220deg 11% 95%);
+    padding: 0px 4px;
+    width: 360px;
+    margin: 5px 13px;
+    line-height: 29px;
+    border-radius: 12px;
+    color: black;
+    border: 1px solid hsl(164deg 72% 23%);
+}
+
+.dot {
+    background-color: hsl(164deg 72% 23%);
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+}
+
+.dot2 {
+    background-color: hsl(164deg 72% 23%);
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    margin-left: 5px;
+}
+
+.wazahat {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 315px;
+    text-overflow: ellipsis;
+}
+
+.tabs {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 90px;
+    text-overflow: ellipsis;
+}
+
+.bbuttons {
+    background-color: hsl(220deg 11% 95%) !important;
+    color: black !important;
+    padding: 4px 4px !important;
+    width: 127px !important;
+    border: unset;
+    line-height: 29px !important;
+    border-radius: 12px !important;
+}
+
+.dicon {
+    margin-right: 52px;
+    cursor: pointer;
+    color: red;
+}
+
+.iicon {
+    margin: 6px;
+    font-size: 12px;
+    color: white;
+}
+
+.islam {
+    width: 46%;
+    text-align: center;
+    padding: 1px;
+    margin-bottom: 5px;
+}
+
+.unwan {
+    max-width: 378px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.unwanat {
+    color: hsl(164deg 72% 23%);
+}
+
+.form-group {
+    margin-bottom: unset;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(0.5em + 19.75px + 2px);
+    padding: 0.375rem 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    background-color: #f1f2f4;
+    background-clip: padding-box;
+    border: unset;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.ftitle {
+    line-height: 40px;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: unset;
+    outline: 0;
+    box-shadow: unset;
+}
+
+.formo {
+    width: 320px;
+}
+
+.fselect {
+    background-color: hsl(164deg 72% 23%);
+    color: white;
+    padding: 0px;
+}
+
+.oselect {
+    padding: 1px;
+}
+
+.alert-success {
+    width: 100%;
+    border-radius: 19px;
+    margin: 0px 20px 0px 20px;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    width: 54%;
+    border-radius: 19px;
+    margin: 0px 0px 0px 0px;
+    text-align: center !important;
+}
+
+.alert-danger ul {
+    list-style-type: none;
+    line-height: 10px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.alert-success {
+    width: 54%;
+    border-radius: 19px;
+    margin: 0px 0px 0px 0px;
+    text-align: center !important;
+}
+
+.alert-success ul {
+    list-style-type: none;
+    line-height: 10px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.fa-edit {
+    color: green;
+}
+
+.fa-times-circle {
+    color: red;
+}
+
+.print-delete-msg {
+    width: 44%;
+    margin: 11px 20.5px;
+}
+
+.print-edit-msg {
+    width: 44%;
+    margin: 11px 20.5px;
+}
+
+
+/* button,
+input,
+optgroup,
+select, */
+
+input {
+    margin: 0;
+    width: 100%;
+    border: unset !important;
+    font-family: inherit;
+    font-size: 15px !important;
+    background-color: #f1f2f4 !important;
+}
+
+.dback {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(85 96 106 / 40%);
+    position: absolute;
+    z-index: 99999999999999;
+}
+
+.dmsg {
+    background-color: #555c64;
+    color: white;
+    height: 20%;
+    width: 25%;
+    border-radius: 20px;
+}
+
+#confirmation {
+    font-family: 'Jameel Noori Nastaleeq';
+    font-size: large;
+}
+
+.cbutton {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .stopic {
+        width: 94%;
+    }
+    .ltopic {
+        width: 94%;
+    }
+}
