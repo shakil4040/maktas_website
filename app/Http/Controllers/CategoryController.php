@@ -7,6 +7,7 @@ use App\Models\Easy;
 use App\Models\Tree;
 use App\Models\Yaad;
 use App\Models\Detail;
+use App\Models\Mahol;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -86,7 +87,7 @@ class CategoryController extends Controller
             'rahe_adal'=> $input['rahe_adal'],
             'husool'=> $input['husool'],
             'tamheed_khas'=> $input['tamheed_khas'],
-            'tamheed_am'=> $input['tamheed_am'],
+            'area'=> $input['area'],
             'hukam'=> $input['hukam'],
             'hasiat'=> $input['hasiat'],
             'shoba'=> $input['shoba'],
@@ -110,6 +111,18 @@ class CategoryController extends Controller
             'hawala'=> $input['hawala'],
         ]);
         $yaad->save();
+        $mahol = new Mahol([
+            'sunana'=> $input['sunana'],
+            'kehalwana'=>$input['kehalwana'],
+            'dekhana'=> $input['dekhana'],
+            'mashq'=> $input['mashq'],
+            'batana'=> $input['batana'],
+            'sikhana'=> $input['sikhana'],
+            'adat'=> $input['adat'],
+            'samjhana'=> $input['samjhana'],
+            'parhana'=> $input['parhana'],
+        ]);
+        $mahol->save();
         return response()->json(['success'=>'نئے عنوان کا اندراج ہو گیا ہے']);
     }
      
@@ -121,6 +134,7 @@ class CategoryController extends Controller
         $detail = Detail::find($id);
         $easy = Easy::find($id);
         $yaad = Yaad::find($id);
+        $mahol = Mahol::find($id);
         $validator = Validator::make($request->all(), [
         		'title' => 'required'
         	]);
@@ -140,6 +154,7 @@ class CategoryController extends Controller
         $easy->update($input);
 
         $yaad->update($input);
+        $mahol->update($input);
         return response()->json(['success'=>' عنوان تبدیل ہو گیا ہے']);
     }
      
@@ -150,11 +165,13 @@ class CategoryController extends Controller
         $detail = Detail::find($id);
         $easy = Easy::find($id);
         $yaad = Yaad::find($id);
+        $mahol = Mahol::find($id);
 
         $tree->delete();
         $detail->delete();
         $easy->delete();
         $yaad->delete();
+        $mahol->delete();
 
         return response()->json(['deletemsg'=>' عنوان ختم ہو گیا ہے']);
     }
@@ -164,10 +181,17 @@ class CategoryController extends Controller
         $detail = Detail::find($id);
         $easy = Easy::find($id);
         $yaad = Yaad::find($id);
+        $mahol = Mahol::find($id);
         $admin = $request->admin;
         $user = $request->user;
         $userId = $request->userId;
-        return view('treeviewPart',compact('tree','detail','easy','yaad','admin','user','userId'));
+        if($admin == null)
+        {
+            return view('treeviewUser',compact('tree','detail','easy','yaad','admin','user','userId','mahol')); 
+        }
+        else {
+        return view('treeviewPart',compact('tree','detail','easy','yaad','admin','user','userId','mahol'));
+        }
     }
 
     public function edit($id){
@@ -175,8 +199,9 @@ class CategoryController extends Controller
         $detail = Detail::find($id);
         $easy = Easy::find($id);
         $yaad = Yaad::find($id);
+        $mahol = Mahol::find($id);
         $allCategories = Tree::pluck('title','sr')->all();
-        return view('edit',compact('tree','detail','easy','yaad','allCategories'));
+        return view('edit',compact('tree','detail','easy','yaad','allCategories','mahol'));
     }
     public function comment(Request $request){
         $treeTitle = $request->treeTitle;

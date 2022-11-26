@@ -18,6 +18,9 @@ class CreateTreesTable extends Migration
             $table->unsignedBigInteger('sr')->nullable();
             $table->string('title');
             $table->unsignedBigInteger('parent_id');
+            $table->integer('naseeha_com');
+            $table->integer('maktab_com');
+            $table->integer('government_com');
             $table->timestamps();
         });
     }

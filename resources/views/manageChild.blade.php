@@ -10,12 +10,21 @@
                 </div>
                 <div class="ctitle list d-flex justify-content-between align-items-center">
                     {{ $child->title }}
+                    @auth('admin')
+                    @if(count($child->childs) == null)
                     <div class="d-flex">
                         <i class="fa fa-edit mx-2 sedit"></i>
                         <i class="fa fa-times-circle mx-2 delete"></i>
                     </div>
+                    @endif
+                    @endauth
                 </div>
                 <div class="cid d-none">{{ $child->id }}</div>
+                <div class="admin d-none">{{ auth('admin')->user() }}</div>
+                <div class="user d-none">{{ auth()->user() }}</div>
+                @auth()
+                <div class="userId d-none">{{ auth()->user()->id }}</div>
+                @endauth
             </div>
         </span>
 

@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-
-
+use App\Http\Controllers\ComparisonController;
+use App\Mail\DeleteMail;
+use Illuminate\Support\Facades\Mail;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -12,6 +13,10 @@ use App\Http\Controllers\CategoryController;
 
 // Route::get('newvisitor','VisitorsController@index');
 Auth::routes();
+Route::get('/email',function(){
+    Mail::to('shakil_ahmed61@yahoo.com')->send(new DeleteMail());
+    return new DeleteMail();
+});
 Route::get('/tree2',function(){
     return view('tree');
 });
@@ -56,7 +61,13 @@ Route::prefix('admin')->namespace('Auth\Admin')->group(function(){
     Route::post('password/reset','ResetPasswordController@reset')->name('admin.password.update');
 });
 
-
+Route::get('/comparison','ComparisonController@main');
+Route::get('/naseehaClasses','ComparisonController@naseehaClasses');
+Route::get('/naseeha/{class}','ComparisonController@naseeha');
+Route::get('/maktabClasses','ComparisonController@maktabClasses');
+Route::get('/maktab/{class}','ComparisonController@maktab');
+Route::get('/governmentClasses','ComparisonController@governmentClasses');
+Route::get('/government/{class}','ComparisonController@government');
 
 
 // Route::any('/who-you-are', 'UserCheckController@userCheckView')->name('userCheck');

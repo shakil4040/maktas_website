@@ -1042,7 +1042,7 @@ $('#delete').unbind('click').bind('click', function() {
     var id = $('#did').text();
     $('#dclose').hide();
     $.ajax({
-        url: "api/delete/" + id,
+        url: "/api/delete/" + id,
         success: function(data) {
             printDeleteMsg(data.deletemsg);
         }
@@ -1066,7 +1066,7 @@ $('#comment').on('submit', function(e) {
     var treeId = $('#treeId').text();
     $.ajax({
         type: "POST",
-        url: 'api/add-comment',
+        url: '/api/add-comment',
         data: $(this).serialize() + '&' + $.param({ userId: userId, treeId: treeId }),
         success: function(data) {
             if ($.isEmptyObject(data.error)) {
@@ -1100,7 +1100,7 @@ $('#acomment').click(function() {
     var treeTitle = $('#treeTitle').text();
     var treeId = $('#treeId').text();
     $.ajax({
-        url: "api/comment/",
+        url: "/api/comment/",
         data: {
             treeTitle: treeTitle,
             treeId: treeId
@@ -1114,4 +1114,18 @@ $('#acomment').click(function() {
 })
 $('#coclose').click(function() {
     $('#araa').hide();
-})
+});
+$('#tasheel2').hide();
+$('#tasheel1').click(function() {
+    $('#tasheel2').show();
+});
+$('#tasheel3').click(function() {
+    $('#tasheel2').hide();
+});
+$('#overlay').hide();
+$('#mazmoon').click(function() {
+    $('#overlay').show();
+});
+$('#close-overlay').click(function() {
+    $('#overlay').hide();
+});

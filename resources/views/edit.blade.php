@@ -28,6 +28,13 @@
             <button type="button" class="close" data-dismiss="alert">×</button>
             <ul></ul>
         </div>
+        <div class="ltopic d-flex align-items-center">
+            <div class="mr-1 formo">
+                <div class="form-group">
+                    {!! Form::text('title', $tree->title, ['class'=>'form-control', 'placeholder'=>'ذیلی عنوان درج کریں','required'=>'required']) !!}
+                </div>
+            </div>
+        </div>
 
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
@@ -41,14 +48,14 @@
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
-                    {!! Form::select('rahe_adal',array('قانوناً' => 'قانوناً', 'دیانتاً' => 'دیانتاً','احساناً' => 'احساناً', 'مقصود' => 'مقصود','مقصود بالذات' => 'مقصود بالذات', 'ذرائع' => 'ذرائع'),$easy->rahe_adal, ['class'=>'form-control oselect', 'placeholder'=>'راہِ عدل درج کریں']) !!}
+                    {!! Form::text('rahe_adal',$easy->rahe_adal, ['class'=>'form-control oselect', 'placeholder'=>'راہِ عدل درج کریں']) !!}
                 </div>
             </div>
         </div>
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('title', $tree->title, ['class'=>'form-control', 'placeholder'=>'ذیلی عنوان درج کریں','required'=>'required']) !!}
+                    {!! Form::text('detail',$detail->detail, ['class'=>'form-control', 'placeholder'=>'مختصر وضاحت درج کریں','required'=>'required']) !!}
                 </div>
             </div>
         </div>
@@ -64,14 +71,14 @@
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
-                    {!! Form::select('hukam',array('فرض' => 'فرض','فرض عین' => 'فرض عین','فرض کفایہ' => 'فرض کفایہ','واجب' => 'واجب','سنت' => 'سنت','سنت مؤکدہ' => 'سنت مؤکدہ','سنت غیر مؤکدہ' => 'سنت غیر مؤکدہ','نفل' => 'نفل','مستحب' => 'مستحب','افضل' => 'افضل','جائز' => 'جائز','مباح' => 'مباح', 'حرام' => 'حرام','مکروہ تحریمی' => 'مکروہ تحریمی', 'مکروہ تنزیہی' => 'مکروہ تنزیہی','ناجائز' => 'ناجائز','بنیاد' => 'بنیاد', 'دفعِ مضرت' => 'دفعِ مضرت','ابہام' => 'ابہام'),$easy->hukam, ['class'=>'form-control oselect', 'placeholder'=>'حکم درج کریں']) !!}
+                    {!! Form::select('hukam',array('فرض' => 'فرض','فرض عین' => 'فرض عین','فرض کفایہ' => 'فرض کفایہ','واجب' => 'واجب','سنت' => 'سنت','سنت مؤکدہ' => 'سنت مؤکدہ','سنت غیر مؤکدہ' => 'سنت غیر مؤکدہ','نفل' => 'نفل','مستحب' => 'مستحب','افضل' => 'افضل','جائز' => 'جائز','مباح' => 'مباح', 'حرام' => 'حرام','مکروہ تحریمی' => 'مکروہ تحریمی', 'مکروہ تنزیہی' => 'مکروہ تنزیہی','ناجائز' => 'ناجائز','بنیادی' => 'بنیادی', 'دفعِ مضرت' => 'دفعِ مضرت','ابہام' => 'ابہام'),$easy->hukam, ['class'=>'form-control oselect', 'placeholder'=>'حکم درج کریں']) !!}
                 </div>
             </div>
         </div>
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('detail',$detail->detail, ['class'=>'form-control', 'placeholder'=>'مختصر وضاحت درج کریں','required'=>'required']) !!}
+                    {!! Form::text('hawala', $yaad->hawala, ['class'=>'form-control', 'placeholder'=>'حوالہ درج کریں','required'=>'required']) !!}
                 </div>
             </div>
         </div>
@@ -87,14 +94,14 @@
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
-                    {!! Form::select('mukhatab',array('عوام' => 'عوام','خواص' => 'خواص', 'مقداء' => 'مقداء'),$easy->mukhatab, ['class'=>'form-control oselect', 'placeholder'=>'مخاطب درج کریں']) !!}
+                    {!! Form::select('mukhatab',array('خواص' => 'خواص', 'مقتداء' => 'مقتداء'),$easy->mukhatab, ['class'=>'form-control oselect', 'placeholder'=>'مخاطب درج کریں']) !!}
                 </div>
             </div>
         </div>
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('hawala', $yaad->hawala, ['class'=>'form-control', 'placeholder'=>'حوالہ درج کریں','required'=>'required']) !!}
+                    {!! Form::text('easy', $easy->easy, ['class'=>'form-control', 'placeholder'=>'تسہیل درج کریں']) !!}
                 </div>
             </div>
         </div>
@@ -110,14 +117,14 @@
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
-                    {!! Form::select('jins',array('مرد' => 'مرد','عورت' => 'عورت', 'دونوں' => 'دونوں'),$easy->jins, ['class'=>'form-control oselect', 'placeholder'=>'جنس درج کریں']) !!}
+                    {!! Form::select('jins',array('مرد' => 'مرد','عورت' => 'عورت'),$easy->jins, ['class'=>'form-control oselect', 'placeholder'=>'جنس درج کریں']) !!}
                 </div>
             </div>
         </div>
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('easy', $easy->easy, ['class'=>'form-control', 'placeholder'=>'تسہیل درج کریں']) !!}
+                    {!! Form::text('rafe_ishkal', $easy->rafe_ishkal, ['class'=>'form-control', 'placeholder'=>'رفعِ اشکال درج کریں']) !!}
                 </div>
             </div>
         </div>
@@ -140,7 +147,7 @@
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('rafe_ishkal', $easy->rafe_ishkal, ['class'=>'form-control', 'placeholder'=>'رفعِ اشکال درج کریں']) !!}
+                    {!! Form::text('husool', $easy->husool, ['class'=>'form-control', 'placeholder'=>'حصول کا طریقہ درج کریں']) !!}
                 </div>
             </div>
         </div>
@@ -163,7 +170,7 @@
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('husool', $easy->husool, ['class'=>'form-control', 'placeholder'=>'حصول کا طریقہ درج کریں']) !!}
+                    {!! Form::text('tamheed_khas', $easy->tamheed_khas, ['class'=>'form-control', 'placeholder'=>'تمہیدِ خاص درج کریں']) !!}
                 </div>
             </div>
         </div>
@@ -186,7 +193,7 @@
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('tamheed_khas', $easy->tamheed_khas, ['class'=>'form-control', 'placeholder'=>'تمہیدِ خاص درج کریں']) !!}
+                    {!! Form::text('area', $easy->area, ['class'=>'form-control', 'placeholder'=>'علاقہ درج کریں']) !!}
                 </div>
             </div>
         </div>
@@ -209,7 +216,7 @@
         <div class="ltopic d-flex align-items-center">
             <div class="mr-1 formo">
                 <div class="form-group">
-                    {!! Form::text('tamheed_am', $easy->tamheed_am, ['class'=>'form-control', 'placeholder'=>'تمہیدِ عام درج کریں']) !!}
+                    {!! Form::text('muharik', $easy->muharik, ['class'=>'form-control', 'placeholder'=>'محرکات و نظریات درج کریں']) !!}
                 </div>
             </div>
         </div>
@@ -229,13 +236,27 @@
                 </div>
             </div>
         </div>
-        <div class="ltopic d-flex align-items-center">
-            <div class="mr-1 formo">
-                <div class="form-group">
-                    {!! Form::text('muharik', $easy->muharik, ['class'=>'form-control', 'placeholder'=>'محرکات و نظریات درج کریں']) !!}
+        <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group }}">
+                        {!! Form::number('sunana', $mahol->sunana, ['class'=>'form-control','min'=>'0', 'placeholder'=>'سنانے کی عمر']) !!}
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group }}">
+                        {!! Form::number('kehalwana', $mahol->kehalwana, ['class'=>'form-control','min'=>'0', 'placeholder'=>'کہلوانے کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group }}">
+                        {!! Form::number('dekhana', $mahol->dekhana, ['class'=>'form-control','min'=>'0', 'placeholder'=>'دکھانے کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
@@ -248,10 +269,31 @@
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
-                {!! Form::select('zamana',array('قبل آدمؑ' => 'قبل آدمؑ','حضرت آدمؑ سے حضرت نوحؑ تک' => 'حضرت آدمؑ سے حضرت نوحؑ تک','حضرت نوحؑ سے حضرت ابراہیمؑ' => 'حضرت نوحؑ سے حضرت ابراہیمؑ تک','حضرت ابراہیمؑ سے حضرت موسیٰؑ تک' => 'حضرت ابراہیمؑ سے حضرت موسیٰؑ تک','حضرت موسیٰؑ سے حضرت عیسیٰؑ تک' => 'حضرت موسیٰؑ سے حضرت عیسیٰئ تک','حضرت عیسیٰؑ سے آپ ﷺ تک' => 'حضرت عیسیٰؑ سے آپ ﷺ تک','آپ ﷺ کے زمانے تک' => 'آپ ﷺ کے زمانے تک','قیامت کے بعد تک' => 'قیامت کے بعد تک'),$easy->zamana, ['class'=>'form-control oselect', 'placeholder'=>'زمانہ درج کریں']) !!}
+                {!! Form::select('zamana',array('قبل آدمؑ' => 'قبل آدمؑ','حضرت آدمؑ سے حضرت نوحؑ تک' => 'حضرت آدمؑ سے حضرت نوحؑ تک','حضرت نوحؑ سے حضرت ابراہیمؑ' => 'حضرت نوحؑ سے حضرت ابراہیمؑ تک','حضرت ابراہیمؑ سے حضرت موسیٰؑ تک' => 'حضرت ابراہیمؑ سے حضرت موسیٰؑ تک','حضرت موسیٰؑ سے حضرت عیسیٰؑ تک' => 'حضرت موسیٰؑ سے حضرت عیسیٰئ تک','حضرت عیسیٰؑ سے آپ ﷺ تک' => 'حضرت عیسیٰؑ سے آپ ﷺ تک','آپ ﷺ کے زمانے سے قیامت تک' => 'آپ ﷺ کے زمانے سے قیامت تک','قیامت کے بعد تک' => 'قیامت کے بعد تک'),$easy->zamana, ['class'=>'form-control oselect', 'placeholder'=>'زمانہ درج کریں']) !!}
                 </div>
             </div>
         </div>
+        <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group">
+                        {!! Form::number('mashq', $mahol->mashq, ['class'=>'form-control','min'=>'0', 'placeholder'=>'مشق کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group">
+                        {!! Form::number('batana', $mahol->batana, ['class'=>'form-control','min'=>'0', 'placeholder'=>'بتانے کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group">
+                        {!! Form::number('sikhana', $mahol->sikhana, ['class'=>'form-control','min'=>'0', 'placeholder'=>'سکھانے کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
@@ -268,6 +310,27 @@
                 </div>
             </div>
         </div>
+        <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group">
+                        {!! Form::number('adat', $mahol->adat, ['class'=>'form-control','min'=>'0', 'placeholder'=>'عادت کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group">
+                        {!! Form::number('samjhana', $mahol->samjhana, ['class'=>'form-control','min'=>'0', 'placeholder'=>'سمجھانے کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="stopic emahol d-flex align-items-center">
+                <div class="tabs mr-1">
+                    <div class="form-group">
+                        {!! Form::number('parhana', $mahol->parhana, ['class'=>'form-control','min'=>'0', 'placeholder'=>'پڑھانے کی عمر']) !!}
+                    </div>
+                </div>
+            </div>
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">

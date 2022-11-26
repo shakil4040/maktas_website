@@ -12,6 +12,6 @@ class Detail extends Model
     public $fillable = ['id','tree_id','abrar_id','asif_id','age','age_sr','course_no','detail'];
 
     public function tree() {
-        return $this->belongsTo(Tree::class);
+        return $this->belongsTo('App\Models\Tree','id','id');
     }
 }

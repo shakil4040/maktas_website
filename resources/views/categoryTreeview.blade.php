@@ -73,6 +73,14 @@
 								<ul></ul>
 							</div>
 
+							<div class="ltopic d-flex align-items-center">
+								<div class="mr-1 formo">
+									<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+										{!! Form::text('title', old('title'), ['class'=>'form-control', 'placeholder'=>'ذیلی عنوان درج کریں','required'=>'required']) !!}
+										<span class="text-danger">{{ $errors->first('title') }}</span>
+									</div>
+								</div>
+							</div>
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('taleem') ? 'has-error' : '' }}">
@@ -86,16 +94,16 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('rahe_adal') ? 'has-error' : '' }}">
-										{!! Form::select('rahe_adal',array('قانوناً' => 'قانوناً', 'دیانتاً' => 'دیانتاً','احساناً' => 'احساناً', 'مقصود' => 'مقصود','مقصود بالذات' => 'مقصود بالذات', 'ذرائع' => 'ذرائع'),old('rahe_adal'), ['class'=>'form-control oselect', 'placeholder'=>'راہِ عدل درج کریں']) !!}
+										{!! Form::text('rahe_adal',old('rahe_adal'), ['class'=>'form-control oselect', 'placeholder'=>'راہِ عدل درج کریں']) !!}
 										<span class="text-danger">{{ $errors->first('rahe_adal') }}</span>
 									</div>
 								</div>
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-										{!! Form::text('title', old('title'), ['class'=>'form-control', 'placeholder'=>'ذیلی عنوان درج کریں','required'=>'required']) !!}
-										<span class="text-danger">{{ $errors->first('title') }}</span>
+									<div class="form-group {{ $errors->has('detail') ? 'has-error' : '' }}">
+										{!! Form::text('detail', old('detail'), ['class'=>'form-control', 'placeholder'=>'مختصر وضاحت درج کریں','required'=>'required']) !!}
+										<span class="text-danger">{{ $errors->first('detail') }}</span>
 									</div>
 								</div>
 							</div>
@@ -112,16 +120,16 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('hukam') ? 'has-error' : '' }}">
-										{!! Form::select('hukam',array('فرض' => 'فرض','فرض عین' => 'فرض عین','فرض کفایہ' => 'فرض کفایہ','واجب' => 'واجب','سنت' => 'سنت','سنت مؤکدہ' => 'سنت مؤکدہ','سنت غیر مؤکدہ' => 'سنت غیر مؤکدہ','نفل' => 'نفل','مستحب' => 'مستحب','افضل' => 'افضل','جائز' => 'جائز','مباح' => 'مباح', 'حرام' => 'حرام','مکروہ تحریمی' => 'مکروہ تحریمی', 'مکروہ تنزیہی' => 'مکروہ تنزیہی','ناجائز' => 'ناجائز','بنیاد' => 'بنیاد', 'دفعِ مضرت' => 'دفعِ مضرت','ابہام' => 'ابہام'),old('hukam'), ['class'=>'form-control oselect', 'placeholder'=>'حکم درج کریں']) !!}
+										{!! Form::select('hukam',array('فرض' => 'فرض','فرض عین' => 'فرض عین','فرض کفایہ' => 'فرض کفایہ','واجب' => 'واجب','سنت' => 'سنت','سنت مؤکدہ' => 'سنت مؤکدہ','سنت غیر مؤکدہ' => 'سنت غیر مؤکدہ','نفل' => 'نفل','مستحب' => 'مستحب','افضل' => 'افضل','جائز' => 'جائز','مباح' => 'مباح', 'حرام' => 'حرام','مکروہ تحریمی' => 'مکروہ تحریمی', 'مکروہ تنزیہی' => 'مکروہ تنزیہی','ناجائز' => 'ناجائز','بنیادی' => 'بنیادی', 'دفعِ مضرت' => 'دفعِ مضرت','ابہام' => 'ابہام'),old('hukam'), ['class'=>'form-control oselect', 'placeholder'=>'حکم درج کریں']) !!}
 										<span class="text-danger">{{ $errors->first('hukam') }}</span>
 									</div>
 								</div>
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('detail') ? 'has-error' : '' }}">
-										{!! Form::text('detail', old('detail'), ['class'=>'form-control', 'placeholder'=>'مختصر وضاحت درج کریں','required'=>'required']) !!}
-										<span class="text-danger">{{ $errors->first('detail') }}</span>
+									<div class="form-group {{ $errors->has('hawala') ? 'has-error' : '' }}">
+										{!! Form::text('hawala', old('hawala'), ['class'=>'form-control', 'placeholder'=>'حوالہ درج کریں','required'=>'required']) !!}
+										<span class="text-danger">{{ $errors->first('hawala') }}</span>
 									</div>
 								</div>
 							</div>
@@ -138,16 +146,16 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('mukhatab') ? 'has-error' : '' }}">
-										{!! Form::select('mukhatab',array('عوام' => 'عوام','خواص' => 'خواص', 'مقداء' => 'مقداء'),old('mukhatab'), ['class'=>'form-control oselect', 'placeholder'=>'مخاطب درج کریں']) !!}
+										{!! Form::select('mukhatab',array('خواص' => 'خواص', 'مقتداء' => 'مقتداء'),old('mukhatab'), ['class'=>'form-control oselect', 'placeholder'=>'مخاطب درج کریں']) !!}
 										<span class="text-danger">{{ $errors->first('mukhatab') }}</span>
 									</div>
 								</div>
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('hawala') ? 'has-error' : '' }}">
-										{!! Form::text('hawala', old('hawala'), ['class'=>'form-control', 'placeholder'=>'حوالہ درج کریں','required'=>'required']) !!}
-										<span class="text-danger">{{ $errors->first('hawala') }}</span>
+									<div class="form-group {{ $errors->has('easy') ? 'has-error' : '' }}">
+										{!! Form::text('easy', old('easy'), ['class'=>'form-control', 'placeholder'=>'تسہیل درج کریں']) !!}
+										<span class="text-danger">{{ $errors->first('easy') }}</span>
 									</div>
 								</div>
 							</div>
@@ -164,16 +172,16 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('jins') ? 'has-error' : '' }}">
-										{!! Form::select('jins',array('مرد' => 'مرد','عورت' => 'عورت', 'دونوں' => 'دونوں'),old('jins'), ['class'=>'form-control oselect', 'placeholder'=>'جنس درج کریں']) !!}
+										{!! Form::select('jins',array('مرد' => 'مرد','عورت' => 'عورت'),old('jins'), ['class'=>'form-control oselect', 'placeholder'=>'جنس درج کریں']) !!}
 										<span class="text-danger">{{ $errors->first('jins') }}</span>
 									</div>
 								</div>
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('easy') ? 'has-error' : '' }}">
-										{!! Form::text('easy', old('easy'), ['class'=>'form-control', 'placeholder'=>'تسہیل درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('easy') }}</span>
+									<div class="form-group {{ $errors->has('rafe_ishkal') ? 'has-error' : '' }}">
+										{!! Form::text('rafe_ishkal', old('rafe_ishkal'), ['class'=>'form-control', 'placeholder'=>'رفعِ اشکال درج کریں']) !!}
+										<span class="text-danger">{{ $errors->first('rafe_ishkal') }}</span>
 									</div>
 								</div>
 							</div>
@@ -197,9 +205,9 @@
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('rafe_ishkal') ? 'has-error' : '' }}">
-										{!! Form::text('rafe_ishkal', old('rafe_ishkal'), ['class'=>'form-control', 'placeholder'=>'رفعِ اشکال درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('rafe_ishkal') }}</span>
+									<div class="form-group {{ $errors->has('husool') ? 'has-error' : '' }}">
+										{!! Form::text('husool', old('husool'), ['class'=>'form-control', 'placeholder'=>'حصول کا طریقہ درج کریں']) !!}
+										<span class="text-danger">{{ $errors->first('husool') }}</span>
 									</div>
 								</div>
 							</div>
@@ -223,9 +231,9 @@
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('husool') ? 'has-error' : '' }}">
-										{!! Form::text('husool', old('husool'), ['class'=>'form-control', 'placeholder'=>'حصول کا طریقہ درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('husool') }}</span>
+									<div class="form-group {{ $errors->has('tamheed_khas') ? 'has-error' : '' }}">
+										{!! Form::text('tamheed_khas', old('tamheed_khas'), ['class'=>'form-control', 'placeholder'=>'تمہیدِ خاص درج کریں']) !!}
+										<span class="text-danger">{{ $errors->first('tamheed_khas') }}</span>
 									</div>
 								</div>
 							</div>
@@ -249,9 +257,9 @@
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('tamheed_khas') ? 'has-error' : '' }}">
-										{!! Form::text('tamheed_khas', old('tamheed_khas'), ['class'=>'form-control', 'placeholder'=>'تمہیدِ خاص درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('tamheed_khas') }}</span>
+									<div class="form-group {{ $errors->has('area') ? 'has-error' : '' }}">
+										{!! Form::text('area', old('area'), ['class'=>'form-control', 'placeholder'=>'علاقہ درج کریں']) !!}
+										<span class="text-danger">{{ $errors->first('area') }}</span>
 									</div>
 								</div>
 							</div>
@@ -275,9 +283,9 @@
 							</div>
 							<div class="ltopic d-flex align-items-center">
 								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('tamheed_am') ? 'has-error' : '' }}">
-										{!! Form::text('tamheed_am', old('tamheed_am'), ['class'=>'form-control', 'placeholder'=>'تمہیدِ عام درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('tamheed_am') }}</span>
+									<div class="form-group {{ $errors->has('muharik') ? 'has-error' : '' }}">
+										{!! Form::text('muharik', old('muharik'), ['class'=>'form-control', 'placeholder'=>'محرکات و نظریات درج کریں']) !!}
+										<span class="text-danger">{{ $errors->first('muharik') }}</span>
 									</div>
 								</div>
 							</div>
@@ -299,11 +307,27 @@
 									</div>
 								</div>
 							</div>
-							<div class="ltopic d-flex align-items-center">
-								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('muharik') ? 'has-error' : '' }}">
-										{!! Form::text('muharik', old('muharik'), ['class'=>'form-control', 'placeholder'=>'محرکات و نظریات درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('muharik') }}</span>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('sunana', old('sunana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'سنانے کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('sunana') }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('kehalwana', old('kehalwana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'کہلوانے کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('kehalwana') }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('dekhana', old('dekhana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'دکھانے کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('dekhana') }}</span>
 									</div>
 								</div>
 							</div>
@@ -320,16 +344,32 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('zamana') ? 'has-error' : '' }}">
-										{!! Form::select('zamana',array('قبل آدمؑ' => 'قبل آدمؑ','حضرت آدمؑ سے حضرت نوحؑ تک' => 'حضرت آدمؑ سے حضرت نوحؑ تک','حضرت نوحؑ سے حضرت ابراہیمؑ' => 'حضرت نوحؑ سے حضرت ابراہیمؑ تک','حضرت ابراہیمؑ سے حضرت موسیٰؑ تک' => 'حضرت ابراہیمؑ سے حضرت موسیٰؑ تک','حضرت موسیٰؑ سے حضرت عیسیٰؑ تک' => 'حضرت موسیٰؑ سے حضرت عیسیٰئ تک','حضرت عیسیٰؑ سے آپ ﷺ تک' => 'حضرت عیسیٰؑ سے آپ ﷺ تک','آپ ﷺ کے زمانے تک' => 'آپ ﷺ کے زمانے تک','قیامت کے بعد تک' => 'قیامت کے بعد تک'),old('zamana'), ['class'=>'form-control oselect', 'placeholder'=>'زمانہ درج کریں']) !!}
+										{!! Form::select('zamana',array('قبل آدمؑ' => 'قبل آدمؑ','حضرت آدمؑ سے حضرت نوحؑ تک' => 'حضرت آدمؑ سے حضرت نوحؑ تک','حضرت نوحؑ سے حضرت ابراہیمؑ' => 'حضرت نوحؑ سے حضرت ابراہیمؑ تک','حضرت ابراہیمؑ سے حضرت موسیٰؑ تک' => 'حضرت ابراہیمؑ سے حضرت موسیٰؑ تک','حضرت موسیٰؑ سے حضرت عیسیٰؑ تک' => 'حضرت موسیٰؑ سے حضرت عیسیٰئ تک','حضرت عیسیٰؑ سے آپ ﷺ تک' => 'حضرت عیسیٰؑ سے آپ ﷺ تک','آپ ﷺ کے زمانے سے قیامت تک' => 'آپ ﷺ کے زمانے قیامت تک','قیامت کے بعد تک' => 'قیامت کے بعد تک'),old('zamana'), ['class'=>'form-control oselect', 'placeholder'=>'زمانہ درج کریں']) !!}
 										<span class="text-danger">{{ $errors->first('zamana') }}</span>
 									</div>
 								</div>
 							</div>
-							<div class="ltopic d-flex align-items-center">
-								<div class="mr-1 formo">
-									<div class="form-group {{ $errors->has('suhbat') ? 'has-error' : '' }}">
-										{!! Form::text('suhbat', old('suhbat'), ['class'=>'form-control', 'placeholder'=>'نیک صحبت   3 سال میں(سنانا،کہلوانا،دکھانا،مشق،بتانا،سکھانا،عادت ڈالنا،سمجھانا،پڑھانا )']) !!}
-										<span class="text-danger">{{ $errors->first('suhbat') }}</span>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('mashq', old('mashq'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'مشق کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('mashq') }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('batana', old('batana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'بتانے کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('batana') }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('sikhana', old('sikhana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'سکھانے کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('sikhana') }}</span>
 									</div>
 								</div>
 							</div>
@@ -348,6 +388,30 @@
 									<div class="form-group {{ $errors->has('taluq') ? 'has-error' : '' }}">
 										{!! Form::select('taluq',array('ظاہری' => 'ظاہری','باطنی' => 'باطنی'),old('taluq'), ['class'=>'form-control oselect', 'placeholder'=>'تعلق درج کریں']) !!}
 										<span class="text-danger">{{ $errors->first('taluq') }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('adat', old('adat'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'عادت کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('adat') }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('samjhana', old('samjhana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'سمجھانے کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('samjhana') }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="stopic emahol d-flex align-items-center">
+								<div class="tabs mr-1">
+									<div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
+										{!! Form::number('parhana', old('parhana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'پڑھانے کی عمر']) !!}
+										<span class="text-danger">{{ $errors->first('parhana') }}</span>
 									</div>
 								</div>
 							</div>
@@ -399,10 +463,12 @@
 												<div class="ctitle list d-flex justify-content-between align-items-center">
 													{{ $category->title }}
 													@auth('admin')
+													@if(count($category->childs) == null)
 													<div class="d-flex">
 														<i class="fa fa-edit mx-2 sedit"></i>
 														<i class="fa fa-times-circle mx-2 delete"></i>
 													</div>
+													@endif
 													@endauth
 												</div>
 												<div class="cid d-none">{{ $category->id }}</div>
@@ -413,7 +479,9 @@
 												@endauth
 											</div>
 										</span>
-										
+										@if(count($category->childs))
+										@include('manageChild',['childs' => $category->childs])
+										@endif
 									</li>
 								</div>
 							</div>

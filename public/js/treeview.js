@@ -79,7 +79,7 @@ $(document).ready(function() {
                 var user = $(this).siblings('.user').text();
                 var userId = $(this).siblings('.userId').text();
                 $.ajax({
-                    url: "api/test/" + id,
+                    url: "/api/test/" + id,
                     data: {
                         admin: admin,
                         user: user,
@@ -97,7 +97,7 @@ $(document).ready(function() {
         $(this).find('.delete').click(function(e) {
             var id = $(this).parent().parent().siblings().text();
             $.ajax({
-                url: "api/confirmation/" + id,
+                url: "/api/confirmation/" + id,
                 success: function(data) {
                     $("#confirmation").html(data);
                 }
@@ -113,7 +113,7 @@ $(document).ready(function() {
             var id = $(this).parent().parent().siblings().text();
 
             $.ajax({
-                url: "api/edit/" + id,
+                url: "/api/edit/" + id,
                 success: function(data) {
                     $("#edit2").html(data);
                     // printEditMsg(data.editmsg);
@@ -176,7 +176,7 @@ $(document).ready(function() {
         e.preventDefault();
         $.ajax({
             type: "POST",
-            url: 'api/add-category',
+            url: '/api/add-category',
             data: $(this).serialize(),
             success: function(data) {
                 if ($.isEmptyObject(data.error)) {

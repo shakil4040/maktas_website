@@ -22,7 +22,7 @@ class CreateEasiesTable extends Migration
             $table->string('rahe_adal')->nullable();
             $table->string('husool')->nullable();
             $table->string('tamheed_khas')->nullable();
-            $table->string('tamheed_am')->nullable();
+            $table->string('area')->nullable();
             $table->string('hukam')->nullable();
             $table->string('hasiat')->nullable();
             $table->string('shoba')->nullable();
