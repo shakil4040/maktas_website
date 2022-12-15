@@ -78,12 +78,14 @@ $(document).ready(function() {
                 var admin = $(this).siblings('.admin').text();
                 var user = $(this).siblings('.user').text();
                 var userId = $(this).siblings('.userId').text();
+                var memberId = $(this).siblings('.memberId').text();
                 $.ajax({
                     url: "/api/test/" + id,
                     data: {
                         admin: admin,
                         user: user,
-                        userId: userId
+                        userId: userId,
+                        memberId: memberId
                     },
                     success: function(data) {
                         $("#div1").html(data);

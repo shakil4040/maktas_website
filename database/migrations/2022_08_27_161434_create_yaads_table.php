@@ -21,6 +21,7 @@ class CreateYaadsTable extends Migration
             $table->string('ahwal')->nullable();
             $table->string('shaz')->nullable();
             $table->longText('hawala')->nullable();
+            $table->longText('government_ref')->nullable();
             $table->timestamps();
             $table->index('id');
         });

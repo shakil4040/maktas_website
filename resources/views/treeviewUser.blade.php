@@ -6,7 +6,8 @@
         <div class="ltopic align-items-center udetail" style="position:relative;">
             <div class="unwanat text-center my-2">مختصر وضاحت</div>
             <div class="mr-2 text-wrap" title="{{ $detail->detail }}">
-                <span class="mukhtasar">{{ $detail->detail }}
+                <span class="mukhtasar">{{ $detail->detail }} <br>
+                    <div style="color:blue;">حوالہ:{{ $yaad->hawala }}</div>
                 </span>
             </div>
             <button id="mazmoon" class="bbuttons my-1 ml-2 mazmon">مکمل مضمون پڑھیں</button>
@@ -28,11 +29,22 @@
                     <div class="tabs mr-2" title="{{ $easy->taleem }}"><span class="unwanat">تعلیم:</span><span class="taleem">{{ $easy->taleem }}</span></div>
                 </div> -->
     </div>
+    @if($yaad->government_ref)
     <div class="d-xl-flex justify-content-between">
-        <div class="ltopic w-100 d-flex align-items-center">
+        <div class="ltopic w-50 d-flex align-items-center">
             <div class="dot">
             </div>
-            <div class="mr-2 wazahat" title="{{ $yaad->hawala }}"><span class="unwanat">حوالہ:</span><span class="easy->">{{ $yaad->hawala }}</span></div>
+            <div class="mr-2 wazahat" title="{{ $yaad->government_ref }}"><span class="unwanat">حوالہ سرکاری نصاب:</span><span class="easy->">{{ $yaad->government_ref }}</span></div>
+        </div>
+        <div class="stopic d-flex align-items-center tooltip1">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2"><span class="unwanat">جماعت:</span><span>{{ $easy->class }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات جماعت {{ $easy->class }} میں پڑھانی چاہیے۔</span></div>
+        </div>
+        <div class="stopic d-flex align-items-center tooltip1">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2"><span class="unwanat">عمر:</span><span>{{ $detail->age }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات {{ $detail->age }} سال کی عمر میں پڑھانی چاہیے۔</span></div>
         </div>
         <!-- <div class="stopic d-flex align-items-center tooltip1">
             <div class="dot">
@@ -40,27 +52,20 @@
                 <div class="tabs mr-2" title="{{ $easy->amli_mashq }}"><span class="unwanat">عملی :</span><span>{{ $easy->amli_mashq }}</span><span class="tooltiptext">{{ $mahol->sunana }} سال کی عمر میں یہ بات سنانا مفید ہے۔</span></div>
             </div> -->
     </div>
+    @endif
     <div class="d-xl-flex flex-wrap justify-content-between">
         <div class="stopic d-flex align-items-center tooltip1">
             <div class="dot">
             </div>
             <div class="tabs mr-2"><span class="unwanat">حکم:</span><span class="hukam">{{ $easy->hukam }}</span><span class="tooltiptext">مختصر وضاحت میں ذکر کی گئی بات {{ $easy->hukam }} ہے۔</span></div>
         </div>
+        
         <div class="stopic d-flex align-items-center tooltip1">
             <div class="dot">
             </div>
-            <div class="tabs mr-2"><span class="unwanat">عمر:</span><span>{{ $detail->age }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات {{ $detail->age }} سال کی عمر میں پڑھانی چاہیے۔</span></div>
+            <div class="tabs mr-2"><span class="unwanat">حیثیت:</span><span>{{ $easy->hasiat }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات مسلمان کی {{ $easy->hasiat }} ذمہ داری ہے۔</span></div>
         </div>
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2"><span class="unwanat">حیثیت:</span><span>{{ $easy->hasiat }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات مسلمان کی {{ $easy->hasiat }} ذمہ داری  ہے۔</span></div>
-        </div>
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2"><span class="unwanat">جماعت:</span><span>{{ $easy->class }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات جماعت {{ $easy->class }}  میں پڑھانی چاہیے۔</span></div>
-        </div>
+        
         @if($easy->qaida)
         <div class="stopic d-flex align-items-center tooltip1">
             <div class="dot">
@@ -87,15 +92,15 @@
             <div class="dot">
             </div>
             <div class="tabs mr-2"><span class="unwanat">مخاطب:</span><span class="tooltip2"><a href="#">{{ $easy->mukhatab }}</a>
-            @if($easy->mukhatab == 'خواص')
-            <span class="tooltiptext2">جن باتوں کا علم عوام کے لئے ضروری نہیں وہ خواص یا مقتداء کے ذیل میں آئیں  گی۔ </span>
-            @endif
-            @if($easy->mukhatab == 'مقتداء')
-            <span class="tooltiptext2">جن باتوں کا علم عوام یا  خواص کے لئے ضروری نہیں وہ مقتداء کے ذیل میں آئیں  گی۔ </span>
-            @endif
-        </span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->mukhatab }} سے ہے۔</span>
-            
-        </div>
+                    @if($easy->mukhatab == 'خواص')
+                    <span class="tooltiptext2">جن باتوں کا علم عوام کے لئے ضروری نہیں وہ خواص یا مقتداء کے ذیل میں آئیں گی۔ </span>
+                    @endif
+                    @if($easy->mukhatab == 'مقتداء')
+                    <span class="tooltiptext2">جن باتوں کا علم عوام یا خواص کے لئے ضروری نہیں وہ مقتداء کے ذیل میں آئیں گی۔ </span>
+                    @endif
+                </span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->mukhatab }} سے ہے۔</span>
+
+            </div>
         </div>
         @endif
         @if($easy->jins)

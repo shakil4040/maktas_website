@@ -1049,7 +1049,7 @@ $('#delete').unbind('click').bind('click', function() {
     });
     return false;
 });
-$('#jinahi').click(function() {
+$('.jinahi').click(function() {
     $('#dclose').hide();
 })
 

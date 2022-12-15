@@ -15,7 +15,7 @@
     <div class="row">
     </div>
     <div class="title islam py-2 my-3">
-        <h1>مکطس کے نصاب کے ساتھ النصیحہ کے نصاب کا موازنہ </h1>
+        <h1>مکطس کے نصاب کے ساتھ مکتب کے نصاب کا موازنہ </h1>
     </div>
     <ul id="tree1">
         @php
@@ -155,20 +155,40 @@
                                                         <div class="ctitle list d-flex justify-content-between align-items-center taqabul">
                                                             {{ $category->title }}
                                                             @auth('admin')
+                                                            @if(!count($category->childs))
                                                             <div class="d-flex">
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
                                                                 <i class="fa fa-times-circle mx-2 delete"></i>
                                                             </div>
+                                                            @endif
+                                                            @endauth
+                                                            @auth('member')
+                                                            @if(!count($category->childs))
+                                                            <div class="d-flex">
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                                <i class="fa fa-times-circle mx-2 delete"></i>
+                                                            </div>
+                                                            @endif
                                                             @endauth
                                                         </div>
                                                         @else
                                                         <div class="ctitle list d-flex justify-content-between align-items-center">
                                                             {{ $category->title }}
                                                             @auth('admin')
+                                                            @if(!count($category->childs))
                                                             <div class="d-flex">
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
                                                                 <i class="fa fa-times-circle mx-2 delete"></i>
                                                             </div>
+                                                            @endif
+                                                            @endauth
+                                                            @auth('member')
+                                                            @if(!count($category->childs))
+                                                            <div class="d-flex">
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                                <i class="fa fa-times-circle mx-2 delete"></i>
+                                                            </div>
+                                                            @endif
                                                             @endauth
                                                         </div>
                                                         @endif

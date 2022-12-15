@@ -9,7 +9,7 @@ class Yaad extends Model
 {
     // use HasFactory;
 
-    public $fillable = ['id','yad_dehani','kitni_takrar','revision','ahwal','shaz','hawala'];
+    public $fillable = ['id','yad_dehani','kitni_takrar','revision','ahwal','shaz','hawala','government_ref'];
 
     public function tree() {
         return $this->belongsTo(Tree::class);

@@ -15,7 +15,7 @@
     <div class="row">
     </div>
     <div class="title islam py-2 my-3">
-        <h1>مکطس کے نصاب کے ساتھ النصیحہ کے نصاب کا موازنہ </h1>
+        <h1>مکطس کے نصاب کے ساتھ سرکاری نصاب کو موازنہ </h1>
     </div>
     <ul id="tree1">
         @php
@@ -38,7 +38,7 @@
         @foreach($categories as $category)
         <div class="row">
             <div class="col-md-12">
-                <li title="{{ $category->title }}" class="list_color">
+                <li class="list_color">
                     @if ($category->parent_id >= 1000000 && $category->parent_id < 2000000 && $tamheed==0) <div class="title islam py-2 my-3">
                         <h4>{{"تمہیداتِ عامہ"}} </h4>
             </div>
@@ -152,23 +152,43 @@
                                                             @endif
                                                         </div>
                                                         @if($category->government_com == 1)
-                                                        <div class="ctitle list d-flex justify-content-between align-items-center taqabul">
+                                                        <div title="اس رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔" class="ctitle list d-flex justify-content-between align-items-center taqabul">
                                                             {{ $category->title }}
                                                             @auth('admin')
+                                                            @if(!count($category->childs))
                                                             <div class="d-flex">
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
                                                                 <i class="fa fa-times-circle mx-2 delete"></i>
                                                             </div>
+                                                            @endif
+                                                            @endauth
+                                                            @auth('member')
+                                                            @if(!count($category->childs))
+                                                            <div class="d-flex">
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                                <i class="fa fa-times-circle mx-2 delete"></i>
+                                                            </div>
+                                                            @endif
                                                             @endauth
                                                         </div>
                                                         @else
                                                         <div class="ctitle list d-flex justify-content-between align-items-center">
                                                             {{ $category->title }}
                                                             @auth('admin')
+                                                            @if(!count($category->childs))
                                                             <div class="d-flex">
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
                                                                 <i class="fa fa-times-circle mx-2 delete"></i>
                                                             </div>
+                                                            @endif
+                                                            @endauth
+                                                            @auth('member')
+                                                            @if(!count($category->childs))
+                                                            <div class="d-flex">
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                                <i class="fa fa-times-circle mx-2 delete"></i>
+                                                            </div>
+                                                            @endif
                                                             @endauth
                                                         </div>
                                                         @endif
@@ -177,6 +197,9 @@
                                                         <div class="user d-none">{{ auth()->user() }}</div>
                                                         @auth()
                                                         <div class="userId d-none">{{ auth()->user()->id }}</div>
+                                                        @endauth
+                                                        @auth('member')
+                                                        <div class="memberId d-none">{{ auth('member')->user()->id }}</div>
                                                         @endauth
                                                     </div>
                                                 </span>

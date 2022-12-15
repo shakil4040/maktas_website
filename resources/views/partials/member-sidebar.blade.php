@@ -4,14 +4,14 @@
             <div class="card-body">
                 <ul>
                     <li><a href="/branch">Home</a></li>
-                    <li><a href="/consignments/create ">Add Consignment</a></li>
-                    <li><a href="/consignments2">Consignments</a></li>
+                    <!-- <li><a href="/consignments/create ">Add Consignment</a></li>
+                    <li><a href="/consignments2">Consignments</a></li> -->
                 </ul>
             </div>
         </div>
     
     
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">{{ 'Track Shipment' }}</div>
     
                     <div class="card-body">
@@ -28,6 +28,6 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
 </div>
         

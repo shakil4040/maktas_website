@@ -109,6 +109,7 @@ class CategoryController extends Controller
             'ahwal'=> $input['ahwal'],
             'shaz'=> $input['shaz'],
             'hawala'=> $input['hawala'],
+            'government_ref'=> $input['government_ref'],
         ]);
         $yaad->save();
         $mahol = new Mahol([
@@ -185,12 +186,13 @@ class CategoryController extends Controller
         $admin = $request->admin;
         $user = $request->user;
         $userId = $request->userId;
+        $memberId = $request->memberId;
         if($admin == null)
         {
-            return view('treeviewUser',compact('tree','detail','easy','yaad','admin','user','userId','mahol')); 
+            return view('treeviewUser',compact('tree','detail','easy','yaad','admin','user','userId','memberId','mahol')); 
         }
         else {
-        return view('treeviewPart',compact('tree','detail','easy','yaad','admin','user','userId','mahol'));
+        return view('treeviewPart',compact('tree','detail','easy','yaad','admin','user','userId','memberId','mahol'));
         }
     }
 

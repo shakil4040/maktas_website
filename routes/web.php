@@ -29,9 +29,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm')->name('login/admin');
 Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm')->middleware('guest:admin');
 
-Route::get('/login/branch', 'Auth\LoginController@showBranchLoginForm')->name('login/branch');
-Route::post('/login/branch', 'Auth\LoginController@branchLogin');
-Route::view('/branch', 'dashboards.branch');
+Route::get('/login/member', 'Auth\LoginController@showMemberLoginForm')->name('login/member');
+Route::post('/login/member', 'Auth\LoginController@memberLogin');
+Route::view('/member', 'dashboards.member');
 
 
 Route::post('/login/admin', 'Auth\LoginController@adminLogin');
@@ -62,12 +62,14 @@ Route::prefix('admin')->namespace('Auth\Admin')->group(function(){
 });
 
 Route::get('/comparison','ComparisonController@main');
+Route::get('/middle/{class}','ComparisonController@middle');
 Route::get('/naseehaClasses','ComparisonController@naseehaClasses');
 Route::get('/naseeha/{class}','ComparisonController@naseeha');
 Route::get('/maktabClasses','ComparisonController@maktabClasses');
 Route::get('/maktab/{class}','ComparisonController@maktab');
 Route::get('/governmentClasses','ComparisonController@governmentClasses');
-Route::get('/government/{class}','ComparisonController@government');
+Route::get('/governmentBasic/{class}','ComparisonController@governmentBasic');
+Route::get('/governmentDetailed/{class}','ComparisonController@governmentDetailed');
 
 
 // Route::any('/who-you-are', 'UserCheckController@userCheckView')->name('userCheck');
