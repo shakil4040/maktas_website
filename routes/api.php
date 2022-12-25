@@ -34,4 +34,5 @@ Route::patch('/update/{id}','CategoryController@update')->name('update.category'
 Route::get('/confirmation/{id}','CategoryController@delete');
 Route::get('/delete/{id}','CategoryController@destroy');
 Route::get('/edit/{id}','CategoryController@edit');
+Route::get('/nav/{sr}','CategoryController@nav');
 Route::get('/comment','CategoryController@comment');

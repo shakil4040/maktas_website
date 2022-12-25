@@ -21,6 +21,12 @@ class CategoryController extends Controller
         $allCategories = Tree::pluck('title','sr')->all();
         return view('categoryTreeview',compact('categories','allCategories'));
     }
+    public function educationist()
+    {
+        $categories = Tree::where('parent_id', '=', 0)->orderBy('sr','asc')->get();
+        $allCategories = Tree::pluck('title','sr')->all();
+        return view('educationist',compact('categories','allCategories'));
+    }
 
 
     /**
@@ -219,5 +225,10 @@ class CategoryController extends Controller
     {
         $childs = Tree::where('parent_id','=', $cid)->get();
         return view('manageChild',compact('childs','cid'));
+    }
+    public function nav($sr) 
+    {
+        $childs = Tree::where('parent_id','=', $sr)->first();
+        return $childs;
     }
 }

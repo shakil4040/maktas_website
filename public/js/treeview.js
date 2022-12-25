@@ -73,28 +73,28 @@ $(document).ready(function() {
     $('.preloader').fadeOut('slow');
 
     $(".ctitle").each(function() {
-            $(this).click(function() {
-                var id = $(this).siblings('.cid').text();
-                var admin = $(this).siblings('.admin').text();
-                var user = $(this).siblings('.user').text();
-                var userId = $(this).siblings('.userId').text();
-                var memberId = $(this).siblings('.memberId').text();
-                $.ajax({
-                    url: "/api/test/" + id,
-                    data: {
-                        admin: admin,
-                        user: user,
-                        userId: userId,
-                        memberId: memberId
-                    },
-                    success: function(data) {
-                        $("#div1").html(data);
+        $(this).click(function() {
+            var id = $(this).siblings('.cid').text();
+            var admin = $(this).siblings('.admin').text();
+            var user = $(this).siblings('.user').text();
+            var userId = $(this).siblings('.userId').text();
+            var memberId = $(this).siblings('.memberId').text();
+            $.ajax({
+                url: "/api/test/" + id,
+                data: {
+                    admin: admin,
+                    user: user,
+                    userId: userId,
+                    memberId: memberId
+                },
+                success: function(data) {
+                    $("#div1").html(data);
 
-                    }
-                });
+                }
             });
-        })
-        // Delete function    
+        });
+    });
+    // Delete function    
     $(".ctitle").each(function() {
         $(this).find('.delete').click(function(e) {
             var id = $(this).parent().parent().siblings().text();
@@ -105,7 +105,7 @@ $(document).ready(function() {
                 }
             });
         });
-    })
+    });
 
 
 
@@ -123,7 +123,22 @@ $(document).ready(function() {
                 }
             });
         });
-    })
+    });
+    $(".ctitle").each(function() {
+        $(this).click(function() {
+            var title = $(this).children('.ctitle').text();
+            console.log(title)
+                // $.ajax({
+                //     url: "/api/nav/" + sr,
+                //     success: function(data) {
+                //         console.log(data);
+                //         // $("#edit2").html(data);
+                //         // printEditMsg(data.editmsg);
+
+            //     }
+            // });
+        });
+    });
 
 
 

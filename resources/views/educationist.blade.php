@@ -84,7 +84,7 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('taleem') ? 'has-error' : '' }}">
-										{!! Form::select('taleem',array('علمی' => 'علمی', 'عملی' => 'عملی'),old('taleem'), ['class'=>'form-control oselect', 'placeholder'=>'تعلیم درج کریں']) !!}
+										{!! Form::select('taleem',array('spiritual','physical'),old('taleem'), ['class'=>'form-control oselect', 'placeholder'=>'Learning Domains']) !!}
 										<span class="text-danger">{{ $errors->first('taleem') }}</span>
 									</div>
 								</div>
@@ -110,7 +110,7 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('amli_mashq') ? 'has-error' : '' }}">
-										{!! Form::select('amli_mashq',array('مشقی' => 'مشقی', 'غیر مشقی' => 'غیر مشقی'),old('amli_mashq'), ['class'=>'form-control oselect', 'placeholder'=>'عملی درج کریں']) !!}
+										{!! Form::select('taleem',array('strand','bench marks','competency','concepts'),old('amli_mashq'), ['class'=>'form-control oselect', 'placeholder'=>'Learning Areas']) !!}
 										<span class="text-danger">{{ $errors->first('amli_mashq') }}</span>
 									</div>
 								</div>
@@ -136,7 +136,7 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('yad_dehani') ? 'has-error' : '' }}">
-										{!! Form::select('yad_dehani',array('عملی تکرار' => 'عملی تکرار','علمی تکرار' => 'علمی تکرار', 'ایک بار' => 'ایک بار'),old('yad_dehani'), ['class'=>'form-control oselect', 'placeholder'=>'یاد دہانی درج کریں']) !!}
+										{!! Form::select('yad_dehani',array('عملی تکرار' => 'عملی تکرار','علمی تکرار' => 'علمی تکرار', 'ایک بار' => 'ایک بار'),old('yad_dehani'), ['class'=>'form-control oselect', 'placeholder'=>'Content Development']) !!}
 										<span class="text-danger">{{ $errors->first('yad_dehani') }}</span>
 									</div>
 								</div>
@@ -161,9 +161,9 @@
 							</div>
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
-									<div class="form-group {{ $errors->has('kitni_takrar') ? 'has-error' : '' }}">
-										{!! Form::number('kitni_takrar', old('kitni_takrar'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'کتنی تکرار درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('kitni_takrar') }}</span>
+									<div class="form-group {{ $errors->has('taleem') ? 'has-error' : '' }}">
+										{!! Form::select('taleem',array('spritual' => 'علمی', 'عملی' => 'عملی'),old('taleem'), ['class'=>'form-control oselect', 'placeholder'=>'Teaching Methodology']) !!}
+										<span class="text-danger">{{ $errors->first('taleem') }}</span>
 									</div>
 								</div>
 							</div>
@@ -188,7 +188,7 @@
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
 									<div class="form-group {{ $errors->has('revision') ? 'has-error' : '' }}">
-										{!! Form::select('revision',array('ضروری' => 'ضروری','غیر ضروری' => 'غیر ضروری'),old('revision'), ['class'=>'form-control oselect', 'placeholder'=>'دہرائی درج کریں']) !!}
+										{!! Form::select('revision',array('ضروری' => 'ضروری','غیر ضروری' => 'غیر ضروری'),old('revision'), ['class'=>'form-control oselect', 'placeholder'=>'Evaluation assesment']) !!}
 										<span class="text-danger">{{ $errors->first('revision') }}</span>
 									</div>
 								</div>
@@ -213,9 +213,9 @@
 							</div>
 							<div class="stopic d-flex align-items-center">
 								<div class="tabs mr-1">
-									<div class="form-group {{ $errors->has('shaz') ? 'has-error' : '' }}">
-										{!! Form::text('shaz', old('shaz'), ['class'=>'form-control', 'placeholder'=>'شاذ مسائل درج کریں']) !!}
-										<span class="text-danger">{{ $errors->first('shaz') }}</span>
+									<div class="form-group {{ $errors->has('taleem') ? 'has-error' : '' }}">
+										{!! Form::select('taleem',array('cognative','effective','psycomotor'),old('taleem'), ['class'=>'form-control oselect', 'placeholder'=>'Learning Outcomes']) !!}
+										<span class="text-danger">{{ $errors->first('taleem') }}</span>
 									</div>
 								</div>
 							</div>
@@ -480,7 +480,6 @@
 													@endauth
 												</div>
 												<div class="cid d-none">{{ $category->id }}</div>
-												<div class="sr d-none">{{ $category->sr }}</div>
 												<div class="admin d-none">{{ auth('admin')->user() }}</div>
 												<div class="user d-none">{{ auth()->user() }}</div>
 												@auth()
