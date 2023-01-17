@@ -18,6 +18,32 @@
         <h1>مکطس کے نصاب کے ساتھ سرکاری نصاب کو موازنہ </h1>
     </div>
     <ul id="tree1">
+        <div class="row navigation_bar">
+            <div id="ctab1" class="mx-2">
+                <div style="color:rgb(61, 151, 230);" id="ct1_title"></div>
+            </div>
+            <div id="ctab2" class="mx-2">
+                <div style="color:rgb(230, 122, 51);" id="ct2_title"></div>
+            </div>
+            <div id="ctab3" class="mx-2">
+                <div style="color:rgb(255, 181, 20);" id="ct3_title"></div>
+            </div>
+            <div id="ctab4" class="mx-2">
+                <div style="color:rgb(221, 39, 42);" id="ct4_title"></div>
+            </div>
+            <div id="ctab5" class="mx-2">
+                <div style="color:rgb(68, 173, 26);" id="ct5_title"></div>
+            </div>
+            <div id="ctab6" class="mx-2">
+                <div style="color:rgb(127, 0, 255);" id="ct6_title"></div>
+            </div>
+            <div id="ctab7" class="mx-2">
+                <div style="color:rgb(108, 110, 121);" id="ct7_title"></div>
+            </div>
+            <div id="ctab8" class="mx-2">
+                <div style="color:rgb(255, 0, 255);" id="ct8_title"></div>
+            </div>
+        </div>
         @php
         $tamheed = 0;
         $aqaid = 0;
@@ -193,6 +219,7 @@
                                                         </div>
                                                         @endif
                                                         <div class="cid d-none">{{ $category->id }}</div>
+                                                        <div class="sr d-none">{{ $category->sr }}</div>
                                                         <div class="admin d-none">{{ auth('admin')->user() }}</div>
                                                         <div class="user d-none">{{ auth()->user() }}</div>
                                                         @auth()

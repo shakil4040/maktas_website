@@ -1,6 +1,6 @@
 <ul>
     @foreach($childs as $child)
-    <li title="{{ $child->title }}">
+    <li class="title={{ $child->title }}">
         <span class="detail1">
             <div class="d-flex align-items-center">
                 <div class="dot2 d-flex align-items-center">
@@ -8,7 +8,7 @@
                     <i class="fa fa-plus detail1 iicon" aria-hidden="true"></i>
                     @endif
                 </div>
-                <div class="ctitle list d-flex justify-content-between align-items-center">
+                <div class="ctitle child list d-flex justify-content-between align-items-center">
                     {{ $child->title }}
                     @auth('admin')
                     @if(count($child->childs) == null)
@@ -28,6 +28,9 @@
                     @endauth
                 </div>
                 <div class="cid d-none">{{ $child->id }}</div>
+                <div class="sr d-none">{{ $child->sr }}</div>
+                <div class="parentId d-none">{{ $child->parent_id }}</div>
+                <div class="admin d-none">{{ auth('admin')->user() }}</div>
                 <div class="admin d-none">{{ auth('admin')->user() }}</div>
                 <div class="user d-none">{{ auth()->user() }}</div>
                 @auth()
@@ -35,10 +38,10 @@
                 @endauth
             </div>
         </span>
-
         @if(count($child->childs))
         @include('manageChild',['childs' => $child->childs])
         @endif
+
     </li>
     @endforeach
 </ul>

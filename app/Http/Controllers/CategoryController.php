@@ -226,9 +226,51 @@ class CategoryController extends Controller
         $childs = Tree::where('parent_id','=', $cid)->get();
         return view('manageChild',compact('childs','cid'));
     }
-    public function nav($sr) 
+    public function nav($id) 
     {
-        $childs = Tree::where('parent_id','=', $sr)->first();
-        return $childs;
+        $tab = Tree::find($id);
+        $sr = $tab['sr'];
+        $parenId = $tab['parent_id'];
+        $parentTitle = Tree::where('sr','=',$parenId)->pluck('title')->toArray();
+        $parentPid = Tree::where('sr','=',$parenId)->get()->toArray();
+        $parent2Title = null;
+        $parent3Title = null;
+        $parent4Title = null;
+        $parent5Title = null;
+        $parent6Title = null;
+        if($parentTitle != []){
+            $parentPid = Tree::where('sr','=',$parenId)->get()->toArray();
+            $one = $parentPid[0]['parent_id'];
+            $parent2Title = Tree::where('sr','=',$one)->pluck('title')->toArray();
+        if($parent2Title != []){
+            $parentPid2 = Tree::where('sr','=',$one)->get()->toArray();
+            $two = $parentPid2[0]['parent_id'];
+            $parent3Title = Tree::where('sr','=',$two)->pluck('title')->toArray();
+            if($parent3Title != []){
+            $parentPid3 = Tree::where('sr','=',$two)->get()->toArray();
+                $three = $parentPid3[0]['parent_id'];
+                $parent4Title = Tree::where('sr','=',$three)->pluck('title')->toArray();
+                if($parent4Title != []){
+                    $parentPid4 = Tree::where('sr','=',$three)->get()->toArray();
+                        $four = $parentPid4[0]['parent_id'];
+                        $parent5Title = Tree::where('sr','=',$four)->pluck('title')->toArray();
+                        if($parent5Title != []){
+                            $parentPid5 = Tree::where('sr','=',$four)->get()->toArray();
+                                $five = $parentPid5[0]['parent_id'];
+                                $parent6Title = Tree::where('sr','=',$five)->pluck('title');
+                            }
+                    }
+            }
+        }
+    }
+            $data = [
+                'parentTitle' => $parentTitle,
+                'parent2Title' => $parent2Title,
+                'parent3Title' => $parent3Title,
+                'parent4Title' => $parent4Title,
+                'parent5Title' => $parent5Title,
+                'parent6Title' => $parent6Title,
+            ];
+            return $data;
     }
 }
