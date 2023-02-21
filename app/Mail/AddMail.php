@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class DeleteMail extends Mailable
+class AddMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,6 +30,6 @@ class DeleteMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.delete');
+        return $this->markdown('emails.AddMail');
     }
 }

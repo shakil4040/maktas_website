@@ -511,32 +511,36 @@
                     <div class="col-md-12">
                         <div class="row navigation_bar">
                             <div id="ctab1" class="mx-2">
-                                <div style="color:rgb(61, 151, 230);" id="ct1_title"></div>
+                                <div id="ct1_title"></div>
                             </div>
                             <div id="ctab2" class="mx-2">
-                                <div style="color:rgb(230, 122, 51);" id="ct2_title"></div>
+                                <div id="ct2_title"></div>
                             </div>
                             <div id="ctab3" class="mx-2">
-                                <div style="color:rgb(255, 181, 20);" id="ct3_title"></div>
+                                <div id="ct3_title"></div>
                             </div>
                             <div id="ctab4" class="mx-2">
-                                <div style="color:rgb(221, 39, 42);" id="ct4_title"></div>
+                                <div id="ct4_title"></div>
                             </div>
                             <div id="ctab5" class="mx-2">
-                                <div style="color:rgb(68, 173, 26);" id="ct5_title"></div>
+                                <div id="ct5_title"></div>
                             </div>
                             <div id="ctab6" class="mx-2">
-                                <div style="color:rgb(127, 0, 255);" id="ct6_title"></div>
+                                <div id="ct6_title"></div>
                             </div>
                             <div id="ctab7" class="mx-2">
-                                <div style="color:rgb(108, 110, 121);" id="ct7_title"></div>
+                                <div id="ct7_title"></div>
                             </div>
                             <div id="ctab8" class="mx-2">
-                                <div style="color:rgb(255, 0, 255);" id="ct8_title"></div>
+                                <div id="ct8_title"></div>
                             </div>
                         </div>
-                        <div class="title islam">
+                        <div class="title islam1">
                             <h1>اسلام</h1>
+                        </div>
+                        <div class="d-flex" style="width: 46%;margin: 16px 3px 0px 0px;">
+                            <input id="searcht" type="search">
+                            <button id="searchb" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
                         <ul id="tree1">
                             @foreach($categories as $category)
@@ -553,6 +557,12 @@
                                                 <div
                                                     class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
+                                                    @if($category->mahol->status == 'Pending')
+                                                    <span
+                                                        style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
+                                                        {{'...Pending'}}
+                                                    </span>
+                                                    @endif
                                                     @auth('admin')
                                                     @if(count($category->childs) == null)
                                                     <div class="d-flex">

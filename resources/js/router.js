@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import { createApp } from 'vue';
+import * as VueRouter from 'vue-router';
 import First from './components/First';
 import Second from './components/Second';
 import Enrolled from './components/Enrolled';
@@ -42,51 +42,48 @@ import Rasool from './components/age15/Rasool';
 import Invalid from './components/Invalid';
 
 Vue.use(VueRouter);
-export default new VueRouter(
-    {
-        routes:[
-            {path:'/', component:First},
-            {path:'/second', component:Second},
-            {path:'/enrolled', component:Enrolled},
-            {path:'/new', component:New},
-            {path:'/student', component:Student},
-            {path:'/below4', component:Below4},
-            {path:'/tree', component:Tree},
-            {path:'/language', component:Language},
-            {path:'/urdu', component:Urdu},
-            {path:'/urduexam', component:Urduexam},
-            {path:'/urduenglish', component:Urduenglish},
-            {path:'/jinahi1', component:Jinahi1},
-            {path:'/jinahi2', component:Jinahi2},
-            {path:'/jihaan', component:Jihaan},
-            {path:'/parent', component:Parent},
-            {path:'/score', component:Score},
-            {path:'/elmi', component:Elmi},
-            {path:'/amli', component:Amli},
-            {path:'/gauge', component:Gauge},
-            {path:'/elmi2', component:Elmi2},
-            {path:'/amli2', component:Amli2},
-            {path:'/jihaan3', component:Jihaan3},
-            {path:'/jinahi3', component:Jinahi3},
-            {path:'/sakhti', component:Sakhti},
-            {path:'/sakhti2', component:Sakhti2},
-            {path:'/majbori', component:Majbori},
-            {path:'/website', component:Website},
-            {path:'/teacher', component:Teacher},
-            {path:'/online', component:Online},
-            {path:'/essay', component:Essay},
-            {path:'/tareeka', component:Tareeka},
-            {path:'/tareeka2', component:Tareeka2},
-            {path:'/stats', component:Stats},
-            {path:'/pending', component:Pending},
-            {path:'/principal', component:Principal},
-            {path:'/chart', component:Chart},
-            {path:'/age15', component:Age15},
-            {path:'/kalma', component:Kalma},
-            {path:'/rasool', component:Rasool},
-            {path:'/invalid', component:Invalid},
-        ],
-        mode:'history'
-    }
-);
-
+export default new VueRouter({
+    routes: [
+        { path: '/', component: First },
+        { path: '/second', component: Second },
+        { path: '/enrolled', component: Enrolled },
+        { path: '/new', component: New },
+        { path: '/student', component: Student },
+        { path: '/below4', component: Below4 },
+        { path: '/tree', component: Tree },
+        { path: '/language', component: Language },
+        { path: '/urdu', component: Urdu },
+        { path: '/urduexam', component: Urduexam },
+        { path: '/urduenglish', component: Urduenglish },
+        { path: '/jinahi1', component: Jinahi1 },
+        { path: '/jinahi2', component: Jinahi2 },
+        { path: '/jihaan', component: Jihaan },
+        { path: '/parent', component: Parent },
+        { path: '/score', component: Score },
+        { path: '/elmi', component: Elmi },
+        { path: '/amli', component: Amli },
+        { path: '/gauge', component: Gauge },
+        { path: '/elmi2', component: Elmi2 },
+        { path: '/amli2', component: Amli2 },
+        { path: '/jihaan3', component: Jihaan3 },
+        { path: '/jinahi3', component: Jinahi3 },
+        { path: '/sakhti', component: Sakhti },
+        { path: '/sakhti2', component: Sakhti2 },
+        { path: '/majbori', component: Majbori },
+        { path: '/website', component: Website },
+        { path: '/teacher', component: Teacher },
+        { path: '/online', component: Online },
+        { path: '/essay', component: Essay },
+        { path: '/tareeka', component: Tareeka },
+        { path: '/tareeka2', component: Tareeka2 },
+        { path: '/stats', component: Stats },
+        { path: '/pending', component: Pending },
+        { path: '/principal', component: Principal },
+        { path: '/chart', component: Chart },
+        { path: '/age15', component: Age15 },
+        { path: '/kalma', component: Kalma },
+        { path: '/rasool', component: Rasool },
+        { path: '/invalid', component: Invalid },
+    ],
+    mode: 'history'
+});

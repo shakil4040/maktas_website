@@ -37,6 +37,11 @@
                         Principal
                     </button>
                 </router-link>
+                <router-link to="principal" style="text-decoration:none;">
+                    <button type="button" class="btn btn-primary nav" data-toggle="modal" data-target="#exampleModal">
+                        Educationist
+                    </button>
+                </router-link>
                 <router-link to="jihaan3" style="text-decoration:none;">
                     <button type="button" class="btn btn-primary nav" data-toggle="modal" data-target="#exampleModal">
                         None of these
@@ -48,7 +53,7 @@
                             15 & Above
                         </button>
                     </router-link>
-                    <router-link to="tree" style="text-decoration:none;">
+                    <router-link to="tree2" style="text-decoration:none;">
                         <button type="button" class="btn btn-primary nav" title="Just a Sample for an idea">
                             Tree of Islam
                         </button>
@@ -56,10 +61,10 @@
                 </div>
                 
             </div>
-            <div class="float-right">
+            <!-- <div class="float-right">
                 <input style="width: 150px;" type="text" placeholder="Make a Suggestion:">
                 <input type="text" style="width: 83px;margin-left: 6px;" placeholder="Search:">
-            </div>
+            </div> -->
             <!-- <a @click="$router.go(+1)">
                 <button type="button" class="btn btn-primary nav" data-toggle="modal" data-target="#exampleModal">
                     Next

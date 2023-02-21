@@ -410,6 +410,7 @@
                     <div class="tabs mr-1">
                         <div class="form-group {{ $errors->has('abrar_id') ? 'has-error' : '' }}">
                             {!! Form::number('parhana', old('parhana'), ['class'=>'form-control','min'=>'0', 'placeholder'=>'پڑھانے کی عمر']) !!}
+                            {!! Form::text('status','Pending', ['class'=>'form-control d-none','min'=>'0']) !!}
                             <span class="text-danger">{{ $errors->first('parhana') }}</span>
                         </div>
                     </div>
@@ -425,7 +426,11 @@
             </div>
             <div class="d-flex justify-content-end align-items-center">
                 <div>
-                    <button class="bbuttons my-1 ml-2">اندراج کریں</button>
+                    @auth('member')
+                        <input type="text" class="d-none" name="member_id" value="{{auth('member')->user()->id}}">
+                        <input type="text" class="d-none" name="member_name" value="{{auth('member')->user()->name}}">
+                    @endauth
+                    <button class="bbuttons my-1 ml-2 addition">اندراج کریں</button>
                     <button class="bbuttons my-1 ml-3" type="button" id="fclose">بند کریں</button>
                 </div>
             </div>

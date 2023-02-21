@@ -241,7 +241,7 @@
     <div class="d-flex justify-content-between align-items-center">
         <i class="fa fa-eye dicon" title="چھپی ہوئی تفصیلات دیکھیں" aria-hidden="true"></i>
         <div>
-            @if($admin)
+            @if($admin || $memberId)
             <button id="acomment" class="bbuttons my-1 ml-2 ara">آراء دیکھیں</button>
             <button class="bbuttons my-1 ml-2 toggler">نئے عنوان کا اندراج کریں</button>
             @endif

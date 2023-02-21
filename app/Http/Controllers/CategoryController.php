@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Models\Easy;
 use App\Models\Tree;
 use App\Models\Yaad;
-use App\Models\Detail;
+use App\Mail\AddMail;
 use App\Models\Mahol;
+use App\Models\Detail;
+use App\Models\Comment;
+use App\Models\Tafseer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -115,7 +118,8 @@ class CategoryController extends Controller
             'ahwal'=> $input['ahwal'],
             'shaz'=> $input['shaz'],
             'hawala'=> $input['hawala'],
-            'government_ref'=> $input['government_ref'],
+            'government_ref'=>null,
+            //  $input['government_ref'],
         ]);
         $yaad->save();
         $mahol = new Mahol([
@@ -128,6 +132,7 @@ class CategoryController extends Controller
             'adat'=> $input['adat'],
             'samjhana'=> $input['samjhana'],
             'parhana'=> $input['parhana'],
+            'status'=> $input['status'],
         ]);
         $mahol->save();
         return response()->json(['success'=>'نئے عنوان کا اندراج ہو گیا ہے']);
@@ -189,16 +194,17 @@ class CategoryController extends Controller
         $easy = Easy::find($id);
         $yaad = Yaad::find($id);
         $mahol = Mahol::find($id);
+        $tafseer = Tafseer::find($id);
         $admin = $request->admin;
         $user = $request->user;
         $userId = $request->userId;
         $memberId = $request->memberId;
-        if($admin == null)
+        if($admin != null || $memberId != null)
         {
-            return view('treeviewUser',compact('tree','detail','easy','yaad','admin','user','userId','memberId','mahol')); 
+            return view('treeviewPart',compact('tree','tafseer','detail','easy','yaad','admin','user','userId','memberId','mahol'));
         }
         else {
-        return view('treeviewPart',compact('tree','detail','easy','yaad','admin','user','userId','memberId','mahol'));
+            return view('treeviewUser',compact('tree','tafseer','detail','easy','yaad','admin','user','userId','memberId','mahol')); 
         }
     }
 
@@ -217,8 +223,23 @@ class CategoryController extends Controller
         $comments = Comment::where('tree_id','=',$treeId)->get();
         return view('comment',compact('comments','treeId','treeTitle'));
     }
-    public function delete($id){
-        return view('confirmation',compact('id'));
+    public function delete(Request $request,$id){
+        $token = $request->token;
+        $memberName = $request->memberName;
+        $memberId = $request->memberId;
+        $title = $request->title;
+        return view('confirmation',compact('id','token','memberId','memberName','title'));
+    }
+    public function editing(Request $request,$id){
+        $token = $request->token;
+        $memberName = $request->memberName;
+        $memberId = $request->memberId;
+        $title = $request->title;
+        return view('Editing',compact('id','token','memberId','memberName','title'));
+    }
+    public function AddMail(Request $request){
+        Mail::to('example@example.com')->send(new AddMail($request));
+        return ;
     }
 
     public function child($cid) 
@@ -238,6 +259,8 @@ class CategoryController extends Controller
         $parent4Title = null;
         $parent5Title = null;
         $parent6Title = null;
+        $parent7Title = null;
+        $parent8Title = null;
         if($parentTitle != []){
             $parentPid = Tree::where('sr','=',$parenId)->get()->toArray();
             $one = $parentPid[0]['parent_id'];
@@ -257,7 +280,12 @@ class CategoryController extends Controller
                         if($parent5Title != []){
                             $parentPid5 = Tree::where('sr','=',$four)->get()->toArray();
                                 $five = $parentPid5[0]['parent_id'];
-                                $parent6Title = Tree::where('sr','=',$five)->pluck('title');
+                                $parent6Title = Tree::where('sr','=',$five)->pluck('title')->toArray();
+                                if($parent6Title != []){
+                                    $parentPid6 = Tree::where('sr','=',$five)->get()->toArray();
+                                        $six = $parentPid6[0]['parent_id'];
+                                        $parent7Title = Tree::where('sr','=',$six)->pluck('title');
+                                    }
                             }
                     }
             }
@@ -270,6 +298,8 @@ class CategoryController extends Controller
                 'parent4Title' => $parent4Title,
                 'parent5Title' => $parent5Title,
                 'parent6Title' => $parent6Title,
+                'parent7Title' => $parent7Title,
+                'parent8Title' => $parent8Title,
             ];
             return $data;
     }

@@ -32,6 +32,8 @@ Route::post('add-category','CategoryController@addCategory')->name('add.category
 Route::post('add-comment','CategoryController@addComment')->name('add.comment');
 Route::patch('/update/{id}','CategoryController@update')->name('update.category');
 Route::get('/confirmation/{id}','CategoryController@delete');
+Route::get('/editing/{id}','CategoryController@editing');
+Route::post('/addition','CategoryController@AddMail');
 Route::get('/delete/{id}','CategoryController@destroy');
 Route::get('/edit/{id}','CategoryController@edit');
 Route::get('/nav/{sr}','CategoryController@nav');

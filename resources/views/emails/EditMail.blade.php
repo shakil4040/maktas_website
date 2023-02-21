@@ -1,5 +1,5 @@
 @component('mail::message')
-# Delete Request
+# Edit Request
 
 {{$request->title}} <br>
 {{$request->reason}}

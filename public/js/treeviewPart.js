@@ -1122,6 +1122,20 @@ $('#tasheel1').click(function() {
 $('#tasheel3').click(function() {
     $('#tasheel2').hide();
 });
+$('#pasaymanzar2').hide();
+$('#pasaymanzar1').click(function() {
+    $('#pasaymanzar2').show();
+});
+$('#pasaymanzar3').click(function() {
+    $('#pasaymanzar2').hide();
+});
+$('#result2').hide();
+$('#result1').click(function() {
+    $('#result2').show();
+});
+$('#result3').click(function() {
+    $('#result2').hide();
+});
 $('#overlay').hide();
 $('#mazmoon').click(function() {
     $('#overlay').show();

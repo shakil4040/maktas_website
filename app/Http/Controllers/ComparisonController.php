@@ -52,7 +52,7 @@ class ComparisonController extends Controller
     }
     public function governmentBasic($class)
     {
-        $categories = Tree::whereRelation('detail', 'age', '=', $class)
+        $categories = Tree::whereRelation('mahol', 'parhana', '=', $class)
             ->whereRelation('easy', function (Builder $query) {
                 $query->where('hukam', '=', 'فرض')
                     ->orWhere('hukam', '=', 'واجب')
@@ -66,7 +66,7 @@ class ComparisonController extends Controller
     }
     public function governmentDetailed($class)
     {
-        $categories = Tree::whereRelation('detail', 'age', '=', $class)->orderBy('sr', 'asc')->get();
+        $categories = Tree::whereRelation('mahol', 'parhana', '=', $class)->orderBy('sr', 'asc')->get();
         $allCategories = Tree::pluck('title', 'sr')->all();
         return view('comparison.government', compact('categories', 'allCategories'));
     }

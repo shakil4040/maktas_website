@@ -1,30 +1,32 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-body{
+body {
     background-color: #fff;
 }
+
 .bismillah-img {
     text-align: center;
 }
+
 .top-nav {
     background: #0e077e;
     padding: 8px;
 }
+
 .bismillah-img img {
     width: 136px;
 }
+
 .form {
     padding-top: 9px;
     text-align: center;
     span {
         font-size: 45px;
-        color:black;
+        color: black;
         font-weight: 700;
         border-bottom: 2px solid;
         padding-bottom: 5px;
@@ -34,12 +36,11 @@ body{
         font-size: 69px;
         margin-top: 4px;
         font-weight: 700;
-        color:black;
+        color: black;
     }
     p.second {
         font-size: 42px;
     }
-   
     button {
         font-family: 'Jameel Noori Nastaleeq';
         border: 2px solid;
@@ -48,14 +49,12 @@ body{
         border-radius: 39px;
         font-size: 28px;
         padding: 6px 39px;
-        
     }
     button:hover {
         background: #000;
         border: 2px solid #000;
         margin-top: 50px;
         color: #fff;
-        
     }
     .info {
         border: 2px solid #000;
@@ -64,31 +63,32 @@ body{
         transition: .5s all ease-in-out;
         background: white !important;
     }
-    .info:hover{
+    .info:hover {
         transition: .5s all ease-in-out;
     }
-    .wrapper{
+    .wrapper {
         border: 2px solid #dfe1e5;
         border-radius: 6px;
     }
-    .blue{
+    .blue {
         font-family: 'Jameel Noori Nastaleeq';
         color: blue;
         cursor: pointer;
         border: unset;
     }
-    .green{
+    .green {
         font-family: 'Jameel Noori Nastaleeq';
         color: green;
         cursor: pointer;
         border: unset;
     }
-    .red{
+    .red {
         font-family: 'Jameel Noori Nastaleeq';
-        color:red;
+        color: red;
         text-align: center;
     }
 }
+
 .for-login {
     text-align: center;
     border: 1px solid #ccc;
@@ -107,6 +107,7 @@ body{
         font-size: 17px;
     }
 }
+
 .login-registration {
     margin: 3% 7%;
     border: 1px solid #ccc;
@@ -132,16 +133,17 @@ body{
         background: #49639F;
         border-color: #49639F;
     }
-    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
         color: #555454;
         background-color: transparent;
         padding: 14px;
         font-size: 20px;
     }
-    .nav-item a{
-      padding: 14px;
-      font-size: 20px;
-      font-weight: 500;
+    .nav-item a {
+        padding: 14px;
+        font-size: 20px;
+        font-weight: 500;
     }
     .craete-account p {
         text-align: center;
@@ -149,8 +151,8 @@ body{
         font-weight: 500;
         color: #555454;
     }
-    .login-form{
-      padding: 0 10px;
+    .login-form {
+        padding: 0 10px;
     }
     button.btn.btn-primary.btn-lg.btn-block.facebook svg {
         margin-right: 14px;
@@ -159,7 +161,8 @@ body{
         margin-right: 34px;
     }
 }
-.btn.btn-primary.nav{
+
+.btn.btn-primary.nav {
     text-align: center;
     padding: 1px 14px;
     font-size: 18px;
@@ -168,20 +171,24 @@ body{
     background-color: white;
     border: none;
 }
-.btn-primary{
+
+.btn-primary {
     background-color: transparent;
 }
-.btn.btn-primary.small{
+
+.btn.btn-primary.small {
     background-color: dimgray;
     font-size: small;
     float: left;
     padding: 1px 11px;
     margin: 29px 7px;
 }
-.main{
+
+.main {
     margin: 0px 62.5px;
 }
-.accordion{
+
+.accordion {
     background-color: black;
     height: 142px;
     color: white;
@@ -190,10 +197,12 @@ body{
     padding-top: 49px;
     margin: 34px 9px;
 }
-.text{
-    font-size:19px;
+
+.text {
+    font-size: 19px;
 }
-.alert{
+
+.alert {
     background-color: white;
     color: black;
     font-size: 25px;
@@ -203,9 +212,9 @@ body{
     padding-right: 12px;
     font-family: 'Jameel Noori Nastaleeq';
     border-bottom: unset;
-    
 }
-.arrow{
+
+.arrow {
     width: 20px;
     color: #797d82;
     padding: 3px 24px 0px 15px;
@@ -214,7 +223,8 @@ body{
     font-size: 19px;
     transform: rotate(90deg);
 }
-.arrow2{
+
+.arrow2 {
     width: 20px;
     color: #797d82;
     padding: 3px 24px 0px 15px;
@@ -223,17 +233,21 @@ body{
     font-size: 19px;
     transform: rotate(-90deg);
 }
-.age{
+
+.age {
     background-color: black;
 }
-.input{
+
+.input {
     margin: 1px 11px;
 }
-p.third{
+
+p.third {
     font-size: 16px;
     color: black;
 }
-.bigcircle{
+
+.bigcircle {
     width: 80px;
     height: 80px;
     color: black;
@@ -243,7 +257,8 @@ p.third{
     border-radius: 40px;
     background-color: green;
 }
-.smallcircle{
+
+.smallcircle {
     width: 50px;
     padding-top: 12px;
     height: 50px;
@@ -251,36 +266,40 @@ p.third{
     position: absolute;
     border-radius: 25px;
     cursor: pointer;
-  
 }
-.first{
+
+.first {
     margin: -5px 0px 0px 1px;
     background-color: #f4ec0ee8;
-    }
-.second{
+}
+
+.second {
     margin: 51px 0px 22px 68px;
     background-color: transparent;
-    }
-.third{
+}
+
+.third {
     margin: 122px 0px 0px 41px;
     background-color: #203ab8;
-    }
-.forth{
+}
+
+.forth {
     margin: 122px 1px 1px -45px;
-    background-color:red;
-    }
-.fifth{
+    background-color: red;
+}
+
+.fifth {
     margin: 51px 1px 1px -68px;
     background-color: #35c9e1;
-    }
-.sixth{
+}
+
+.sixth {
     margin: 6px 1px 1px -47px;
     background-color: #35e13a;
-    }
+}
 
-
-@media (max-width: 700px){
+@media (max-width: 700px) {
     .login-registration {
-      margin: 3% 3%;
+        margin: 3% 3%;
     }
 }

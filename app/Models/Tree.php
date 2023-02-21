@@ -26,7 +26,10 @@ class Tree extends Model
         return $this->hasOne('App\Models\Yaad','id','id');
     }
     public function mahol() {
-        return $this->hasOne('App\Models\mahol','id','id');
+        return $this->hasOne('App\Models\Mahol','id','id');
+    }
+    public function tafseer() {
+        return $this->hasOne('App\Models\Tafseer','id','id');
     }
     public function comments() {
         return $this->hasMany('App\Models\Comment','tree_id','sr') ;

@@ -15,16 +15,18 @@ return new class extends Migration
     {
         Schema::create('mahols', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('sunana')->nullable();
-            $table->unsignedInteger('kehalwana')->nullable();
-            $table->unsignedInteger('dekhana')->nullable();
-            $table->unsignedInteger('mashq')->nullable();
-            $table->unsignedInteger('batana')->nullable();
-            $table->unsignedInteger('sikhana')->nullable();
-            $table->unsignedInteger('adat')->nullable();
-            $table->unsignedInteger('samjhana')->nullable();
-            $table->unsignedInteger('parhana')->nullable();
+            $table->longText('sunana')->nullable();
+            $table->longText('kehalwana')->nullable();
+            $table->longText('dekhana')->nullable();
+            $table->longText('mashq')->nullable();
+            $table->longText('batana')->nullable();
+            $table->longText('sikhana')->nullable();
+            $table->longText('adat')->nullable();
+            $table->longText('samjhana')->nullable();
+            $table->longText('parhana')->nullable();
+            $table->longText('status')->nullable();
             $table->timestamps();
+            $table->index('id');
         });
     }
 

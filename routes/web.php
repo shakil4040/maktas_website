@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Mail;
 
 // Route::get('newvisitor','VisitorsController@index');
 Auth::routes();
-Route::get('/email',function(){
-    Mail::to('shakil_ahmed61@yahoo.com')->send(new DeleteMail());
-    return new DeleteMail();
-});
+Route::post('/deleteMail','MailController@deleteMail');
+Route::post('/AddMail','MailController@AddMail');
+Route::post('/EditMail','MailController@EditMail');
 Route::get('/tree2',function(){
     return view('tree');
 });

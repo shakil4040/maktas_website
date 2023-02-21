@@ -12,6 +12,6 @@ class Yaad extends Model
     public $fillable = ['id','yad_dehani','kitni_takrar','revision','ahwal','shaz','hawala','government_ref'];
 
     public function tree() {
-        return $this->belongsTo(Tree::class);
+        return $this->belongsTo('App\Models\Tree','id','id');
     }
 }

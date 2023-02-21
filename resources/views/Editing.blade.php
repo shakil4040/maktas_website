@@ -3,7 +3,7 @@
         <div class="dmsg">
             <div id="did" class="d-none">{{$id}}</div>
             <div class="dimsg text-center mt-3">
-                آپ واقعی عنوان کو ختم کرنا چاہتے ہیں؟
+                آپ واقعی عنوان کو تبدیل کرنا چاہتے ہیں؟
             </div> <br>
             <div class="d-flex justify-content-center">
                 <button class="jinahi btn btn-success mx-2">جی نہیں</button>
@@ -19,14 +19,14 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content" style="color:black;direction:rtl;">
                             <div class="modal-header d-flex justify-content-between">
-                                <h5 class="modal-title" id="exampleModalLabel">برائے مہربانی ڈیلیٹ کرنے کی وجہ تحریر
+                                <h5 class="modal-title" id="exampleModalLabel">برائے مہربانی تبدیل  کرنے کی وجہ تحریر
                                     کریں۔</h5>
                                 <button type="button" style="margin:unset;" class="close" data-dismiss="modal"
                                     aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="/deleteMail" method="post" enctype="multipart/form-data">
+                            <form action="/EditMail" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{$token}}">
                             <input type="hidden" name="memberName" value="{{$memberName}}">
                             <input type="hidden" name="memberId" value="{{$memberId}}">

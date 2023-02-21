@@ -2,6 +2,34 @@
     <div class="d-flex justify-content-center my-1 ftitle">
         <div class="title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>
+    @if ($tafseer)
+    <div class="row" style="margin: 5px 16px 5px 0px;background: #f1f2f4;padding: 8px;width: 95%;border-radius: 8px;">
+        <div>{{ $tafseer->topic1 }}</div>
+        @if($tafseer->topic2)
+        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic2 }}</div>
+        @endif
+        @if($tafseer->topic3)
+        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic3 }}</div>
+        @endif
+        @if($tafseer->topic4)
+        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic4 }}</div>
+        @endif
+        @if($tafseer->topic5)
+        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic5 }}</div>
+        @endif
+        @if($tafseer->topic6)
+        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic6 }}</div>
+        @endif
+        @if($tafseer->topic7)
+        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic7 }}</div>
+        @endif
+        @if($tafseer->topic8)
+        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic8 }}</div>
+        @endif
+
+
+    </div>
+    @endif
     <div class="d-xl-flex justify-content-between">
         <div class="ltopic align-items-center udetail" style="position:relative;">
             <div class="unwanat text-center my-2">مختصر وضاحت</div>
@@ -14,6 +42,12 @@
             @if($easy->easy)
             <button id="tasheel1" class="bbuttons my-1 ml-2 mazmon tasheel">تسہیل</button>
             @endif
+            @if($yaad->pasaymanzar)
+            <button id="pasaymanzar1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:140px;">پسِ منظر</button>
+            @endif
+            @if($yaad->result)
+            <button id="result1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:272px;">نتیجہ</button>
+            @endif
         </div>
         <div id="tasheel2" class="ltopic align-items-center tasheel2 udetail">
             <div class="unwanat text-center my-2">تسہیل</div>
@@ -22,6 +56,22 @@
                 </span>
             </div>
             <button id="tasheel3" class="bbuttons my-1 ml-2 mazmon">بند کریں</button>
+        </div>
+        <div id="pasaymanzar2" class="ltopic align-items-center pasaymanzar2 udetail" style="position:absolute;width:96%;">
+            <div class="unwanat text-center my-2">پسِ منظر</div>
+            <div class="mr-2 text-wrap" title="{{ $yaad->pasaymanzar }}">
+                <span class="mukhtasar">{{ $yaad->pasaymanzar }}
+                </span>
+            </div>
+            <button id="pasaymanzar3" class="bbuttons my-1 ml-2 mazmon" style="position:relative;">بند کریں</button>
+        </div>
+        <div id="result2" class="ltopic align-items-center result2 udetail" style="position:absolute;width:96%;">
+            <div class="unwanat text-center my-2">نتیجہ</div>
+            <div class="mr-2 text-wrap" title="{{ $yaad->result }}">
+                <span class="mukhtasar">{{ $yaad->result }}
+                </span>
+            </div>
+            <button id="result3" class="bbuttons my-1 ml-2 mazmon">بند کریں</button>
         </div>
         <!-- <div class="stopic d-flex align-items-center">
                 <div class="dot">
@@ -93,10 +143,10 @@
             </div>
             <div class="tabs mr-2"><span class="unwanat">مخاطب:</span><span class="tooltip2"><a href="#">{{ $easy->mukhatab }}</a>
                     @if($easy->mukhatab == 'خواص')
-                    <span class="tooltiptext2">جن باتوں کا علم عوام کے لئے ضروری نہیں وہ خواص یا مقتداء کے ذیل میں آئیں گی۔ </span>
+                    <span class="tooltiptext2">علم و عمل میں عوام سے آگے ہوں لیکن اس درجے میں نہیں کہ عوام ان کی اقتداء کرے۔ </span>
                     @endif
                     @if($easy->mukhatab == 'مقتداء')
-                    <span class="tooltiptext2">جن باتوں کا علم عوام یا خواص کے لئے ضروری نہیں وہ مقتداء کے ذیل میں آئیں گی۔ </span>
+                    <span class="tooltiptext2">جو متبع شریعت اور متبع سنت اس درجے میں ہوں کہ عوام ان کی اتباع کرکے گمراہ نہ ہوں۔ </span>
                     @endif
                 </span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->mukhatab }} سے ہے۔</span>
 
@@ -303,7 +353,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title" id="exampleModalLongTitle">اپنی رائے کا اظہار کریں</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle"> دلیل کے ساتھ اپنی رائے کا اظہار کریں</h5>
             </div>
             <div class="alert mt-3 alert-success print-csuccess-msg" style="display:none;width:95%;margin:auto;">
                 <button type="button" class="close" data-dismiss="alert">×</button>

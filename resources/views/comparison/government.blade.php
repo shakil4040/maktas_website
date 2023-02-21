@@ -14,34 +14,41 @@
 <div class="col-md-12">
     <div class="row">
     </div>
-    <div class="title islam py-2 my-3">
+    <div id="token">
+        @csrf
+    </div>
+    <div class="title islam py-2">
         <h1>مکطس کے نصاب کے ساتھ سرکاری نصاب کو موازنہ </h1>
     </div>
+    <div class="d-flex" style="width: 46%;margin: 16px 3px 0px 0px;">
+        <input id="search" type="search">
+        <button id="searchb" class="btn btn-success"><i class="fa fa-search"></i></button>
+    </div>
     <ul id="tree1">
-        <div class="row navigation_bar">
+        <div class="row navigation_barg">
             <div id="ctab1" class="mx-2">
-                <div style="color:rgb(61, 151, 230);" id="ct1_title"></div>
+                <div id="ct1_title"></div>
             </div>
             <div id="ctab2" class="mx-2">
-                <div style="color:rgb(230, 122, 51);" id="ct2_title"></div>
+                <div id="ct2_title"></div>
             </div>
             <div id="ctab3" class="mx-2">
-                <div style="color:rgb(255, 181, 20);" id="ct3_title"></div>
+                <div id="ct3_title"></div>
             </div>
             <div id="ctab4" class="mx-2">
-                <div style="color:rgb(221, 39, 42);" id="ct4_title"></div>
+                <div id="ct4_title"></div>
             </div>
             <div id="ctab5" class="mx-2">
-                <div style="color:rgb(68, 173, 26);" id="ct5_title"></div>
+                <div id="ct5_title"></div>
             </div>
             <div id="ctab6" class="mx-2">
-                <div style="color:rgb(127, 0, 255);" id="ct6_title"></div>
+                <div id="ct6_title"></div>
             </div>
             <div id="ctab7" class="mx-2">
-                <div style="color:rgb(108, 110, 121);" id="ct7_title"></div>
+                <div id="ct7_title"></div>
             </div>
             <div id="ctab8" class="mx-2">
-                <div style="color:rgb(255, 0, 255);" id="ct8_title"></div>
+                <div id="ct8_title"></div>
             </div>
         </div>
         @php
@@ -65,105 +72,120 @@
         <div class="row">
             <div class="col-md-12">
                 <li class="list_color">
-                    @if ($category->parent_id >= 1000000 && $category->parent_id < 2000000 && $tamheed==0) <div class="title islam py-2 my-3">
+                    @if ($category->parent_id >= 1000000 && $category->parent_id < 2000000 && $tamheed==0) <div
+                        class="title islam py-2 my-3">
                         <h4>{{"تمہیداتِ عامہ"}} </h4>
             </div>
 
             @php $tamheed=1;
             @endphp
             @endif
-            @if ($category->parent_id >= 2000000 && $category->parent_id < 3000000 && $aqaid==0) <div class="title islam py-2 my-3">
+            @if ($category->parent_id >= 2000000 && $category->parent_id < 3000000 && $aqaid==0) <div
+                class="title islam py-2 my-3">
                 <h4>{{"عقائد"}} </h4>
         </div>
         @php
         $aqaid = 1;
         @endphp
         @endif
-        @if ($category->parent_id >= 3000000 && $category->parent_id < 4000000 && $ebadat==0) <div class="title islam py-2 my-3">
+        @if ($category->parent_id >= 3000000 && $category->parent_id < 4000000 && $ebadat==0) <div
+            class="title islam py-2 my-3">
             <h4>{{"عبادات"}} </h4>
 </div>
 
 @php $ebadat=1;
 @endphp
 @endif
-@if ($category->parent_id >= 4000000 && $category->parent_id < 5000000 && $muamlat==0) <div class="title islam py-2 my-3">
+@if ($category->parent_id >= 4000000 && $category->parent_id < 5000000 && $muamlat==0) <div
+    class="title islam py-2 my-3">
     <h4>{{"معاملات"}} </h4>
     </div>
 
     @php $muamlat=1;
     @endphp
     @endif
-    @if ($category->parent_id >= 5000000 && $category->parent_id < 6000000 && $muashrat==0) <div class="title islam py-2 my-3">
+    @if ($category->parent_id >= 5000000 && $category->parent_id < 6000000 && $muashrat==0) <div
+        class="title islam py-2 my-3">
         <h4>{{"معاشرت"}} </h4>
         </div>
 
         @php $muashrat=1;
         @endphp
         @endif
-        @if ($category->parent_id >= 7000000 && $category->parent_id < 8000000 && $akhlaq==0) <div class="title islam py-2 my-3">
+        @if ($category->parent_id >= 7000000 && $category->parent_id < 8000000 && $akhlaq==0) <div
+            class="title islam py-2 my-3">
             <h4>{{"اخلاقیات"}} </h4>
             </div>
 
             @php $akhlaq=1;
             @endphp
             @endif
-            @if ($category->parent_id >= 8000000 && $category->parent_id < 9000000 && $riyasat==0) <div class="title islam py-2 my-3">
+            @if ($category->parent_id >= 8000000 && $category->parent_id < 9000000 && $riyasat==0) <div
+                class="title islam py-2 my-3">
                 <h4>{{"اسلامی ریاست"}} </h4>
                 </div>
 
                 @php $riyasat=1;
                 @endphp
                 @endif
-                @if ($category->parent_id >= 9000000 && $category->parent_id < 10000000 && $quran==0) <div class="title islam py-2 my-3">
+                @if ($category->parent_id >= 9000000 && $category->parent_id < 10000000 && $quran==0) <div
+                    class="title islam py-2 my-3">
                     <h4>{{"قرآن کریم"}} </h4>
                     </div>
 
                     @php $quran=1;
                     @endphp
                     @endif
-                    @if ($category->parent_id >= 10000000 && $category->parent_id < 11000000 && $seeratm==0) <div class="title islam py-2 my-3">
+                    @if ($category->parent_id >= 10000000 && $category->parent_id < 11000000 && $seeratm==0) <div
+                        class="title islam py-2 my-3">
                         <h4>{{"سیرتِ مصطفیٰ ﷺ"}} </h4>
                         </div>
 
                         @php $seeratm=1;
                         @endphp
                         @endif
-                        @if ($category->parent_id >= 11000000 && $category->parent_id < 12000000 && $seerata==0) <div class="title islam py-2 my-3">
+                        @if ($category->parent_id >= 11000000 && $category->parent_id < 12000000 && $seerata==0) <div
+                            class="title islam py-2 my-3">
                             <h4>{{"سیر الانبیاء علیہم السلام"}} </h4>
                             </div>
 
                             @php $seerata=1;
                             @endphp
                             @endif
-                            @if ($category->parent_id >= 12000000 && $category->parent_id < 13000000 && $seyars==0) <div class="title islam py-2 my-3">
+                            @if ($category->parent_id >= 12000000 && $category->parent_id < 13000000 && $seyars==0) <div
+                                class="title islam py-2 my-3">
                                 <h4>{{"سیر الصحابہ رضی اللہ عنہم"}} </h4>
                                 </div>
 
                                 @php $seyars=1;
                                 @endphp
                                 @endif
-                                @if ($category->parent_id >= 13000000 && $category->parent_id < 14000000 && $seyarsa==0) <div class="title islam py-2 my-3">
+                                @if ($category->parent_id >= 13000000 && $category->parent_id < 14000000 && $seyarsa==0)
+                                    <div class="title islam py-2 my-3">
                                     <h4>{{"سیر الصالحین"}} </h4>
                                     </div>
 
                                     @php $seyarsa=1;
                                     @endphp
                                     @endif
-                                    @if ($category->parent_id >= 14000000 && $category->parent_id < 15000000 && $tareekh==0) <div class="title islam py-2 my-3">
+                                    @if ($category->parent_id >= 14000000 && $category->parent_id < 15000000 &&
+                                        $tareekh==0) <div class="title islam py-2 my-3">
                                         <h4>{{"تاریخِ امت مسلمہ"}} </h4>
                                         </div>
 
                                         @php $tareekh=1;
                                         @endphp
                                         @endif
-                                        @if ($category->parent_id >= 15000000 && $category->parent_id < 16000000 && $hifat==0) <div class="title islam py-2 my-3">
+                                        @if ($category->parent_id >= 15000000 && $category->parent_id < 16000000 &&
+                                            $hifat==0) <div class="title islam py-2 my-3">
                                             <h4>{{"حفاظت و اشاعتِ دین"}} </h4>
                                             </div>
 
                                             @php $hifat=1;
                                             @endphp
                                             @endif
-                                            @if ($category->parent_id >= 16000000 && $category->parent_id < 17000000 && $mmmdt==0) <div class="title islam py-2 my-3">
+                                            @if ($category->parent_id >= 16000000 && $category->parent_id < 17000000 &&
+                                                $mmmdt==0) <div class="title islam py-2 my-3">
                                                 <h4>{{"مجموعہ معلومات معاون دینی تعلیمات"}} </h4>
                                                 </div>
 
@@ -178,7 +200,8 @@
                                                             @endif
                                                         </div>
                                                         @if($category->government_com == 1)
-                                                        <div title="اس رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔" class="ctitle list d-flex justify-content-between align-items-center taqabul">
+                                                        <div title="اس رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔"
+                                                            class="ctitle list d-flex justify-content-between align-items-center taqabul">
                                                             {{ $category->title }}
                                                             @auth('admin')
                                                             @if(!count($category->childs))
@@ -198,7 +221,8 @@
                                                             @endauth
                                                         </div>
                                                         @else
-                                                        <div class="ctitle list d-flex justify-content-between align-items-center">
+                                                        <div
+                                                            class="ctitle list d-flex justify-content-between align-items-center">
                                                             {{ $category->title }}
                                                             @auth('admin')
                                                             @if(!count($category->childs))
@@ -220,13 +244,17 @@
                                                         @endif
                                                         <div class="cid d-none">{{ $category->id }}</div>
                                                         <div class="sr d-none">{{ $category->sr }}</div>
+                                                        <div class="title d-none">{{ $category->title }}</div>
                                                         <div class="admin d-none">{{ auth('admin')->user() }}</div>
                                                         <div class="user d-none">{{ auth()->user() }}</div>
                                                         @auth()
                                                         <div class="userId d-none">{{ auth()->user()->id }}</div>
                                                         @endauth
                                                         @auth('member')
-                                                        <div class="memberId d-none">{{ auth('member')->user()->id }}</div>
+                                                        <div class="memberName d-none">
+                                                            {{ auth('member')->user()->name }}</div>
+                                                        <div class="memberId d-none">{{ auth('member')->user()->id }}
+                                                        </div>
                                                         @endauth
                                                     </div>
                                                 </span>

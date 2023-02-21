@@ -28,6 +28,12 @@
             </button>
            
           </router-link>
+            <router-link to="/principal">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+               Educationist
+            </button>
+           
+          </router-link>
             <router-link to="/jihaan3">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                None of these
