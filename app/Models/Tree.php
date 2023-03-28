@@ -12,7 +12,7 @@ class Tree extends Model
     public $fillable = ['title','parent_id','id','sr'];
 
     public function childs() {
-        return $this->hasMany('App\Models\Tree','parent_id','sr') ;
+        return $this->hasMany(Tree::class,'parent_id','sr') ;
     }
     public function detail() {
         return $this->hasOne('App\Models\Detail','id','id');

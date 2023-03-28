@@ -40,26 +40,15 @@
            
            
             <router-link to="chart">
-                <button style="margin-right:220px;" v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    ضروری عملی باتوں کا مکمل چارٹ
+                <button style="margin-right:105px;" v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    ضروری باتوں کا  طالب علم کی عمر کے حساب سے   چارٹ  
                 </button>
             </router-link> 
             <router-link to="chart">
                 <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
-                    ضروری علمی باتوں کا مکمل چارٹ
+                    ضروری  باتوں کا مکمل چارٹ
                 </button> 
             </router-link> <br>
-            <router-link to="chart">
-                <button style="margin-right:20px;" v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                ضروری عملی باتوں کا  طالب علم کی عمر کے حساب سے   چارٹ  
-                </button>
-            </router-link> 
-            <router-link to="chart">
-                <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    ضروری علمی باتوں کا  طالب علم کی عمر کے حساب سے   چارٹ  
-                </button>
-            </router-link> 
-
         </div>
     </div>
 </div>

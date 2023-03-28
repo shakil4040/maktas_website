@@ -21421,7 +21421,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       hidden: false,
       hidden2: false,
-      hidden3: false
+      hidden3: false,
+      chart2: false
     };
   },
   methods: {
@@ -21433,6 +21434,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     show3: function show3() {
       return this.hidden3 = true;
+    },
+    chart1: function chart1() {
+      return this.chart2 = true;
     }
   }
 });
@@ -21442,6 +21446,39 @@ __webpack_require__.r(__webpack_exports__);
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan3.vue?vue&type=script&lang=js":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan3.vue?vue&type=script&lang=js ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  },
+  data: function data() {
+    return {
+      hidden: false,
+      hidden2: false
+    };
+  },
+  methods: {
+    show: function show() {
+      return this.hidden = !this.hidden;
+    },
+    show2: function show2() {
+      return this.hidden2 = !this.hidden2;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan4.vue?vue&type=script&lang=js":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan4.vue?vue&type=script&lang=js ***!
   \******************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -21628,7 +21665,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       hidden: false,
       hidden2: false,
-      hidden3: false
+      hidden3: false,
+      chart2: false
     };
   },
   methods: {
@@ -21640,6 +21678,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     show3: function show3() {
       return this.hidden3 = true;
+    },
+    chart1: function chart1() {
+      return this.chart2 = true;
     }
   }
 });
@@ -21698,6 +21739,25 @@ __webpack_require__.r(__webpack_exports__);
     show8: function show8() {
       return this.hidden8 = !this.hidden8;
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/educationist/Educationist.vue?vue&type=script&lang=js":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/educationist/Educationist.vue?vue&type=script&lang=js ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
   }
 });
 
@@ -21767,6 +21827,43 @@ __webpack_require__.r(__webpack_exports__);
     },
     show4: function show4() {
       return this.hidden4 = true;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/publisher/Publisher.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/publisher/Publisher.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  },
+  data: function data() {
+    return {
+      hidden3: false,
+      chart2: false,
+      chart4: false
+    };
+  },
+  methods: {
+    show3: function show3() {
+      return this.hidden3 = true;
+    },
+    chart1: function chart1() {
+      return this.chart2 = true;
+    },
+    chart3: function chart3() {
+      return this.chart4 = true;
     }
   }
 });
@@ -22033,7 +22130,8 @@ __webpack_require__.r(__webpack_exports__);
       hidden2: false,
       hidden3: false,
       hidden4: false,
-      hidden5: false
+      hidden5: false,
+      chart2: false
     };
   },
   methods: {
@@ -22051,6 +22149,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     show5: function show5() {
       return this.hidden5 = !this.hidden5;
+    },
+    chart1: function chart1() {
+      return this.chart2 = true;
     }
   }
 });
@@ -22078,7 +22179,8 @@ __webpack_require__.r(__webpack_exports__);
       hidden2: false,
       hidden3: false,
       hidden4: false,
-      hidden5: false
+      hidden5: false,
+      chart2: false
     };
   },
   methods: {
@@ -22096,6 +22198,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     show5: function show5() {
       return this.hidden5 = !this.hidden5;
+    },
+    chart1: function chart1() {
+      return this.chart2 = true;
     }
   }
 });
@@ -22192,103 +22297,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "main"
+  id: "header"
 };
 var _hoisted_2 = {
-  "class": "navbar sticky-top",
+  "class": "container",
   style: {
-    "background-color": "black",
-    "margin": "-10px -57px",
-    "padding": "15px 23px"
+    "margin-bottom": "-13px"
   }
 };
-var _hoisted_3 = {
-  "class": "float-left d-flex"
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#",
+  id: "logo",
+  title: "Website For Essential Education"
+}, "Website For Essential Education", -1 /* HOISTED */);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "menu-trigger"
+}, null, -1 /* HOISTED */);
+var _hoisted_5 = {
+  id: "menu"
 };
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " Home ", -1 /* HOISTED */);
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " Student ", -1 /* HOISTED */);
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " Concenrned Parent ", -1 /* HOISTED */);
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " Teacher ", -1 /* HOISTED */);
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " Principal ", -1 /* HOISTED */);
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " Educationist ", -1 /* HOISTED */);
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " None of these ", -1 /* HOISTED */);
-var _hoisted_11 = {
-  "class": "d-flex",
-  style: {
-    "margin-left": "16px"
-  }
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#"
+}, "Student", -1 /* HOISTED */);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#"
+}, "Concerned Parent", -1 /* HOISTED */);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#"
+}, "Teacher", -1 /* HOISTED */);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#"
+}, "Principal", -1 /* HOISTED */);
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#"
+}, "Educationist", -1 /* HOISTED */);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#"
+}, "Publisher", -1 /* HOISTED */);
+var _hoisted_12 = {
+  "class": "main"
 };
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  title: "Sample Windown of an Enrolled Student Age 15 & Above"
-}, " 15 & Above ", -1 /* HOISTED */);
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary nav",
-  title: "Just a Sample for an idea"
-}, " Tree of Islam ", -1 /* HOISTED */);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a @click=\"$router.go(-1)\">\r\n                <button type=\"button\" class=\"btn btn-primary nav\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n                    Back\r\n                </button>\r\n            </a> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/second",
     style: {
       "text-decoration": "none"
     }
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4];
+      return [_hoisted_3];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/student",
-    style: {
-      "text-decoration": "none"
-    }
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/parent",
     style: {
       "text-decoration": "none"
     }
@@ -22297,8 +22360,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_6];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "teacher",
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/parent",
     style: {
       "text-decoration": "none"
     }
@@ -22307,8 +22370,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_7];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "principal",
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "teacher",
     style: {
       "text-decoration": "none"
     }
@@ -22317,7 +22380,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_8];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "principal",
     style: {
       "text-decoration": "none"
@@ -22327,8 +22390,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_9];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "jihaan3",
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "educationist",
     style: {
       "text-decoration": "none"
     }
@@ -22337,27 +22400,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_10];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "age15",
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "publisher",
     style: {
       "text-decoration": "none"
     }
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_12];
+      return [_hoisted_11];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "tree2",
-    style: {
-      "text-decoration": "none"
-    }
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_13];
-    }),
-    _: 1 /* STABLE */
-  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"float-right\">\r\n                <input style=\"width: 150px;\" type=\"text\" placeholder=\"Make a Suggestion:\">\r\n                <input type=\"text\" style=\"width: 83px;margin-left: 6px;\" placeholder=\"Search:\">\r\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a @click=\"$router.go(+1)\">\r\n                <button type=\"button\" class=\"btn btn-primary nav\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n                    Next\r\n                </button>\r\n            </a> ")]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.KeepAlive, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)], 1024 /* DYNAMIC_SLOTS */))])]);
+  })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" / navigation ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" / container ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.KeepAlive, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)], 1024 /* DYNAMIC_SLOTS */))])]);
 }
 
 /***/ }),
@@ -22376,89 +22429,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "login-registration"
+  "class": "student d-block mx-auto my-4",
+  style: {
+    "width": "68%"
+  },
+  id: "fancy"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "nav nav-pills mb-3",
-  id: "pills-tab",
-  role: "tablist"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"nav-item\">\n                <a class=\"nav-link\" id=\"pills-profile-tab\" data-toggle=\"pill\" href=\"#pills-profile\" role=\"tab\" aria-controls=\"pills-profile\" aria-selected=\"false\">New Visitor</a>\n            </li> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link active",
-  id: "pills-home-tab",
-  "data-toggle": "pill",
-  href: "#pills-home",
-  role: "tab",
-  "aria-controls": "pills-home",
-  "aria-selected": "true"
-}, "Enrolled Visitor")])], -1 /* HOISTED */);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Enrolled Visitor", -1 /* HOISTED */);
 var _hoisted_3 = {
-  "class": "tab-content",
-  id: "pills-tabContent"
+  "class": "left"
 };
 var _hoisted_4 = {
-  "class": "tab-pane fade show active",
-  id: "pills-home",
-  role: "tabpanel",
-  "aria-labelledby": "pills-home-tab"
+  "class": "mail"
 };
 var _hoisted_5 = {
-  "class": "login-form"
+  key: 0,
+  "class": "text-danger"
 };
 var _hoisted_6 = {
-  "class": "row"
+  "class": "right"
 };
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-lg-3"
-}, null, -1 /* HOISTED */);
+var _hoisted_7 = {
+  "class": "name"
+};
 var _hoisted_8 = {
-  "class": "col-lg-6"
-};
-var _hoisted_9 = {
-  "class": "form-group"
-};
-var _hoisted_10 = {
   key: 0,
   "class": "text-danger"
 };
-var _hoisted_11 = {
-  "class": "form-group"
-};
-var _hoisted_12 = {
-  key: 0,
-  "class": "text-danger"
-};
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group form-check\"><input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\"><label class=\"form-check-label\" for=\"exampleCheck1\">Remember Me</label><a href=\"#\" class=\"float-right\">Forget Password ?</a></div><button type=\"submit\" class=\"btn btn-primary btn-lg btn-block facebook\"><i class=\"fa fa-sign-in\"></i>  Login</button>", 2);
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-lg-3"
-}, null, -1 /* HOISTED */);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "btn-holder"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "btn blue",
+  type: "submit"
+}, "Submit")], -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"tab-pane fade\" id=\"pills-profile\" role=\"tabpanel\" aria-labelledby=\"pills-profile-tab\">\n                <div class=\"login-form\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-3\"></div>\n                        <div class=\"col-lg-6\">\n                            <form @submit.prevent=\"submit\">\n\n                                <div class=\"form-group\">\n                                    <input type=\"text\" name=\"name\" class=\"form-control\" id=\"exampleInputName1\" aria-describedby=\"emailHelp\" placeholder=\"Nick Name\" v-model=\"fields.name\">\n                                     <div v-if=\"errors && errors.name\" class=\"text-danger\">{{ errors.name[0] }}</div>\n                                </div>\n\n                                <div class=\"form-group\">\n                                    <input type=\"number\" name=\"age\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Submit your age\" v-model=\"fields.age\">\n                                     <div v-if=\"errors && errors.age\" class=\"text-danger\">{{ errors.age[0] }}</div>\n                                </div>\n\n                                <div class=\"form-group \">\n                                    <div class=\"form-check-inline\">\n                                        <label class=\"form-check-label\">\n                                            <input type=\"radio\"  class=\"form-check-input\"  value=\"Male\" name=\"gender\"  v-model=\"fields.gender\">Male\n                                        </label>\n                                    </div>\n                                    <div class=\"form-check-inline\">\n                                        <label class=\"form-check-label\">\n                                            <input type=\"radio\" class=\"form-check-input\"  value=\"Female\" name=\"gender\" v-model=\"fields.gender\" >Female\n                                        </label>\n                                    </div>\n                                    <div v-if=\"errors && errors.gender\" class=\"text-danger\">{{ errors.gender[0] }}</div>\n                                </div>\n\n                                <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block facebook\"><i class=\"fa fa-sign-in\"></i>&nbsp;&nbsp;Submit</button>\n\n                            </form>\n                        </div>\n                        <div class=\"col-lg-3\"></div>\n                    </div>\n                </div>\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $options.submit2 && $options.submit2.apply($options, arguments);
+      return $options.submit && $options.submit.apply($options, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"fb-goo\">\n                      <button type=\"button\" class=\"btn btn-primary btn-lg btn-block google\"><i class=\"fa fa-google\"></i>&nbsp;&nbsp;Login with Google</button>\n                    </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "email",
     "class": "form-control",
     name: "email",
     id: "exampleInputEmail1",
     "aria-describedby": "emailHelp",
-    placeholder: "Email",
+    placeholder: "Email address...",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.fields2.email = $event;
     })
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.fields2.email]]), $data.errors && $data.errors2.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors2.email[0]), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.fields2.email]]), $data.errors && $data.errors2.email ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors2.email[0]), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "password",
     "class": "form-control",
     name: "password",
     id: "exampleInputPassword1",
-    placeholder: "Password",
+    placeholder: "Password...",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.fields2.password = $event;
     })
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.fields2.password]]), $data.errors && $data.errors2.password ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors2.password[0]), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_13], 32 /* HYDRATE_EVENTS */)]), _hoisted_15])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"form\">\n        <div class=\"container\">\n          <div class=\"info\">\n            <p>Enrolled Visitor<br>\n              Sorry but we do not seem to have you as an enrolled Visitor. Please Click\n               <router-link to=\"/new\">\n              <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">\n                 New Visitor\n              </button>\n            </router-link> \n               to get enrolled\n\n            </p>\n\n          </div>\n        </div>\n      </div> ")]);
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.fields2.password]]), $data.errors && $data.errors2.password ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors2.password[0]), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), _hoisted_9], 32 /* HYDRATE_EVENTS */)])]);
 }
 
 /***/ }),
@@ -22477,30 +22506,110 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "form"
+  "class": "slider"
 };
 var _hoisted_2 = {
+  "class": "bxslider"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "container mx-5"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"info\">\n                      <h2><br><span style=\"font-family: 'jameel noori nastaleeq';\">یہ شارع عام نہیں</span></h2>\n                      <router-link to=\"/second\" style=\"font-family: 'jameel noori nastaleeq';\">\n                        مزید جانیے\n                      </router-link>\n                  </div> ")], -1 /* HOISTED */);
+var _hoisted_4 = {
+  "class": "container"
+};
+var _hoisted_5 = {
   "class": "info"
 };
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "This is Not a Thorough Fare", -1 /* HOISTED */);
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "یہ شارع عام نہیں ہے", -1 /* HOISTED */);
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " مزید جانیے ", -1 /* HOISTED */);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("This Is Not"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "A Thoroughfare")], -1 /* HOISTED */);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" For more details click here ");
+var _hoisted_8 = {
+  "class": "container mx-5"
+};
+var _hoisted_9 = {
+  "class": "info"
+};
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  style: {
+    "font-family": "'jameel noori nastaleeq'"
+  }
+}, "یہ شارع عام نہیں")], -1 /* HOISTED */);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" مزید جانیے ");
+var _hoisted_12 = {
+  "class": "container"
+};
+var _hoisted_13 = {
+  "class": "info"
+};
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("This Is Not"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "A Thoroughfare")], -1 /* HOISTED */);
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" For more details click here ");
+var _hoisted_16 = {
+  "class": "container mx-5"
+};
+var _hoisted_17 = {
+  "class": "info"
+};
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  style: {
+    "font-family": "'jameel noori nastaleeq'"
+  }
+}, "یہ شارع عام نہیں")], -1 /* HOISTED */);
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" مزید جانیے ");
+var _hoisted_20 = {
+  "class": "container"
+};
+var _hoisted_21 = {
+  "class": "info"
+};
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("This Is Not"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "A Thoroughfare")], -1 /* HOISTED */);
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" For more details click here ");
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "bg-bottom"
+}, null, -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/second"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5];
+      return [_hoisted_7];
     }),
     _: 1 /* STABLE */
-  })])])]);
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" / content ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/second",
+    style: {
+      "font-family": "'jameel noori nastaleeq'"
+    }
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_11];
+    }),
+    _: 1 /* STABLE */
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/second"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_15];
+    }),
+    _: 1 /* STABLE */
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" / content ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/second",
+    style: {
+      "font-family": "'jameel noori nastaleeq'"
+    }
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_19];
+    }),
+    _: 1 /* STABLE */
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/second"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_23];
+    }),
+    _: 1 /* STABLE */
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" / content ")])]), _hoisted_24])]);
 }
 
 /***/ }),
@@ -22676,10 +22785,11 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "info",
   style: {
-    "direction": "rtl"
+    "direction": "rtl",
+    "width": "100%"
   }
 };
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p style=\"font-size:35px;\">This is a Learning Website where age &amp; skill based Learning Solution are provided to its Users </p><p style=\"font-size:25px;\">ہماری کوشش یہ ہے کہ طالب علم حضرات اپنی موجودہ </p><div class=\"d-flex justify-content-center\"><p style=\"font-size:25px;\"><ul class=\"text-right\"><li>عمر</li><li>علمی استعداد</li><li>قلبی استعداد</li><li>سمجھنے کی استعداد</li><li>سیکھنے کی استعداد</li><li> طلب کے مطابق</li></ul></p></div><p style=\"font-size:25px;\"> کسی معتمد استاد کی نگرانی میں تعلیم و تربیت کے دورے سے اس طرح گزریں <br> کہ <br> اگلی بات جاننے سے قبل ضروری ہے <br> کہ <br> پچھلی بات صحیح طور پر سمجھی گئی ہو <br> اور <br> جو علم حاصل کیا گیا ہے اس پر عمل ہو <br> یا <br> کم از کم عمل کرنے میں سستی پر ندامت کے ساتھ کوشش <br> اور <br> اللہ تعالی سے مدد مانگے کا سلسلہ قائم ہوا ہو۔ <br><br> اگر آپ یہ چاہتے ہیں کہ اللہ تعالیٰ کے اس ارشاد <br> <span style=\"font-family:&#39;Droid Arabic Kufi&#39;;font-size:25px;border:unset;color:blue;\">يَا أَيُّهَا الَّذِينَ آمَنُوا ادْخُلُوا فِی السِّلْمِ كَافَّةً(البقرۃ:۲۰۸ ) </span> <br> کے مطابق پورے اسلام میں داخل ہوں <br> تو مزید آگے بڑھیے۔ </p>", 4);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h6 style=\"font-size:35px;\">This is a Learning Website where age &amp; skill based Learning Solution are provided to its Users </h6><p style=\"font-size:25px;\">ہماری کوشش یہ ہے کہ طالب علم حضرات اپنی موجودہ </p><div class=\"d-flex justify-content-center\"><p style=\"font-size:25px;\"><ul class=\"text-right\"><li>عمر</li><li>علمی استعداد</li><li>قلبی استعداد</li><li>سمجھنے کی استعداد</li><li>سیکھنے کی استعداد</li><li> طلب کے مطابق</li></ul></p></div><p style=\"font-size:25px;\"> کسی معتمد استاد کی نگرانی میں تعلیم و تربیت کے دورے سے اس طرح گزریں <br> کہ <br> اگلی بات جاننے سے قبل ضروری ہے <br> کہ <br> پچھلی بات صحیح طور پر سمجھی گئی ہو <br> اور <br> جو علم حاصل کیا گیا ہے اس پر عمل ہو <br> یا <br> کم از کم عمل کرنے میں سستی پر ندامت کے ساتھ کوشش <br> اور <br> اللہ تعالی سے مدد مانگے کا سلسلہ قائم ہوا ہو۔ <br><br> اگر آپ یہ چاہتے ہیں کہ اللہ تعالیٰ کے اس ارشاد <br><br> <span style=\"font-family:&#39;Amiri Quran&#39;;font-size:25px;border:unset;color:black;\">يَا أَيُّهَا الَّذِينَ آمَنُوا ادْخُلُوا فِی السِّلْمِ كَافَّةً(البقرۃ:۲۰۸ ) </span> <br><br> کے مطابق پورے اسلام میں داخل ہوں <br> تو مزید آگے بڑھیے۔ </p>", 4);
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
   "class": "btn btn-primary",
@@ -23769,10 +23879,23 @@ var _hoisted_9 = {
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 };
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-
+var _hoisted_10 = {
+  key: 2,
+  "class": "mt-2"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  style: {
+    "margin-bottom": "-44px"
+  }
+}, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+  src: "/tree",
+  height: "650",
+  width: "100%",
+  title: "Iframe Example"
+}, null, -1 /* HOISTED */);
+var _hoisted_13 = [_hoisted_11, _hoisted_12];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary",
@@ -23811,21 +23934,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "data-toggle": "modal",
     "data-target": "#exampleModal"
-  }, " لڑکی ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/amli2"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_8, " عملی باتوں کا معائنہ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/elmi2"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " علمی باتوں کا معائنہ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
-    }),
-    _: 1 /* STABLE */
-  }), _hoisted_10])])]);
+  }, " لڑکی ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "javascript:;",
+    onClick: _cache[5] || (_cache[5] = function () {
+      return $options.chart1 && $options.chart1.apply($options, arguments);
+    })
+  }, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_8, " عملی باتوں کا معائنہ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "javascript:;",
+    onClick: _cache[6] || (_cache[6] = function () {
+      return $options.chart1 && $options.chart1.apply($options, arguments);
+    })
+  }, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " علمی باتوں کا معائنہ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _ctx.chart2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_13)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
 
 /***/ }),
@@ -23914,6 +24033,94 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 1 /* STABLE */
   }), _hoisted_53])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show\">\r\n                    انرول ہونے سے قبل چند بنیادی مضامین کا پڑھنا ضروری ہے\r\n                </button>\r\n                <br>\r\n\r\n                <button v-if=\"hidden\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show2\">\r\n                    دوائیوں کی طرح ہوتے ہیں Learning Material\r\n                </button>\r\n\r\n                <br> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"btn btn-primary\">اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے</button>\r\n            <br>\r\n            <router-link to=\"sakhti\">\r\n                <button class=\"btn btn-primary\">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>\r\n            </router-link>\r\n            <router-link to=\"jihaan3\">\r\n                <button class=\"btn btn-primary\">کیا آپ مشق حل کرنا چاہیں گے</button>\r\n            </router-link> ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan4.vue?vue&type=template&id=28af6476":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan4.vue?vue&type=template&id=28af6476 ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "form"
+};
+var _hoisted_2 = {
+  "class": "info"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("اللہ تعالی آپ سے راضی ہوں "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br")], -1 /* HOISTED */);
+var _hoisted_4 = {
+  "class": "wrapper"
+};
+var _hoisted_5 = {
+  "class": "alert"
+};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" انرول ہوئے بغیر آپ درج ذیل مضامین پڑھ سکتے ہیں۔ ");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "arrow2"
+}, "❮", -1 /* HOISTED */);
+var _hoisted_8 = [_hoisted_6, _hoisted_7];
+var _hoisted_9 = {
+  key: 0,
+  "class": "alert"
+};
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" دوائیوں کی طرح ہوتے ہیں Learning Material ");
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "arrow2"
+}, "❮", -1 /* HOISTED */);
+var _hoisted_12 = [_hoisted_10, _hoisted_11];
+var _hoisted_13 = {
+  key: 1,
+  "class": "alert text-center"
+};
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" ہم انسانوں کی مثال اس ہانڈی کی طرح ہے جو چولہے پر رکھی ہے اور نیچے وقت کی آگ جل رہی ہے۔ <br> وقت کے ساتھ ساتھ ہم اپنے ارد گرد سےجو کچھ حاصل کرتے ہیں وہ ہماری ذات پر اپنا اثر چھوڑتی ہیں۔ <br> جیسے اگر ہم اپنی ہانڈی میں نمک ڈالیں گے تو نمک کا ذائقہ آئے گا، مرچیں ڈالیں تو مرچ کا، <br> <br> اور <br><br> کمال یہ ہے کہ سب کچھ ایسا گھل مل جاتا ہے کہ اس کا الگ کرنا ممکن نہیں رہتا <br> ایسے میں اگر <br> کچھ غلط ڈل جائے تو اس کے اثر کو زائل کرنے کے لیے بڑی محنت کرنی پڑتی ہے۔ <br><br> کتابیں یا جو بھی سیکھنے والا مواد ہمارے ارد گرد موجود ہے اس سب کی مثال کسی میڈیکل سٹور میں رکھی ہوئی دوائیوں کی مانند ہے <br><br> کہ <br><br> تمام دوائیاں ہیں تو انسان کو نفع پہنچانے کے لیے مگر کس مریض کو کون سی دوائی کھانی چاہیے، اس کا فیصلہ اگر ڈاکٹر صاحب کریں تو نفع <br> کی غالب امید ہے اور اگر کوئی آدمی اپنی مرضی سے کھاتا چلا جائے تو صحت مندی کی بجائے الٹا اپنی جان کو نقصان پہنچائے گا۔ <br> <br> بالکل اس ہی طرح کون سے شاگرد کو کون سا مواد پڑھنا یا دیکھنا اور سننا چاہیے اور کس قسم کے مواد سے پرہیز کرنا چاہیے اس کا فیصلہ اگر <br> ایک قابل استاد کرے تو امید ہے کہ تھوڑے وقت میں شاگرد کوزیادہ نفع ہو گا اور اس کی زندگی کی ہانڈی خوشبودار اور ذائقےدار ہو گی۔ <br> واللہ اعلم <br>", 36);
+var _hoisted_50 = {
+  "class": "alert",
+  style: {
+    "text-align": "center"
+  }
+};
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "red"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br")], -1 /* HOISTED */);
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "btn btn-primary"
+}, "آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟", -1 /* HOISTED */);
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
+  "class": "btn btn-primary"
+}, "کیا آپ مشق حل کرنا چاہیں گے؟", -1 /* HOISTED */);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "blue text-center",
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.show && $options.show.apply($options, arguments);
+    })
+  }, _hoisted_8)]), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "blue text-center",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.show2 && $options.show2.apply($options, arguments);
+    })
+  }, _hoisted_12)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [_hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "sakhti"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_52];
+    }),
+    _: 1 /* STABLE */
+  }), _hoisted_53])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show\">\r\n                        انرول ہونے سے قبل چند بنیادی مضامین کا پڑھنا ضروری ہے\r\n                    </button>\r\n                    <br>\r\n    \r\n                    <button v-if=\"hidden\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show2\">\r\n                        دوائیوں کی طرح ہوتے ہیں Learning Material\r\n                    </button>\r\n    \r\n                    <br> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"btn btn-primary\">اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے</button>\r\n                <br>\r\n                <router-link to=\"sakhti\">\r\n                    <button class=\"btn btn-primary\">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>\r\n                </router-link>\r\n                <router-link to=\"jihaan3\">\r\n                    <button class=\"btn btn-primary\">کیا آپ مشق حل کرنا چاہیں گے</button>\r\n                </router-link> ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
 }
 
 /***/ }),
@@ -24193,7 +24400,10 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   }
 }, " آپ کو ہمارے ساتھ کچھ مضمون پڑھنے ہوں گے اور ان کی مشق کرنی ہوگی۔ ", -1 /* HOISTED */);
 var _hoisted_5 = {
-  "class": "alert"
+  "class": "alert",
+  style: {
+    "text-align": "center"
+  }
 };
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" کی تعریف Media ");
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -24204,7 +24414,8 @@ var _hoisted_9 = {
   key: 0,
   "class": "alert",
   style: {
-    "direction": "rtl"
+    "direction": "rtl",
+    "text-align": "center"
   }
 };
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" میڈیا سے مراد وہ ذرائع ابلاغ ہیں جو ");
@@ -24289,6 +24500,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "form-group input"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "number",
+  required: "",
   min: "0",
   "class": "form-control",
   placeholder: "اپی عمر کا اندراج کریں"
@@ -24309,10 +24521,23 @@ var _hoisted_9 = {
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 };
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-
+var _hoisted_10 = {
+  key: 2,
+  "class": "mt-2"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  style: {
+    "margin-bottom": "-44px"
+  }
+}, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+  src: "/tree",
+  height: "650",
+  width: "100%",
+  title: "Iframe Example"
+}, null, -1 /* HOISTED */);
+var _hoisted_13 = [_hoisted_11, _hoisted_12];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary",
@@ -24351,21 +24576,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "data-toggle": "modal",
     "data-target": "#exampleModal"
-  }, " والد ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/amli"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_8, " عملی باتوں کا معائنہ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/elmi"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " علمی باتوں کا معائنہ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
-    }),
-    _: 1 /* STABLE */
-  }), _hoisted_10])])]);
+  }, " والد ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "javascript:;",
+    onClick: _cache[5] || (_cache[5] = function () {
+      return $options.chart1 && $options.chart1.apply($options, arguments);
+    })
+  }, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_8, " دینی باتوں کی اجمالی فہرست ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "javascript:;",
+    onClick: _cache[6] || (_cache[6] = function () {
+      return $options.chart1 && $options.chart1.apply($options, arguments);
+    })
+  }, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " دینی باتوں کی تفصیلی فہرست ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _ctx.chart2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_13)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
 
 /***/ }),
@@ -24405,7 +24626,7 @@ var _hoisted_6 = {
     "direction": "rtl"
   }
 };
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" قرآن مجید کی آیت <br> <span style=\"font-family:&#39;Droid Arabic Kufi&#39;;font-size:25px;border:unset;color:blue;\">يَاأَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا(الحجرات:۶ ) <br></span> میں حکم ہےکہ تحقیق و تصدیق کے بغیربات آگے نقل نہ کی جائے <br> اور دوسرا حضرت علی کا قول ہےکہ <br> <span style=\"font-family:&#39;Droid Arabic Kufi&#39;;font-size:25px;border:unset;color:blue;\">قَالَ عَلِيٌّ حَدِّثُوا النَّاسَ بِمَا يَعْرِفُونَ أَتُحِبُّونَ أَنْ يُكَذَّبَ اللَّهُ وَرَسُولُهُ <br><span style=\"font-size:15px;border:unset;color:blue;\">(صحيح البخاري، باب مَنْ خَصَّ بِالْعِلْمِ قَوْمًا دُونَ قَوْمٍ كَرَاهِيَةَ أَنْ لَا يَفْهَمُوا، 1/37، رقم الحديث: 127)</span> <br></span> حضرت علی کرم اللہ وجہہ فرماتے ہیں کہ لوگوں کو ایسی بات بتاؤ جس کو وہ سمجھ سکیں۔ کیا تم یہ پسند کرتے ہو کہ) سادہ لوگ اپنی <br> کم علمی کی وجہ سے ) اللہ اور اس کے رسول ﷺ کی تکذیب کر بیٹھیں۔ <br> لوگوں سے ان کی عقول کے موافق بات کرو ۔ <br> Learning website ان دو اصولوں کا خاص لحاظ رکھتے ہوئے خالصتاً اللہ تعالیٰ کی رضا کے لیے دینِ اسلام کی تعلیمات کے <br> ذریعے انسانیت کی خدمت کرنا چاہتی ہے اور اپنی اس کاوش کا کسی مخلوق سے کوئی بدلہ نہیں لینا چاہتی۔ <br> Learning Website میں کوشش یہ کی گئی ہے کہ قاری کی <br> موجودہ عمر، <br> قلبی استعداد، <br> علمی استعداد، <br> سمجھنے کی استعداد <br> اور طلب کے مطابق <br> اس کو آگے بڑھنے کا راستہ دکھایا جائے۔ <br><br>", 35);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" قرآن مجید کی آیت <br> <span style=\"font-family:&#39;Amiri Quran&#39;;font-size:25px;border:unset;color:blue;\">يَاأَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا(الحجرات:۶ ) <br></span> میں حکم ہےکہ تحقیق و تصدیق کے بغیربات آگے نقل نہ کی جائے <br> اور دوسرا حضرت علی کا قول ہےکہ <br> <span style=\"font-family:&#39;Amiri Quran&#39;;font-size:25px;border:unset;color:blue;\">قَالَ عَلِيٌّ حَدِّثُوا النَّاسَ بِمَا يَعْرِفُونَ أَتُحِبُّونَ أَنْ يُكَذَّبَ اللَّهُ وَرَسُولُهُ <br><span style=\"font-size:15px;border:unset;color:blue;\">(صحيح البخاري، باب مَنْ خَصَّ بِالْعِلْمِ قَوْمًا دُونَ قَوْمٍ كَرَاهِيَةَ أَنْ لَا يَفْهَمُوا، 1/37، رقم الحديث: 127)</span> <br></span> حضرت علی کرم اللہ وجہہ فرماتے ہیں کہ لوگوں کو ایسی بات بتاؤ جس کو وہ سمجھ سکیں۔ کیا تم یہ پسند کرتے ہو کہ) سادہ لوگ اپنی <br> کم علمی کی وجہ سے ) اللہ اور اس کے رسول ﷺ کی تکذیب کر بیٹھیں۔ <br> لوگوں سے ان کی عقول کے موافق بات کرو ۔ <br> Learning website ان دو اصولوں کا خاص لحاظ رکھتے ہوئے خالصتاً اللہ تعالیٰ کی رضا کے لیے دینِ اسلام کی تعلیمات کے <br> ذریعے انسانیت کی خدمت کرنا چاہتی ہے اور اپنی اس کاوش کا کسی مخلوق سے کوئی بدلہ نہیں لینا چاہتی۔ <br> Learning Website میں کوشش یہ کی گئی ہے کہ قاری کی <br> موجودہ عمر، <br> قلبی استعداد، <br> علمی استعداد، <br> سمجھنے کی استعداد <br> اور طلب کے مطابق <br> اس کو آگے بڑھنے کا راستہ دکھایا جائے۔ <br><br>", 35);
 var _hoisted_42 = [_hoisted_7];
 var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue text-center"
@@ -24561,6 +24782,59 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/educationist/Educationist.vue?vue&type=template&id=0fc345d4":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/educationist/Educationist.vue?vue&type=template&id=0fc345d4 ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "form"
+};
+var _hoisted_2 = {
+  "class": "info"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " Teach Student online ", -1 /* HOISTED */);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " Help us develope a universal curriculum ", -1 /* HOISTED */);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/online"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_3];
+    }),
+    _: 1 /* STABLE */
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/essay"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_4];
+    }),
+    _: 1 /* STABLE */
+  })])])]);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/principal/Chart.vue?vue&type=template&id=11b970a2":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/principal/Chart.vue?vue&type=template&id=11b970a2 ***!
@@ -24577,43 +24851,10 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "form"
 };
-var _hoisted_2 = {
-  "class": "info"
-};
-var _hoisted_3 = {
-  "class": "wrapper"
-};
-var _hoisted_4 = {
-  "class": "alert"
-};
-var _hoisted_5 = {
-  "class": "red"
-};
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" مندرجہ ذیل شکل میں پائی چارٹ بنایاجائے گا ان تمام بنیادی باتوں کا جن کو ہم دین کی جڑ کہ سکتے ہیں اور <br><img src=\"/assets/images/pie chart.jpg\" alt=\"\"> <br> ان باتوں میں سے کسی بھی بات پر کلک کرنے سے اگلے درجے کی بنیادی باتوں کی تفصیلات کادرخت کھل جائے گا <br><img src=\"/assets/images/chart2.jpg\" alt=\"\" width=\"100%\"> <br><br> یہ والدین کو دکھانے کے لیے ہے۔ سکولوں کے پرنسپلز حضرات کو دکھانے کے لئے ہے تاکہ ایک اندازہ ہو کہ ہم بچوں کو دین کی کتنی تصویر پڑھا رہے ہیں یا سمجھا رہے ہیں یا دکھا رہے ہیں یا ہمیں خود کو کتنی باتیں معلوم ہے اور اس حوالہ سے کہ اللہ کے ہاں کون کون سی چیزیں ہیں جو کہ ایک اچھا مسلمان بننے کے لیے ضروری ہیں، ابھی مزید کتنا اور کام ہونا ضروری ہے۔ یہ چارٹ بچے کو دکھانے کے لیے نہیں ہے ۔ بچےپر بوجھ پڑ سکتا ہے کہ اتنا زیادہ کرنا ہے مگر بڑوں کو اس کا اندازہ ہو گا تو ذہن سازی ہو جائی گی ان شاء اللہ اور پھر کل کو بچہ خود بھی دیکھ لیا تو کوئی مسئلہ نہیں۔ واللہ اعلم <br> <br><div class=\"alert\" style=\"text-align:center;\"><div class=\"red\"> کسی بھی مضمون کو کلک کرنے پر اس کا خلاصہ لکھا ہو گا اور پورا مضمون پڑھئے کا کلک ہو گا۔ پورا مضمون پڑھنے کو کلک کرنے پر مندرجہ ذیل جملہ لکھا آئے گا۔ <br></div> ہم معذرت خواہ ہیں کہ پورا مضمون صرف انرولڈ وزٹر پڑھ سکتے ہیں کیا آپ انرول ہونا چاہیں گے ؟ </div>", 16);
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-primary"
-}, "جی نہیں", -1 /* HOISTED */);
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-primary"
-}, "جی ہاں", -1 /* HOISTED */);
-
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div><div class=\"info\"><div class=\"wrapper\"><div class=\"alert\"><div class=\"red\"><div class=\"mt-2\"><p style=\"margin-bottom:-44px;\">براہِ مہربانی انتظار فرمائیں۔۔۔</p><iframe src=\"/tree\" height=\"650\" width=\"100%\" title=\"Iframe Example\"></iframe></div></div></div></div></div></div>", 1);
+var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "below4"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_22];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "jihaan3"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_23];
-    }),
-    _: 1 /* STABLE */
-  })])])])])])]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
 }
 
 /***/ }),
@@ -24671,7 +24912,7 @@ var _hoisted_11 = [_hoisted_10];
 var _hoisted_12 = {
   key: 0,
   style: {
-    "margin-right": "220px"
+    "margin-right": "105px"
   },
   type: "button",
   "class": "btn btn-primary",
@@ -24687,23 +24928,7 @@ var _hoisted_13 = {
 };
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_16 = {
-  key: 0,
-  style: {
-    "margin-right": "20px"
-  },
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-};
-var _hoisted_17 = {
-  key: 0,
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-};
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -24759,31 +24984,139 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     to: "chart"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_12, " ضروری عملی باتوں کا مکمل چارٹ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_12, " ضروری باتوں کا طالب علم کی عمر کے حساب سے چارٹ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 1 /* STABLE */
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "chart"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_13, " ضروری علمی باتوں کا مکمل چارٹ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_13, " ضروری باتوں کا مکمل چارٹ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_14, _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "chart"
+  }), _hoisted_14, _hoisted_15])])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/publisher/Publisher.vue?vue&type=template&id=744911e4":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/publisher/Publisher.vue?vue&type=template&id=744911e4 ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "form"
+};
+var _hoisted_2 = {
+  "class": "info"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "جو دینی نصاب آپ شائع کر رہے ہیں، کیا آپ اس کا اور ہماری فہرستوں کا موازنہ کروانا چاہیں گے؟ ", -1 /* HOISTED */);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " جی نہیں ", -1 /* HOISTED */);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_6 = {
+  href: "mailto:webmaster@example.com"
+};
+var _hoisted_7 = {
+  key: 0,
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+};
+var _hoisted_8 = {
+  key: 0,
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+};
+var _hoisted_9 = {
+  key: 0,
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+};
+var _hoisted_10 = {
+  key: 0,
+  "class": "mt-2"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  style: {
+    "margin-bottom": "-44px"
+  }
+}, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+  src: "/tree",
+  height: "650",
+  width: "100%",
+  title: "Iframe Example"
+}, null, -1 /* HOISTED */);
+var _hoisted_13 = [_hoisted_11, _hoisted_12];
+var _hoisted_14 = {
+  key: 1,
+  "class": "mt-2"
+};
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  style: {
+    "margin-bottom": "-44px"
+  }
+}, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+  src: "/comparison",
+  height: "650",
+  width: "100%",
+  title: "Iframe Example"
+}, null, -1 /* HOISTED */);
+var _hoisted_17 = [_hoisted_15, _hoisted_16];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "jihaan4"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_16, " ضروری عملی باتوں کا طالب علم کی عمر کے حساب سے چارٹ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+      return [_hoisted_4];
     }),
     _: 1 /* STABLE */
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "chart"
+    to: "#"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_17, " ضروری علمی باتوں کا طالب علم کی عمر کے حساب سے چارٹ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        type: "button",
+        onClick: _cache[0] || (_cache[0] = function () {
+          return $options.show3 && $options.show3.apply($options, arguments);
+        }),
+        "class": "btn btn-primary",
+        "data-toggle": "modal",
+        "data-target": "#exampleModal"
+      }, " جی ہاں ")];
     }),
     _: 1 /* STABLE */
-  })])])]);
+  }), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_6, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_7, " موازنے کے لیے کتاب کی سافٹ کاپی بھیجیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "javascript:;",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.chart3 && $options.chart3.apply($options, arguments);
+    })
+  }, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_8, " موازنے کا نمونہ دیکھیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "javascript:;",
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.chart1 && $options.chart1.apply($options, arguments);
+    })
+  }, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " دینی عنوانات کی فہرستیں دیکھیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _ctx.chart2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_13)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.chart4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, _hoisted_17)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
 
 /***/ }),
@@ -24807,10 +25140,7 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "info"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red",
-  style: {
-    "font-size": "60px"
-  }
+  "class": "red"
 }, "Audio visual - Learning material inflow would start")])], -1 /* HOISTED */);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -24939,7 +25269,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "form"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div><div class=\"info\"><div class=\"red\" style=\"font-size:60px;\">Audio visual - Learning material inflow would start</div><div class=\"alert\"><img src=\"/assets/images/AVLA1.jpg\" alt=\"\" style=\"width:100%;\"><img src=\"/assets/images/AVLA2.jpg\" alt=\"\" style=\"width:100%;\"><img src=\"/assets/images/AVLA3.jpg\" alt=\"\" style=\"width:100%;\"><img src=\"/assets/images/AVLA4.jpg\" alt=\"\" style=\"width:100%;\"></div><!-- Button trigger modal --></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div><div class=\"info\"><div class=\"red\">Audio visual - Learning material inflow would start</div><div class=\"alert text-center\" style=\"border-top:unset;\"><img src=\"/assets/images/AVLA1.jpg\" alt=\"\"><img src=\"/assets/images/AVLA2.jpg\" alt=\"\"><img src=\"/assets/images/AVLA3.jpg\" alt=\"\"><img src=\"/assets/images/AVLA4.jpg\" alt=\"\"></div><!-- Button trigger modal --></div></div>", 1);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
@@ -25260,10 +25590,7 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "info"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red",
-  style: {
-    "font-size": "60px"
-  }
+  "class": "red"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" استعدادی امتحان دے دیا جائے گا۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Reading & comprehension as per child’s age. ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal ")])], -1 /* HOISTED */);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -25350,57 +25677,39 @@ var _hoisted_2 = {
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_4 = {
   key: 0,
-  "class": "alert"
+  "class": "mt-2"
 };
-var _hoisted_5 = {
-  "class": "red"
-};
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" احتسابی چارٹ درخت کی شکل میں دکھایا جائے گا ");
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "alert",
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   style: {
-    "text-align": "center",
-    "border": "unset"
+    "margin-bottom": "-44px"
   }
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" کسی بھی مضمون کو کلک کرنے پر اس کا خلاصہ لکھا ہو گا اور پورا مضمون پڑھئے کا کلک ہو گا۔ پورا مضمون پڑھنے کو کلک کرنے پر مندرجہ ذیل جملہ لکھا آئے گا۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ہم معذرت خواہ ہیں کہ پورا مضمون صرف انرولڈ وزٹر پڑھ سکتے ہیں کیا آپ انرول ہونا چاہیں گے ؟ ")], -1 /* HOISTED */);
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-primary"
-}, "جی نہیں", -1 /* HOISTED */);
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-primary"
-}, "جی ہاں", -1 /* HOISTED */);
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_13 = {
+}, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+  src: "/tree",
+  height: "650",
+  width: "100%",
+  title: "Iframe Example"
+}, null, -1 /* HOISTED */);
+var _hoisted_7 = [_hoisted_5, _hoisted_6];
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_10 = {
   key: 2,
-  "class": "alert"
+  "class": "info"
 };
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red",
-  style: {
-    "color": "black"
-  }
-}, " ہم آپ کے مشکور ہیں کہ آپ نے ہماری معاونت کا ارادہ کیا ازرائے کرم رہنمائی فرمائیں کہ ", -1 /* HOISTED */);
-var _hoisted_15 = [_hoisted_14];
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_18 = {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " ہم آپ کے مشکور ہیں کہ آپ نے ہماری معاونت کا ارادہ کیا ازراہِ کرم رہنمائی فرمائیں کہ ", -1 /* HOISTED */);
+var _hoisted_12 = [_hoisted_11];
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_15 = {
   key: 4,
-  "class": "alert",
+  "class": "info",
   style: {
     "text-align": "center"
   }
 };
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red",
-  style: {
-    "color": "black"
-  }
-}, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   style: {
     "border": "solid orange"
   },
@@ -25409,6 +25718,14 @@ var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
 var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -25416,36 +25733,28 @@ var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
-}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
+}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
 var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_29 = {
+var _hoisted_26 = {
   "class": "alert",
   style: {
     "text-align": "center"
   }
 };
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_32 = {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_29 = {
   key: 5,
   "class": "alert",
   style: {
     "text-align": "center"
   }
 };
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "red"
 }, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   style: {
     "border": "solid orange"
   },
@@ -25454,6 +25763,14 @@ var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
 var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -25461,36 +25778,28 @@ var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
-}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
+}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
 var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_43 = {
+var _hoisted_40 = {
   "class": "alert",
   style: {
     "text-align": "center"
   }
 };
-var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_46 = {
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_43 = {
   key: 6,
   "class": "alert",
   style: {
     "text-align": "center"
   }
 };
-var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "red"
 }, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   style: {
     "border": "solid orange"
   },
@@ -25499,6 +25808,14 @@ var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
+var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
 var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -25506,43 +25823,21 @@ var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
-}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
+}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
 var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
 var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
-var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary",
-    onClick: _cache[0] || (_cache[0] = function () {
-      return $options.show && $options.show.apply($options, arguments);
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.chart1(), $options.show();
     }),
     "data-toggle": "modal",
     "data-target": "#exampleModal"
-  }, " ازراہے کرم ! مجھے پڑھائے جانے والے مضامین کی فہرست دکھائیں۔ "), _hoisted_3, _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, _hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "below4"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_9];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "jihaan3"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_10];
-    }),
-    _: 1 /* STABLE */
-  })])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }, " ازراہِ کرم ! مجھے پڑھائے جانے والے مضامین کی فہرست دکھائیں۔ "), _hoisted_3, _ctx.chart2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
     type: "button",
     "class": "btn btn-primary",
@@ -25551,7 +25846,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "data-toggle": "modal",
     "data-target": "#exampleModal"
-  }, " میں معاونت کرنے کی نیت سےمزید آگے بڑھنا چاہتا ہوں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_11, _hoisted_12, _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, _hoisted_15)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }, " میں معاونت کرنے کی نیت سےمزید آگے بڑھنا چاہتا ہوں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8, _hoisted_9, _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_12)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 3,
     type: "button",
     "class": "btn btn-primary",
@@ -25560,21 +25855,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[2] || (_cache[2] = function () {
       return $options.show3 && $options.show3.apply($options, arguments);
     })
-  }, " آپ اللہ واسطے مدد فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_16, _hoisted_17, _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [_hoisted_19, _hoisted_20, _hoisted_21, _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, " آپ اللہ واسطے مدد فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_13, _hoisted_14, _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [_hoisted_16, _hoisted_17, _hoisted_18, _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "sakhti2"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_23, _hoisted_24, _hoisted_25];
+      return [_hoisted_20, _hoisted_21, _hoisted_22];
     }),
     _: 1 /* STABLE */
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "tareeka"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_26];
+      return [_hoisted_23];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_27, _hoisted_28])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }), _hoisted_24, _hoisted_25])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 0,
     type: "button",
     "class": "btn btn-primary",
@@ -25583,21 +25878,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[3] || (_cache[3] = function () {
       return $options.show4 && $options.show4.apply($options, arguments);
     })
-  }, " آپ کی خدمات کے نتیجے میں ہم جو بھی ہدیہ دیں گے آپ قبول فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_30, _hoisted_31]), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_32, [_hoisted_33, _hoisted_34, _hoisted_35, _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, " آپ کی خدمات کے نتیجے میں ہم جو بھی ہدیہ دیں گے آپ قبول فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_27, _hoisted_28]), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_29, [_hoisted_30, _hoisted_31, _hoisted_32, _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "sakhti2"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_37, _hoisted_38, _hoisted_39];
+      return [_hoisted_34, _hoisted_35, _hoisted_36];
     }),
     _: 1 /* STABLE */
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "tareeka"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_40];
+      return [_hoisted_37];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_41, _hoisted_42])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }), _hoisted_38, _hoisted_39])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 0,
     type: "button",
     "class": "btn btn-primary",
@@ -25606,21 +25901,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[4] || (_cache[4] = function () {
       return $options.show5 && $options.show5.apply($options, arguments);
     })
-  }, " پہلے آپس کا معاملہ طے کرنا چاہیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_44, _hoisted_45]), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_46, [_hoisted_47, _hoisted_48, _hoisted_49, _hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, " پہلے آپس کا معاملہ طے کرنا چاہیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_41, _hoisted_42]), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_43, [_hoisted_44, _hoisted_45, _hoisted_46, _hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "sakhti2"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_51, _hoisted_52, _hoisted_53];
+      return [_hoisted_48, _hoisted_49, _hoisted_50];
     }),
     _: 1 /* STABLE */
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "tareeka"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_54];
+      return [_hoisted_51];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_55, _hoisted_56])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
+  }), _hoisted_52, _hoisted_53])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
 
 /***/ }),
@@ -25644,201 +25939,248 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "info"
 };
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "alert"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red"
-}, " احتسابی چارٹ درخت کی شکل میں کھل جائے گا جو مضمون لکھے جا چکے ہیں ان کا رنگ سبز اور جو نہیں لکھے گئے وہ خالی نظر آئیں گے۔ ")], -1 /* HOISTED */);
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_6 = {
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_4 = {
   key: 0,
-  "class": "alert"
+  "class": "mt-2"
 };
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red"
-}, " ہم آپ کے مشکور ہیں کہ آپ نے ہماری معاونت کا ارادہ کیا ازرائے کرم رہنمائی فرمائیں کہ ", -1 /* HOISTED */);
-var _hoisted_8 = [_hoisted_7];
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_11 = {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  style: {
+    "margin-bottom": "-44px"
+  }
+}, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+  src: "/educationist",
+  height: "650",
+  width: "100%",
+  title: "Iframe Example"
+}, null, -1 /* HOISTED */);
+var _hoisted_7 = [_hoisted_5, _hoisted_6];
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_10 = {
   key: 2,
-  "class": "alert",
-  style: {
-    "text-align": "center"
-  }
+  "class": "info"
 };
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red"
-}, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_22 = {
-  "class": "alert",
-  style: {
-    "text-align": "center"
-  }
-};
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_25 = {
-  key: 3,
-  "class": "alert",
-  style: {
-    "text-align": "center"
-  }
-};
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red"
-}, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-primary",
-  "data-toggle": "modal",
-  "data-target": "#exampleModal"
-}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_36 = {
-  "class": "alert",
-  style: {
-    "text-align": "center"
-  }
-};
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_39 = {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " ہم آپ کے مشکور ہیں کہ آپ نے ہماری معاونت کا ارادہ کیا ازراہِ کرم رہنمائی فرمائیں کہ ", -1 /* HOISTED */);
+var _hoisted_12 = [_hoisted_11];
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_15 = {
   key: 4,
-  "class": "alert",
+  "class": "info",
   style: {
     "text-align": "center"
   }
 };
-var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red"
-}, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
-var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_26 = {
+  "class": "alert",
+  style: {
+    "text-align": "center"
+  }
+};
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_29 = {
+  key: 5,
+  "class": "alert",
+  style: {
+    "text-align": "center"
+  }
+};
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "red"
+}, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_40 = {
+  "class": "alert",
+  style: {
+    "text-align": "center"
+  }
+};
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_43 = {
+  key: 6,
+  "class": "alert",
+  style: {
+    "text-align": "center"
+  }
+};
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "red"
+}, " آپ کو کام سونپنے سے قبل ضروری ہے کہ آپ ویب سائٹ کے مزاج کو اچھی طرح سمجھ لیں اور پھر کام کرنے کا ضابطہ پوری طرح سے سمجھ لیں اور پھر ہماری معاونت کریں ", -1 /* HOISTED */);
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " میں آج کل مصروف ہوں اور یہ تفصیلی کام ہے۔ ", -1 /* HOISTED */);
+var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " مجھے ویب سائٹ کا مزاج سمجھنے کے لیے کیا کرنا ہوگا۔ ", -1 /* HOISTED */);
+var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "btn btn-primary",
+  "data-toggle": "modal",
+  "data-target": "#exampleModal"
+}, " پہلے مجھے کام کرنے کے طریقہ کار سے مطلع فرمائیے۔ ", -1 /* HOISTED */);
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)();
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary",
-    onClick: _cache[0] || (_cache[0] = function () {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.chart1(), $options.show();
+    }),
+    "data-toggle": "modal",
+    "data-target": "#exampleModal"
+  }, " ازراہِ کرم ! مجھے لکھے جانے والے مضامین کی فہرست دکھائیں۔ "), _hoisted_3, _ctx.chart2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 1,
+    type: "button",
+    "class": "btn btn-primary",
+    onClick: _cache[1] || (_cache[1] = function () {
       return $options.show2 && $options.show2.apply($options, arguments);
     }),
     "data-toggle": "modal",
     "data-target": "#exampleModal"
-  }, " میں معاونت کرنے کی نیت سےمزید آگے بڑھنا چاہتا ہوں۔ "), _hoisted_4, _hoisted_5, _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
-    key: 1,
-    type: "button",
-    "class": "btn btn-primary",
-    "data-toggle": "modal",
-    "data-target": "#exampleModal",
-    onClick: _cache[1] || (_cache[1] = function () {
-      return $options.show3 && $options.show3.apply($options, arguments);
-    })
-  }, " آپ اللہ واسطے مدد فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_9, _hoisted_10, _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, [_hoisted_12, _hoisted_13, _hoisted_14, _hoisted_15, _hoisted_16, _hoisted_17, _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "tareeka2"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_19];
-    }),
-    _: 1 /* STABLE */
-  }), _hoisted_20, _hoisted_21])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
-    key: 0,
+  }, " میں معاونت کرنے کی نیت سےمزید آگے بڑھنا چاہتا ہوں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8, _hoisted_9, _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_12)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 3,
     type: "button",
     "class": "btn btn-primary",
     "data-toggle": "modal",
     "data-target": "#exampleModal",
     onClick: _cache[2] || (_cache[2] = function () {
-      return $options.show4 && $options.show4.apply($options, arguments);
+      return $options.show3 && $options.show3.apply($options, arguments);
     })
-  }, " آپ کی خدمات کے نتیجے میں ہم جو بھی ہدیہ دیں گے آپ قبول فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_23, _hoisted_24]), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_25, [_hoisted_26, _hoisted_27, _hoisted_28, _hoisted_29, _hoisted_30, _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "tareeka2"
+  }, " آپ اللہ واسطے مدد فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_13, _hoisted_14, _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [_hoisted_16, _hoisted_17, _hoisted_18, _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "sakhti2"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_33];
+      return [_hoisted_20, _hoisted_21, _hoisted_22];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_34, _hoisted_35])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "tareeka"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_23];
+    }),
+    _: 1 /* STABLE */
+  }), _hoisted_24, _hoisted_25])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 0,
     type: "button",
     "class": "btn btn-primary",
     "data-toggle": "modal",
     "data-target": "#exampleModal",
     onClick: _cache[3] || (_cache[3] = function () {
-      return $options.show5 && $options.show5.apply($options, arguments);
+      return $options.show4 && $options.show4.apply($options, arguments);
     })
-  }, " پہلے آپس کا معاملہ طے کرنا چاہیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_37, _hoisted_38]), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_39, [_hoisted_40, _hoisted_41, _hoisted_42, _hoisted_43, _hoisted_44, _hoisted_45, _hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "tareeka2"
+  }, " آپ کی خدمات کے نتیجے میں ہم جو بھی ہدیہ دیں گے آپ قبول فرمائیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_27, _hoisted_28]), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_29, [_hoisted_30, _hoisted_31, _hoisted_32, _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "sakhti2"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_47];
+      return [_hoisted_34, _hoisted_35, _hoisted_36];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_48, _hoisted_49])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "tareeka"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_37];
+    }),
+    _: 1 /* STABLE */
+  }), _hoisted_38, _hoisted_39])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 0,
+    type: "button",
+    "class": "btn btn-primary",
+    "data-toggle": "modal",
+    "data-target": "#exampleModal",
+    onClick: _cache[4] || (_cache[4] = function () {
+      return $options.show5 && $options.show5.apply($options, arguments);
+    })
+  }, " پہلے آپس کا معاملہ طے کرنا چاہیں گے ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_41, _hoisted_42]), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_43, [_hoisted_44, _hoisted_45, _hoisted_46, _hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "sakhti2"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_48, _hoisted_49, _hoisted_50];
+    }),
+    _: 1 /* STABLE */
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "tareeka"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_51];
+    }),
+    _: 1 /* STABLE */
+  }), _hoisted_52, _hoisted_53])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
 
 /***/ }),
@@ -26031,7 +26373,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
 /* harmony import */ var _components_First__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/First */ "./resources/js/components/First.vue");
@@ -26056,27 +26398,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_concerned_parent_Elmi2__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/concerned parent/Elmi2 */ "./resources/js/components/concerned parent/Elmi2.vue");
 /* harmony import */ var _components_concerned_parent_Amli2__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/concerned parent/Amli2 */ "./resources/js/components/concerned parent/Amli2.vue");
 /* harmony import */ var _components_concerned_parent_Jihaan3__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/concerned parent/Jihaan3 */ "./resources/js/components/concerned parent/Jihaan3.vue");
-/* harmony import */ var _components_concerned_parent_Jinahi3__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/concerned parent/Jinahi3 */ "./resources/js/components/concerned parent/Jinahi3.vue");
-/* harmony import */ var _components_concerned_parent_Sakhti__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/concerned parent/Sakhti */ "./resources/js/components/concerned parent/Sakhti.vue");
-/* harmony import */ var _components_concerned_parent_Sakhti2__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/concerned parent/Sakhti2 */ "./resources/js/components/concerned parent/Sakhti2.vue");
-/* harmony import */ var _components_concerned_parent_Majbori__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/concerned parent/Majbori */ "./resources/js/components/concerned parent/Majbori.vue");
-/* harmony import */ var _components_concerned_parent_Website__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/concerned parent/Website */ "./resources/js/components/concerned parent/Website.vue");
-/* harmony import */ var _components_teacher_Teacher__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/teacher/Teacher */ "./resources/js/components/teacher/Teacher.vue");
-/* harmony import */ var _components_teacher_Online__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/teacher/Online */ "./resources/js/components/teacher/Online.vue");
-/* harmony import */ var _components_teacher_Essay__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/teacher/Essay */ "./resources/js/components/teacher/Essay.vue");
-/* harmony import */ var _components_teacher_Tareeka__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/teacher/Tareeka */ "./resources/js/components/teacher/Tareeka.vue");
-/* harmony import */ var _components_teacher_Tareeka2__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/teacher/Tareeka2 */ "./resources/js/components/teacher/Tareeka2.vue");
-/* harmony import */ var _components_teacher_Stats__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/teacher/Stats */ "./resources/js/components/teacher/Stats.vue");
-/* harmony import */ var _components_teacher_Pending__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/teacher/Pending */ "./resources/js/components/teacher/Pending.vue");
-/* harmony import */ var _components_principal_Principal__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/principal/Principal */ "./resources/js/components/principal/Principal.vue");
-/* harmony import */ var _components_principal_Chart__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/principal/Chart */ "./resources/js/components/principal/Chart.vue");
-/* harmony import */ var _components_age15_Age15__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/age15/Age15 */ "./resources/js/components/age15/Age15.vue");
-/* harmony import */ var _components_age15_Kalma__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/age15/Kalma */ "./resources/js/components/age15/Kalma.vue");
-/* harmony import */ var _components_age15_Rasool__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/age15/Rasool */ "./resources/js/components/age15/Rasool.vue");
-/* harmony import */ var _components_Invalid__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/Invalid */ "./resources/js/components/Invalid.vue");
+/* harmony import */ var _components_concerned_parent_Jihaan4__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/concerned parent/Jihaan4 */ "./resources/js/components/concerned parent/Jihaan4.vue");
+/* harmony import */ var _components_concerned_parent_Jinahi3__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/concerned parent/Jinahi3 */ "./resources/js/components/concerned parent/Jinahi3.vue");
+/* harmony import */ var _components_concerned_parent_Sakhti__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/concerned parent/Sakhti */ "./resources/js/components/concerned parent/Sakhti.vue");
+/* harmony import */ var _components_concerned_parent_Sakhti2__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/concerned parent/Sakhti2 */ "./resources/js/components/concerned parent/Sakhti2.vue");
+/* harmony import */ var _components_concerned_parent_Majbori__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/concerned parent/Majbori */ "./resources/js/components/concerned parent/Majbori.vue");
+/* harmony import */ var _components_concerned_parent_Website__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/concerned parent/Website */ "./resources/js/components/concerned parent/Website.vue");
+/* harmony import */ var _components_teacher_Teacher__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/teacher/Teacher */ "./resources/js/components/teacher/Teacher.vue");
+/* harmony import */ var _components_publisher_Publisher__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/publisher/Publisher */ "./resources/js/components/publisher/Publisher.vue");
+/* harmony import */ var _components_educationist_Educationist__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/educationist/Educationist */ "./resources/js/components/educationist/Educationist.vue");
+/* harmony import */ var _components_teacher_Online__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/teacher/Online */ "./resources/js/components/teacher/Online.vue");
+/* harmony import */ var _components_teacher_Essay__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/teacher/Essay */ "./resources/js/components/teacher/Essay.vue");
+/* harmony import */ var _components_teacher_Tareeka__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/teacher/Tareeka */ "./resources/js/components/teacher/Tareeka.vue");
+/* harmony import */ var _components_teacher_Tareeka2__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/teacher/Tareeka2 */ "./resources/js/components/teacher/Tareeka2.vue");
+/* harmony import */ var _components_teacher_Stats__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/teacher/Stats */ "./resources/js/components/teacher/Stats.vue");
+/* harmony import */ var _components_teacher_Pending__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/teacher/Pending */ "./resources/js/components/teacher/Pending.vue");
+/* harmony import */ var _components_principal_Principal__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/principal/Principal */ "./resources/js/components/principal/Principal.vue");
+/* harmony import */ var _components_principal_Chart__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/principal/Chart */ "./resources/js/components/principal/Chart.vue");
+/* harmony import */ var _components_age15_Age15__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/age15/Age15 */ "./resources/js/components/age15/Age15.vue");
+/* harmony import */ var _components_age15_Kalma__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/age15/Kalma */ "./resources/js/components/age15/Kalma.vue");
+/* harmony import */ var _components_age15_Rasool__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/age15/Rasool */ "./resources/js/components/age15/Rasool.vue");
+/* harmony import */ var _components_Invalid__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/Invalid */ "./resources/js/components/Invalid.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 // 1. Define route components.
 // These can be imported from other files
+
+
+
 
 
 
@@ -26191,67 +26539,76 @@ var routes = [{
   path: '/jihaan3',
   component: _components_concerned_parent_Jihaan3__WEBPACK_IMPORTED_MODULE_23__["default"]
 }, {
+  path: '/jihaan4',
+  component: _components_concerned_parent_Jihaan4__WEBPACK_IMPORTED_MODULE_24__["default"]
+}, {
   path: '/jinahi3',
-  component: _components_concerned_parent_Jinahi3__WEBPACK_IMPORTED_MODULE_24__["default"]
+  component: _components_concerned_parent_Jinahi3__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   path: '/sakhti',
-  component: _components_concerned_parent_Sakhti__WEBPACK_IMPORTED_MODULE_25__["default"]
+  component: _components_concerned_parent_Sakhti__WEBPACK_IMPORTED_MODULE_26__["default"]
 }, {
   path: '/sakhti2',
-  component: _components_concerned_parent_Sakhti2__WEBPACK_IMPORTED_MODULE_26__["default"]
+  component: _components_concerned_parent_Sakhti2__WEBPACK_IMPORTED_MODULE_27__["default"]
 }, {
   path: '/majbori',
-  component: _components_concerned_parent_Majbori__WEBPACK_IMPORTED_MODULE_27__["default"]
+  component: _components_concerned_parent_Majbori__WEBPACK_IMPORTED_MODULE_28__["default"]
 }, {
   path: '/website',
-  component: _components_concerned_parent_Website__WEBPACK_IMPORTED_MODULE_28__["default"]
+  component: _components_concerned_parent_Website__WEBPACK_IMPORTED_MODULE_29__["default"]
 }, {
   path: '/teacher',
-  component: _components_teacher_Teacher__WEBPACK_IMPORTED_MODULE_29__["default"]
+  component: _components_teacher_Teacher__WEBPACK_IMPORTED_MODULE_30__["default"]
+}, {
+  path: '/publisher',
+  component: _components_publisher_Publisher__WEBPACK_IMPORTED_MODULE_31__["default"]
+}, {
+  path: '/educationist',
+  component: _components_educationist_Educationist__WEBPACK_IMPORTED_MODULE_32__["default"]
 }, {
   path: '/online',
-  component: _components_teacher_Online__WEBPACK_IMPORTED_MODULE_30__["default"]
+  component: _components_teacher_Online__WEBPACK_IMPORTED_MODULE_33__["default"]
 }, {
   path: '/essay',
-  component: _components_teacher_Essay__WEBPACK_IMPORTED_MODULE_31__["default"]
+  component: _components_teacher_Essay__WEBPACK_IMPORTED_MODULE_34__["default"]
 }, {
   path: '/tareeka',
-  component: _components_teacher_Tareeka__WEBPACK_IMPORTED_MODULE_32__["default"]
+  component: _components_teacher_Tareeka__WEBPACK_IMPORTED_MODULE_35__["default"]
 }, {
   path: '/tareeka2',
-  component: _components_teacher_Tareeka2__WEBPACK_IMPORTED_MODULE_33__["default"]
+  component: _components_teacher_Tareeka2__WEBPACK_IMPORTED_MODULE_36__["default"]
 }, {
   path: '/stats',
-  component: _components_teacher_Stats__WEBPACK_IMPORTED_MODULE_34__["default"]
+  component: _components_teacher_Stats__WEBPACK_IMPORTED_MODULE_37__["default"]
 }, {
   path: '/pending',
-  component: _components_teacher_Pending__WEBPACK_IMPORTED_MODULE_35__["default"]
+  component: _components_teacher_Pending__WEBPACK_IMPORTED_MODULE_38__["default"]
 }, {
   path: '/principal',
-  component: _components_principal_Principal__WEBPACK_IMPORTED_MODULE_36__["default"]
+  component: _components_principal_Principal__WEBPACK_IMPORTED_MODULE_39__["default"]
 }, {
   path: '/chart',
-  component: _components_principal_Chart__WEBPACK_IMPORTED_MODULE_37__["default"]
+  component: _components_principal_Chart__WEBPACK_IMPORTED_MODULE_40__["default"]
 }, {
   path: '/age15',
-  component: _components_age15_Age15__WEBPACK_IMPORTED_MODULE_38__["default"]
+  component: _components_age15_Age15__WEBPACK_IMPORTED_MODULE_41__["default"]
 }, {
   path: '/kalma',
-  component: _components_age15_Kalma__WEBPACK_IMPORTED_MODULE_39__["default"]
+  component: _components_age15_Kalma__WEBPACK_IMPORTED_MODULE_42__["default"]
 }, {
   path: '/rasool',
-  component: _components_age15_Rasool__WEBPACK_IMPORTED_MODULE_40__["default"]
+  component: _components_age15_Rasool__WEBPACK_IMPORTED_MODULE_43__["default"]
 }, {
   path: '/invalid',
-  component: _components_Invalid__WEBPACK_IMPORTED_MODULE_41__["default"]
+  component: _components_Invalid__WEBPACK_IMPORTED_MODULE_44__["default"]
 }];
 
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
 // keep it simple for now.
-var router = vue_router__WEBPACK_IMPORTED_MODULE_42__.createRouter({
+var router = vue_router__WEBPACK_IMPORTED_MODULE_45__.createRouter({
   // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-  history: vue_router__WEBPACK_IMPORTED_MODULE_42__.createWebHistory(),
+  history: vue_router__WEBPACK_IMPORTED_MODULE_45__.createWebHistory(),
   routes: routes // short for `routes: routes`
 });
 
@@ -33524,7 +33881,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */\r\n  color: black;\r\n  font-size: 16px;\r\n  opacity: 1; /* Firefox */\n}\n::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */\r\n  color: black;\r\n  font-size: 16px;\r\n  opacity: 1; /* Firefox */\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n::-moz-placeholder {\r\n    /* Chrome, Firefox, Opera, Safari 10.1+ */\r\n    color: black;\r\n    font-size: 16px;\r\n    opacity: 1;\r\n    /* Firefox */\n}\n::placeholder {\r\n    /* Chrome, Firefox, Opera, Safari 10.1+ */\r\n    color: black;\r\n    font-size: 16px;\r\n    opacity: 1;\r\n    /* Firefox */\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -51819,6 +52176,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/concerned parent/Jihaan4.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/concerned parent/Jihaan4.vue ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Jihaan4_vue_vue_type_template_id_28af6476__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Jihaan4.vue?vue&type=template&id=28af6476 */ "./resources/js/components/concerned parent/Jihaan4.vue?vue&type=template&id=28af6476");
+/* harmony import */ var _Jihaan4_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Jihaan4.vue?vue&type=script&lang=js */ "./resources/js/components/concerned parent/Jihaan4.vue?vue&type=script&lang=js");
+/* harmony import */ var C_xampp_htdocs_maktas_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_maktas_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Jihaan4_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Jihaan4_vue_vue_type_template_id_28af6476__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/concerned parent/Jihaan4.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/concerned parent/Jinahi3.vue":
 /*!**************************************************************!*\
   !*** ./resources/js/components/concerned parent/Jinahi3.vue ***!
@@ -52015,6 +52400,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/educationist/Educationist.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/educationist/Educationist.vue ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Educationist_vue_vue_type_template_id_0fc345d4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Educationist.vue?vue&type=template&id=0fc345d4 */ "./resources/js/components/educationist/Educationist.vue?vue&type=template&id=0fc345d4");
+/* harmony import */ var _Educationist_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Educationist.vue?vue&type=script&lang=js */ "./resources/js/components/educationist/Educationist.vue?vue&type=script&lang=js");
+/* harmony import */ var C_xampp_htdocs_maktas_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_maktas_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Educationist_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Educationist_vue_vue_type_template_id_0fc345d4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/educationist/Educationist.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/principal/Chart.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/principal/Chart.vue ***!
@@ -52066,6 +52479,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_maktas_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Principal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Principal_vue_vue_type_template_id_8d5e2a1c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/principal/Principal.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/publisher/Publisher.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/publisher/Publisher.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Publisher_vue_vue_type_template_id_744911e4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Publisher.vue?vue&type=template&id=744911e4 */ "./resources/js/components/publisher/Publisher.vue?vue&type=template&id=744911e4");
+/* harmony import */ var _Publisher_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Publisher.vue?vue&type=script&lang=js */ "./resources/js/components/publisher/Publisher.vue?vue&type=script&lang=js");
+/* harmony import */ var C_xampp_htdocs_maktas_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_maktas_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Publisher_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Publisher_vue_vue_type_template_id_744911e4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/publisher/Publisher.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -52790,6 +53231,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/concerned parent/Jihaan4.vue?vue&type=script&lang=js":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/concerned parent/Jihaan4.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Jihaan4_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Jihaan4_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Jihaan4.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan4.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/concerned parent/Jinahi3.vue?vue&type=script&lang=js":
 /*!**************************************************************************************!*\
   !*** ./resources/js/components/concerned parent/Jinahi3.vue?vue&type=script&lang=js ***!
@@ -52902,6 +53359,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/educationist/Educationist.vue?vue&type=script&lang=js":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/educationist/Educationist.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Educationist_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Educationist_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Educationist.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/educationist/Educationist.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/principal/Chart.vue?vue&type=script&lang=js":
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/principal/Chart.vue?vue&type=script&lang=js ***!
@@ -52930,6 +53403,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Principal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Principal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Principal.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/principal/Principal.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/publisher/Publisher.vue?vue&type=script&lang=js":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/publisher/Publisher.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Publisher_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Publisher_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Publisher.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/publisher/Publisher.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -53446,6 +53935,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/concerned parent/Jihaan4.vue?vue&type=template&id=28af6476":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/concerned parent/Jihaan4.vue?vue&type=template&id=28af6476 ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Jihaan4_vue_vue_type_template_id_28af6476__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Jihaan4_vue_vue_type_template_id_28af6476__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Jihaan4.vue?vue&type=template&id=28af6476 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/concerned parent/Jihaan4.vue?vue&type=template&id=28af6476");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/concerned parent/Jinahi3.vue?vue&type=template&id=0bff4aa7":
 /*!********************************************************************************************!*\
   !*** ./resources/js/components/concerned parent/Jinahi3.vue?vue&type=template&id=0bff4aa7 ***!
@@ -53558,6 +54063,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/educationist/Educationist.vue?vue&type=template&id=0fc345d4":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/educationist/Educationist.vue?vue&type=template&id=0fc345d4 ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Educationist_vue_vue_type_template_id_0fc345d4__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Educationist_vue_vue_type_template_id_0fc345d4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Educationist.vue?vue&type=template&id=0fc345d4 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/educationist/Educationist.vue?vue&type=template&id=0fc345d4");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/principal/Chart.vue?vue&type=template&id=11b970a2":
 /*!***********************************************************************************!*\
   !*** ./resources/js/components/principal/Chart.vue?vue&type=template&id=11b970a2 ***!
@@ -53586,6 +54107,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Principal_vue_vue_type_template_id_8d5e2a1c__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Principal_vue_vue_type_template_id_8d5e2a1c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Principal.vue?vue&type=template&id=8d5e2a1c */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/principal/Principal.vue?vue&type=template&id=8d5e2a1c");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/publisher/Publisher.vue?vue&type=template&id=744911e4":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/publisher/Publisher.vue?vue&type=template&id=744911e4 ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Publisher_vue_vue_type_template_id_744911e4__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Publisher_vue_vue_type_template_id_744911e4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Publisher.vue?vue&type=template&id=744911e4 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/publisher/Publisher.vue?vue&type=template&id=744911e4");
 
 
 /***/ }),

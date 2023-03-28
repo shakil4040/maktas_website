@@ -3,7 +3,7 @@
       <div>
         <div class="info">
           
-          <div class="red" style="font-size:60px">
+          <div class="red">
             استعدادی امتحان دے دیا جائے گا۔  <br>
             Reading & comprehension as per child’s age.
           </div>

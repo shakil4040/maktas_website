@@ -6,7 +6,7 @@
                 <div class="alert" style="text-align:center;">
                     آپ کو ہمارے ساتھ کچھ مضمون پڑھنے ہوں گے اور ان کی مشق کرنی ہوگی۔
                 </div>
-                <div class="alert">
+                <div class="alert" style="text-align:center;">
                     
                     <div class="blue" @click="show">
                         کی تعریف Media
@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <div class="alert" v-if="hidden" style="direction: rtl;">
+                <div class="alert" v-if="hidden" style="direction: rtl;text-align:center;" >
 
                     میڈیا سے مراد وہ ذرائع ابلاغ ہیں جو <br>
 

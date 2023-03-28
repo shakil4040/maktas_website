@@ -26,12 +26,15 @@ import Gauge from './components/concerned parent/Gauge';
 import Elmi2 from './components/concerned parent/Elmi2';
 import Amli2 from './components/concerned parent/Amli2';
 import Jihaan3 from './components/concerned parent/Jihaan3';
+import Jihaan4 from './components/concerned parent/Jihaan4';
 import Jinahi3 from './components/concerned parent/Jinahi3';
 import Sakhti from './components/concerned parent/Sakhti';
 import Sakhti2 from './components/concerned parent/Sakhti2';
 import Majbori from './components/concerned parent/Majbori';
 import Website from './components/concerned parent/Website';
 import Teacher from './components/teacher/Teacher';
+import Publisher from './components/publisher/Publisher';
+import Educationist from './components/educationist/Educationist';
 import Online from './components/teacher/Online';
 import Essay from './components/teacher/Essay';
 import Tareeka from './components/teacher/Tareeka';
@@ -71,12 +74,15 @@ const routes = [
     { path: '/elmi2', component: Elmi2 },
     { path: '/amli2', component: Amli2 },
     { path: '/jihaan3', component: Jihaan3 },
+    { path: '/jihaan4', component: Jihaan4 },
     { path: '/jinahi3', component: Jinahi3 },
     { path: '/sakhti', component: Sakhti },
     { path: '/sakhti2', component: Sakhti2 },
     { path: '/majbori', component: Majbori },
     { path: '/website', component: Website },
     { path: '/teacher', component: Teacher },
+    { path: '/publisher', component: Publisher },
+    { path: '/educationist', component: Educationist },
     { path: '/online', component: Online },
     { path: '/essay', component: Essay },
     { path: '/tareeka', component: Tareeka },

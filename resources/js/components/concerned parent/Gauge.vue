@@ -26,18 +26,20 @@
 
             <br>
 
-            <router-link to="/amli2">
+            <a href="javascript:;" @click="chart1">
                 <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    عملی باتوں کا معائنہ
+                    عملی باتوں کا معائنہ 
                 </button>
-            </router-link>
-            <router-link to="/elmi2">
+            </a>
+            <a href="javascript:;" @click="chart1">
                 <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    علمی باتوں کا معائنہ
+                    علمی  باتوں  کا  معائنہ
                 </button>
-            </router-link>
-
-            <br>
+            </a>
+            <div v-if="chart2" class="mt-2">
+                <p style="margin-bottom:-44px;">براہِ مہربانی انتظار فرمائیں۔۔۔</p>
+                <iframe src="/tree" height="650" width="100%" title="Iframe Example"></iframe>
+            </div>
 
         </div>
     </div>
@@ -53,7 +55,8 @@ export default {
         return {
             hidden: false,
             hidden2: false,
-            hidden3: false
+            hidden3: false,
+            chart2: false
         }
     },
     methods: {
@@ -65,6 +68,9 @@ export default {
         },
         show3() {
             return this.hidden3 = true;
+        },
+        chart1() {
+           return this.chart2 = true;
         }
     }
 }

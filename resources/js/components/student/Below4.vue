@@ -2,7 +2,7 @@
    <div class="form">
       <div >
         <div class="info">
-          <div class="red" style="font-size:60px">Audio visual - Learning material inflow would start</div>
+          <div class="red">Audio visual - Learning material inflow would start</div>
         </div>
       </div>
     </div>

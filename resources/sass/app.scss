@@ -33,33 +33,46 @@ body {
     }
     p {
         font-family: 'Jameel Noori Nastaleeq';
-        font-size: 69px;
+        font-size: 30px;
         margin-top: 4px;
-        font-weight: 700;
-        color: black;
+        font-weight: 600;
+        color: #8c929c;
     }
+    
+    li {
+        font-family: 'Jameel Noori Nastaleeq';
+        font-size: 25px;
+        color: #8c929c;
+        font-weight: 600;
+        list-style-type: disc;
+    }  
+    h6 {
+        color: #8c929c;
+        font-family: 'BebasNeue';
+    }
+    
     p.second {
         font-size: 42px;
     }
     button {
         font-family: 'Jameel Noori Nastaleeq';
-        border: 2px solid;
+        border: 2px solid #8c929c;
         margin-top: 50px;
-        color: black;
+        color: #8c929c;
         border-radius: 39px;
         font-size: 28px;
         padding: 6px 39px;
+        margin-left: 15px;
     }
     button:hover {
-        background: #000;
-        border: 2px solid #000;
+        background: #8c929c;
+        border: 2px solid #8c929c;
         margin-top: 50px;
         color: #fff;
     }
     .info {
-        border: 2px solid #000;
+        // border: 2px solid #000;
         padding: 100px 20px;
-        margin: 0 -57px;
         transition: .5s all ease-in-out;
         background: white !important;
     }
@@ -85,7 +98,11 @@ body {
     .red {
         font-family: 'Jameel Noori Nastaleeq';
         color: red;
+        font-size: 30px;
         text-align: center;
+    }
+    .alert img {
+        width: 70%;
     }
 }
 
@@ -184,9 +201,9 @@ body {
     margin: 29px 7px;
 }
 
-.main {
-    margin: 0px 62.5px;
-}
+// .main {
+//     margin: 0px 62.5px;
+// }
 
 .accordion {
     background-color: black;
@@ -235,7 +252,8 @@ body {
 }
 
 .age {
-    background-color: black;
+    background-color: #8c929c;
+    border-radius: 25px;
 }
 
 .input {

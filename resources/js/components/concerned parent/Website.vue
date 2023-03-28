@@ -14,8 +14,8 @@
                 </div>
 
                 <div class="alert text-center" v-if="hidden" style="direction:rtl;">
-                    قرآن مجید کی آیت <br> <span style="font-family: 'Droid Arabic Kufi';font-size:25px;border:unset;color:blue">يَاأَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا(الحجرات:۶ ) <br></span> میں حکم ہےکہ تحقیق و تصدیق کے بغیربات آگے نقل نہ کی جائے <br>
-                    اور دوسرا حضرت علی کا قول ہےکہ <br> <span style="font-family: 'Droid Arabic Kufi';font-size:25px;border:unset;color:blue">قَالَ عَلِيٌّ حَدِّثُوا النَّاسَ بِمَا يَعْرِفُونَ أَتُحِبُّونَ أَنْ يُكَذَّبَ اللَّهُ وَرَسُولُهُ <br>
+                    قرآن مجید کی آیت <br> <span style="font-family: 'Amiri Quran';font-size:25px;border:unset;color:blue">يَاأَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا(الحجرات:۶ ) <br></span> میں حکم ہےکہ تحقیق و تصدیق کے بغیربات آگے نقل نہ کی جائے <br>
+                    اور دوسرا حضرت علی کا قول ہےکہ <br> <span style="font-family: 'Amiri Quran';font-size:25px;border:unset;color:blue">قَالَ عَلِيٌّ حَدِّثُوا النَّاسَ بِمَا يَعْرِفُونَ أَتُحِبُّونَ أَنْ يُكَذَّبَ اللَّهُ وَرَسُولُهُ <br>
  <span style="font-size:15px;border:unset;color:blue;">(صحيح البخاري، باب مَنْ خَصَّ بِالْعِلْمِ قَوْمًا دُونَ قَوْمٍ كَرَاهِيَةَ أَنْ لَا يَفْهَمُوا، 1/37، رقم الحديث: 127)</span> <br>
  
 </span> 

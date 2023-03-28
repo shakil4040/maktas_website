@@ -2,33 +2,41 @@
     <div class="d-flex justify-content-center my-1 ftitle">
         <div class="title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>
-    @if ($tafseer)
-    <div class="row" style="margin: 5px 16px 5px 0px;background: #f1f2f4;padding: 8px;width: 95%;border-radius: 8px;">
-        <div>{{ $tafseer->topic1 }}</div>
-        @if($tafseer->topic2)
-        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic2 }}</div>
-        @endif
-        @if($tafseer->topic3)
-        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic3 }}</div>
-        @endif
-        @if($tafseer->topic4)
-        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic4 }}</div>
-        @endif
-        @if($tafseer->topic5)
-        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic5 }}</div>
-        @endif
-        @if($tafseer->topic6)
-        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic6 }}</div>
-        @endif
-        @if($tafseer->topic7)
-        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic7 }}</div>
-        @endif
-        @if($tafseer->topic8)
-        <div><span style="color:#f1f2f4;">d</span>{{'<'}}<span style="color:#f1f2f4;">d</span>{{ $tafseer->topic8 }}</div>
-        @endif
+    @if($tafseer)
+        <div class="row"
+            style="margin: 5px 16px 5px 0px;background: #f1f2f4;padding: 8px;width: 95%;border-radius: 8px;">
+            <div>{{ $tafseer->topic1 }}</div>
+            @if($tafseer->topic2)
+                <div><span style="color:#f1f2f4;">d</span>{{ '<' }}<span
+                        style="color:#f1f2f4;">d</span>{{ $tafseer->topic2 }}</div>
+            @endif
+            @if($tafseer->topic3)
+                <div><span style="color:#f1f2f4;">d</span>{{ '<' }}<span
+                        style="color:#f1f2f4;">d</span>{{ $tafseer->topic3 }}</div>
+            @endif
+            @if($tafseer->topic4)
+                <div><span style="color:#f1f2f4;">d</span>{{ '<' }}<span
+                        style="color:#f1f2f4;">d</span>{{ $tafseer->topic4 }}</div>
+            @endif
+            @if($tafseer->topic5)
+                <div><span style="color:#f1f2f4;">d</span>{{ '<' }}<span
+                        style="color:#f1f2f4;">d</span>{{ $tafseer->topic5 }}</div>
+            @endif
+            @if($tafseer->topic6)
+                <div><span style="color:#f1f2f4;">d</span>{{ '<' }}<span
+                        style="color:#f1f2f4;">d</span>{{ $tafseer->topic6 }}</div>
+            @endif
+            @if($tafseer->topic7)
+                <div><span style="color:#f1f2f4;">d</span>{{ '<' }}<span
+                        style="color:#f1f2f4;">d</span>{{ $tafseer->topic7 }}</div>
+            @endif
+            @if($tafseer->topic8)
+                <div><span style="color:#f1f2f4;">d</span>{{ '<' }}<span
+                        style="color:#f1f2f4;">d</span>{{ $tafseer->topic8 }}</div>
+            @endif
 
 
-    </div>
+        </div>
     @endif
     <div class="d-xl-flex justify-content-between">
         <div class="ltopic align-items-center udetail" style="position:relative;">
@@ -40,13 +48,14 @@
             </div>
             <button id="mazmoon" class="bbuttons my-1 ml-2 mazmon">مکمل مضمون پڑھیں</button>
             @if($easy->easy)
-            <button id="tasheel1" class="bbuttons my-1 ml-2 mazmon tasheel">تسہیل</button>
+                <button id="tasheel1" class="bbuttons my-1 ml-2 mazmon tasheel">تسہیل</button>
             @endif
             @if($yaad->pasaymanzar)
-            <button id="pasaymanzar1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:140px;">پسِ منظر</button>
+                <button id="pasaymanzar1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:140px;">پسِ
+                    منظر</button>
             @endif
             @if($yaad->result)
-            <button id="result1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:272px;">نتیجہ</button>
+                <button id="result1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:272px;">نتیجہ</button>
             @endif
         </div>
         <div id="tasheel2" class="ltopic align-items-center tasheel2 udetail">
@@ -57,7 +66,8 @@
             </div>
             <button id="tasheel3" class="bbuttons my-1 ml-2 mazmon">بند کریں</button>
         </div>
-        <div id="pasaymanzar2" class="ltopic align-items-center pasaymanzar2 udetail" style="position:absolute;width:96%;">
+        <div id="pasaymanzar2" class="ltopic align-items-center pasaymanzar2 udetail"
+            style="position:absolute;width:96%;">
             <div class="unwanat text-center my-2">پسِ منظر</div>
             <div class="mr-2 text-wrap" title="{{ $yaad->pasaymanzar }}">
                 <span class="mukhtasar">{{ $yaad->pasaymanzar }}
@@ -80,92 +90,112 @@
                 </div> -->
     </div>
     @if($yaad->government_ref)
-    <div class="d-xl-flex justify-content-between">
-        <div class="ltopic w-50 d-flex align-items-center">
-            <div class="dot">
+        <div class="d-xl-flex justify-content-between">
+            <div class="ltopic w-50 d-flex align-items-center">
+                <div class="dot">
+                </div>
+                <div class="mr-2 wazahat" title="{{ $yaad->government_ref }}"><span class="unwanat">حوالہ سرکاری
+                        نصاب:</span><span class="easy->">{{ $yaad->government_ref }}</span></div>
             </div>
-            <div class="mr-2 wazahat" title="{{ $yaad->government_ref }}"><span class="unwanat">حوالہ سرکاری نصاب:</span><span class="easy->">{{ $yaad->government_ref }}</span></div>
-        </div>
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">جماعت:</span><span>{{ $easy->class }}</span><span
+                        class="tooltiptext">مختصر وضاحت میں مذکور بات جماعت {{ $easy->class }} میں پڑھانی
+                        چاہیے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">جماعت:</span><span>{{ $easy->class }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات جماعت {{ $easy->class }} میں پڑھانی چاہیے۔</span></div>
-        </div>
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">عمر:</span><span>{{ $detail->age }}</span><span
+                        class="tooltiptext">مختصر وضاحت میں مذکور بات {{ $detail->age }} سال کی عمر میں پڑھانی
+                        چاہیے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">عمر:</span><span>{{ $detail->age }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات {{ $detail->age }} سال کی عمر میں پڑھانی چاہیے۔</span></div>
-        </div>
-        <!-- <div class="stopic d-flex align-items-center tooltip1">
+            <!-- <div class="stopic d-flex align-items-center tooltip1">
             <div class="dot">
                 </div>
                 <div class="tabs mr-2" title="{{ $easy->amli_mashq }}"><span class="unwanat">عملی :</span><span>{{ $easy->amli_mashq }}</span><span class="tooltiptext">{{ $mahol->sunana }} سال کی عمر میں یہ بات سنانا مفید ہے۔</span></div>
             </div> -->
-    </div>
+        </div>
     @endif
     <div class="d-xl-flex flex-wrap justify-content-between">
         <div class="stopic d-flex align-items-center tooltip1">
             <div class="dot">
             </div>
-            <div class="tabs mr-2"><span class="unwanat">حکم:</span><span class="hukam">{{ $easy->hukam }}</span><span class="tooltiptext">مختصر وضاحت میں ذکر کی گئی بات {{ $easy->hukam }} ہے۔</span></div>
+            <div class="tabs mr-2"><span class="unwanat">حکم:</span><span class="hukam">{{ $easy->hukam }}</span><span
+                    class="tooltiptext">مختصر وضاحت میں ذکر کی گئی بات {{ $easy->hukam }} ہے۔</span></div>
         </div>
-        
+
         <div class="stopic d-flex align-items-center tooltip1">
             <div class="dot">
             </div>
-            <div class="tabs mr-2"><span class="unwanat">حیثیت:</span><span>{{ $easy->hasiat }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات مسلمان کی {{ $easy->hasiat }} ذمہ داری ہے۔</span></div>
+            <div class="tabs mr-2"><span class="unwanat">حیثیت:</span><span>{{ $easy->hasiat }}</span><span
+                    class="tooltiptext">مختصر وضاحت میں مذکور بات مسلمان کی {{ $easy->hasiat }} ذمہ داری ہے۔</span>
+            </div>
         </div>
-        
+
         @if($easy->qaida)
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">قاعدہ:</span><span
+                        class="qaida">{{ $easy->qaida }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور قاعدے
+                        کا اطلاق {{ $easy->qaida }} طور پر ہوتا ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">قاعدہ:</span><span class="qaida">{{ $easy->qaida }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور قاعدے کا اطلاق {{ $easy->qaida }} طور پر ہوتا ہے۔</span></div>
-        </div>
         @endif
         @if($easy->zamana)
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">زمانہ:</span><span>{{ $easy->zamana }}</span><span
+                        class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->zamana }} کے زمانے سے
+                        ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">زمانہ:</span><span>{{ $easy->zamana }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->zamana }} کے زمانے سے ہے۔</span></div>
-        </div>
         @endif
         @if($easy->shoba)
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">شعبہ:</span><span>{{ $easy->shoba }}</span><span
+                        class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->shoba }} کے شعبے سے ہے۔</span>
+                </div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">شعبہ:</span><span>{{ $easy->shoba }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->shoba }} کے شعبے سے ہے۔</span></div>
-        </div>
         @endif
         @if($easy->mukhatab)
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2"><span class="unwanat">مخاطب:</span><span class="tooltip2"><a href="#">{{ $easy->mukhatab }}</a>
-                    @if($easy->mukhatab == 'خواص')
-                    <span class="tooltiptext2">علم و عمل میں عوام سے آگے ہوں لیکن اس درجے میں نہیں کہ عوام ان کی اقتداء کرے۔ </span>
-                    @endif
-                    @if($easy->mukhatab == 'مقتداء')
-                    <span class="tooltiptext2">جو متبع شریعت اور متبع سنت اس درجے میں ہوں کہ عوام ان کی اتباع کرکے گمراہ نہ ہوں۔ </span>
-                    @endif
-                </span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->mukhatab }} سے ہے۔</span>
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">مخاطب:</span><span class="tooltip2"><a
+                            href="#">{{ $easy->mukhatab }}</a>
+                        @if($easy->mukhatab == 'خواص')
+                            <span class="tooltiptext2">علم و عمل میں عوام سے آگے ہوں لیکن اس درجے میں نہیں کہ عوام ان
+                                کی اقتداء کرے۔ </span>
+                        @endif
+                        @if($easy->mukhatab == 'مقتداء')
+                            <span class="tooltiptext2">جو متبع شریعت اور متبع سنت اس درجے میں ہوں کہ عوام ان کی اتباع
+                                کرکے گمراہ نہ ہوں۔ </span>
+                        @endif
+                    </span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->mukhatab }} سے
+                        ہے۔</span>
 
+                </div>
             </div>
-        </div>
         @endif
         @if($easy->jins)
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">جنس:</span><span>{{ $easy->jins }}</span><span
+                        class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->jins }} سے ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">جنس:</span><span>{{ $easy->jins }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->jins }} سے ہے۔</span></div>
-        </div>
         @endif
         @if($yaad->ahwal)
-        <div class="stopic d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">احوال:</span><span>{{ $yaad->ahwal }}</span><span
+                        class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->ahwal }} سے ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">احوال:</span><span>{{ $yaad->ahwal }}</span><span class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->ahwal }} سے ہے۔</span></div>
-        </div>
         @endif
         <!-- <div class="ltopic d-flex align-items-center">
             <div class="dot">
@@ -181,78 +211,92 @@
     <div class="d-xl-flex flex-wrap justify-content-between">
         <div class="ltopic mahol d-flex align-items-center justify-content-center">
 
-            <div><span>{{ 'نیک صحبت میں درج ذیل کا ماحول مہیا کرنا ' }}</span></div>
+            <div>
+                <span>{{ 'نیک صحبت میں درج ذیل کا ماحول مہیا کرنا ' }}</span>
+            </div>
         </div>
         @if($mahol->sunana)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">سنانا:</span><span>{{ $mahol->sunana }}</span><span
+                        class="tooltiptext">{{ $mahol->sunana }} سال کی عمر میں یہ بات سنانا مفید ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">سنانا:</span><span>{{ $mahol->sunana }}</span><span class="tooltiptext">{{ $mahol->sunana }} سال کی عمر میں یہ بات سنانا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->kehalwana)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">کہلوانا:</span><span>{{ $mahol->kehalwana }}</span><span
+                        class="tooltiptext">{{ $mahol->kehalwana }} سال کی عمر میں یہ بات کہلوانا مفید ہے۔</span>
+                </div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">کہلوانا:</span><span>{{ $mahol->kehalwana }}</span><span class="tooltiptext">{{ $mahol->kehalwana }} سال کی عمر میں یہ بات کہلوانا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->dekhana)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">دکھانا:</span><span>{{ $mahol->dekhana }}</span><span
+                        class="tooltiptext">{{ $mahol->dekhana }} سال کی عمر میں یہ بات دکھانا مفید ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">دکھانا:</span><span>{{ $mahol->dekhana }}</span><span class="tooltiptext">{{ $mahol->dekhana }} سال کی عمر میں یہ بات دکھانا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->mashq)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">مشق:</span><span>{{ $mahol->mashq }}</span><span
+                        class="tooltiptext">{{ $mahol->mashq }} سال کی عمر میں اس بات کی مشق مفید ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">مشق:</span><span>{{ $mahol->mashq }}</span><span class="tooltiptext">{{ $mahol->mashq }} سال کی عمر میں اس بات کی مشق مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->batana)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">بتانا:</span><span>{{ $mahol->batana }}</span><span
+                        class="tooltiptext">{{ $mahol->batana }} سال کی عمر میں یہ بات بتانا مفید ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">بتانا:</span><span>{{ $mahol->batana }}</span><span class="tooltiptext">{{ $mahol->batana }} سال کی عمر میں یہ بات بتانا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->sikhana)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">سکھانا:</span><span>{{ $mahol->sikhana }}</span><span
+                        class="tooltiptext">{{ $mahol->sikhana }} سال کی عمر میں یہ بات سکھانا مفید ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">سکھانا:</span><span>{{ $mahol->sikhana }}</span><span class="tooltiptext">{{ $mahol->sikhana }} سال کی عمر میں یہ بات سکھانا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->adat)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">عادت:</span><span>{{ $mahol->adat }}</span><span
+                        class="tooltiptext">{{ $mahol->adat }} سال کی عمر میں اس بات کی عادت ڈالنا مفید ہے۔</span>
+                </div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">عادت:</span><span>{{ $mahol->adat }}</span><span class="tooltiptext">{{ $mahol->adat }} سال کی عمر میں اس بات کی عادت ڈالنا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->samjhana)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">سمجھانا:</span><span>{{ $mahol->samjhana }}</span><span
+                        class="tooltiptext">{{ $mahol->samjhana }} سال کی عمر میں یہ بات سمجھانا مفید ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">سمجھانا:</span><span>{{ $mahol->samjhana }}</span><span class="tooltiptext">{{ $mahol->samjhana }} سال کی عمر میں یہ بات سمجھانا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($mahol->parhana)
-        <div class="stopic smahol2 d-flex align-items-center tooltip1">
-            <div class="dot">
+            <div class="stopic smahol2 d-flex align-items-center tooltip1">
+                <div class="dot">
+                </div>
+                <div class="tabs mr-2"><span class="unwanat">پڑھانا:</span><span>{{ $mahol->parhana }}</span><span
+                        class="tooltiptext">{{ $mahol->parhana }} سال کی عمر میں یہ بات پڑھانا مفید ہے۔</span></div>
             </div>
-            <div class="tabs mr-2"><span class="unwanat">پڑھانا:</span><span>{{ $mahol->parhana }}</span><span class="tooltiptext">{{ $mahol->parhana }} سال کی عمر میں یہ بات پڑھانا مفید ہے۔</span></div>
-        </div>
         @endif
         @if($user)
-        <!-- Button trigger modal -->
-        <button type="button" class="bbuttons my-1 ml-2" style="position: absolute;bottom: 5px;left: 5px;" data-toggle="modal" data-target="#exampleModalLong">
-            اپنی رائے کا اظہار کریں
-        </button>
+            <!-- Button trigger modal -->
+            <button type="button" class="bbuttons my-1 ml-2" style="position: absolute;bottom: 5px;left: 5px;"
+                data-toggle="modal" data-target="#exampleModalLong">
+                اپنی رائے کا اظہار کریں
+            </button>
 
-        <!-- Modal -->
+            <!-- Modal -->
         @endif
         <!-- <div class="stopic d-flex align-items-center">
             <div class="dot">
@@ -340,13 +384,14 @@
         <!-- <i class="fa fa-eye dicon" title="چھپی ہوئی تفصیلات دیکھیں" aria-hidden="true"></i> -->
         <div>
             @if($admin)
-            <button id="acomment" class="bbuttons my-1 ml-2 ara">آراء دیکھیں</button>
-            <button class="bbuttons my-1 ml-2 toggler">نئے عنوان کا اندراج کریں</button>
+                <button id="acomment" class="bbuttons my-1 ml-2 ara">آراء دیکھیں</button>
+                <button class="bbuttons my-1 ml-2 toggler">نئے عنوان کا اندراج کریں</button>
             @endif
         </div>
     </div>
 </span>
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -366,9 +411,9 @@
             <form id="comment">
                 @csrf
                 <div class="modal-body d-flex justify-content-center">
-                    <div class="d-none" id="userId">{{$userId}}</div>
-                    <div class="d-none" id="treeId">{{$tree->id}}</div>
-                    <div class="d-none" id="treeTitle">{{$tree->title}}</div>
+                    <div class="d-none" id="userId">{{ $userId }}</div>
+                    <div class="d-none" id="treeId">{{ $tree->id }}</div>
+                    <div class="d-none" id="treeTitle">{{ $tree->title }}</div>
                     <textarea name="comment" id="" cols="40" rows="10"></textarea>
                 </div>
                 <div class="modal-footer">
@@ -388,86 +433,87 @@
             </div>
             <div class="mx-auto text-center overlay-bdiv">
                 <div class="pb-4">
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                    {{ $detail->detail }}
-                </div>
-                <div class="accordion" id="accordionExample">
-                    @if($easy->rahe_adal)
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-right" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    راہِ عدل
-                                </button>
-                            </h2>
-                            <div class="arrow2">
-                                ❮
-                            </div>
+                    <div class="alert" style="text-align:center">
+                        <div class="red my-3">
+                            ہم معذرت خواہ ہیں کہ پورا مضمون صرف انرولڈ وزٹر پڑھ سکتے ہیں کیا آپ انرول ہونا چاہیں گے ؟
                         </div>
+                        <a href="/jihaan4" target="_blank">
+                            <button class="btn btn-primary">جی نہیں</button>
+                        </a>
+                        <a href="/jihaan3" target="_blank">
+                            <button class="btn btn-primary">جی ہاں</button>
+                        </a>
+                    </div>
+                    <div class="accordion" id="accordionExample">
+                        @if($easy->rahe_adal)
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-right" type="button"
+                                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            راہِ عدل
+                                        </button>
+                                    </h2>
+                                    <div class="arrow2">
+                                        ❮
+                                    </div>
+                                </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body text-right">
-                                {{ $easy->rahe_adal }}
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-right">
+                                        {{ $easy->rahe_adal }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        @endif
+                        @if($easy->rafe_ishkal)
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-right collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            رفعِ اشکال
+                                        </button>
+                                    </h2>
+                                    <div class="arrow2">
+                                        ❮
+                                    </div>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-right">
+                                        {{ $easy->rafe_ishkal }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if($easy->husool)
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-right collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            حصول کا طریقہ
+                                        </button>
+                                    </h2>
+                                    <div class="arrow2">
+                                        ❮
+                                    </div>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-right">
+                                        {{ $easy->husool }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
-                    @endif
-                    @if($easy->rafe_ishkal)
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-right collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    رفعِ اشکال
-                                </button>
-                            </h2>
-                            <div class="arrow2">
-                                ❮
-                            </div>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <div class="card-body text-right">
-                                {{ $easy->rafe_ishkal }}
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    @if($easy->husool)
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-right collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    حصول کا طریقہ
-                                </button>
-                            </h2>
-                            <div class="arrow2">
-                                ❮
-                            </div>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                            <div class="card-body text-right">
-                                {{ $easy->husool }}
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-                <!-- <div class="d-flex my-4 text-right justify-content-end">
+                    <!-- <div class="d-flex my-4 text-right justify-content-end">
                     <div class="stopic d-flex align-items-center">
                         <div class="dot">
                         </div>
@@ -484,8 +530,8 @@
                         <div class="mr-2 wazahat" title="{{ $easy->husool }}"><span class="unwanat">حصول کا طریقہ:</span><span>{{ $easy->husool }}</span></div>
                     </div>
                 </div> -->
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script src="/js/treeviewPart.js"></script>
+    <script src="/js/treeviewPart.js"></script>

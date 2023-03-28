@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Mail;
 
 // Route::get('newvisitor','VisitorsController@index');
 Auth::routes();
+
+//New site
+Route::controller(ViewsController::class)->group(function(){
+    Route::get('/new','home');
+    Route::get('/student','student');
+    Route::get('/parents','parents');
+    Route::get('/parents2','parents2');
+    Route::get('/teacher','teacher');
+    Route::get('/gauge-yourself','gaugeYourself');
+    Route::get('/gauge-yourself2','gaugeYourself2');
+    Route::get('/gauge-yourself3','gaugeYourself3');
+});
+
+
+
+
 Route::post('/deleteMail','MailController@deleteMail');
 Route::post('/AddMail','MailController@AddMail');
 Route::post('/EditMail','MailController@EditMail');
