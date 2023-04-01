@@ -638,7 +638,7 @@ h1.single{
 ------------------------------------------------------------------------------*/
 
 .slider {
-	height: 536px;
+	height: 505px;
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 94px;
@@ -652,7 +652,7 @@ h1.single{
 
 .slider .info {
 	float: right;
-	padding: 105px 281px 0 0;;
+	padding: 76px 301px 0 0;;
 }
 
 .slider .info h2 {
