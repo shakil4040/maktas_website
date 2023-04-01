@@ -10,7 +10,7 @@
                Teach Student online
             </button>
            </router-link>
-           <router-link to="/essay">
+           <router-link to="/online">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                Write essays / lesson for the website
             </button>

@@ -92,7 +92,7 @@
                 </div>
                 <div v-if="hidden6" class="alert text-center" @click="show7">
                     <div class="blue" style="color:black">
-                        To learn further we humbly request you to please <span style="color:blue;border:unset;font-size:25px;">enroll yourself</span> <br> with us.
+                        To proceed further we humbly request you to please <span style="color:blue;border:unset;font-size:25px;">enroll yourself</span> <br> with us.
                         <div class="arrow2">&#10094;</div>
                     </div>
                 </div>

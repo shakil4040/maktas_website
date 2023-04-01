@@ -22,7 +22,7 @@
 
 
 
-    <footer id="footer">
+    <!-- <footer id="footer">
 		<div class="container">
 			<section>
 				<article class="col-1">
@@ -67,8 +67,7 @@
 			</section>
 			<p class="copy">Copyright 2014 Harrison High School. Designed by <a href="http://www.vandelaydesign.com/" title="Designed by Vandelay Design" target="_blank">Vandelay Design</a>. All rights reserved.</p>
 		</div>
-		<!-- / container -->
-	</footer>
+	</footer> -->
 	<!-- / footer -->
 
 	<div id="fancy">

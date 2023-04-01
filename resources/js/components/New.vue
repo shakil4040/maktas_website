@@ -28,9 +28,15 @@
             </button>
            
           </router-link>
-            <router-link to="/principal">
+            <router-link to="/educationist">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                Educationist
+            </button>
+           
+          </router-link>
+            <router-link to="/publisher">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+               Publisher
             </button>
            
           </router-link>
