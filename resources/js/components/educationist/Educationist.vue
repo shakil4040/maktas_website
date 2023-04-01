@@ -7,14 +7,14 @@
           
            <router-link to="/online">
              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Teach Student online
+              Help us develope a universal curriculum
              </button>
             </router-link>
-            <router-link to="/essay">
+            <!-- <router-link to="/essay">
              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Help us develope a universal curriculum
              </button>
-           </router-link>
+           </router-link> -->
          </div>
        </div>
      </div>
