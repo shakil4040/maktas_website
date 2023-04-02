@@ -10,7 +10,7 @@
                     <div class="red"> 
                         <div class="mt-2">
                             <p style="margin-bottom:-44px;">براہِ مہربانی انتظار فرمائیں۔۔۔</p>
-                            <iframe src="/tree" height="650" width="100%" title="Iframe Example"></iframe>
+                            <iframe src="/gauge-yourself" height="650" width="100%" title="Iframe Example"></iframe>
                         </div>
                     </div>
 

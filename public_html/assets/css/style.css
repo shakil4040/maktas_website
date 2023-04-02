@@ -401,20 +401,20 @@ h1.single{
     height: 0;
     border-style: solid;
     border-width: 7.5px 7px 7.5px 0;
-    border-color: transparent #008cc4 transparent transparent;
+    border-color: transparent hsl(164deg 72% 23%) transparent transparent;
 }
 
 #sidebar .sidemenu .current a,
 #sidebar .sidemenu a:hover {
-	border: 1px solid #008bc4;
-	color: #fff;
-	background: #008bc4;
-	text-decoration: none;
+	border: 1px solid #a3da8b;
+    color: #fff;
+    background: #a3da8b;
+    text-decoration: none;
 }
 
 #sidebar .sidemenu .current a .nr,
 #sidebar .sidemenu a:hover .nr {
-	background: #2c4167;
+	background: hsl(164deg 72% 23%);
 }
 
 #sidebar .sidemenu a .nr {
@@ -1778,7 +1778,7 @@ a.btn.blue,
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	
 	#logo {
-		background-image: url(../images/logo@2x.png);
+		background-image: url(../images/logo.png);
 		background-size: 121px 134px;
 	}
 
@@ -2107,7 +2107,7 @@ a.btn.blue,
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	
 		#logo {
-			background-image: url(../images/logo@2x.png);
+			background-image: url(../images/logo.png);
 			background-size: 90px 100px;
 		}
 	}

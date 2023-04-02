@@ -23862,7 +23862,7 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   }
 }, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
-  src: "/tree",
+  src: "/gauge-yourself",
   height: "650",
   width: "100%",
   title: "Iframe Example"
@@ -24504,7 +24504,7 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   }
 }, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
-  src: "/tree",
+  src: "/gauge-yourself",
   height: "650",
   width: "100%",
   title: "Iframe Example"
@@ -24811,7 +24811,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "form"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div><div class=\"info\"><div class=\"wrapper\"><div class=\"alert\"><div class=\"red\"><div class=\"mt-2\"><p style=\"margin-bottom:-44px;\">براہِ مہربانی انتظار فرمائیں۔۔۔</p><iframe src=\"/tree\" height=\"650\" width=\"100%\" title=\"Iframe Example\"></iframe></div></div></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div><div class=\"info\"><div class=\"wrapper\"><div class=\"alert\"><div class=\"red\"><div class=\"mt-2\"><p style=\"margin-bottom:-44px;\">براہِ مہربانی انتظار فرمائیں۔۔۔</p><iframe src=\"/gauge-yourself\" height=\"650\" width=\"100%\" title=\"Iframe Example\"></iframe></div></div></div></div></div></div>", 1);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
@@ -25020,7 +25020,7 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   }
 }, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
-  src: "/tree",
+  src: "/gauge-yourself",
   height: "650",
   width: "100%",
   title: "Iframe Example"
@@ -25645,7 +25645,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   }
 }, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
-  src: "/tree",
+  src: "/gauge-yourself",
   height: "650",
   width: "100%",
   title: "Iframe Example"

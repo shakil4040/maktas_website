@@ -6,36 +6,36 @@
         <aside id="sidebar">
             <div class="widget sidemenu">
                 <ul>
-                    <li><a href="/tree">تمہیداتِ عامہ<span class="nr">49</span></a></li>
-                    <li><a href="/tree">عقائد<span class="nr">142</span></a></li>
-                    <li><a href="/tree">عبادات<span class="nr">98</span></a></li>
-                    <!-- <li class="current"><a href="/tree">The best students in 2014<span class="nr">16</span></a></li> -->
-                    <li><a href="/tree">معاملات<span class="nr">63</span></a></li>
-                    <li><a href="/tree">معاشرت<span class="nr">49</span></a></li>
+                    <li><a href="/tree" target="_blank">تمہیداتِ عامہ<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">عقائد<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">عبادات<span class="nr"></span></a></li>
+                    <!-- <li class="current"><a href="/tree" target="_blank">The best students in 2014<span class="nr">16</span></a></li> -->
+                    <li><a href="/tree" target="_blank">معاملات<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">معاشرت<span class="nr"></span></a></li>
                 </ul>
             </div>
         </aside>
         <aside id="sidebar">
             <div class="widget sidemenu">
                 <ul>
-                    <li><a href="/tree">اخلاقیات<span class="nr">142</span></a></li>
-                    <li><a href="/tree">اسلامی ریاست<span class="nr">98</span></a></li>
-                    <li><a href="/tree">قرآن کریم<span class="nr">98</span></a></li>
-                    <li><a href="/tree">سیرتِ مصطفیٰ ﷺ<span class="nr">98</span></a></li>
-                    <!-- <li class="current"><a href="/tree">The best students in 2014<span class="nr">16</span></a></li> -->
-                    <li><a href="/tree">سیر الانبیاء علیہم السلام<span class="nr">63</span></a></li>
+                    <li><a href="/tree" target="_blank">اخلاقیات<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">اسلامی ریاست<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">قرآن کریم<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">سیرتِ مصطفیٰ ﷺ<span class="nr"></span></a></li>
+                    <!-- <li class="current"><a href="/tree" target="_blank">The best students in 2014<span class="nr">16</span></a></li> -->
+                    <li><a href="/tree" target="_blank">سیر الانبیاء علیہم السلام<span class="nr"></span></a></li>
                 </ul>
             </div>
         </aside>
         <aside id="sidebar">
             <div class="widget sidemenu">
                 <ul>
-                    <li><a href="/tree">سیر الصحابہ رضی اللہ عنہم<span class="nr">142</span></a></li>
-                    <li><a href="/tree">سیر الصالحین<span class="nr">98</span></a></li>
-                    <li><a href="/tree">تاریخِ امتِ مسلمہ<span class="nr">98</span></a></li>
-                    <!-- <li class="current"><a href="/tree">The best students in 2014<span class="nr">16</span></a></li> -->
-                    <li><a href="/tree">حفاظت و اشاعتِ دین<span class="nr">63</span></a></li>
-                    <li><a href="/tree">مجموعہ معلومات معاون دینی تعلیمات<span class="nr">49</span></a></li>
+                    <li><a href="/tree" target="_blank">سیر الصحابہ رضی اللہ عنہم<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">سیر الصالحین<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">تاریخِ امتِ مسلمہ<span class="nr"></span></a></li>
+                    <!-- <li class="current"><a href="/tree" target="_blank">The best students in 2014<span class="nr">16</span></a></li> -->
+                    <li><a href="/tree" target="_blank">حفاظت و اشاعتِ دین<span class="nr"></span></a></li>
+                    <li><a href="/tree" target="_blank">مجموعہ معلومات معاون دینی تعلیمات<span class="nr"></span></a></li>
                 </ul>
             </div>
         </aside>
