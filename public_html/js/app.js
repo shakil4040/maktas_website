@@ -24065,14 +24065,14 @@ var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "red"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br")], -1 /* HOISTED */);
 var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-primary"
-}, "آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟", -1 /* HOISTED */);
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   style: {
     "border": "solid orange"
   },
   "class": "btn btn-primary"
 }, "کیا آپ مشق حل کرنا چاہیں گے؟", -1 /* HOISTED */);
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "btn btn-primary"
+}, "آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟", -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -24086,14 +24086,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.show2 && $options.show2.apply($options, arguments);
     })
-  }, _hoisted_12)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [_hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, _hoisted_12)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [_hoisted_51, _hoisted_52, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "sakhti"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_52];
+      return [_hoisted_53];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_53])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show\">\r\n                        انرول ہونے سے قبل چند بنیادی مضامین کا پڑھنا ضروری ہے\r\n                    </button>\r\n                    <br>\r\n    \r\n                    <button v-if=\"hidden\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show2\">\r\n                        دوائیوں کی طرح ہوتے ہیں Learning Material\r\n                    </button>\r\n    \r\n                    <br> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"btn btn-primary\">اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے</button>\r\n                <br>\r\n                <router-link to=\"sakhti\">\r\n                    <button class=\"btn btn-primary\">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>\r\n                </router-link>\r\n                <router-link to=\"jihaan3\">\r\n                    <button class=\"btn btn-primary\">کیا آپ مشق حل کرنا چاہیں گے</button>\r\n                </router-link> ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
+  })])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show\">\r\n                        انرول ہونے سے قبل چند بنیادی مضامین کا پڑھنا ضروری ہے\r\n                    </button>\r\n                    <br>\r\n    \r\n                    <button v-if=\"hidden\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show2\">\r\n                        دوائیوں کی طرح ہوتے ہیں Learning Material\r\n                    </button>\r\n    \r\n                    <br> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"btn btn-primary\">اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے</button>\r\n                <br>\r\n                <router-link to=\"sakhti\">\r\n                    <button class=\"btn btn-primary\">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>\r\n                </router-link>\r\n                <router-link to=\"jihaan3\">\r\n                    <button class=\"btn btn-primary\">کیا آپ مشق حل کرنا چاہیں گے</button>\r\n                </router-link> ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
 }
 
 /***/ }),
@@ -24684,7 +24684,10 @@ var _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
     "border": "unset",
     "font-size": "25px"
   }
-}, "enroll yourself"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" with us. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#student",
+  "class": "student1"
+}, "enroll yourself")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" with us. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
 var _hoisted_84 = [_hoisted_83];

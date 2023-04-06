@@ -36,11 +36,11 @@
                             <div class="red">
                                 اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے۔ <br>
                             </div>
+                            <button style="border:solid orange;" class="btn btn-primary">کیا آپ مشق حل کرنا چاہیں گے؟</button>
                             <router-link to="sakhti">
                                 <button class="btn btn-primary">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>
                             </router-link>
     
-                            <button style="border:solid orange;" class="btn btn-primary">کیا آپ مشق حل کرنا چاہیں گے؟</button>
     
                         </div>
                     </div>
