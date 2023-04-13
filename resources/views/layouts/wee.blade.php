@@ -10,6 +10,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo.png">
     <link rel="stylesheet" media="all" href="/assets/css/style.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Amiri Quran' rel='stylesheet'>
@@ -112,7 +113,8 @@
             </div>
             <div class="right">
                 <!-- <fieldset class="question"><textarea placeholder="Question..."></textarea></fieldset> -->
-                <fieldset class="name"><input placeholder="Region..." type="text"></fieldset>
+                <fieldset class="name"><input placeholder="Country..." type="text"></fieldset>
+                <fieldset class="name"><input placeholder="City..." type="text"></fieldset>
                 <fieldset class="subject">
                     <select>
                         <option>Category...</option>
@@ -135,15 +137,25 @@
                 </fieldset>
             </div>
             <div class="btn-holder">
-                <button class="btn blue" type="submit">Submit</button>
+                <button class="btn blue" id="submit" type="submit">Submit</button>
             </div>
         </form>
     </div>
 
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script>
         window.jQuery || document.write("<script src='js/jquery-1.11.1.min.js'>\x3C/script>")
 
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#enroll').hide();
+            $('#submit').click(function(){
+                $('#enroll').show();
+                $('.fancybox-overlay').hide();
+                $('body').removeClass('fancybox-lock')
+            })
+        })
     </script>
     <script src="/assets/js/plugins.js"></script>
     <script src="/assets/js/main.js"></script>

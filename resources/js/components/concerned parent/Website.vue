@@ -90,13 +90,13 @@
                         <div class="arrow2">&#10094;</div>
                     </div>
                 </div>
-                <div v-if="hidden6" class="alert text-center" @click="show7">
+                <div v-if="hidden6" class="alert text-center">
                     <div class="blue" style="color:black">
                         To proceed further we humbly request you to please <span style="color:blue;border:unset;font-size:25px;"><a href="#student" class="student1">enroll yourself</a></span> <br> with us.
                         <div class="arrow2">&#10094;</div>
                     </div>
                 </div>
-                <div v-if="hidden7" class="alert" @click="show8">
+                <div id="enroll" class="alert" @click="show8">
                     <div class="blue">
                         اب آپ صرف اوپر دکھائے گئے تمام مضامین کی مشقیں حل کرنے کو کوشش کریں تو ا ٓپ خود بخود انرول ہو جائیں گے۔
                         <div class="arrow2">&#10094;</div>

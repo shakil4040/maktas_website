@@ -157,7 +157,7 @@
                 <div class="dot">
                 </div>
                 <div class="tabs mr-2"><span class="unwanat">شعبہ:</span><span>{{ $easy->shoba }}</span><span
-                        class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->shoba }} کے شعبے سے ہے۔</span>
+                        class="tooltiptext">مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->shoba }} سے ہے۔</span>
                 </div>
             </div>
         @endif

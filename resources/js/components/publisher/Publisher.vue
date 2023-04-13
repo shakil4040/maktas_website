@@ -25,7 +25,7 @@
                     موازنے کے لیے کتاب کی سافٹ کاپی بھیجیں۔
                 </button>
             </a>
-            <a href="javascript:;" @click="chart3">
+            <a href="/comparison" target="_blank">
                 <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     موازنے کا نمونہ دیکھیں۔
                 </button>
@@ -39,10 +39,10 @@
                 <p style="margin-bottom:-44px;">براہِ مہربانی انتظار فرمائیں۔۔۔</p>
                 <iframe src="/gauge-yourself" height="650" width="100%" title="Iframe Example"></iframe>
             </div>
-            <div v-if="chart4" class="mt-2">
+            <!-- <div v-if="chart4" class="mt-2">
                 <p style="margin-bottom:-44px;">براہِ مہربانی انتظار فرمائیں۔۔۔</p>
-                <iframe src="/comparison" height="650" width="100%" title="Iframe Example"></iframe>
-            </div>
+                <iframe src="/comparison"  height="650" width="100%" title="Iframe Example"></iframe>
+            </div> -->
         </div>
     </div>
 </div>

@@ -200,7 +200,7 @@
                                                             @endif
                                                         </div>
                                                         @if($category->government_com == 1)
-                                                        <div title="اس رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔"
+                                                        <div title="پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔"
                                                             class="ctitle list d-flex justify-content-between align-items-center taqabul">
                                                             {{ $category->title }}
                                                             @auth('admin')
