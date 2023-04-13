@@ -546,12 +546,14 @@
                             @foreach($categories as $category)
                             <div class="row">
                                 <div class="col-md-12">
-                                    <li title="{{ $category->title }}" class="list_color">
+                                    <li title="{{ $category->title }}" class="list_color level-1">
                                         <span class="detail1">
                                             <div class="d-flex align-items-center">
                                                 <div class="dot2 d-flex align-items-center">
                                                     @if(count($category->childs))
-                                                    <i class="fa fa-plus detail1 iicon" aria-hidden="true"></i>
+                                                    <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
+                                                       aria-hidden="true" onclick="getchilds({{ $category->id }}, 1)
+                                                        "></i>
                                                     @endif
                                                 </div>
                                                 <div
@@ -594,7 +596,8 @@
                                             </div>
                                         </span>
                                         @if(count($category->childs))
-                                        @include('manageChild',['childs' => $category->childs])
+                                        <div class="child-div" id="child-{{ $category->id }}">
+                                        </div>
                                         @endif
                                     </li>
                                 </div>
@@ -612,6 +615,16 @@
     </div>
     <script src="/js/treeview.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="application/javascript">
+        function getchilds(id, level){
+            $.ajax({
+                url: "/api/get-child/" + id +'/' + level,
+                success: function (data) {
+                    $("#child-" + id).html(data);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -74,7 +74,7 @@ $(document).ready(function() {
     //search for comparison
     $('#search').keyup(function() {
         $('.ctitle').each(function() {
-            $(this).parent().parent('.detail1').show(); 
+            $(this).parent().parent('.detail1').show();
         });
         value = $('#search').val();
         $('.ctitle').each(function() {
@@ -87,7 +87,7 @@ $(document).ready(function() {
     //search for tree
     $('#searcht').keyup(function() {
         $('.ctitle').each(function() {
-            $(this).parent().parent('.detail1').hide(); 
+            $(this).parent().parent('.detail1').hide();
         });
         value = $('#searcht').val();
         $('.ctitle').each(function() {
@@ -99,9 +99,9 @@ $(document).ready(function() {
         });
     })
 
-    
-    $(".ctitle").each(function() {
-        $(this).click(function() {
+
+    // $(document).on("click" ,".ctitle", function () {
+        $(document).on("click" ,".ctitle", function () {
             var id = $(this).siblings('.cid').text();
             var admin = $(this).siblings('.admin').text();
             var user = $(this).siblings('.user').text();
@@ -121,9 +121,9 @@ $(document).ready(function() {
                 }
             });
         });
-    });
-    // Delete function    
-    $(".ctitle").each(function() {
+    // });
+    // Delete function
+    $(document).on("click" ,".ctitle", function () {
         $(this).find('.delete').click(function(e) {
             var id = $(this).parent().parent().siblings('.cid').text();
             var memberName = $(this).parent().parent().siblings('.memberName').text();
@@ -148,7 +148,7 @@ $(document).ready(function() {
 
     //Editing Function
 
-    $(".ctitle").each(function() {
+    $(document).on("click" ,".ctitle", function () {
         $(this).find('.sedit').click(function(e) {
             var id = $(this).parent().parent().siblings('.cid').text();
             var memberName = $(this).parent().parent().siblings('.memberName').text();
@@ -202,7 +202,7 @@ $(document).ready(function() {
 
 
     //Edit function
-    // $(".ctitle").each(function() {
+    // $(document).on("click" ,".ctitle", function () {
     //     $(this).find('.sedit').click(function() {
     //         var id = $(this).parent().parent().siblings().text();
 
@@ -229,514 +229,6 @@ $(document).ready(function() {
     //         $("#tab8").hide();
     //     });
     // });
-    $(".list_color").children().children().children(".list").each(function() {
-        var title = $(this).text();
-        var id = $(this).siblings('.cid').text();
-        $(this).click(function() {
-            $("#ctab7").children('#ct7_title').html(title);
-            $.ajax({
-                url: "/api/nav/" + id,
-                success: function(data) {
-                    $("#ctab6").children('#ct6_title').html(data.parentTitle);
-                    $("#ctab5").children('#ct5_title').html(data.parent2Title);
-                    $("#ctab4").children('#ct4_title').html(data.parent3Title);
-                    $("#ctab3").children('#ct3_title').html(data.parent4Title);
-                    $("#ctab2").children('#ct2_title').html(data.parent5Title);
-                    $("#ctab1").children('#ct1_title').html(data.parent6Title);
-                    if (data.parent2Title == null) {
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                    }
-                    if (data.parent3Title == null && data.parent2Title != null) {
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                    }
-                    if (data.parent4Title == null && data.parent3Title != null) {
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                    }
-                    if (data.parent5Title == null && data.parent4Title != null) {
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                    }
-                    if (data.parent6Title == null && data.parent5Title != null) {
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                    }
-                    if (data.parent7Title == null && data.parent6Title != null) {
-                        $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                    }
-                    if (data.parent8Title == null && data.parent7Title != null) {
-                        $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                    }
-                }
-            });
-        });
-    });
-
-    $(".list_color").children().children().children().children().children(".list").each(function() {
-        var title = $(this).text();
-        var id = $(this).siblings('.cid').text();
-        $(this).click(function() {
-            $("#ctab7").children('#ct7_title').html(title);
-            $.ajax({
-                url: "/api/nav/" + id,
-                success: function(data) {
-                    $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                    $("#ctab5").children('#ct5_title').html(data.parent2Title);
-                    $("#ctab4").children('#ct4_title').html(data.parent3Title);
-                    $("#ctab3").children('#ct3_title').html(data.parent4Title);
-                    $("#ctab2").children('#ct2_title').html(data.parent5Title);
-                    $("#ctab1").children('#ct1_title').html(data.parent6Title);
-                    if (data.parent2Title == null) {
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                    }
-                    if (data.parent3Title == null && data.parent2Title != null) {
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                    }
-                    if (data.parent4Title == null && data.parent3Title != null) {
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                    }
-                    if (data.parent5Title == null && data.parent4Title != null) {
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                    }
-                    if (data.parent6Title == null && data.parent5Title != null) {
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                    }
-                    if (data.parent7Title == null && data.parent6Title != null) {
-                        $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                    }
-                    if (data.parent8Title == null && data.parent7Title != null) {
-                        $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                    }
-                }
-            });
-        });
-
-    });
-    $(".list_color").children().children().children().children()
-        .children().children().children(".list").each(function() {
-            var title = $(this).text();
-            var id = $(this).siblings('.cid').text();
-            $(this).click(function() {
-                $("#ctab7").children('#ct7_title').html(title);
-                $.ajax({
-                    url: "/api/nav/" + id,
-                    success: function(data) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title);
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title);
-                        $("#ctab2").children('#ct2_title').html(data.parent5Title);
-                        $("#ctab1").children('#ct1_title').html(data.parent6Title);
-                        if (data.parent2Title == null) {
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                        }
-                        if (data.parent3Title == null && data.parent2Title != null) {
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                        }
-                        if (data.parent4Title == null && data.parent3Title != null) {
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                        }
-                        if (data.parent5Title == null && data.parent4Title != null) {
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                        }
-                        if (data.parent6Title == null && data.parent5Title != null) {
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                        }
-                        if (data.parent7Title == null && data.parent6Title != null) {
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                        }
-                        if (data.parent8Title == null && data.parent7Title != null) {
-                            $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                        }
-
-                    }
-                });
-            });
-        });
-    $(".list_color").children().children().children().children()
-        .children().children().children().children().children(".list").each(function() {
-            var title = $(this).text();
-            var id = $(this).siblings('.cid').text();
-            $(this).click(function() {
-                $("#ctab7").children('#ct7_title').html(title);
-                $.ajax({
-                    url: "/api/nav/" + id,
-                    success: function(data) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title);
-                        $("#ctab2").children('#ct2_title').html(data.parent5Title);
-                        $("#ctab1").children('#ct1_title').html(data.parent6Title);
-                        if (data.parent2Title == null) {
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                        }
-                        if (data.parent3Title == null && data.parent2Title != null) {
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                        }
-                        if (data.parent4Title == null && data.parent3Title != null) {
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                        }
-                        if (data.parent5Title == null && data.parent4Title != null) {
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                        }
-                        if (data.parent6Title == null && data.parent5Title != null) {
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                        }
-                        if (data.parent7Title == null && data.parent6Title != null) {
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                        }
-                        if (data.parent8Title == null && data.parent7Title != null) {
-                            $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                        }
-                    }
-                });
-            });
-        });
-    $(".list_color").children().children().children().children().children().children()
-        .children().children().children().children().children(".list").each(function() {
-            var title = $(this).text();
-            var id = $(this).siblings('.cid').text();
-            $(this).click(function() {
-                $("#ctab7").children('#ct7_title').html(title);
-                $.ajax({
-                    url: "/api/nav/" + id,
-                    success: function(data) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab2").children('#ct2_title').html(data.parent5Title);
-                        $("#ctab1").children('#ct1_title').html(data.parent6Title);
-                        if (data.parent2Title == null) {
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                        }
-                        if (data.parent3Title == null && data.parent2Title != null) {
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                        }
-                        if (data.parent4Title == null && data.parent3Title != null) {
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                        }
-                        if (data.parent5Title == null && data.parent4Title != null) {
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                        }
-                        if (data.parent6Title == null && data.parent5Title != null) {
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                        }
-                        if (data.parent7Title == null && data.parent6Title != null) {
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                        }
-                        if (data.parent8Title == null && data.parent7Title != null) {
-                            $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                        }
-                    }
-                });
-            });
-        });
-    $(".list_color").children().children().children().children().children().children().children().children()
-        .children().children().children().children().children(".list").each(function() {
-            var title = $(this).text();
-            var id = $(this).siblings('.cid').text();
-            $(this).click(function() {
-                $("#ctab7").children('#ct7_title').html(title);
-                $.ajax({
-                    url: "/api/nav/" + id,
-                    success: function(data) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab2").children('#ct2_title').html(data.parent5Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab1").children('#ct1_title').html(data.parent6Title);
-                        if (data.parent2Title == null) {
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                        }
-                        if (data.parent3Title == null && data.parent2Title != null) {
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                        }
-                        if (data.parent4Title == null && data.parent3Title != null) {
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                        }
-                        if (data.parent5Title == null && data.parent4Title != null) {
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                        }
-                        if (data.parent6Title == null && data.parent5Title != null) {
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                        }
-                        if (data.parent7Title == null && data.parent6Title != null) {
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                        }
-                        if (data.parent8Title == null && data.parent7Title != null) {
-                            $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                        }
-                    }
-                });
-            });
-        });
-    $(".list_color").children().children().children().children().children().children().children().children()
-        .children().children().children().children().children().children().children(".list").each(function() {
-            var title = $(this).text();
-            var id = $(this).siblings('.cid').text();
-            $(this).click(function() {
-                $("#ctab7").children('#ct7_title').html(title);
-                $.ajax({
-                    url: "/api/nav/" + id,
-                    success: function(data) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab2").children('#ct2_title').html(data.parent5Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab1").children('#ct1_title').html(data.parent6Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        if (data.parent2Title == null) {
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                        }
-                        if (data.parent3Title == null && data.parent2Title != null) {
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                        }
-                        if (data.parent4Title == null && data.parent3Title != null) {
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                        }
-                        if (data.parent5Title == null && data.parent4Title != null) {
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                        }
-                        if (data.parent6Title == null && data.parent5Title != null) {
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                        }
-                        if (data.parent7Title == null && data.parent6Title != null) {
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                        }
-                        if (data.parent8Title == null && data.parent7Title != null) {
-                            $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                            $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                            $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                            $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                            $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                            $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                            $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                        }
-                    }
-                });
-            });
-        });
-
-    //==================================================
-
-    //comparison navigation bar
-
-    $(".list_color").children().children().children(".list").each(function() {
-        var title = $(this).text();
-        var id = $(this).siblings('.cid').text();
-        $(this).click(function() {
-            $("#ctab7").children('#ct7_title').html(title);
-            $.ajax({
-                url: "/api/nav/" + id,
-                success: function(data) {
-                    if (data.parent2Title == null) {
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(61, 151, 230)");
-                    }
-                    if (data.parent3Title == null && data.parent2Title != null) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title);
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(230, 122, 51)");
-                    }
-                    if (data.parent4Title == null && data.parent3Title != null) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title);
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(255, 181, 20)");
-                    }
-                    if (data.parent5Title == null && data.parent4Title != null) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title);
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(221, 39, 42)");
-                    }
-                    if (data.parent6Title == null && data.parent5Title != null) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab2").children('#ct2_title').html(data.parent5Title);
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(68, 173, 26)");
-                    }
-                    if (data.parent7Title == null && data.parent6Title != null) {
-                        $("#ctab6").children('#ct6_title').html(data.parentTitle + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab5").children('#ct5_title').html(data.parent2Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab4").children('#ct4_title').html(data.parent3Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab3").children('#ct3_title').html(data.parent4Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab2").children('#ct2_title').html(data.parent5Title + '<span style="color:#f1f1f1;">d</span>' + '&#62;');
-                        $("#ctab1").children('#ct1_title').html(data.parent6Title);
-                        $("#ctab2").children('#ct2_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(68, 173, 26)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(127, 0, 255)");
-                    }
-                    if (data.parent8Title == null && data.parent7Title != null) {
-                        $("#ctab1").children('#ct1_title').css("color", "rgb(61, 151, 230)");
-                        $("#ctab2").children('#ct2_title').css("color", "rgb(230, 122, 51)");
-                        $("#ctab3").children('#ct3_title').css("color", "rgb(255, 181, 20)");
-                        $("#ctab4").children('#ct4_title').css("color", "rgb(221, 39, 42)");
-                        $("#ctab5").children('#ct5_title').css("color", "rgb(68, 173, 26)");
-                        $("#ctab6").children('#ct6_title').css("color", "rgb(127, 0, 255)");
-                        $("#ctab7").children('#ct7_title').css("color", "rgb(108, 110, 121)");
-                    }
-                }
-            });
-        });
-    });
-
 
 
 
@@ -772,27 +264,7 @@ $(document).ready(function() {
         $(".detail2").not($(this).siblings('.detail2')).hide();
     });
 
-    // different colors  for parents and children
-    // $(".detail3").hide();
-    $(".list_color").children().children().children(".list").css("color", "hsl(208deg 77% 57%)");
-    $(".list_color").children().children().children(".dot2").css("background-color", "hsl(208deg 77% 57%)");
-    $(".list_color").find("ul").children().children().children().children(".list").css("color", "hsl(24deg 78% 55%)");
-    $(".list_color").find("ul").children().children().children().children(".dot2").css("background-color", "hsl(24deg 78% 55%)");
-    $(".list_color").find("ul").find("li").children().children().children().children().children(".list").css("color", "hsl(41deg 100% 54%)");
-    $(".list_color").find("ul").find("li").children().children().children().children().children(".dot2").css("background-color", "hsl(41deg 100% 54%)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".list").css("color", "hsl(359deg 73% 51%)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".dot2").css("background-color", "hsl(359deg 73% 51%)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".list").css("color", "hsl(103deg 74% 39%)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".dot2").css("background-color", "hsl(103deg 74% 39%)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".list").css("color", "rgb(127, 0, 255)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".dot2").css("background-color", "rgb(127, 0, 255)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".list").css("color", "rgb(108, 110, 121)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".dot2").css("background-color", "rgb(108, 110, 121)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".list").css("color", "rgb(255, 0, 255)");
-    $(".list_color").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").find("ul").find("li").children().children().children().children().children(".dot2").css("background-color", "rgb(255, 0, 255)");
-    // ==============================================
-
-    //form submission 
+    //form submission
     $('#treeForm').on('submit', function(e) {
         e.preventDefault();
         $.ajax({

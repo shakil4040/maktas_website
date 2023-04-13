@@ -27,6 +27,54 @@
 .tree ul ul {
     margin-left: .5em
 }
+.level-1 > span  {
+    color: rgb(61, 151, 230);
+}
+.level-1 .dot2  {
+    background-color: rgb(61, 151, 230);
+}
+.level-2 > span {
+    color: rgb(230, 122, 51);
+}
+.level-2  .dot2 {
+    background-color: rgb(230, 122, 51);
+}
+.level-3  > span{
+    color: rgb(255, 181, 20);
+}
+.level-3 .dot2 {
+    background-color: rgb(255, 181, 20);
+}
+.level-4 > span{
+    color: rgb(221, 39, 42);
+}
+.level-4 .dot2{
+    background-color: rgb(221, 39, 42);
+}
+.level-5 > span{
+    color: rgb(68, 173, 26);
+}
+.level-5 .dot2{
+    background-color: rgb(68, 173, 26);
+}
+.level-6 > span{
+    color: rgb(127, 0, 255);
+}
+.level-6 .dot2{
+    background-color: rgb(127, 0, 255);
+}
+.level-7 > span{
+    color: rgb(108, 110, 121);
+}
+.level-7 .dot2{
+    background-color: rgb(108, 110, 121);
+}
+.level-8 > span{
+    color: rgb(255, 0, 255);
+}
+.level-8 .dot2{
+    background-color: rgb(255, 0, 255);
+}
 
 .tree ul:before {
     /* content: ""; */
