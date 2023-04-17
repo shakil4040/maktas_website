@@ -100,24 +100,24 @@
         <h2>Your information</h2>
         <form action="javascript:">
             <div class="left">
-                <fieldset class="mail"><input placeholder="Email address..." type="text"></fieldset>
-                <fieldset class="name"><input placeholder="Name..." type="text"></fieldset>
+                <fieldset class="mail"><input required placeholder="Email address..." type="text"></fieldset>
+                <fieldset class="name"><input required placeholder="Name..." type="text"></fieldset>
                 <fieldset class="subject">
-					<select>
-                        <option>Gender...</option>
+					<select required>
+                        <option value="">Gender...</option>
                         <option>Male</option>
                         <option>Female</option>
                     </select>
 				</fieldset>
-                <fieldset class="name"><input placeholder="Age..." type="number" min="0"></fieldset>
+                <fieldset class="name"><input required placeholder="Age..." type="number" min="0"></fieldset>
             </div>
             <div class="right">
                 <!-- <fieldset class="question"><textarea placeholder="Question..."></textarea></fieldset> -->
-                <fieldset class="name"><input placeholder="Country..." type="text"></fieldset>
-                <fieldset class="name"><input placeholder="City..." type="text"></fieldset>
+                <fieldset class="name"><input required placeholder="Country..." type="text"></fieldset>
+                <fieldset class="name"><input required placeholder="City..." type="text"></fieldset>
                 <fieldset class="subject">
-                    <select>
-                        <option>Category...</option>
+                    <select required>
+                        <option value="">Category...</option>
                         <option>Student</option>
                         <option>Concerned Parent</option>
                         <option>Teacher</option>
@@ -128,8 +128,8 @@
                     </select>
                 </fieldset>
                 <fieldset class="subject">
-                    <select>
-                        <option>Occupation...</option>
+                    <select required>
+                        <option value="">Occupation...</option>
                         <option>Doctor</option>
                         <option>Engineer</option>
                         <option>Lawyer</option>
@@ -150,7 +150,7 @@
     <script>
         $(document).ready(function(){
             $('#enroll').hide();
-            $('#submit').click(function(){
+            $('#student').submit(function(){
                 $('#enroll').show();
                 $('.fancybox-overlay').hide();
                 $('body').removeClass('fancybox-lock')
