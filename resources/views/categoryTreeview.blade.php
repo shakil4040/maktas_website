@@ -552,11 +552,11 @@
                                                 <div class="dot2 d-flex align-items-center">
                                                     @if(count($category->childs))
                                                     <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
-                                                       aria-hidden="true" onclick="getchilds({{ $category->id }}, 1)
+                                                       aria-hidden="true" onclick="getchilds({{ $category->id }}, 1, '{{ $category->title }}')
                                                         "></i>
                                                     @endif
                                                 </div>
-                                                <div
+                                                <div onclick="setParentTitle('{{ $category->title }}')"
                                                     class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
                                                     @if($category->mahol->status == 'Pending')
@@ -616,13 +616,15 @@
     <script src="/js/treeview.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="application/javascript">
-        function getchilds(id, level){
-            $.ajax({
-                url: "/api/get-child/" + id +'/' + level,
-                success: function (data) {
-                    $("#child-" + id).html(data);
-                }
-            });
+        function setParentTitle(title){
+            $("#ct1_title").html(title);
+            $("#ct2_title").html("");
+            $("#ct3_title").html("");
+            $("#ct4_title").html("");
+            $("#ct5_title").html("");
+            $("#ct6_title").html("");
+            $("#ct7_title").html("");
+            $("#ct8_title").html("");
         }
     </script>
 </body>

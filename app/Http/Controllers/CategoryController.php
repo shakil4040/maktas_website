@@ -303,12 +303,25 @@ class CategoryController extends Controller
             ];
             return $data;
     }
-    public function getChild($id, $level)
+    public function getChild($id, $level, $title)
     {
+        $index = 0;
         $tree = Tree::find($id);
         $childs = $tree->childs;
-        $level+=1;
+        $title = urldecode(base64_decode($title));
+        $navigation = Session::get("navigation", []);
+
+        if (isset($navigation[$level][$index])) {
+            $navigation[$level][$index] = $title;
+            for ($i = $level + 1; $i <= 8; $i++) {
+                unset($navigation[$i]);
+            }
+        } else {
+            $navigation[$level][] = $title;
+        }
+        Session::put("navigation", $navigation);
+        $level += 1;
         return view('manageChild',
-            compact('childs', 'level'));
+            compact('childs', 'level', 'navigation'));
     }
 }

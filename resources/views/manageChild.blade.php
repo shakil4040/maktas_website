@@ -6,10 +6,11 @@
                 <div class="dot2 d-flex align-items-center">
                     @if(count($child->childs))
                         <i class="fa fa-plus detail1 iicon " id="{{ $child->id }}"
-                           aria-hidden="true" onclick="getchilds({{ $child->id }}, {{$level}})"></i>
+                           aria-hidden="true" onclick="getchilds({{ $child->id }}, {{$level}}, '{{ $child->title }}')"></i>
                     @endif
                 </div>
-                <div class="ctitle child list d-flex justify-content-between align-items-center">
+                <div class="ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle
+                    ('{{ $child->title }}', {{ $level }})">
                     {{ $child->title }}
                     @auth('admin')
                         @if(count($child->childs) == null)
@@ -47,5 +48,45 @@
         </li>
     @endforeach
 </ul>
-
-<x></x>
+<script>
+    function setTitle(currentTitle, currentLevel){
+        var navigation = {!! isset($navigation) ? json_encode($navigation) : null !!};
+        var lastLevel = 0;
+        let showNav = true;
+        $("#ct1_title,#ct2_title,#ct3_title,#ct4_title,#ct5_title,#ct6_title,#ct7_title,#ct8_title").html("");
+        for (var level in navigation) {
+            if (navigation.hasOwnProperty(level)) {
+                var items = navigation[level];
+                for (var index in items) {
+                    if (items.hasOwnProperty(index)) {
+                        var title = items[index];
+                        let levelCount = parseInt(level);
+                        let previousCount = parseInt(level) - 1;
+                        currentLevel = parseInt(currentLevel);
+                        if (
+                            (
+                                currentLevel == level && (title != currentTitle)
+                            ) ||
+                            (
+                                title == currentTitle || title === currentTitle)
+                        ) {
+                            showNav = false;
+                            $("#ct" + levelCount + "_title").html(currentTitle);
+                        } else {
+                            $("#ct" + levelCount + "_title").html(title);
+                        }
+                        if(previousCount >= 0){
+                            $("#ct" + previousCount + "_title").html($("#ct" + previousCount + "_title").html() + ' >');
+                        }
+                    }
+                }
+            }
+            lastLevel =  parseInt(level) + 1;
+        }
+        if(showNav){
+            $("#ct" + lastLevel + "_title").html(currentTitle);
+            previousLevel = lastLevel - 1;
+            $("#ct" + previousLevel + "_title").html($("#ct" + previousLevel + "_title").html() + ' >');
+        }
+    }
+</script>

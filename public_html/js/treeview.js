@@ -308,7 +308,15 @@ $(document).ready(function() {
     // }
 
 });
-
+function getchilds(id, level, title){
+    console.log(title);
+    $.ajax({
+        url: "/get-child/" + id +'/' + level + '/' + btoa(encodeURIComponent(title)),
+        success: function (data) {
+            $("#child-" + id).html(data);
+        }
+    });
+}
 //getting data from cotnroller
 
 
