@@ -28,6 +28,10 @@ Route::post('newvisitor','Api\VisitorsController@submit');
 //     Route::get('/edit/{id}','edit');
 // });
 Route::get('/test/{id}','CategoryController@test');
+Route::get('/phpinfo',function (){
+    phpinfo();
+});
+
 Route::post('add-category','CategoryController@addCategory')->name('add.category');
 Route::post('add-comment','CategoryController@addComment')->name('add.comment');
 Route::patch('/update/{id}','CategoryController@update')->name('update.category');

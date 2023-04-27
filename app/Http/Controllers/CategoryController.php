@@ -61,7 +61,7 @@ class CategoryController extends Controller
         		'title' => 'required',
                 'sr' => 'unique:trees'
         	]);
-        
+
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()->all()]);
         }
@@ -137,7 +137,7 @@ class CategoryController extends Controller
         $mahol->save();
         return response()->json(['success'=>'نئے عنوان کا اندراج ہو گیا ہے']);
     }
-     
+
     }
 
     public function update(Request $request,$id)
@@ -150,7 +150,7 @@ class CategoryController extends Controller
         $validator = Validator::make($request->all(), [
         		'title' => 'required'
         	]);
-        
+
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()->all()]);
         }
@@ -161,7 +161,7 @@ class CategoryController extends Controller
         $tree->update($input);
 
        $detail->update($input);
-       
+
 
         $easy->update($input);
 
@@ -169,7 +169,7 @@ class CategoryController extends Controller
         $mahol->update($input);
         return response()->json(['success'=>' عنوان تبدیل ہو گیا ہے']);
     }
-     
+
     }
 
     public function destroy($id) {
@@ -204,7 +204,7 @@ class CategoryController extends Controller
             return view('treeviewPart',compact('tree','tafseer','detail','easy','yaad','admin','user','userId','memberId','mahol'));
         }
         else {
-            return view('treeviewUser',compact('tree','tafseer','detail','easy','yaad','admin','user','userId','memberId','mahol')); 
+            return view('treeviewUser',compact('tree','tafseer','detail','easy','yaad','admin','user','userId','memberId','mahol'));
         }
     }
 
@@ -242,12 +242,12 @@ class CategoryController extends Controller
         return ;
     }
 
-    public function child($cid) 
+    public function child($cid)
     {
         $childs = Tree::where('parent_id','=', $cid)->get();
         return view('manageChild',compact('childs','cid'));
     }
-    public function nav($id) 
+    public function nav($id)
     {
         $tab = Tree::find($id);
         $sr = $tab['sr'];
@@ -302,5 +302,26 @@ class CategoryController extends Controller
                 'parent8Title' => $parent8Title,
             ];
             return $data;
+    }
+    public function getChild($id, $level, $title)
+    {
+        $index = 0;
+        $tree = Tree::find($id);
+        $childs = $tree->childs;
+        $title = urldecode(base64_decode($title));
+        $navigation = Session::get("navigation", []);
+
+        if (isset($navigation[$level][$index])) {
+            $navigation[$level][$index] = $title;
+            for ($i = $level + 1; $i <= 8; $i++) {
+                unset($navigation[$i]);
+            }
+        } else {
+            $navigation[$level][] = $title;
+        }
+        Session::put("navigation", $navigation);
+        $level += 1;
+        return view('manageChild',
+            compact('childs', 'level', 'navigation'));
     }
 }
