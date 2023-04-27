@@ -36,7 +36,6 @@ Route::get('/tree2',function(){
     return view('tree');
 });
 Route::view('marhabah','Marhabah');
-Route::get('/get-child/{id}/{level}/{title}','CategoryController@getChild');
 Route::get('/tree', 'CategoryController@manageCategory');
 Route::get('/educationist', 'CategoryController@educationist');
 Route::post('add-category','CategoryController@addCategory')->name('add.category');

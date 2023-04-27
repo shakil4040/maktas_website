@@ -546,17 +546,15 @@
                             @foreach($categories as $category)
                             <div class="row">
                                 <div class="col-md-12">
-                                    <li title="{{ $category->title }}" class="list_color level-1">
+                                    <li title="{{ $category->title }}" class="list_color">
                                         <span class="detail1">
                                             <div class="d-flex align-items-center">
                                                 <div class="dot2 d-flex align-items-center">
                                                     @if(count($category->childs))
-                                                    <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
-                                                       aria-hidden="true" onclick="getchilds({{ $category->id }}, 1, '{{ $category->title }}')
-                                                        "></i>
+                                                    <i class="fa fa-plus detail1 iicon" aria-hidden="true"></i>
                                                     @endif
                                                 </div>
-                                                <div onclick="setParentTitle('{{ $category->title }}')"
+                                                <div
                                                     class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
                                                     @if($category->mahol->status == 'Pending')
@@ -596,8 +594,7 @@
                                             </div>
                                         </span>
                                         @if(count($category->childs))
-                                        <div class="child-div" id="child-{{ $category->id }}">
-                                        </div>
+                                        @include('manageChild',['childs' => $category->childs])
                                         @endif
                                     </li>
                                 </div>
@@ -615,18 +612,6 @@
     </div>
     <script src="/js/treeview.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="application/javascript">
-        function setParentTitle(title){
-            $("#ct1_title").html(title);
-            $("#ct2_title").html("");
-            $("#ct3_title").html("");
-            $("#ct4_title").html("");
-            $("#ct5_title").html("");
-            $("#ct6_title").html("");
-            $("#ct7_title").html("");
-            $("#ct8_title").html("");
-        }
-    </script>
 </body>
 
 </html>

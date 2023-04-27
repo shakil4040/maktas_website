@@ -27,54 +27,6 @@
 .tree ul ul {
     margin-left: .5em
 }
-.level-1 > span  , #ct1_title{
-    color: rgb(61, 151, 230);
-}
-.level-1 .dot2  {
-    background-color: rgb(61, 151, 230);
-}
-.level-2 > span , #ct2_title{
-    color: rgb(230, 122, 51);
-}
-.level-2  .dot2 {
-    background-color: rgb(230, 122, 51);
-}
-.level-3  > span, #ct3_title{
-    color: rgb(255, 181, 20);
-}
-.level-3 .dot2 {
-    background-color: rgb(255, 181, 20);
-}
-.level-4 > span, #ct4_title{
-    color: rgb(221, 39, 42);
-}
-.level-4 .dot2{
-    background-color: rgb(221, 39, 42);
-}
-.level-5 > span, #ct5_title{
-    color: rgb(68, 173, 26);
-}
-.level-5 .dot2{
-    background-color: rgb(68, 173, 26);
-}
-.level-6 > span , #ct6_title{
-    color: rgb(127, 0, 255);
-}
-.level-6 .dot2{
-    background-color: rgb(127, 0, 255);
-}
-.level-7 > span, #ct7_title{
-    color: rgb(108, 110, 121);
-}
-.level-7 .dot2{
-    background-color: rgb(108, 110, 121);
-}
-.level-8 > span, #ct8_title{
-    color: rgb(255, 0, 255);
-}
-.level-8 .dot2{
-    background-color: rgb(255, 0, 255);
-}
 
 .tree ul:before {
     /* content: ""; */
@@ -325,7 +277,7 @@
 .navigation_bar {
     width: 100%;
     position: fixed;
-    /*height: 47px;*/
+    height: 47px;
     right: 14px;
     background-color: #f1f1f1;
     padding: 8px;
