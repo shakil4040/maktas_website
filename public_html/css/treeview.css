@@ -634,10 +634,7 @@ input {
     font-size: 19px;
 }
 
-.tooltip1 {
-    position: relative;
-    overflow: visible;
-}
+
 
 .tooltip1 .tooltiptext {
     visibility: hidden;
@@ -670,6 +667,10 @@ input {
 
 .tooltip1:hover .tooltiptext {
     visibility: visible;
+}
+.tooltips {
+    position: relative;
+    overflow: visible;
 }
 
 .tooltip2 .tooltiptext2 {
@@ -718,7 +719,7 @@ input {
     width: 59%;
     top: 55px;
     right: 134px;
-    z-index: 101;
+    z-index: -1;
     box-shadow: 0px 0px 14px 2px #10654e;
 }
 

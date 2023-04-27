@@ -6,87 +6,243 @@
         <div class="title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->qaida }}"><span class="unwanat">قاعدہ:</span><span
-                    class="qaida">{{ $easy->qaida }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    قاعدہ:
+                    <span class="tooltiptext">
+                        وہ باتیں جو اصول کی حیثیت رکھتی ہیں۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="qaida">{{ $easy->qaida }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->qaida }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="ltopic d-flex align-items-center">
+        <div class="ltopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="mr-2 wazahat" title="{{ $detail->detail }}"><span class="unwanat">مختصر وضاحت:</span><span
-                    class="mukhtasar">{{ $detail->detail }}</span></div>
+            <div class="wazahat mr-2">
+                <span class="unwanat tooltip1">
+                    مختصر وضاحت:
+                    <span class="tooltiptext">
+                        مذکور عنوان کو ایسے چند الفاظ کے ساتھ تعبیر کرنا کہ عنوان سمجھ میں آجائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="mukhtasar">{{ $detail->detail }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->detail }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->taleem }}"><span class="unwanat">تعلیم:</span><span
-                    class="taleem">{{ $easy->taleem }}</span></div>
-        </div>
-    </div>
-    <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
-            <div class="dot">
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    تعلیم:
+                    <span class="tooltiptext">
+                        اس سے مقصود یہ ہے کہ مذکور بات کا تعلق علم سے ہے یا عمل سے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="taleem">{{ $easy->taleem }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->taleem }} سے
+                        ہے۔
+                    </span>
+                </span>
             </div>
-            <div class="tabs mr-2" title="{{ $easy->rahe_adal }}"><span class="unwanat">راہِ عدل:</span><span
-                    class="adal">{{ $easy->rahe_adal }}</span></div>
-        </div>
-        <div class="ltopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="mr-2 wazahat" title="{{ $yaad->hawala }}"><span class="unwanat">حوالہ:</span><span
-                    class="easy->">{{ $yaad->hawala }}</span></div>
-        </div>
-        <div class="stopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2" title="{{ $easy->amli_mashq }}"><span class="unwanat">عملی
-                    :</span><span>{{ $easy->amli_mashq }}</span></div>
-        </div>
-    </div>
-    <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2" title="{{ $easy->hukam }}"><span class="unwanat">حکم:</span><span
-                    class="hukam">{{ $easy->hukam }}</span></div>
-        </div>
-        <div class="ltopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="mr-2 wazahat" title="{{ $easy->easy }}"><span
-                    class="unwanat">تسہیل:</span><span>{{ $easy->easy }}</span></div>
-        </div>
-        <div class="stopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2" title="{{ $yaad->yad_dehani }}"><span class="unwanat">یاد
-                    دہانی:</span><span>{{ $yaad->yad_dehani }}</span></div>
-        </div>
-    </div>
-    <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2" title="{{ $easy->mukhatab }}"><span
-                    class="unwanat">مخاطب:</span><span>{{ $easy->mukhatab }}</span></div>
-        </div>
-        <div class="ltopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="mr-2 wazahat" title="{{ $easy->rafe_ishkal }}"><span class="unwanat">رفعِ
-                    اشکال:</span><span>{{ $easy->rafe_ishkal }}</span></div>
-        </div>
-        <div class="stopic d-flex align-items-center">
-            <div class="dot">
-            </div>
-            <div class="tabs mr-2" title="{{ $yaad->kitni_takrar }}"><span class="unwanat">کتنی
-                    تکرار:</span><span>{{ $yaad->kitni_takrar }}</span></div>
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    راہِ عدل:
+                    <span class="tooltiptext">
+                        اس کا مقصد یہ بتانا ہے کہ مذکورہ بات کا مرتبہ کیا ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="adal">{{ $easy->rahe_adal }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->rahe_adal }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="ltopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="wazahat mr-2">
+                <span class="unwanat tooltip1">
+                    حوالہ:
+                    <span class="tooltiptext">
+                        اس میں یہ بتایا گیا ہےکہ مختصر وضاحت میں مذکور بات کہاں سے لی گئی ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="easy">{{ $yaad->hawala }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->hawala }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="stopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    عملی:
+                    <span class="tooltiptext">
+                        اس کا مقصد یہ بتانا ہے کہ مذکور عملی بات کا تعلق مشق سے ہے یا نہیں۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="">{{ $easy->amli_mashq }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->amli_mashq }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="d-xl-flex justify-content-between">
+        <div class="stopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    حکم:
+                    <span class="tooltiptext">
+                        اس کا مقصد یہ بتانا ہے کہ مختصر وضاحت میں مذکور بات کی حیثیت کیا ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="hukam">{{ $easy->hukam }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->hukam }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="ltopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="wazahat mr-2">
+                <span class="unwanat tooltip1">
+                    تسہیل:
+                    <span class="tooltiptext">
+                        یہاں پر مختصر وضاحت میں مذکور بات ضرورت پڑنے پرآسان انداز میں بیان کی گئی ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="">{{ $easy->easy }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->easy }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="stopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    یاد دہانی:
+                    <span class="tooltiptext">
+                        اس کا مقصد یہ بتانا ہے کہ مذکور علمی یا عملی بات ایک بار پڑھائی جائے یا بار بار۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    <span class="">{{ $yaad->yad_dehani }}</span>
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->yad_dehani }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="d-xl-flex justify-content-between">
+        <div class="stopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    مخاطب:
+                    <span class="tooltiptext">
+                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کس کے لیے ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->mukhatab }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->mukhatab }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="ltopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="wahahat mr-2">
+                <span class="unwanat tooltip1">
+                    رفعِ اشکال:
+                    <span class="tooltiptext">
+                        اس کا مقصد مذکور بات پر ہونے والے اشکال کو دور کرنا ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->rafe_ishkal }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->rafe_ishkal }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="stopic d-flex align-items-center tooltips">
+            <div class="dot">
+            </div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    کتنی تکرار:
+                    <span class="tooltiptext">
+                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کتنی مرتبہ دہرائی جائے گی۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $yaad->kitni_takrar }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->kitni_takrar }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="d-xl-flex justify-content-between">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
             <div class="tabs mr-2" title="{{ $easy->jins }}"><span
@@ -106,91 +262,250 @@
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->hasiat }}"><span
-                    class="unwanat">حیثیت:</span><span>{{ $easy->hasiat }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    حیثیت:
+                    <span class="tooltiptext">
+                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کو تعلق انفرادی عمل سے ہے یا اجتماعی سے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->hasiat }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->hasiat }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="ltopic d-flex align-items-center">
+        <div class="ltopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="mr-2 wazahat" title="{{ $easy->tamheed_khas }}"><span class="unwanat">تمہیدِ
-                    خاص:</span><span>{{ $easy->tamheed_khas }}</span></div>
+            <div class="wazahat mr-2">
+                <span class="unwanat tooltip1">
+                    تمہید خاص:
+                    <span class="tooltiptext">
+                        اس میں وہ بات ذکر کی جائے گی جو مذکور عنوان سے پہلے پڑھانا ضروری ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->tamheed_khas }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->tamheed_khas }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $yaad->shaz }}"><span class="unwanat">شاذ
-                    مسائل:</span><span>{{ $yaad->shaz }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    شاذ مسائل:
+                    <span class="tooltiptext">
+                        وہ مسائل جن کی عمومی طور پر ضرورت نہیں ہوتی۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $yaad->shaz }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->shaz }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
+
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->shoba }}"><span
-                    class="unwanat">شعبہ:</span><span>{{ $easy->shoba }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    شعبہ:
+                    <span class="tooltiptext">
+                    اس کا مقصد یہ بتانا ہے کہ مذکور بات کس پیشے سے تعلق رکھتی ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->shoba }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->shoba }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="ltopic d-flex align-items-center">
+        <div class="ltopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="mr-2 wazahat" title="{{ $easy->area }}"><span
-                    class="unwanat">علاقہ:</span><span>{{ $easy->area }}</span></div>
+            <div class="wazahat mr-2">
+                <span class="unwanat tooltip1">
+                    علاقہ:
+                    <span class="tooltiptext">
+                    اس کا مقصد یہ بتانا ہے کہ مذکور بات کا تعلق کس علاقے سے ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->area }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->area }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $detail->age_sr }}"><span class="unwanat">بلحاظ
-                    عمر:</span><span>{{ $detail->age_sr }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                    بلحاظِ عمر:
+                    <span class="tooltiptext">
+                    اس خانے میں عمر کے لحاظ سے عنوانات کا نمبر شمار درج کیا گیا ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $detail->age_sr }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->age_sr }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $detail->age }}"><span
-                    class="unwanat">عمر:</span><span>{{ $detail->age }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                 عمر:
+                    <span class="tooltiptext">
+                    اس خانے وہ عمر درج کی گئی ہے جس میں مذکور عنوان پڑھایا جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $detail->age }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->age }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="ltopic d-flex align-items-center">
+        <div class="ltopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="mr-2 wazahat" title="{{ $easy->muharik }}"><span class="unwanat">محرکات و نظریات:</span><span
-                    class="muharik">{{ $easy->muharik }}</span></div>
+            <div class="wazahat mr-2">
+                <span class="unwanat tooltip1">
+                 محرکات و نظریات:
+                    <span class="tooltiptext">
+                    اس عنوان سے مراد وہ عقائد و نظریات ہیں جن کو بنیاد بنا کر انسان عمل کرتا ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->muharik }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->muharik }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $detail->course_no }}"><span class="unwanat">نصابی
-                    نمبر:</span><span>{{ $detail->course_no }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                 نصابی نمبر:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ نمبر شمار ذکر کیا گیا ہے جس سے نصاب بنانے میں مدد حاصل کی جاسکتی ہے ۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $detail->course_no }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->course_no }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->class }}"><span
-                    class="unwanat">جماعت:</span><span>{{ $easy->class }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                 جماعت:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ جماعت درج کی گئی ہے جس میں مذکور عنوان پڑھانا چاہیے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->class }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->class }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
         <div class="ltopic mahol d-flex align-items-center">
+            <div class="frame" style="height: 166px;top: 383px;">
 
+            </div>
             <div class="mr-2 wazahat" title="{{ $easy->muharik }}">
                 <span>{{ 'نیک صحبت میں ماحول مہیا کرنا ' }}</span>
             </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $tree->sr }}"><span class="unwanat">نمبر
-                    شمار:</span><span>{{ $tree->sr }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                 نمبر شمار:
+                    <span class="tooltiptext">
+                    اس خانے میں عنوانات کے مطابق نمبر شمار درج کیا گیا ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $tree->sr }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $tree->sr }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $yaad->ahwal }}"><span
-                    class="unwanat">احوال:</span><span>{{ $yaad->ahwal }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                 احوال:
+                    <span class="tooltiptext">
+                    اس خانے میں ان لوگوں کا ذکر کیا جائے جن کے حالات خاص ہیں۔مثلاً گونکا ،بہرہ وغیرہ۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $yaad->ahwal }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->ahwal }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
         <div class="stopic smahol d-flex align-items-center">
             <div class="dot">

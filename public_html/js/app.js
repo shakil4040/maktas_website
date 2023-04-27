@@ -25081,11 +25081,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "form"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "info"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "red"
-}, "Audio visual - Learning material inflow would start")])], -1 /* HOISTED */);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div><div class=\"info\"><div class=\"red\">Audio visual - Learning material inflow would start</div><div class=\"alert text-center\" style=\"border-top:unset;\"><img src=\"/assets/images/AVLA1.jpg\" alt=\"\"><img src=\"/assets/images/AVLA2.jpg\" alt=\"\"><img src=\"/assets/images/AVLA3.jpg\" alt=\"\"><img src=\"/assets/images/AVLA4.jpg\" alt=\"\"></div></div></div>", 1);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);

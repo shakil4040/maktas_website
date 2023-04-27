@@ -171,6 +171,7 @@
                             <span class="tooltiptext2">علم و عمل میں عوام سے آگے ہوں لیکن اس درجے میں نہیں کہ عوام ان
                                 کی اقتداء کرے۔ </span>
                         @endif
+                        
                         @if($easy->mukhatab == 'مقتداء')
                             <span class="tooltiptext2">جو متبع شریعت اور متبع سنت اس درجے میں ہوں کہ عوام ان کی اتباع
                                 کرکے گمراہ نہ ہوں۔ </span>
@@ -210,7 +211,7 @@
     </div>
     <div class="d-xl-flex flex-wrap justify-content-between">
         <div class="ltopic mahol d-flex align-items-center justify-content-center">
-
+            
             <div>
                 <span>{{ 'نیک صحبت میں درج ذیل کا ماحول مہیا کرنا ' }}</span>
             </div>
