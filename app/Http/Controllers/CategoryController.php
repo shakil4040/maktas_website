@@ -305,21 +305,9 @@ class CategoryController extends Controller
     }
     public function getChild($id, $level, $title)
     {
-        $index = 0;
         $tree = Tree::find($id);
         $childs = $tree->childs;
-        $title = urldecode(base64_decode($title));
-        $navigation = Session::get("navigation", []);
-
-        if (isset($navigation[$level][$index])) {
-            $navigation[$level][$index] = $title;
-            for ($i = $level + 1; $i <= 8; $i++) {
-                unset($navigation[$i]);
-            }
-        } else {
-            $navigation[$level][] = $title;
-        }
-        Session::put("navigation", $navigation);
+        $navigation = urldecode(base64_decode($title));
         $level += 1;
         return view('manageChild',
             compact('childs', 'level', 'navigation'));
