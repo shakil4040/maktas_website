@@ -245,14 +245,41 @@
         <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->jins }}"><span
-                    class="unwanat">جنس:</span><span>{{ $easy->jins }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                جنس:
+                    <span class="tooltiptext">
+                    اس خانے میں یہ ذکر کیا گیا ہے کہ مذکور عنوان کا تعلق مرد سے ہے یا عورت سے یا ہر جنس سے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->jins }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->jins }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="ltopic d-flex align-items-center">
+        <div class="ltopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="mr-2 wazahat" title="{{ $easy->husool }}"><span class="unwanat">حصول کا
-                    طریقہ:</span><span>{{ $easy->husool }}</span></div>
+            <div class="hukam mr-2">
+                <span class="unwanat tooltip1">
+                حصول کا
+                    طریقہ:
+                    <span class="tooltiptext">
+                        اس خانے یں یہ ذکر کیا گیا ہے کہ مذکور بات کو حاصل کرنے کا طریقہ کیا ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->husool }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->husool }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
         <div class="stopic d-flex align-items-center">
             <div class="dot">
