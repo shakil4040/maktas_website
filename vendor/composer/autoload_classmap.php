@@ -38,6 +38,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Imports\\TreeDataImport' => $baseDir . '/app/Imports/TreeDataImport.php',
     'App\\Mail\\AddMail' => $baseDir . '/app/Mail/AddMail.php',
     'App\\Mail\\DeleteMail' => $baseDir . '/app/Mail/DeleteMail.php',
     'App\\Mail\\EditMail' => $baseDir . '/app/Mail/EditMail.php',
