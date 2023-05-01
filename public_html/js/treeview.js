@@ -326,10 +326,18 @@ function getchilds(id, level, title){
 
 //comparison navigation bar
 
-$(".list_color").children().children().children(".list").each(function() {
+$(".list_color1").children().children().children(".list").each(function() {
     var title = $(this).text();
     var id = $(this).siblings('.cid').text();
     $(this).click(function() {
+        $('#ct1_title').html("");
+        $('#ct2_title').html("");
+        $('#ct3_title').html("");
+        $('#ct4_title').html("");
+        $('#ct5_title').html("");
+        $('#ct6_title').html("");
+        $('#ct7_title').html("");
+        $('#ct8_title').html("");
         $("#ctab7").children('#ct7_title').html(title);
         $.ajax({
             url: "/api/nav/" + id,
