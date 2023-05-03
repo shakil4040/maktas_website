@@ -13,7 +13,7 @@
                 <span class="unwanat tooltip1">
                     قاعدہ:
                     <span class="tooltiptext">
-                        وہ باتیں جو اصول کی حیثیت رکھتی ہیں۔
+                    یہ خانہ  رہنمائی کرتا ہے کہ اس اصول کا اطلاق ہر جگہ  ہوسکتا   ہے یا  کہیں کہیں۔
                     </span>
                 </span>
                 <span class="tooltip2">
@@ -209,7 +209,7 @@
                 <span class="unwanat tooltip1">
                     رفعِ اشکال:
                     <span class="tooltiptext">
-                        اس کا مقصد مذکور بات پر ہونے والے اشکال کو دور کرنا ہے۔
+                        اس کا مقصد مذکور بات پر ہونے والے ممکنہ اشکال کو دور کرنا ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
@@ -228,7 +228,7 @@
                 <span class="unwanat tooltip1">
                     کتنی تکرار:
                     <span class="tooltiptext">
-                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کتنی مرتبہ دہرائی جائے گی۔
+                    اس کا مقصد یہ بتانا ہے کہ مذکوربات کتنی مرتبہ مختلف طریقوں سے پڑھائی جائے گی۔
                     </span>
                 </span>
                 <span class="tooltip2">
@@ -281,11 +281,24 @@
                 </span>
             </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $yaad->revision }}"><span
-                    class="unwanat">دہرائی:</span><span>{{ $yaad->revision }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                دہرائی:
+                    <span class="tooltiptext">
+                    اس خانے میں یہ ذکر گیا ہے کہ مذکور بات کی دہرائی ضروری ہے یا نہیں۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $yaad->revision }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->revision }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
@@ -296,7 +309,7 @@
                 <span class="unwanat tooltip1">
                     حیثیت:
                     <span class="tooltiptext">
-                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کو تعلق انفرادی عمل سے ہے یا اجتماعی سے۔
+                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کا تعلق انفرادی عمل سے ہے یا اجتماعی سے۔
                     </span>
                 </span>
                 <span class="tooltip2">
@@ -315,7 +328,7 @@
                 <span class="unwanat tooltip1">
                     تمہید خاص:
                     <span class="tooltiptext">
-                        اس میں وہ بات ذکر کی جائے گی جو مذکور عنوان سے پہلے پڑھانا ضروری ہے۔
+                    اس خانے میں وہ بات ذکر کی گئی ہے جو  مذکور عنوان سے پہلے پڑھانا ضروری ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
@@ -522,7 +535,7 @@
                 <span class="unwanat tooltip1">
                  احوال:
                     <span class="tooltiptext">
-                    اس خانے میں ان لوگوں کا ذکر کیا جائے جن کے حالات خاص ہیں۔مثلاً گونکا ،بہرہ وغیرہ۔
+                    اس خانے میں ان لوگوں کا ذکر کیا گیا ہےجن کے حالات خاص ہیں۔مثلاً گونکا ،بہرہ وغیرہ۔
                     </span>
                 </span>
                 <span class="tooltip2">
@@ -534,93 +547,275 @@
                 </span>
             </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->sunana }}"><span
-                    class="unwanat">سنانا:</span><span>{{ $mahol->sunana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                سنانا:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سنائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->sunana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->sunana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->kehalwana }}"><span
-                    class="unwanat">کہلوانا:</span><span>{{ $mahol->kehalwana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                کہلوانا:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کہلوائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->kehalwana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->kehalwana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->dekhana }}"><span
-                    class="unwanat">دکھانا:</span><span>{{ $mahol->dekhana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                دکھانا:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات دکھائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->dekhana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->dekhana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $detail->abrar_id }}"><span
-                    class="unwanat">اح:</span><span>{{ $detail->abrar_id }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                اح:
+                    <span class="tooltiptext">
+                    اس خانےمیں مولانا ابرار صاحب کی فائل کی آئی ڈی  درج کی گئی ہے۔ 
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $detail->abrar_id }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->abrar_id }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->zamana }}"><span
-                    class="unwanat">زمانہ:</span><span>{{ $easy->zamana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                زمانہ:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ زمانہ آئے گا جس کے ساتھ مذکور بات کا تعلق ہے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->zamana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->zamana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->mashq }}"><span
-                    class="unwanat">مشق:</span><span>{{ $mahol->mashq }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                مشق:
+                    <span class="tooltiptext">
+                    اس خانےمیں وہ عمر درج کی گئی ہے جس میں مذکور بات کی مشق کرائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->mashq }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->mashq }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->batana }}"><span
-                    class="unwanat">بتانا:</span><span>{{ $mahol->batana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                بتانا:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات بتائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->batana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->batana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->sikhana }}"><span
-                    class="unwanat">سکھانا:</span><span>{{ $mahol->sikhana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                سکھانا:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سکھائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->sikhana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->sikhana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $detail->asif_id }}"><span
-                    class="unwanat">آص:</span><span>{{ $detail->asif_id }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                آص:
+                    <span class="tooltiptext">
+                    اس خانےمیں مولانا ابرار صاحب کی فائل کی آئی ڈی  درج کی گئی ہے۔ 
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $detail->asif_id }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->asif_id }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
     <div class="d-xl-flex justify-content-between">
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $easy->taluq }}"><span class="unwanat">تعلق:</span><span
-                    class="taluq">{{ $easy->taluq }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                تعلق:
+                    <span class="tooltiptext">
+                    اس خانے میں یہ بتایا گیا ہے کہ مذکور بات کا تعلق ظاہر سے ہے یا باطن سے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $easy->taluq }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->taluq }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->adat }}"><span
-                    class="unwanat">عادت:</span><span>{{ $mahol->adat }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                عادت:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کی عادت ڈالی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->adat }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->adat }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->samjhana }}"><span
-                    class="unwanat">سمجھانا:</span><span>{{ $mahol->samjhana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                سمجھانا:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سمجھائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->samjhana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->samjhana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic smahol d-flex align-items-center">
+        <div class="stopic smahol d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $mahol->parhana }}"><span
-                    class="unwanat">پڑھانا:</span><span>{{ $mahol->parhana }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                پڑھانا:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سنائی جائے۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $mahol->parhana }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->parhana }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
-        <div class="stopic d-flex align-items-center">
+        <div class="stopic d-flex align-items-center tooltips">
             <div class="dot">
             </div>
-            <div class="tabs mr-2" title="{{ $tree->id }}"><span class="unwanat">آئی
-                    ڈی:</span><span>{{ $tree->id }}</span></div>
+            <div class="tabs mr-2">
+                <span class="unwanat tooltip1">
+                آئی ڈی:
+                    <span class="tooltiptext">
+                    اس خانے میں وہ آئی ڈی آئےگی جو websiteخود بنائے گی۔
+                    </span>
+                </span>
+                <span class="tooltip2">
+                    {{ $tree->id }}
+                    <span class="tooltiptext2">
+                        مختصر وضاحت میں مذکور بات کا تعلق {{ $tree->id }} سے
+                        ہے۔
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
     <div class="d-flex justify-content-between align-items-center">
