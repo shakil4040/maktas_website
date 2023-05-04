@@ -47,7 +47,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["bunyadi_unwan"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["bunyadi_unwan"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => 0,
@@ -57,7 +57,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["zayal_unwan_1"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["zayal_unwan_1"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => $keyValueArray[$row["bunyadi_unwan"]],
@@ -67,7 +67,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["zayal_unwan_2"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["zayal_unwan_2"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => $keyValueArray[$row["zayal_unwan_1"]],
@@ -77,7 +77,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["zayal_unwan_3"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["zayal_unwan_3"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => $keyValueArray[$row["zayal_unwan_2"]],
@@ -87,7 +87,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["zayal_unwan_4"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["zayal_unwan_4"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => $keyValueArray[$row["zayal_unwan_3"]],
@@ -97,7 +97,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["zayal_unwan_5"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["zayal_unwan_5"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => $keyValueArray[$row["zayal_unwan_4"]],
@@ -107,7 +107,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["zayal_unwan_6"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["zayal_unwan_6"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => $keyValueArray[$row["zayal_unwan_5"]],
@@ -117,7 +117,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $keyValueArray[$row["zayal_unwan_61"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
                             'id' => $count,
-                            'sr' => $value,
+                            'sr' => $row["oyb_say_nmbr_shmar"],
                             'title' => $row["zayal_unwan_61"],
                             'government_com' => $row["government_com"] ?? 0,
                             'parent_id' => $keyValueArray[$row["zayal_unwan_6"]],
