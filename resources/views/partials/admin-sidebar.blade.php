@@ -7,6 +7,7 @@
                 <li><a href="/admin-profile">Profile</a></li>
                 <li><a href="/register/member">Add Member</a></li>
                 <li><a href="/members">Members</a></li>
+                <li><a href="/upload">Upload File</a></li>
                 <!-- <li><a href="/consignments/create ">Add Consignment</a></li>
                 <li><a href="/consignments ">Consignments</a></li> -->
             </ul>
