@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\TreeDataImport;
-use Illuminate\Http\Request;
+use App\Models\Easy;
+use App\Models\Tree;
+use App\Models\Yaad;
 use App\Models\Admin;
+use App\Models\Mahol;
+use App\Models\Detail;
 use App\Models\Member;
+use Illuminate\Http\Request;
+use App\Imports\TreeDataImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -41,6 +46,11 @@ class AdminController extends Controller
 
     public function uploadFile(Request $request)
     {
+        Tree::truncate();
+        Detail::truncate();
+        Easy::truncate();
+        Mahol::truncate();
+        Yaad::truncate();
         ini_set('max_execution_time', 3600);
         $this->validate($request, [
             'file' => 'required'
