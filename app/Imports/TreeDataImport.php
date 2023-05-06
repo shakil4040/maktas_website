@@ -36,13 +36,6 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
             foreach ($array as $index => $row) {//dd($row);
                 foreach ($row as $key => $value) {
                     $row["bunyadi_unwan"] = isset($row["bunyadi_unwan"]) ? trim($row["bunyadi_unwan"]) : null;
-                    $row["zayal_unwan_1"] = isset($row["zayal_unwan_1"]) ? trim($row["zayal_unwan_1"]) : null;
-                    $row["zayal_unwan_2"] = isset($row["zayal_unwan_2"]) ? trim($row["zayal_unwan_2"]) : null;
-                    $row["zayal_unwan_3"] = isset($row["zayal_unwan_3"]) ? trim($row["zayal_unwan_3"]) : null;
-                    $row["zayal_unwan_4"] = isset($row["zayal_unwan_4"]) ? trim($row["zayal_unwan_4"]) : null;
-                    $row["zayal_unwan_5"] = isset($row["zayal_unwan_5"]) ? trim($row["zayal_unwan_5"]) : null;
-                    $row["zayal_unwan_6"] = isset($row["zayal_unwan_6"]) ? trim($row["zayal_unwan_6"]) : null;
-                    $row["zayal_unwan_61"] = isset($row["zayal_unwan_61"]) ? trim($row["zayal_unwan_61"]) : null;
                     if (isset($row["bunyadi_unwan"]) && !key_exists($row["bunyadi_unwan"], $keyValueArray)) {
                         $keyValueArray[$row["bunyadi_unwan"]] = $row["oyb_say_nmbr_shmar"];
                         $treeArray[] = [
@@ -53,75 +46,25 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                             'parent_id' => 0,
                         ];
                     }
-                    if (isset($row["zayal_unwan_1"]) && !key_exists($row["zayal_unwan_1"], $keyValueArray)) {
-                        $keyValueArray[$row["zayal_unwan_1"]] = $row["oyb_say_nmbr_shmar"];
-                        $treeArray[] = [
-                            'id' => $count,
-                            'sr' => $row["oyb_say_nmbr_shmar"],
-                            'title' => $row["zayal_unwan_1"],
-                            'government_com' => $row["government_com"] ?? 0,
-                            'parent_id' => $keyValueArray[$row["bunyadi_unwan"]],
-                        ];
-                    }
-                    if (isset($row["zayal_unwan_2"]) && !key_exists($row["zayal_unwan_2"], $keyValueArray)) {
-                        $keyValueArray[$row["zayal_unwan_2"]] = $row["oyb_say_nmbr_shmar"];
-                        $treeArray[] = [
-                            'id' => $count,
-                            'sr' => $row["oyb_say_nmbr_shmar"],
-                            'title' => $row["zayal_unwan_2"],
-                            'government_com' => $row["government_com"] ?? 0,
-                            'parent_id' => $keyValueArray[$row["zayal_unwan_1"]],
-                        ];
-                    }
-                    if (isset($row["zayal_unwan_3"]) && !key_exists($row["zayal_unwan_3"], $keyValueArray)) {
-                        $keyValueArray[$row["zayal_unwan_3"]] = $row["oyb_say_nmbr_shmar"];
-                        $treeArray[] = [
-                            'id' => $count,
-                            'sr' => $row["oyb_say_nmbr_shmar"],
-                            'title' => $row["zayal_unwan_3"],
-                            'government_com' => $row["government_com"] ?? 0,
-                            'parent_id' => $keyValueArray[$row["zayal_unwan_2"]],
-                        ];
-                    }
-                    if (isset($row["zayal_unwan_4"]) && !key_exists($row["zayal_unwan_4"], $keyValueArray)) {
-                        $keyValueArray[$row["zayal_unwan_4"]] = $row["oyb_say_nmbr_shmar"];
-                        $treeArray[] = [
-                            'id' => $count,
-                            'sr' => $row["oyb_say_nmbr_shmar"],
-                            'title' => $row["zayal_unwan_4"],
-                            'government_com' => $row["government_com"] ?? 0,
-                            'parent_id' => $keyValueArray[$row["zayal_unwan_3"]],
-                        ];
-                    }
-                    if (isset($row["zayal_unwan_5"]) && !key_exists($row["zayal_unwan_5"], $keyValueArray)) {
-                        $keyValueArray[$row["zayal_unwan_5"]] = $row["oyb_say_nmbr_shmar"];
-                        $treeArray[] = [
-                            'id' => $count,
-                            'sr' => $row["oyb_say_nmbr_shmar"],
-                            'title' => $row["zayal_unwan_5"],
-                            'government_com' => $row["government_com"] ?? 0,
-                            'parent_id' => $keyValueArray[$row["zayal_unwan_4"]],
-                        ];
-                    }
-                    if (isset($row["zayal_unwan_6"]) && !key_exists($row["zayal_unwan_6"], $keyValueArray)) {
-                        $keyValueArray[$row["zayal_unwan_6"]] = $row["oyb_say_nmbr_shmar"];
-                        $treeArray[] = [
-                            'id' => $count,
-                            'sr' => $row["oyb_say_nmbr_shmar"],
-                            'title' => $row["zayal_unwan_6"],
-                            'government_com' => $row["government_com"] ?? 0,
-                            'parent_id' => $keyValueArray[$row["zayal_unwan_5"]],
-                        ];
-                    }
-                    if (isset($row["zayal_unwan_61"]) && !key_exists($row["zayal_unwan_61"], $keyValueArray)) {
-                        $keyValueArray[$row["zayal_unwan_61"]] = $row["oyb_say_nmbr_shmar"];
-                        $treeArray[] = [
-                            'id' => $count,
-                            'sr' => $row["oyb_say_nmbr_shmar"],
-                            'title' => $row["zayal_unwan_61"],
-                            'government_com' => $row["government_com"] ?? 0,
-                            'parent_id' => $keyValueArray[$row["zayal_unwan_6"]],
-                        ];
+                    $needle   = 'zayalunwan';
+                    if (str_contains($key, $needle)) {
+                        $row[$key] = isset($row[$key]) ? trim($row[$key]) : null;
+                        $data = explode('_', $key);
+                        $parent = "bunyadi_unwan";
+                        if ($data[1] > 1) {
+                            $parent = $data[0].'_'.$data[1] - 1;
+                        }
+
+                        if (isset($row[$key]) && !key_exists($row[$key], $keyValueArray)) {
+                            $keyValueArray[$row[$key]] = $row["oyb_say_nmbr_shmar"];
+                            $treeArray[] = [
+                                'id' => $count,
+                                'sr' => $row["oyb_say_nmbr_shmar"],
+                                'title' => $row[$key],
+                                'government_com' => $row["government_com"] ?? 0,
+                                'parent_id' => $keyValueArray[$row[$parent]],
+                            ];
+                        }
                     }
                     if (isset($row["nsaby_nmbr"]) && $row["nsaby_nmbr"] == "-") {
                         $row["nsaby_nmbr"] = null;
