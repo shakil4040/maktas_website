@@ -3,10 +3,10 @@
         <li class="title={{ $child->title }}  level-{{$level}}">
         <span class="detail1">
             <div class="d-flex align-items-center">
-                <div class="dot2 d-flex align-items-center">
+                <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $child->id }}, {{$level}}, '{{ $child->title }}')">
                     @if(count($child->childs))
                         <i class="fa fa-plus detail1 iicon " id="{{ $child->id }}"
-                           aria-hidden="true" onclick="getchilds({{ $child->id }}, {{$level}}, '{{ $child->title }}')"></i>
+                           aria-hidden="true"></i>
                     @endif
                 </div>
                 <div class="ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle

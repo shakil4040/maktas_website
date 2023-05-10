@@ -549,11 +549,11 @@
                                     <li title="{{ $category->title }}" class="list_color level-1">
                                         <span class="detail1">
                                             <div class="d-flex align-items-center">
-                                                <div class="dot2 d-flex align-items-center">
+                                                <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }}, 1, '{{ $category->title }}')
+                                                    ">
                                                     @if(count($category->childs))
                                                     <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
-                                                       aria-hidden="true" onclick="getchilds({{ $category->id }}, 1, '{{ $category->title }}')
-                                                        "></i>
+                                                       aria-hidden="true" ></i>
                                                     @endif
                                                 </div>
                                                 <div onclick="setParentTitle('{{ $category->title }}')"
