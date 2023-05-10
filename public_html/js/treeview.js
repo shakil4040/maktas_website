@@ -320,7 +320,7 @@ function getchilds(id, level, title){
             }
         });
     } else {
-        $("#child-" + id).remove();
+        $("#child-" + id+ " ul").remove();
     }
 }
 //getting data from cotnroller
