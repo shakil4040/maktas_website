@@ -76,7 +76,7 @@
                             $("#ct" + levelCount + "_title").html(title);
                         }
                         if(previousCount >= 0){
-                            $("#ct" + previousCount + "_title").html($("#ct" + previousCount + "_title").html() + ' >');
+                            $("#ct" + previousCount + "_title").html($("#ct" + previousCount + "_title").html() + '&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;');
                         }
                     }
                 }
@@ -86,7 +86,7 @@
         if(showNav){
             $("#ct" + lastLevel + "_title").html(currentTitle);
             previousLevel = lastLevel - 1;
-            $("#ct" + previousLevel + "_title").html($("#ct" + previousLevel + "_title").html() + ' >');
+            $("#ct" + previousLevel + "_title").html($("#ct" + previousLevel + "_title").html() + '&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;');
         }
     }
 </script>
