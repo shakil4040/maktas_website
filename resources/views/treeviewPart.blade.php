@@ -19,8 +19,18 @@
                 <span class="tooltip2">
                     <span class="qaida">{{ $easy->qaida }}</span>
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->qaida }} سے
-                        ہے۔
+                        @if($easy->qaida == 'کلی')
+                            جو قانون ہر لحاظ سے قابل عمل ہو اس میں تبدیلی کی گنجائش نہ ہو۔
+                        @endif
+                        @if($easy->qaida == 'اکثری')
+                            وہ باتیں جن کو بنیاد بناتے ہوئے زندگی بہتر گزاری جا سکتی ہے۔
+                        @endif
+                        @if($easy->qaida == 'جزوی')
+                        جو اصول جو کہیں کہیں  لگے اس کو جزوی کہتے ہیں۔
+                        @endif
+                        @if($easy->qaida == 'استثنائی')
+                        جس اصول   کی کوئی بات استثنا بنتی ہو وہاں اس کو بیان کرنا 
+                        @endif
                     </span>
                 </span>
             </div>
@@ -38,8 +48,7 @@
                 <span class="tooltip2">
                     <span class="mukhtasar">{{ $detail->detail }}</span>
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->detail }} سے
-                        ہے۔
+                        {{ $detail->detail }}
                     </span>
                 </span>
             </div>
@@ -57,8 +66,12 @@
                 <span class="tooltip2">
                     <span class="taleem">{{ $easy->taleem }}</span>
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->taleem }} سے
-                        ہے۔
+                        @if($easy->taleem == 'علمی')
+                        وہ باتیں جن پر براہ ِراست عمل نہیں ہوسکتا   لیکن عمل تک پہنچنے میں معاون ہوں۔
+                        @endif
+                        @if($easy->taleem == 'عملی')
+                        وہ باتیں جن پر براہ ِراست عمل  ہوسکتا ہے۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -78,8 +91,18 @@
                 <span class="tooltip2">
                     <span class="adal">{{ $easy->rahe_adal }}</span>
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->rahe_adal }} سے
-                        ہے۔
+                        @if($easy->rahe_adal == 'قانوناً')
+                            جو قانون ہر لحاظ سے قابل عمل ہو اس میں تبدیلی کی گنجائش نہ ہو۔
+                        @endif
+                        @if($easy->rahe_adal == 'دیانتاً')
+                            وہ باتیں جن کو بنیاد بناتے ہوئے زندگی بہتر گزاری جا سکتی ہے۔
+                        @endif
+                        @if($easy->rahe_adal == 'جزوی')
+                        جو اصول جو کہیں کہیں  لگے اس کو جزوی کہتے ہیں۔
+                        @endif
+                        @if($easy->rahe_adal == 'استثنائی')
+                        جس اصول   کی کوئی بات استثنا بنتی ہو وہاں اس کو بیان کرنا 
+                        @endif
                     </span>
                 </span>
             </div>
