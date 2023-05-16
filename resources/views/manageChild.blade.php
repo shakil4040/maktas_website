@@ -5,10 +5,13 @@
             <div class="d-flex align-items-center">
                 <div class="dot2 d-flex align-items-center">
                     @if(count($child->childs))
-                    <i class="fa fa-plus detail1 iicon" aria-hidden="true"></i>
+                        <i class="fa fa-plus detail1 iicon " id="{{ $child->id }}"
+                           aria-hidden="true" onclick="getchilds({{ $child->id }}, {{$level}}, '{{ $navigation .",".
+                           $level ."#".  $child->title }}')"></i>
                     @endif
                 </div>
-                <div class="ctitle child list d-flex justify-content-between align-items-center">
+                <div class="ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle
+                    (this)">
                     {{ $child->title }}
                     @auth('admin')
                     @if(count($child->childs) == null)
@@ -28,6 +31,7 @@
                     @endauth
                 </div>
                 <div class="cid d-none">{{ $child->id }}</div>
+                <div class="navigation d-none">{{$navigation .",". $level ."#".  $child->title }}</div>
                 <div class="sr d-none">{{ $child->sr }}</div>
                 <div class="parentId d-none">{{ $child->parent_id }}</div>
                 <div class="admin d-none">{{ auth('admin')->user() }}</div>
@@ -38,10 +42,30 @@
                 @endauth
             </div>
         </span>
-        @if(count($child->childs))
-        @include('manageChild',['childs' => $child->childs])
-        @endif
+            @if(count($child->childs))
+                <div class="child-div" id="child-{{ $child->id }}">
+                </div>
+            @endif
 
     </li>
     @endforeach
 </ul>
+<script>
+    function setTitle(item){
+        $(".nav-title").html("");
+        var navigation = $(item).siblings('.navigation').text();
+        var strArray = navigation.split(",");
+        // Display array values on page
+        for (var i = 0; i < strArray.length; i++) {
+            var splited = strArray[i].split("#");
+            if (i > 0) {
+                let index = i;
+                let data = $("#ct" + index + "_title").html();
+                $("#ct" + index + "_title").html(data + " > ");
+            }
+            $("#ct" + splited[0] + "_title").html(splited[1]);
+        }
+
+
+    }
+</script>

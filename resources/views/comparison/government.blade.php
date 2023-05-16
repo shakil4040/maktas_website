@@ -71,7 +71,7 @@
         @foreach($categories as $category)
         <div class="row">
             <div class="col-md-12">
-                <li class="list_color">
+                <li class="list_color1">
                     @if ($category->parent_id >= 1000000 && $category->parent_id < 2000000 && $tamheed==0) <div
                         class="title islam py-2 my-3">
                         <h4>{{"تمہیداتِ عامہ"}} </h4>

@@ -303,4 +303,13 @@ class CategoryController extends Controller
             ];
             return $data;
     }
+    public function getChild($id, $level, $title)
+    {
+        $tree = Tree::find($id);
+        $childs = $tree->childs;
+        $navigation = urldecode(base64_decode($title));
+        $level += 1;
+        return view('manageChild',
+            compact('childs', 'level', 'navigation'));
+    }
 }
