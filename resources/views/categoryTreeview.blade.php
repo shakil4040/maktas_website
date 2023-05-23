@@ -4,51 +4,51 @@
 <head>
     <title>اسلام</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <link href="/css/treeview.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="preloader"></div>
-    <div id="confirmation"></div>
-    <div class="container">
-        <div class="card card-primary">
-            <div class="card-body">
-                <div class="row">
-                    @if ($message = Session::get('success'))
+<div class="preloader"></div>
+<div id="confirmation"></div>
+<div class="container">
+    <div class="card card-primary">
+        <div class="card-body">
+            <div class="row">
+                @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-block">
                         <strong>{{ $message }}</strong>
                         <button type="button" class="close" data-dismiss="alert">×</button>
                     </div>
-                    @endif
-                    <div class="alert alert-danger print-delete-msg" style="display:none">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <ul></ul>
-                    </div>
-                    <div class="alert alert-success print-edit-msg" style="display:none">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <ul></ul>
-                    </div>
-                    @if($errors->any())
+                @endif
+                <div class="alert alert-danger print-delete-msg" style="display:none">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <ul></ul>
+                </div>
+                <div class="alert alert-success print-edit-msg" style="display:none">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <ul></ul>
+                </div>
+                @if($errors->any())
                     {!! implode('', $errors->all('<div class="alert text-center alert-danger alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         <div class="my-1">:message</div>
                         <div class="my-1">معلومات درست کرنے کے لیے نیچے دیے گئے بٹن پر کلک کریں۔</div>
                         <button class="btn btn-danger toggler my-2" type="button">کلک کریں</button>
                     </div>')) !!}
-                    @endif
-                    <span class="card card-success detail3" id="add">
+                @endif
+                <span class="card card-success detail3" id="add">
                         {!! Form::open(['route'=>'add.category','id'=>'treeForm']) !!}
-                        @csrf
+                    @csrf
                         <div class="d-flex justify-content-center my-1 ftitle">
                             <div class="title unwan py-1 px-2">
                                 <div class="form-group {{ $errors->has('parent_id') ? 'has-error' : '' }}">
@@ -498,130 +498,135 @@
                         </div>
                         {!! Form::close() !!}
                     </span>
-                    <div id="comment2">
+                <div id="comment2">
 
-                    </div>
-                    <div id="edit2">
+                </div>
+                <div id="edit2">
 
-                    </div>
-                    <div id="div1">
+                </div>
+                <div id="div1">
 
-                    </div>
+                </div>
 
-                    <div class="col-md-12">
-                        <div class="row navigation_bar">
-                            <div id="ctab1" class="mx-2">
-                                <div class="nav-title" id="ct1_title"></div>
-                            </div>
-                            <div id="ctab2" class="mx-2">
-                                <div class="nav-title" id="ct2_title"></div>
-                            </div>
-                            <div id="ctab3" class="mx-2">
-                                <div class="nav-title" id="ct3_title"></div>
-                            </div>
-                            <div id="ctab4" class="mx-2">
-                                <div class="nav-title" id="ct4_title"></div>
-                            </div>
-                            <div id="ctab5" class="mx-2">
-                                <div class="nav-title" id="ct5_title"></div>
-                            </div>
-                            <div id="ctab6" class="mx-2">
-                                <div class="nav-title" id="ct6_title"></div>
-                            </div>
-                            <div id="ctab7" class="mx-2">
-                                <div class="nav-title" id="ct7_title"></div>
-                            </div>
-                            <div id="ctab8" class="mx-2">
-                                <div class="nav-title" id="ct8_title"></div>
-                            </div>
+                <div class="col-md-12">
+                    <div class="row navigation_bar">
+                        <div id="ctab1" class="mx-2">
+                            <div id="ct1_title"></div>
                         </div>
-                        <div class="title islam1">
-                            <h1>اسلام</h1>
+                        <div id="ctab2" class="mx-2">
+                            <div id="ct2_title"></div>
                         </div>
-                        <div class="d-flex" style="width: 46%;margin: 16px 3px 0px 0px;">
-                            <input id="searcht" type="search">
-                            <button id="searchb" class="btn btn-success"><i class="fa fa-search"></i></button>
+                        <div id="ctab3" class="mx-2">
+                            <div id="ct3_title"></div>
                         </div>
-                        <ul id="tree1">
-                            @foreach($categories as $category)
+                        <div id="ctab4" class="mx-2">
+                            <div id="ct4_title"></div>
+                        </div>
+                        <div id="ctab5" class="mx-2">
+                            <div id="ct5_title"></div>
+                        </div>
+                        <div id="ctab6" class="mx-2">
+                            <div id="ct6_title"></div>
+                        </div>
+                        <div id="ctab7" class="mx-2">
+                            <div id="ct7_title"></div>
+                        </div>
+                        <div id="ctab8" class="mx-2">
+                            <div id="ct8_title"></div>
+                        </div>
+                    </div>
+                    <div class="title islam1">
+                        <h1>اسلام</h1>
+                    </div>
+                    <div class="d-flex" style="width: 46%;margin: 16px 3px 0px 0px;">
+                        <input id="searcht" type="search">
+                        <button id="searchb" class="btn btn-success"><i class="fa fa-search"></i></button>
+                    </div>
+                    <ul id="tree1">
+                        @foreach($categories as $category)
                             <div class="row">
                                 <div class="col-md-12">
-                                    <li title="{{ $category->title }}" class="list_color">
+                                    <li title="{{ $category->title }}" class="list_color level-1">
                                         <span class="detail1">
                                             <div class="d-flex align-items-center">
-                                                <div class="dot2 d-flex align-items-center">
+                                                <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }}, 1, '{{ $category->title }}')
+                                                    ">
                                                     @if(count($category->childs))
-                                                    <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
-                                                       aria-hidden="true" onclick="getchilds({{ $category->id }}, 1,
-                                                        '{{ "1#". $category->title }}')
-                                                        "></i>
+                                                        <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
+                                                           aria-hidden="true" ></i>
                                                     @endif
                                                 </div>
-                                                <div
-                                                    class="ctitle list d-flex justify-content-between align-items-center">
+                                                <div onclick="setParentTitle('{{ $category->title }}')"
+                                                     class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
                                                     @if($category->mahol->status == 'Pending')
-                                                    <span
-                                                        style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
+                                                        <span
+                                                            style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
                                                         {{'...Pending'}}
                                                     </span>
                                                     @endif
                                                     @auth('admin')
-                                                    @if(count($category->childs) == null)
-                                                    <div class="d-flex">
+                                                        @if(count($category->childs) == null)
+                                                            <div class="d-flex">
                                                         <i class="fa fa-edit mx-2 sedit"></i>
                                                         <i class="fa fa-times-circle mx-2 delete"></i>
                                                     </div>
-                                                    @endif
+                                                        @endif
                                                     @endauth
                                                     @auth('member')
-                                                    @if(count($category->childs) == null)
-                                                    <div class="d-flex">
+                                                        @if(count($category->childs) == null)
+                                                            <div class="d-flex">
                                                         <i class="fa fa-edit mx-2 sedit"></i>
                                                         <i class="fa fa-times-circle mx-2 delete"></i>
                                                     </div>
-                                                    @endif
+                                                        @endif
                                                     @endauth
                                                 </div>
                                                 <div class="cid d-none">{{ $category->id }}</div>
-                                                <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
                                                 <div class="admin d-none">{{ auth('admin')->user() }}</div>
                                                 <div class="user d-none">{{ auth()->user() }}</div>
                                                 @auth()
-                                                <div class="userId d-none">{{ auth()->user()->id }}</div>
+                                                    <div class="userId d-none">{{ auth()->user()->id }}</div>
                                                 @endauth
                                                 @auth('member')
-                                                <div class="memberId d-none">{{ auth('member')->user()->id }}</div>
+                                                    <div class="memberId d-none">{{ auth('member')->user()->id }}</div>
                                                 @endauth
                                             </div>
                                         </span>
                                         @if(count($category->childs))
-                                        @include('manageChild',['childs' => $category->childs])
+                                            <div class="child-div" id="child-{{ $category->id }}">
+                                            </div>
                                         @endif
                                     </li>
                                 </div>
                             </div>
-                            @endforeach
-                        </ul>
-                    </div>
-
-
+                        @endforeach
+                    </ul>
                 </div>
 
 
             </div>
+
+
         </div>
     </div>
-    <script src="/js/treeview.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="application/javascript">
-        function setParentTitle(title){
-            $(".nav-title").html("");
-            $("#ct1_title").html(title);
-        }
-    </script>
+</div>
+<script src="/js/treeview.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="application/javascript">
+    function setParentTitle(title){
+        $("#ct1_title").html(title);
+        $("#ct2_title").html("");
+        $("#ct3_title").html("");
+        $("#ct4_title").html("");
+        $("#ct5_title").html("");
+        $("#ct6_title").html("");
+        $("#ct7_title").html("");
+        $("#ct8_title").html("");
+    }
+</script>
 </body>
 
 </html>

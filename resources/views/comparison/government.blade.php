@@ -112,7 +112,7 @@
         @php $muashrat=1;
         @endphp
         @endif
-        @if ($category->parent_id >= 7000000 && $category->parent_id < 8000000 && $akhlaq==0) <div
+        @if ($category->parent_id >= 6000000 && $category->parent_id < 7000000 && $akhlaq==0) <div
             class="title islam py-2 my-3">
             <h4>{{"اخلاقیات"}} </h4>
             </div>
@@ -120,7 +120,7 @@
             @php $akhlaq=1;
             @endphp
             @endif
-            @if ($category->parent_id >= 8000000 && $category->parent_id < 9000000 && $riyasat==0) <div
+            @if ($category->parent_id >= 7000000 && $category->parent_id < 8000000 && $riyasat==0) <div
                 class="title islam py-2 my-3">
                 <h4>{{"اسلامی ریاست"}} </h4>
                 </div>
@@ -128,7 +128,7 @@
                 @php $riyasat=1;
                 @endphp
                 @endif
-                @if ($category->parent_id >= 9000000 && $category->parent_id < 10000000 && $quran==0) <div
+                @if ($category->parent_id >= 8000000 && $category->parent_id < 9000000 && $quran==0) <div
                     class="title islam py-2 my-3">
                     <h4>{{"قرآن کریم"}} </h4>
                     </div>
@@ -136,7 +136,7 @@
                     @php $quran=1;
                     @endphp
                     @endif
-                    @if ($category->parent_id >= 10000000 && $category->parent_id < 11000000 && $seeratm==0) <div
+                    @if ($category->parent_id >= 9000000 && $category->parent_id < 10000000 && $seeratm==0) <div
                         class="title islam py-2 my-3">
                         <h4>{{"سیرتِ مصطفیٰ ﷺ"}} </h4>
                         </div>
@@ -144,7 +144,7 @@
                         @php $seeratm=1;
                         @endphp
                         @endif
-                        @if ($category->parent_id >= 11000000 && $category->parent_id < 12000000 && $seerata==0) <div
+                        @if ($category->parent_id >= 10000000 && $category->parent_id < 11000000 && $seerata==0) <div
                             class="title islam py-2 my-3">
                             <h4>{{"سیر الانبیاء علیہم السلام"}} </h4>
                             </div>
@@ -152,7 +152,7 @@
                             @php $seerata=1;
                             @endphp
                             @endif
-                            @if ($category->parent_id >= 12000000 && $category->parent_id < 13000000 && $seyars==0) <div
+                            @if ($category->parent_id >= 11000000 && $category->parent_id < 12000000 && $seyars==0) <div
                                 class="title islam py-2 my-3">
                                 <h4>{{"سیر الصحابہ رضی اللہ عنہم"}} </h4>
                                 </div>
@@ -160,7 +160,7 @@
                                 @php $seyars=1;
                                 @endphp
                                 @endif
-                                @if ($category->parent_id >= 13000000 && $category->parent_id < 14000000 && $seyarsa==0)
+                                @if ($category->parent_id >= 12000000 && $category->parent_id < 13000000 && $seyarsa==0)
                                     <div class="title islam py-2 my-3">
                                     <h4>{{"سیر الصالحین"}} </h4>
                                     </div>
@@ -168,7 +168,7 @@
                                     @php $seyarsa=1;
                                     @endphp
                                     @endif
-                                    @if ($category->parent_id >= 14000000 && $category->parent_id < 15000000 &&
+                                    @if ($category->parent_id >= 13000000 && $category->parent_id < 14000000 &&
                                         $tareekh==0) <div class="title islam py-2 my-3">
                                         <h4>{{"تاریخِ امت مسلمہ"}} </h4>
                                         </div>
@@ -176,7 +176,7 @@
                                         @php $tareekh=1;
                                         @endphp
                                         @endif
-                                        @if ($category->parent_id >= 15000000 && $category->parent_id < 16000000 &&
+                                        @if ($category->parent_id >= 14000000 && $category->parent_id < 15000000 &&
                                             $hifat==0) <div class="title islam py-2 my-3">
                                             <h4>{{"حفاظت و اشاعتِ دین"}} </h4>
                                             </div>
@@ -184,7 +184,7 @@
                                             @php $hifat=1;
                                             @endphp
                                             @endif
-                                            @if ($category->parent_id >= 16000000 && $category->parent_id < 17000000 &&
+                                            @if ($category->parent_id >= 15000000 && $category->parent_id < 16000000 &&
                                                 $mmmdt==0) <div class="title islam py-2 my-3">
                                                 <h4>{{"مجموعہ معلومات معاون دینی تعلیمات"}} </h4>
                                                 </div>
