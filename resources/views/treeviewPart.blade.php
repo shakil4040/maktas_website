@@ -13,23 +13,23 @@
                 <span class="unwanat tooltip1">
                     قاعدہ:
                     <span class="tooltiptext">
-                    یہ خانہ  رہنمائی کرتا ہے کہ اس اصول کا اطلاق ہر جگہ  ہوسکتا   ہے یا  کہیں کہیں۔
+                        یہ خانہ رہنمائی کرتا ہے کہ اس اصول کا اطلاق ہر جگہ ہوسکتا ہے یا کہیں کہیں۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     <span class="qaida">{{ $easy->qaida }}</span>
                     <span class="tooltiptext2">
                         @if($easy->qaida == 'کلی')
-                            جو قانون ہر لحاظ سے قابل عمل ہو اس میں تبدیلی کی گنجائش نہ ہو۔
+                        جو قانون ہر لحاظ سے قابل عمل ہو اس میں تبدیلی کی گنجائش نہ ہو۔
                         @endif
                         @if($easy->qaida == 'اکثری')
-                            وہ باتیں جن کو بنیاد بناتے ہوئے زندگی بہتر گزاری جا سکتی ہے۔
+                        وہ باتیں جن کو بنیاد بناتے ہوئے زندگی بہتر گزاری جا سکتی ہے۔
                         @endif
                         @if($easy->qaida == 'جزوی')
-                        جو اصول جو کہیں کہیں  لگے اس کو جزوی کہتے ہیں۔
+                        جو اصول جو کہیں کہیں لگے اس کو جزوی کہتے ہیں۔
                         @endif
                         @if($easy->qaida == 'استثنائی')
-                        جس اصول   کی کوئی بات استثنا بنتی ہو وہاں اس کو بیان کرنا 
+                        جس اصول کی کوئی بات استثنا بنتی ہو وہاں اس کو بیان کرنا
                         @endif
                     </span>
                 </span>
@@ -67,10 +67,10 @@
                     <span class="taleem">{{ $easy->taleem }}</span>
                     <span class="tooltiptext2">
                         @if($easy->taleem == 'علمی')
-                        وہ باتیں جن پر براہ ِراست عمل نہیں ہوسکتا   لیکن عمل تک پہنچنے میں معاون ہوں۔
+                        وہ باتیں جن پر براہ ِراست عمل نہیں ہوسکتا لیکن عمل تک پہنچنے میں معاون ہوں۔
                         @endif
                         @if($easy->taleem == 'عملی')
-                        وہ باتیں جن پر براہ ِراست عمل  ہوسکتا ہے۔
+                        وہ باتیں جن پر براہ ِراست عمل ہوسکتا ہے۔
                         @endif
                     </span>
                 </span>
@@ -95,7 +95,7 @@
                         وہ کام اگر نہیں کریں گے تو گنہگار ہوں گے۔
                         @endif
                         @if($easy->rahe_adal == 'دیانتاً')
-                        وہ کام  جس کے نہ کرنے سے بیلنس برابر نہیں ہو گا۔
+                        وہ کام جس کے نہ کرنے سے بیلنس برابر نہیں ہو گا۔
                         @endif
                         @if($easy->rahe_adal == 'احساناً')
                         وہ کام جس سے گنہگار تو نہیں ہوں گے لیکن آپس کی محبت پیدا نہیں ہو گی۔
@@ -104,10 +104,10 @@
                         اللہ تعالی کی رضا
                         @endif
                         @if($easy->rahe_adal == 'مقصود بالذات')
-                        وہ چیزیں   جن کے بغیر اللہ کی رضا ملنا ممکن نہیں  ہے۔
+                        وہ چیزیں جن کے بغیر اللہ کی رضا ملنا ممکن نہیں ہے۔
                         @endif
                         @if($easy->rahe_adal == 'ذرائع')
-                        وہ  کام جو اللہ تعالی تک  پہنچائے۔ 
+                        وہ کام جو اللہ تعالی تک پہنچائے۔
                         @endif
                     </span>
                 </span>
@@ -126,7 +126,7 @@
                 <span class="tooltip2">
                     <span class="easy">{{ $yaad->hawala }}</span>
                     <span class="tooltiptext2">
-                     {{ $yaad->hawala }} 
+                        {{ $yaad->hawala }}
                     </span>
                 </span>
             </div>
@@ -170,31 +170,38 @@
                     <span class="hukam">{{ $easy->hukam }}</span>
                     <span class="tooltiptext2">
                         @if($easy->hukam == 'فرض')
-                        وہ  حکم جو قرآن و حدیث سے یقینی طور پر ثابت ہو۔اس پر عمل کرنا ضروری ہے۔اس کو بلاعذر چھوڑنے والا گناہ گار ہے ۔اس کا منکر کافر ہے۔
+                        وہ حکم جو قرآن و حدیث سے یقینی طور پر ثابت ہو۔اس پر عمل کرنا ضروری ہے۔اس کو بلاعذر چھوڑنے والا
+                        گناہ گار ہے ۔اس کا منکر کافر ہے۔
                         @endif
                         @if($easy->hukam == 'فرض عین')
                         فرض عین اس فرض کو کہتے ہیں جس کا ادا کرنا ہر شخص پر ضروری ہو اور بلا عذر چھوڑنے والا گنہگار ہو ۔
                         @endif
                         @if($easy->hukam == 'فرض کفایہ')
-                        فرضِ کفایہ وہ فرض ہے جو ایک دو آدمیوں کے ادا کر لینے سے سب کے ذمّہ سے اُتر جائے ۔ اور کوئی ادا نہ کرے تو سب کے سب گنہگار ہوں۔
+                        فرضِ کفایہ وہ فرض ہے جو ایک دو آدمیوں کے ادا کر لینے سے سب کے ذمّہ سے اُتر جائے ۔ اور کوئی ادا
+                        نہ کرے تو سب کے سب گنہگار ہوں۔
                         @endif
                         @if($easy->hukam == 'واجب')
-                        وہ عمل  جس کا کرنا فرض کی طرح ضروری ہو ۔ اس کا منکر گناہ گار ہے کافر نہیں۔
+                        وہ عمل جس کا کرنا فرض کی طرح ضروری ہو ۔ اس کا منکر گناہ گار ہے کافر نہیں۔
                         @endif
                         @if($easy->hukam == 'سنت')
                         وہ عمل جو سنت مؤکدہ اور غیرمؤکدہ کا واضح حکم نہ لگایا گیا ہو۔
                         @endif
                         @if($easy->hukam == 'سنت مؤکدہ')
-                        وہ عمل جو آپ ﷺیا صحابہ رضی اللہ عنہم  نے عبادت کے طور پرہمیشہ کیا ہواور بلا عذر نہ چھوڑا ہو ۔ اس پر بھی عمل کرنا واجب کی طرح ضروری ہے اور اس کا چھوڑنا گناہ ہے ۔ واجب اور سنت مؤکدہ میں فرق یہ ہے کہ واجب کا چھوڑنے والا سزا کا مستحق ہے اور سنت مؤکدہ کا چھوڑنے والا ملامت کا۔
+                        وہ عمل جو آپ ﷺیا صحابہ رضی اللہ عنہم نے عبادت کے طور پرہمیشہ کیا ہواور بلا عذر نہ چھوڑا ہو ۔ اس
+                        پر بھی عمل کرنا واجب کی طرح ضروری ہے اور اس کا چھوڑنا گناہ ہے ۔ واجب اور سنت مؤکدہ میں فرق یہ ہے
+                        کہ واجب کا چھوڑنے والا سزا کا مستحق ہے اور سنت مؤکدہ کا چھوڑنے والا ملامت کا۔
                         @endif
                         @if($easy->hukam == 'سنت غیر مؤکدہ')
-                        وہ عمل جو آپ ﷺ نے عادتاً کیا ہو یا کبھی کیا ہو اور کبھی نہ کیا ہو۔ اس کو کرنے پر ثواب ہے اور چھوڑنے پر گناہ نہیں۔ اسی کو نفل، مستحب اور ادب بھی کہتے ہیں۔
+                        وہ عمل جو آپ ﷺ نے عادتاً کیا ہو یا کبھی کیا ہو اور کبھی نہ کیا ہو۔ اس کو کرنے پر ثواب ہے اور
+                        چھوڑنے پر گناہ نہیں۔ اسی کو نفل، مستحب اور ادب بھی کہتے ہیں۔
                         @endif
                         @if($easy->hukam == 'نفل')
-                        وہ عمل جو آپﷺ نے عبادتاً کبھی کبھی کیا ہو۔اس کے کرنے پر ثواب ہے اور چھوڑنے پر گناہ نہیں ۔لیکن اس کا درجہ سنت غیرمؤکدہ سے کم ہے۔
+                        وہ عمل جو آپﷺ نے عبادتاً کبھی کبھی کیا ہو۔اس کے کرنے پر ثواب ہے اور چھوڑنے پر گناہ نہیں ۔لیکن
+                        اس کا درجہ سنت غیرمؤکدہ سے کم ہے۔
                         @endif
                         @if($easy->hukam == 'مستحب')
-                        سنت غیر مؤکدہ اور نفل کو مستحب بھی کہتے ہیں ۔لیکن مستحب کی تعریف میں وہ باتیں بھی شامل ہیں جن کو قابل اعتماد بزرگانِ دین اور فقہاء نے پسند کیا ہو۔
+                        سنت غیر مؤکدہ اور نفل کو مستحب بھی کہتے ہیں ۔لیکن مستحب کی تعریف میں وہ باتیں بھی شامل ہیں جن کو
+                        قابل اعتماد بزرگانِ دین اور فقہاء نے پسند کیا ہو۔
                         @endif
                         @if($easy->hukam == 'افضل')
                         وہ عمل جس کا کرنا افضل ہے۔
@@ -203,25 +210,27 @@
                         وہ عمل جس کا کرنا جائز ہو۔
                         @endif
                         @if($easy->hukam == 'مباح')
-                        وہ عمل جس  کا کرنا جائز ہو لیکن اس کے کرنے پر نہ ثواب ہو نہ چھوڑنے پر گناہ۔
+                        وہ عمل جس کا کرنا جائز ہو لیکن اس کے کرنے پر نہ ثواب ہو نہ چھوڑنے پر گناہ۔
                         @endif
                         @if($easy->hukam == 'حرام')
-                        وہ  حکم جس کی ممانعت قرآن و حدیث سے یقینی طور پر ثابت ہو۔اس سے بچنا ضروری ہے ۔اس کو کرنے والا گناہ گار ہے۔اس کو جائز سمجھنے والا کافر ہے۔
+                        وہ حکم جس کی ممانعت قرآن و حدیث سے یقینی طور پر ثابت ہو۔اس سے بچنا ضروری ہے ۔اس کو کرنے والا
+                        گناہ گار ہے۔اس کو جائز سمجھنے والا کافر ہے۔
                         @endif
                         @if($easy->hukam == 'مکروہ تحریمی')
-                        وہ عمل جس سے بچنا حرام کی طرح ضروری ہو۔ اس کو کرنے والا گناہ گار  ہے۔اس کو جائز سمجھنے والا گناہ گار ہے کافر نہیں۔
+                        وہ عمل جس سے بچنا حرام کی طرح ضروری ہو۔ اس کو کرنے والا گناہ گار ہے۔اس کو جائز سمجھنے والا گناہ
+                        گار ہے کافر نہیں۔
                         @endif
                         @if($easy->hukam == 'مکروہ تنزیہی')
-                        وہ فعل جس  سے بچنے میں ثواب ہے،لیکن جو نہ بچے اس پر کوئی گناہ اور عذاب بھی نہیں۔
+                        وہ فعل جس سے بچنے میں ثواب ہے،لیکن جو نہ بچے اس پر کوئی گناہ اور عذاب بھی نہیں۔
                         @endif
                         @if($easy->hukam == 'ناجائز')
                         وہ عمل جس کا کرنا جائز نہ ہو۔
                         @endif
-                        @if($easy->hukam == 'بنیادی')
-                        وہ کام جو شرعی حکم میں نہیں آسکتے۔ 
+                        @if($easy->hukam == 'بنیاد')
+                        وہ کام جو شرعی حکم میں نہیں آسکتے۔
                         @endif
                         @if($easy->hukam == 'دفعِ مضرت')
-                        وہ جو کام  جس کا نفع  یا نقصان خا ص ہو۔
+                        وہ جو کام جس کا نفع یا نقصان خا ص ہو۔
                         @endif
                         @if($easy->hukam == 'ابہام')
                         وہ بات جس کا حکم فی الحال معلوم نہ ہو سکا۔
@@ -243,7 +252,7 @@
                 <span class="tooltip2">
                     <span class="">{{ $easy->easy }}</span>
                     <span class="tooltiptext2">
-                    {{ $easy->easy }}
+                        {{ $easy->easy }}
                     </span>
                 </span>
             </div>
@@ -261,8 +270,16 @@
                 <span class="tooltip2">
                     <span class="">{{ $yaad->yad_dehani }}</span>
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->yad_dehani }} سے
-                        ہے۔
+                        @if($yaad->yad_dehani == 'عملی تکرار')
+                        یہ فلٹر admin کے لئے ہے ۔ تعلیمی نظم کے درمیان جن باتوں کی تکرار ضروری ہے اس کی نشاندہی کرنا۔
+                        @endif
+                        @if($yaad->yad_dehani == 'علمی تکرار')
+                        یہ فلٹر admin کے لئے ہے ۔تعلیمی نظم کے درمیان جن عقائد اور نظریاتی باتوں کی تکرار ضروری ہے اس کی
+                        نشاندہی کرنا۔
+                        @endif
+                        @if($yaad->yad_dehani == 'ایک بار')
+                        مذکور بات ایک بار پرھائی جائے گی۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -282,8 +299,17 @@
                 <span class="tooltip2">
                     {{ $easy->mukhatab }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->mukhatab }} سے
-                        ہے۔
+                        @if($easy->mukhatab == 'خواص')
+                        علم و عمل میں عوام سے آگے ہوں لیکن اس درجے میں نہیں کہ عوام ان
+                        کی اقتداء کرے۔
+                        @endif
+                        @if($easy->mukhatab == 'مقتداء')
+                        جو متبع شریعت اور متبع سنت اس درجے میں ہوں کہ عوام ان کی اتباع
+                        کرکے گمراہ نہ ہوں۔
+                        @endif
+                        @if($easy->mukhatab == 'عوام')
+                        جو خواص اور مقتداء نہ ہوں۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -301,8 +327,7 @@
                 <span class="tooltip2">
                     {{ $easy->rafe_ishkal }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->rafe_ishkal }} سے
-                        ہے۔
+                        {{ $easy->rafe_ishkal }}
                     </span>
                 </span>
             </div>
@@ -314,18 +339,13 @@
                 <span class="unwanat tooltip1">
                     کتنی تکرار:
                     <span class="tooltiptext">
-                    اس کا مقصد یہ بتانا ہے کہ مذکوربات کتنی مرتبہ مختلف طریقوں سے پڑھائی جائے گی۔
+                        اس کا مقصد یہ بتانا ہے کہ مذکوربات کتنی مرتبہ مختلف طریقوں سے پڑھائی جائے گی۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $yaad->kitni_takrar }}
                     <span class="tooltiptext2">
-                        @if($easy->hukam == 'ناجائز')
-                        وہ عمل جس کا کرنا جائز نہ ہو۔
-                        @endif
-                        @if($easy->hukam == 'بنیادی')
-                        وہ کام جو شرعی حکم میں نہیں آسکتے۔ 
-                        @endif
+                        {{ $yaad->kitni_takrar }}
                     </span>
                 </span>
             </div>
@@ -337,16 +357,23 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                جنس:
+                    جنس:
                     <span class="tooltiptext">
-                    اس خانے میں یہ ذکر کیا گیا ہے کہ مذکور عنوان کا تعلق مرد سے ہے یا عورت سے یا ہر جنس سے۔
+                        اس خانے میں یہ ذکر کیا گیا ہے کہ مذکور عنوان کا تعلق مرد سے ہے یا عورت سے یا ہر جنس سے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->jins }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->jins }} سے
-                        ہے۔
+                        @if($easy->jins == 'مرد')
+                        وہ احکام جن کا تعلق صرف مرد سے ہے۔
+                        @endif
+                        @if($easy->jins == 'عورت')
+                        وہ احکام جن کا تعلق صرف عورت سے ہے۔
+                        @endif
+                        @if($easy->jins == 'ہر جنس')
+                        وہ احکام جن کا تعلق ہر جنس سے ہو۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -356,7 +383,7 @@
             </div>
             <div class="hukam mr-2">
                 <span class="unwanat tooltip1">
-                حصول کا
+                    حصول کا
                     طریقہ:
                     <span class="tooltiptext">
                         اس خانے یں یہ ذکر کیا گیا ہے کہ مذکور بات کو حاصل کرنے کا طریقہ کیا ہے۔
@@ -365,8 +392,7 @@
                 <span class="tooltip2">
                     {{ $easy->husool }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->husool }} سے
-                        ہے۔
+                        {{ $easy->husool }}
                     </span>
                 </span>
             </div>
@@ -376,16 +402,20 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                دہرائی:
+                    دہرائی:
                     <span class="tooltiptext">
-                    اس خانے میں یہ ذکر گیا ہے کہ مذکور بات کی دہرائی ضروری ہے یا نہیں۔
+                        اس خانے میں یہ ذکر گیا ہے کہ مذکور بات کی دہرائی ضروری ہے یا نہیں۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $yaad->revision }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->revision }} سے
-                        ہے۔
+                        @if($yaad->revision == 'ضروری')
+                        اس بات کی دہرائی ضروری ہے۔
+                        @endif
+                        @if($yaad->revision == 'غیر ضروری')
+                        وہ احکام جن کا تعلق صرف عورت سے ہے۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -405,8 +435,12 @@
                 <span class="tooltip2">
                     {{ $easy->hasiat }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->hasiat }} سے
-                        ہے۔
+                        @if($easy->hasiat == 'انفرادی')
+                        وہ نیک کام جو ایک مسلمان اکیلا کر سکتا ہے۔
+                        @endif
+                        @if($easy->hasiat == 'اجتماعی')
+                        وہ نیک کام جو بالعموم مسلمان عوام کے ذمے ہیں اور لوگ مل کر ہی اسے مکمل کر سکتے ہیں۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -418,14 +452,13 @@
                 <span class="unwanat tooltip1">
                     تمہید خاص:
                     <span class="tooltiptext">
-                    اس خانے میں وہ بات ذکر کی گئی ہے جو  مذکور عنوان سے پہلے پڑھانا ضروری ہے۔
+                        اس خانے میں وہ بات ذکر کی گئی ہے جو مذکور عنوان سے پہلے پڑھانا ضروری ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->tamheed_khas }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->tamheed_khas }} سے
-                        ہے۔
+                        {{ $easy->tamheed_khas }}
                     </span>
                 </span>
             </div>
@@ -443,8 +476,7 @@
                 <span class="tooltip2">
                     {{ $yaad->shaz }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->shaz }} سے
-                        ہے۔
+                        {{ $yaad->shaz }}
                     </span>
                 </span>
             </div>
@@ -459,14 +491,13 @@
                 <span class="unwanat tooltip1">
                     شعبہ:
                     <span class="tooltiptext">
-                    اس کا مقصد یہ بتانا ہے کہ مذکور بات کس پیشے سے تعلق رکھتی ہے۔
+                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کس پیشے سے تعلق رکھتی ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->shoba }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->shoba }} سے
-                        ہے۔
+                        {{ $easy->shoba }}
                     </span>
                 </span>
             </div>
@@ -478,14 +509,13 @@
                 <span class="unwanat tooltip1">
                     علاقہ:
                     <span class="tooltiptext">
-                    اس کا مقصد یہ بتانا ہے کہ مذکور بات کا تعلق کس علاقے سے ہے۔
+                        اس کا مقصد یہ بتانا ہے کہ مذکور بات کا تعلق کس علاقے سے ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->area }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->area }} سے
-                        ہے۔
+                        {{ $easy->area }}
                     </span>
                 </span>
             </div>
@@ -497,14 +527,13 @@
                 <span class="unwanat tooltip1">
                     بلحاظِ عمر:
                     <span class="tooltiptext">
-                    اس خانے میں عمر کے لحاظ سے عنوانات کا نمبر شمار درج کیا گیا ہے۔
+                        اس خانے میں عمر کے لحاظ سے عنوانات کا نمبر شمار درج کیا گیا ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $detail->age_sr }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->age_sr }} سے
-                        ہے۔
+                        {{ $detail->age_sr }}
                     </span>
                 </span>
             </div>
@@ -516,16 +545,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                 عمر:
+                    عمر:
                     <span class="tooltiptext">
-                    اس خانے وہ عمر درج کی گئی ہے جس میں مذکور عنوان پڑھایا جائے۔
+                        اس خانے وہ عمر درج کی گئی ہے جس میں مذکور عنوان پڑھایا جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $detail->age }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->age }} سے
-                        ہے۔
+                        {{ $detail->age }}
                     </span>
                 </span>
             </div>
@@ -535,16 +563,15 @@
             </div>
             <div class="wazahat mr-2">
                 <span class="unwanat tooltip1">
-                 محرکات و نظریات:
+                    محرکات و نظریات:
                     <span class="tooltiptext">
-                    اس عنوان سے مراد وہ عقائد و نظریات ہیں جن کو بنیاد بنا کر انسان عمل کرتا ہے۔
+                        اس عنوان سے مراد وہ عقائد و نظریات ہیں جن کو بنیاد بنا کر انسان عمل کرتا ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->muharik }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->muharik }} سے
-                        ہے۔
+                        {{ $easy->muharik }}
                     </span>
                 </span>
             </div>
@@ -554,16 +581,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                 نصابی نمبر:
+                    نصابی نمبر:
                     <span class="tooltiptext">
-                    اس خانے میں وہ نمبر شمار ذکر کیا گیا ہے جس سے نصاب بنانے میں مدد حاصل کی جاسکتی ہے ۔
+                        اس خانے میں وہ نمبر شمار ذکر کیا گیا ہے جس سے نصاب بنانے میں مدد حاصل کی جاسکتی ہے ۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $detail->course_no }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->course_no }} سے
-                        ہے۔
+                        {{ $detail->course_no }}
                     </span>
                 </span>
             </div>
@@ -575,16 +601,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                 جماعت:
+                    جماعت:
                     <span class="tooltiptext">
-                    اس خانے میں وہ جماعت درج کی گئی ہے جس میں مذکور عنوان پڑھانا چاہیے۔
+                        اس خانے میں وہ جماعت درج کی گئی ہے جس میں مذکور عنوان پڑھانا چاہیے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->class }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->class }} سے
-                        ہے۔
+                        {{ $easy->class }}
                     </span>
                 </span>
             </div>
@@ -602,16 +627,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                 نمبر شمار:
+                    نمبر شمار:
                     <span class="tooltiptext">
-                    اس خانے میں عنوانات کے مطابق نمبر شمار درج کیا گیا ہے۔
+                        اس خانے میں عنوانات کے مطابق نمبر شمار درج کیا گیا ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $tree->sr }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $tree->sr }} سے
-                        ہے۔
+                        {{ $tree->sr }}
                     </span>
                 </span>
             </div>
@@ -623,16 +647,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                 احوال:
+                    احوال:
                     <span class="tooltiptext">
-                    اس خانے میں ان لوگوں کا ذکر کیا گیا ہےجن کے حالات خاص ہیں۔مثلاً گونکا ،بہرہ وغیرہ۔
+                        اس خانے میں ان لوگوں کا ذکر کیا گیا ہےجن کے حالات خاص ہیں۔مثلاً گونکا ،بہرہ وغیرہ۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $yaad->ahwal }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $yaad->ahwal }} سے
-                        ہے۔
+                        {{ $yaad->ahwal }}
                     </span>
                 </span>
             </div>
@@ -642,16 +665,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                سنانا:
+                    سنانا:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سنائی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سنائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->sunana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->sunana }} سے
-                        ہے۔
+                        {{ $mahol->sunana }}
                     </span>
                 </span>
             </div>
@@ -661,16 +683,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                کہلوانا:
+                    کہلوانا:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کہلوائی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کہلوائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->kehalwana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->kehalwana }} سے
-                        ہے۔
+                        {{ $mahol->kehalwana }}
                     </span>
                 </span>
             </div>
@@ -680,16 +701,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                دکھانا:
+                    دکھانا:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات دکھائی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات دکھائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->dekhana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->dekhana }} سے
-                        ہے۔
+                        {{ $mahol->dekhana }}
                     </span>
                 </span>
             </div>
@@ -699,16 +719,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                اح:
+                    اح:
                     <span class="tooltiptext">
-                    اس خانےمیں مولانا ابرار صاحب کی فائل کی آئی ڈی  درج کی گئی ہے۔ 
+                        اس خانےمیں مولانا ابرار صاحب کی فائل کی آئی ڈی درج کی گئی ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $detail->abrar_id }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->abrar_id }} سے
-                        ہے۔
+                        {{ $detail->abrar_id }}
                     </span>
                 </span>
             </div>
@@ -720,16 +739,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                زمانہ:
+                    زمانہ:
                     <span class="tooltiptext">
-                    اس خانے میں وہ زمانہ آئے گا جس کے ساتھ مذکور بات کا تعلق ہے۔
+                        اس خانے میں وہ زمانہ آئے گا جس کے ساتھ مذکور بات کا تعلق ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->zamana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->zamana }} سے
-                        ہے۔
+                        {{ $easy->zamana }}
                     </span>
                 </span>
             </div>
@@ -739,16 +757,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                مشق:
+                    مشق:
                     <span class="tooltiptext">
-                    اس خانےمیں وہ عمر درج کی گئی ہے جس میں مذکور بات کی مشق کرائی جائے۔
+                        اس خانےمیں وہ عمر درج کی گئی ہے جس میں مذکور بات کی مشق کرائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->mashq }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->mashq }} سے
-                        ہے۔
+                        {{ $mahol->mashq }}
                     </span>
                 </span>
             </div>
@@ -758,16 +775,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                بتانا:
+                    بتانا:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات بتائی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات بتائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->batana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->batana }} سے
-                        ہے۔
+                        {{ $mahol->batana }}
                     </span>
                 </span>
             </div>
@@ -777,16 +793,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                سکھانا:
+                    سکھانا:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سکھائی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سکھائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->sikhana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->sikhana }} سے
-                        ہے۔
+                        {{ $mahol->sikhana }}
                     </span>
                 </span>
             </div>
@@ -796,16 +811,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                آص:
+                    آص:
                     <span class="tooltiptext">
-                    اس خانےمیں مولانا ابرار صاحب کی فائل کی آئی ڈی  درج کی گئی ہے۔ 
+                        اس خانےمیں مولانا ابرار صاحب کی فائل کی آئی ڈی درج کی گئی ہے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $detail->asif_id }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $detail->asif_id }} سے
-                        ہے۔
+                        {{ $detail->asif_id }}
                     </span>
                 </span>
             </div>
@@ -817,16 +831,20 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                تعلق:
+                    تعلق:
                     <span class="tooltiptext">
-                    اس خانے میں یہ بتایا گیا ہے کہ مذکور بات کا تعلق ظاہر سے ہے یا باطن سے۔
+                        اس خانے میں یہ بتایا گیا ہے کہ مذکور بات کا تعلق ظاہر سے ہے یا باطن سے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $easy->taluq }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $easy->taluq }} سے
-                        ہے۔
+                        @if($easy->taluq == 'ظاہری')
+                        وہ عمل جن کا ہونا یانہ ہونا نظر آتا ہے۔ یعنی ان کا تعلق ظاہر سے ہے۔
+                        @endif
+                        @if($easy->taluq == 'باطنی')
+                        وہ عمل جن کا ہونا یا نہ ہونا نظر نہیں آتا، صرف محسوس ہوتا ہے۔ یعنی ان کا تعلق باطن سے ہے۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -836,16 +854,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                عادت:
+                    عادت:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کی عادت ڈالی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کی عادت ڈالی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->adat }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->adat }} سے
-                        ہے۔
+                        {{ $mahol->adat }}
                     </span>
                 </span>
             </div>
@@ -855,16 +872,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                سمجھانا:
+                    سمجھانا:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سمجھائی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سمجھائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->samjhana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->samjhana }} سے
-                        ہے۔
+                        {{ $mahol->samjhana }}
                     </span>
                 </span>
             </div>
@@ -874,16 +890,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                پڑھانا:
+                    پڑھانا:
                     <span class="tooltiptext">
-                    اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سنائی جائے۔
+                        اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات پڑھائی جائے۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $mahol->parhana }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $mahol->parhana }} سے
-                        ہے۔
+                        {{ $mahol->parhana }}
                     </span>
                 </span>
             </div>
@@ -893,16 +908,15 @@
             </div>
             <div class="tabs mr-2">
                 <span class="unwanat tooltip1">
-                آئی ڈی:
+                    آئی ڈی:
                     <span class="tooltiptext">
-                    اس خانے میں وہ آئی ڈی آئےگی جو websiteخود بنائے گی۔
+                        اس خانے میں وہ آئی ڈی آئےگی جو websiteخود بنائے گی۔
                     </span>
                 </span>
                 <span class="tooltip2">
                     {{ $tree->id }}
                     <span class="tooltiptext2">
-                        مختصر وضاحت میں مذکور بات کا تعلق {{ $tree->id }} سے
-                        ہے۔
+                        {{ $tree->id }}
                     </span>
                 </span>
             </div>
@@ -912,16 +926,16 @@
         <i class="fa fa-eye dicon" title="چھپی ہوئی تفصیلات دیکھیں" aria-hidden="true"></i>
         <div>
             @if($admin || $memberId)
-                <button id="acomment" class="bbuttons my-1 ml-2 ara">آراء دیکھیں</button>
-                <button class="bbuttons my-1 ml-2 toggler">نئے عنوان کا اندراج کریں</button>
+            <button id="acomment" class="bbuttons my-1 ml-2 ara">آراء دیکھیں</button>
+            <button class="bbuttons my-1 ml-2 toggler">نئے عنوان کا اندراج کریں</button>
             @endif
             @if($user)
-                <!-- Button trigger modal -->
-                <button type="button" class="bbuttons my-1 ml-2" data-toggle="modal" data-target="#exampleModalLong">
-                    اپنی رائے کا اظہار کریں
-                </button>
+            <!-- Button trigger modal -->
+            <button type="button" class="bbuttons my-1 ml-2" data-toggle="modal" data-target="#exampleModalLong">
+                اپنی رائے کا اظہار کریں
+            </button>
 
-                <!-- Modal -->
+            <!-- Modal -->
             @endif
             <button id="mazmoon" class="bbuttons my-1 ml-2">مکمل مضمون پڑھیں</button>
         </div>
@@ -988,71 +1002,70 @@
                 </div>
                 <div class="accordion" id="accordionExample">
                     @if($easy->rahe_adal)
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-right" type="button"
-                                        data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                        aria-controls="collapseOne">
-                                        راہِ عدل
-                                    </button>
-                                </h2>
-                                <div class="arrow2">
-                                    ❮
-                                </div>
-                            </div>
-
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                                data-parent="#accordionExample">
-                                <div class="card-body text-right">
-                                    {{ $easy->rahe_adal }}
-                                </div>
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-right" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    راہِ عدل
+                                </button>
+                            </h2>
+                            <div class="arrow2">
+                                ❮
                             </div>
                         </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body text-right">
+                                {{ $easy->rahe_adal }}
+                            </div>
+                        </div>
+                    </div>
                     @endif
                     @if($easy->rafe_ishkal)
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-right collapsed" type="button"
-                                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        رفعِ اشکال
-                                    </button>
-                                </h2>
-                                <div class="arrow2">
-                                    ❮
-                                </div>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordionExample">
-                                <div class="card-body text-right">
-                                    {{ $easy->rafe_ishkal }}
-                                </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-right collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    رفعِ اشکال
+                                </button>
+                            </h2>
+                            <div class="arrow2">
+                                ❮
                             </div>
                         </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body text-right">
+                                {{ $easy->rafe_ishkal }}
+                            </div>
+                        </div>
+                    </div>
                     @endif
                     @if($easy->husool)
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-right collapsed" type="button"
-                                        data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        حصول کا طریقہ
-                                    </button>
-                                </h2>
-                                <div class="arrow2">
-                                    ❮
-                                </div>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordionExample">
-                                <div class="card-body text-right">
-                                    {{ $easy->husool }}
-                                </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-right collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    حصول کا طریقہ
+                                </button>
+                            </h2>
+                            <div class="arrow2">
+                                ❮
                             </div>
                         </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body text-right">
+                                {{ $easy->husool }}
+                            </div>
+                        </div>
+                    </div>
                     @endif
                 </div>
                 <!-- <div class="d-flex my-4 text-right justify-content-end">
