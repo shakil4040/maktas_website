@@ -511,28 +511,28 @@
                 <div class="col-md-12">
                     <div class="row navigation_bar">
                         <div id="ctab1" class="mx-2">
-                            <div id="ct1_title"></div>
+                            <div class="nav-title" id="ct1_title"></div>
                         </div>
                         <div id="ctab2" class="mx-2">
-                            <div id="ct2_title"></div>
+                            <div class="nav-title" id="ct2_title"></div>
                         </div>
                         <div id="ctab3" class="mx-2">
-                            <div id="ct3_title"></div>
+                            <div class="nav-title" id="ct3_title"></div>
                         </div>
                         <div id="ctab4" class="mx-2">
-                            <div id="ct4_title"></div>
+                            <div class="nav-title" id="ct4_title"></div>
                         </div>
                         <div id="ctab5" class="mx-2">
-                            <div id="ct5_title"></div>
+                            <div class="nav-title" id="ct5_title"></div>
                         </div>
                         <div id="ctab6" class="mx-2">
-                            <div id="ct6_title"></div>
+                            <div class="nav-title" id="ct6_title"></div>
                         </div>
                         <div id="ctab7" class="mx-2">
-                            <div id="ct7_title"></div>
+                            <div class="nav-title" id="ct7_title"></div>
                         </div>
                         <div id="ctab8" class="mx-2">
-                            <div id="ct8_title"></div>
+                            <div class="nav-title" id="ct8_title"></div>
                         </div>
                     </div>
                     <div class="title islam1">
@@ -549,7 +549,7 @@
                                     <li title="{{ $category->title }}" class="list_color level-1">
                                         <span class="detail1">
                                             <div class="d-flex align-items-center">
-                                                <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }}, 1, '{{ $category->title }}')
+                                                <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }}, 1, '{{ "1#". $category->title }}')
                                                     ">
                                                     @if(count($category->childs))
                                                         <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
@@ -583,6 +583,7 @@
                                                     @endauth
                                                 </div>
                                                 <div class="cid d-none">{{ $category->id }}</div>
+                                                <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
                                                 <div class="admin d-none">{{ auth('admin')->user() }}</div>
@@ -617,6 +618,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="application/javascript">
     function setParentTitle(title){
+        $(".nav-title").html("");
         $("#ct1_title").html(title);
         $("#ct2_title").html("");
         $("#ct3_title").html("");

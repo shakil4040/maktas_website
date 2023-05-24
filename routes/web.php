@@ -48,7 +48,7 @@ Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm')->
 Route::get('/login/member', 'Auth\LoginController@showMemberLoginForm')->name('login/member');
 Route::post('/login/member', 'Auth\LoginController@memberLogin');
 Route::view('/member', 'dashboards.member');
-
+Route::get('/get-child/{id}/{level}/{title}','CategoryController@getChild');
 
 Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');
