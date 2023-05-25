@@ -27,6 +27,49 @@
 .tree ul ul {
     margin-left: .5em
 }
+
+.tree ul:before {
+    /* content: ""; */
+    display: block;
+    width: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -9px;
+    border-left: 1px solid
+}
+
+.tree li {
+    margin: 0;
+    padding: 0 1em;
+    line-height: 2em;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+    text-align: right;
+}
+
+.tree ul li:before {
+    /* content: ""; */
+    display: block;
+    width: 22px;
+    height: 0;
+    border-top: 1px solid;
+    margin-top: -1px;
+    position: absolute;
+    top: 1em;
+    right: -8px;
+}
+
+.tree ul li:last-child:before {
+    background: #fff;
+    height: auto;
+    top: 1em;
+    bottom: 0;
+    right: -9px;
+}
+
 .level-1 > span  , #ct1_title{
     color: rgb(61, 151, 230);
 }
@@ -74,48 +117,6 @@
 }
 .level-8 .dot2{
     background-color: rgb(255, 0, 255);
-}
-
-.tree ul:before {
-    /* content: ""; */
-    display: block;
-    width: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -9px;
-    border-left: 1px solid
-}
-
-.tree li {
-    margin: 0;
-    padding: 0 1em;
-    line-height: 2em;
-    color: black;
-    font-weight: 600;
-    font-size: 20px;
-    position: relative;
-    text-align: right;
-}
-
-.tree ul li:before {
-    /* content: ""; */
-    display: block;
-    width: 22px;
-    height: 0;
-    border-top: 1px solid;
-    margin-top: -1px;
-    position: absolute;
-    top: 1em;
-    right: -8px;
-}
-
-.tree ul li:last-child:before {
-    background: #fff;
-    height: auto;
-    top: 1em;
-    bottom: 0;
-    right: -9px;
 }
 
 .indicator {
@@ -325,7 +326,7 @@
 .navigation_bar {
     width: 100%;
     position: fixed;
-    /*height: 47px;*/
+    height: 47px;
     right: 14px;
     background-color: #f1f1f1;
     padding: 8px;
@@ -358,8 +359,8 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .unwan {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 .udetail::-webkit-scrollbar {
     display: none;
@@ -367,8 +368,8 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .udetail {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .unwanat {
@@ -682,10 +683,7 @@ input {
     font-size: 19px;
 }
 
-.tooltip1 {
-    position: relative;
-    overflow: visible;
-}
+
 
 .tooltip1 .tooltiptext {
     visibility: hidden;
@@ -699,10 +697,10 @@ input {
     padding: 5px 5px;
     position: absolute;
     z-index: 1;
-    width: 145px;
+    width: 125px;
     top: 130%;
     left: 30%;
-    margin-left: -60px;
+    margin-left: -41px;
 }
 
 .tooltip1 .tooltiptext::after {
@@ -718,6 +716,10 @@ input {
 
 .tooltip1:hover .tooltiptext {
     visibility: visible;
+}
+.tooltips {
+    position: relative;
+    overflow: visible;
 }
 
 .tooltip2 .tooltiptext2 {
@@ -766,7 +768,7 @@ input {
     width: 59%;
     top: 55px;
     right: 134px;
-    z-index: 101;
+    z-index: -1;
     box-shadow: 0px 0px 14px 2px #10654e;
 }
 
