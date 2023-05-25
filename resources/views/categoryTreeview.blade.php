@@ -559,7 +559,7 @@
                                                 <div onclick="setParentTitle('{{ $category->title }}')"
                                                      class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
-                                                    @if($category->mahol->status == 'Pending')
+                                                    @if($category->mahol && $category->mahol->status == 'Pending')
                                                         <span
                                                             style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
                                                         {{'...Pending'}}

@@ -372,7 +372,7 @@
                         وہ احکام جن کا تعلق صرف عورت سے ہے۔
                         @endif
                         @if($easy->jins == 'ہر جنس')
-                        وہ احکام جن کا تعلق ہر جنس سے ہو۔
+                        مذکور بات کا تعلق مرد، عورت ،وغیرہ ہر ایک کے ساتھ ہے۔
                         @endif
                     </span>
                 </span>
@@ -497,7 +497,9 @@
                 <span class="tooltip2">
                     {{ $easy->shoba }}
                     <span class="tooltiptext2">
-                        {{ $easy->shoba }}
+                        @if($easy->shoba == 'ہر شعبہ')
+                        مذکور بات کا تعلق کسی خاص شعبے سے نہیں۔ بلکہ تمام شعبوں سے ہے۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -655,7 +657,9 @@
                 <span class="tooltip2">
                     {{ $yaad->ahwal }}
                     <span class="tooltiptext2">
-                        {{ $yaad->ahwal }}
+                        @if($yaad->ahwal == 'تمام احوال')
+                        مذکور بات کا تعلق خاص قسم کے افراد سے نہیں ہے۔ بلکہ تمام لوگوں کے ساتھ ہے۔
+                        @endif
                     </span>
                 </span>
             </div>
