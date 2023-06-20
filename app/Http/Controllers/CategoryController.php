@@ -231,11 +231,10 @@ class CategoryController extends Controller
         return view('confirmation',compact('id','token','memberId','memberName','title'));
     }
     public function editing(Request $request,$id){
-        $token = $request->token;
         $memberName = $request->memberName;
         $memberId = $request->memberId;
         $title = $request->title;
-        return view('Editing',compact('id','token','memberId','memberName','title'));
+        return view('Editing',compact('id','memberId','memberName','title'));
     }
     public function AddMail(Request $request){
         Mail::to('example@example.com')->send(new AddMail($request));

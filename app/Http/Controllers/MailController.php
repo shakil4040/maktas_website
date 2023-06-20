@@ -12,14 +12,14 @@ class MailController extends Controller
 {
     public function deleteMail(Request $request){
         Mail::to('example@example.com')->send(new DeleteMail($request));
-        return redirect('/governmentClasses');
+        return redirect()->back();
     }
     public function AddMail(Request $request){
         Mail::to('example@example.com')->send(new AddMail($request));
-        return redirect('/governmentClasses');
+        return redirect()->back();
     }
     public function EditMail(Request $request){
         Mail::to('example@example.com')->send(new EditMail($request));
-        return redirect('/governmentClasses');
+        return redirect()->back();
     }
 }

@@ -26,8 +26,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="/EditMail" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="{{$token}}">
+                            <form action="/api/EditMail" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="memberName" value="{{$memberName}}">
                             <input type="hidden" name="memberId" value="{{$memberId}}">
                             <input type="hidden" name="title" value="{{$title}}">

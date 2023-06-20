@@ -202,19 +202,19 @@ $(document).ready(function() {
 
 
     //Edit function
-    // $(document).on("click" ,".ctitle", function () {
-    //     $(this).find('.sedit').click(function() {
-    //         var id = $(this).parent().parent().siblings().text();
+    $(document).on("click" ,".ctitle", function () {
+        $(this).find('.tedit').click(function() {
+            var id = $(this).parent().parent().siblings('.cid').text();
 
-    //         $.ajax({
-    //             url: "/api/edit/" + id,
-    //             success: function(data) {
-    //                 $("#edit2").html(data);
+            $.ajax({
+                url: "/api/edit/" + id,
+                success: function(data) {
+                    $("#edit2").html(data);
 
-    //             }
-    //         });
-    //     });
-    // });
+                }
+            });
+        });
+    });
     //tree navigation bar
     // $(".list_color").children().children().children(".list").each(function() {
     //     var title = $(this).text();

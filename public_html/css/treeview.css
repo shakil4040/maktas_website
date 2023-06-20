@@ -192,7 +192,7 @@
     width: 49%;
     height: 95vh;
     overflow: auto;
-    z-index: 100;
+    z-index: 999;
     background-color: hsl(102deg 51% 70%);
     border-radius: 4%;
 }
