@@ -16,10 +16,13 @@
                     @auth('admin')
                         @if(count($child->childs) == null)
                             <div class="d-flex">
-                        <i class="fa fa-edit mx-2 sedit"></i>
-                        <i class="fa fa-times-circle mx-2 delete"></i>
-                    </div>
-                        @endif
+                                <i class="fa fa-edit mx-2 sedit"></i>
+                                <i class="fa fa-times-circle mx-2 delete"></i>
+                            </div>
+                            @endif
+                            <div class="d-flex">
+                            <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
+                           </div>
                     @endauth
                     @auth('member')
                         @if(count($child->childs) == null)

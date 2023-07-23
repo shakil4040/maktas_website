@@ -3,6 +3,7 @@
 
 <head>
     <title>اسلام</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -568,11 +569,14 @@
                                                     @auth('admin')
                                                     @if(count($category->childs) == null)
                                                     <div class="d-flex">
-                                                        <!-- <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i> -->
+                                                        <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
                                                         <i class="fa fa-edit mx-2 sedit"></i>
                                                         <i class="fa fa-times-circle mx-2 delete"></i>
                                                     </div>
                                                     @endif
+                                                    <div class="d-flex">
+                                                        <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
+                                                    </div>
                                                     @endauth
                                                     @auth('member')
                                                     @if(count($category->childs) == null)

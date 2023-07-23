@@ -7,11 +7,11 @@
             </div> <br>
             <div class="d-flex justify-content-center">
                 <button class="jinahi btn btn-success mx-2">جی نہیں</button>
-                <!-- <button id="delete" class="btn btn-danger mx-2">جی ہاں</button> -->
+                <button id="delete" class="btn btn-danger mx-2">جی ہاں</button>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger mx-2" data-toggle="modal" data-target="#exampleModal">
+                <!-- <button type="button" class="btn btn-danger mx-2" data-toggle="modal" data-target="#exampleModal">
                     جی ہاں
-                </button>
+                </button> -->
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"

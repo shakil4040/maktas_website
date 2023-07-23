@@ -200,7 +200,7 @@
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
-                    {!! Form::number('course_no', $detail->course_no, ['class'=>'form-control','min'=>'0', 'placeholder'=>'نصابی نمبر درج کریں']) !!}
+                    {!! Form::number('course_no', $detail->course_no, ['class'=>'form-control','min'=>'0',"step"=>"0.001", 'placeholder'=>'نصابی نمبر درج کریں']) !!}
                 </div>
             </div>
         </div>
@@ -223,7 +223,7 @@
         <div class="stopic d-flex align-items-center">
             <div class="tabs mr-1">
                 <div class="form-group">
-                    {!! Form::number('sr', $tree->sr, ['class'=>'form-control','min'=>'0', 'placeholder'=>'نمبر شمار درج کریں','disabled']) !!}
+                    {!! Form::number('sr', $tree->sr, ['class'=>'form-control','min'=>'0',"step"=>"0.001", 'placeholder'=>'نمبر شمار درج کریں']) !!}
                 </div>
             </div>
         </div>
