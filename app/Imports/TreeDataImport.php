@@ -117,7 +117,10 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                 }
                 $count++;
             }
-            Tree::insert($treeArray);
+            foreach (array_chunk(array_values($treeArray),1000) as $t)
+            {
+                Tree::insert(array_values($t));
+            }
 //            Detail::insert(array_values($detailArray));
             foreach (array_chunk(array_values($detailArray),1000) as $t)
             {
@@ -143,7 +146,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
 
     public function chunkSize(): int
     {
-        return 15000;
+        return 30000;
     }
 
     public function startRow(): int
