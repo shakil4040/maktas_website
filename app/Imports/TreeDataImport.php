@@ -151,7 +151,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
 
     public function chunkSize(): int
     {
-        return 15000;
+        return 30000;
     }
 
     public function startRow(): int
