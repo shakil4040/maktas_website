@@ -3,7 +3,7 @@
 
     </div>
     <div class="d-flex justify-content-center my-1 ftitle">
-        <div class="title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
+        <div class="scroll-topics title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>
     <div class="d-xl-flex justify-content-between">
         <div class="stopic d-flex align-items-center tooltips">

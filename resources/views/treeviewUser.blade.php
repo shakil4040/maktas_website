@@ -1,6 +1,6 @@
 <span class="card card-success detail2">
     <div class="d-flex justify-content-center my-1 ftitle">
-        <div class="title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
+        <div class="scroll-topics title unwan text-center px-4 py-1" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>
     @if($tafseer)
     <div class="row" style="margin: 5px 16px 5px 0px;background: #f1f2f4;padding: 8px;width: 95%;border-radius: 8px;">
@@ -38,14 +38,16 @@
     </div>
     @endif
     <div class="d-xl-flex justify-content-between">
-        <div class="ltopic align-items-center udetail" style="position:relative;">
+        <div class="ltopic scroll-topics align-items-center udetail" style="position:relative;">
             <div class="unwanat text-center my-2">مختصر وضاحت</div>
             <div class="mr-2 text-wrap" title="{{ $detail->detail }}">
                 <span class="mukhtasar">{{ $detail->detail }} <br>
                     <div style="color:blue;">حوالہ:{{ $yaad->hawala }}</div>
                 </span>
             </div>
+            @if($detail->detail)
             <button id="mazmoon" class="bbuttons my-1 ml-2 mazmon">مکمل مضمون پڑھیں</button>
+            @endif
             @if($easy->easy)
             <button id="tasheel1" class="bbuttons my-1 ml-2 mazmon tasheel">تسہیل</button>
             @endif

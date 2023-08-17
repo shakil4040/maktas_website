@@ -16,6 +16,10 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <link href="/css/treeview.css" rel="stylesheet">
+    
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -510,34 +514,34 @@
                     </div>
 
                     <div class="col-md-12">
-                        <div class="row navigation_bar">
-                            <div id="ctab1" class="mx-2">
-                                <div class="nav-title" id="ct1_title"></div>
+                        <div class="row scroll-topics navigation_bar">
+                            <div id="ctab1" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct1_title"></div>
                             </div>
-                            <div id="ctab2" class="mx-2">
-                                <div class="nav-title" id="ct2_title"></div>
+                            <div id="ctab2" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct2_title"></div>
                             </div>
-                            <div id="ctab3" class="mx-2">
-                                <div class="nav-title" id="ct3_title"></div>
+                            <div id="ctab3" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct3_title"></div>
                             </div>
-                            <div id="ctab4" class="mx-2">
-                                <div class="nav-title" id="ct4_title"></div>
+                            <div id="ctab4" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct4_title"></div>
                             </div>
-                            <div id="ctab5" class="mx-2">
-                                <div class="nav-title" id="ct5_title"></div>
+                            <div id="ctab5" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct5_title"></div>
                             </div>
-                            <div id="ctab6" class="mx-2">
-                                <div class="nav-title" id="ct6_title"></div>
+                            <div id="ctab6" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct6_title"></div>
                             </div>
-                            <div id="ctab7" class="mx-2">
-                                <div class="nav-title" id="ct7_title"></div>
+                            <div id="ctab7" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct7_title"></div>
                             </div>
-                            <div id="ctab8" class="mx-2">
-                                <div class="nav-title" id="ct8_title"></div>
+                            <div id="ctab8" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics" id="ct8_title"></div>
                             </div>
                         </div>
                         <div class="title islam1">
-                            <h1>اسلام</h1>
+                            <h1 style="font-size:35px;margin-bottom:1.5rem;">اسلام</h1>
                         </div>
                         <div class="d-flex" style="width: 46%;margin: 16px 3px 0px 0px;">
                             <input id="searcht" type="search">
