@@ -38,7 +38,7 @@
     </div>
     @endif
     <div class="d-xl-flex justify-content-between">
-        <div class="ltopic scroll-topics align-items-center udetail" style="position:relative;">
+        <div class="ltopic  align-items-center udetail" style="position:relative;">
             <div class="unwanat text-center my-2">مختصر وضاحت</div>
             <div class="mr-2 text-wrap" title="{{ $detail->detail }}">
                 <span class="mukhtasar">{{ $detail->detail }} <br>
@@ -52,11 +52,11 @@
             <button id="tasheel1" class="bbuttons my-1 ml-2 mazmon tasheel">تسہیل</button>
             @endif
             @if($yaad->pasaymanzar)
-            <button id="pasaymanzar1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:140px;">پسِ
+            <button id="pasaymanzar1" class="bbuttons my-1 mazmon pasaymanzar mx-2">پسِ
                 منظر</button>
             @endif
             @if($yaad->result)
-            <button id="result1" class="bbuttons my-1 mazmon pasaymanzar" style="margin-left:272px;">نتیجہ</button>
+            <button id="result1" class="bbuttons my-1 mazmon pasaymanzar mx-2">نتیجہ</button>
             @endif
         </div>
         <div id="tasheel2" class="ltopic align-items-center tasheel2 udetail">

@@ -362,16 +362,16 @@
 /* .unwan {
   -ms-overflow-style: none;  
   scrollbar-width: none;  
-}
+} */
 .udetail::-webkit-scrollbar {
     display: none;
-} */
+}
 
 /* Hide scrollbar for IE, Edge and Firefox */
-/* .udetail {
+.udetail {
   -ms-overflow-style: none;  
   scrollbar-width: none;  
-} */
+}
 
 .unwanat {
     color: hsl(164deg 72% 23%);
