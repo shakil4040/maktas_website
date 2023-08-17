@@ -32,11 +32,16 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
     {
         try {
             $count = 1;
-            $tempArray = [];
+            $tempArray = $structure = [];
             $matched = false;
             $matching_columns = ['bunyadi_unwan', 'zayalunwan'];
             $treeArray = $easyArray = $yaadArray = $detailArray = $maholArray =  [];
             foreach ($array as $index => $row) {//dd($row);
+                foreach ($row as $key => $value) {
+                    if(($key == $matching_columns[0] || str_contains($key, $matching_columns[1]))){
+                        $structure[$index][$key] = $value;
+                    }
+                }
                 foreach ($row as $key => $value) {
                     if (isset($value) && ($key == $matching_columns[0] || str_contains($key, $matching_columns[1]))) {
 
@@ -54,7 +59,8 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                                 'sr' => $row["oyb_say_nmbr_shmar"],
                                 'title' => $row['agmaly_aanoan'],
                                 'government_com' => $row["government_com"] ?? 0,
-                                'parent_id' => $row["parent"] ?? 2000000,
+                                'parent_id' => $row["parent"] ?? 0,
+                                'structure' => json_encode($structure[$index]),
                             ];
                             $tempArray = $row;
                             $easyArray[$count] = [
@@ -121,7 +127,6 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
             {
                 Tree::insert(array_values($t));
             }
-//            Detail::insert(array_values($detailArray));
             foreach (array_chunk(array_values($detailArray),1000) as $t)
             {
                 Detail::insert(array_values($t));
@@ -157,6 +162,6 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
 
     public function headingRow(): int
     {
-        return 3;
+        return 1;
     }
 }

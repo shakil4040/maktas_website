@@ -55,7 +55,7 @@
 </ul>
 <script>
     function setTitle(item){
-        // $(".nav-title").html("");
+        $(".nav-title").html("");
         var navigation = $(item).siblings('.navigation').text();
         var strArray = navigation.split(",");
         // Display array values on page

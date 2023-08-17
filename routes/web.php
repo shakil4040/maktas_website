@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::post('/register/member', 'Auth\RegisterController@createMember');
     Route::get('/members', 'AdminController@members');
     Route::get('/upload', 'AdminController@upload');
+    Route::get('/download', 'AdminController@download');
     Route::post('/admin/uploadFile', 'AdminController@uploadFile');
     Route::get('/admin/{admin}/edit', 'AdminController@editAdmin');
     Route::patch('/admin/{admin}', 'AdminController@updateAdmin');
