@@ -15,6 +15,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\TreeDataExport;
 
 class AdminController extends Controller
 {
@@ -59,5 +60,10 @@ class AdminController extends Controller
         Excel::queueImport(new TreeDataImport, $request->file);
         Session::flash('message', 'Tree data Imported successfully.');
         return Redirect::to('/upload');
+    }
+
+    public function download()
+    {
+        return Excel::download(new TreeDataExport(), 'tree_data.xlsx');
     }
 }

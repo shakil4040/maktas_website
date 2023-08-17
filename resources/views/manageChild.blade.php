@@ -10,7 +10,7 @@
                            $level ."#".  $child->title }}')"></i>
                     @endif
                 </div>
-                <div class="ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle
+                <div class="scroll-topics ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle
                     (this)">
                     {{ $child->title }}
                     @auth('admin')
@@ -55,7 +55,7 @@
 </ul>
 <script>
     function setTitle(item){
-        // $(".nav-title").html("");
+        $(".nav-title").html("");
         var navigation = $(item).siblings('.navigation').text();
         var strArray = navigation.split(",");
         // Display array values on page

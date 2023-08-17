@@ -42,10 +42,10 @@
 .tree li {
     margin: 0;
     padding: 0 1em;
-    line-height: 2em;
+    line-height: 3em;
     color: black;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 17px;
     position: relative;
     text-align: right;
 }
@@ -141,9 +141,10 @@
 }
 
 .container {
-    font-family: jameel Noori Nastaleeq;
-    font-weight: 600;
-    font-size: 20px;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    /*font-family: 'Lato', sans-serif;*/
+    /*font-weight: 600;*/
+    font-size: 17px;
     text-align: right;
     direction: rtl;
     padding: unset !important;
@@ -177,7 +178,7 @@
     left: 5px;
     top: 48px;
     width: 49%;
-    height: 90vh;
+    height: 570px;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 100;
@@ -227,8 +228,8 @@
 .title {
     background-color: hsl(164deg 72% 23%);
     color: white;
-    border-radius: 25px;
-    font-size: 30px;
+    border-radius: 10px;
+    font-size: 20px;
     font-weight: 100;
     /* letter-spacing: 3px; */
 }
@@ -250,7 +251,7 @@
     padding: 0px 4px;
     width: 360px;
     margin: 5px 13px;
-    line-height: 29px;
+    line-height: 37px;
     border-radius: 12px;
     color: black;
     border: 1px solid hsl(164deg 72% 23%);
@@ -288,7 +289,7 @@
 .bbuttons {
     background-color: hsl(220deg 11% 95%) !important;
     color: black !important;
-    padding: 4px 4px !important;
+    padding: 12px 7px !important;
     width: 127px !important;
     border: unset;
     line-height: 29px !important;
@@ -348,28 +349,28 @@
 .unwan {
     max-width: 530px;
     white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden; */
     text-overflow: unset;
 }
 
-.unwan::-webkit-scrollbar {
+/* .unwan::-webkit-scrollbar {
     display: none;
-}
+} */
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.unwan {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+/* .unwan {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+} */
 .udetail::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .udetail {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
 .unwanat {
@@ -549,7 +550,7 @@ input {
 }
 
 .mahol {
-    font-size: 20px;
+    font-size: 16px;
     background-color: hsl(164deg 72% 23% / 51%);
     color: white !important;
     text-align: center;
@@ -572,14 +573,15 @@ input {
 
 .udetail {
     width: 100%;
-    height: 200px;
+    height: 250px;
     overflow-y: scroll;
 }
 
 .mazmon {
-    position: absolute;
-    bottom: 3px;
-    left: 0;
+    position: relative;
+    /* bottom: 3px;
+    left: 0; */
+    float: left;
     background-color: #10654e !important;
     color: white !important;
 }
@@ -771,6 +773,31 @@ input {
     z-index: -1;
     box-shadow: 0px 0px 14px 2px #10654e;
 }
+
+.scroll-topics {
+    /* width: 100%; */
+    height: auto;
+    /* display: flex; */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .scroll-topics::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #aaa;
+  }
+  
+  .scroll-topics::-webkit-scrollbar-thumb {
+    background-color: black;
+  }
+
+  .nav-title{
+     text-wrap:nowrap;
+  }
 
 @media only screen and (max-width: 1280px) {
     .stopic {
