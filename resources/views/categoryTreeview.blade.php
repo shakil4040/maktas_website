@@ -4,6 +4,7 @@
 <head>
     <title>اسلام</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -543,7 +544,7 @@
                         <div class="title islam1">
                             <h1 style="font-size:35px;margin-bottom:1.5rem;">اسلام</h1>
                         </div>
-                        <div class="d-flex" style="width: 46%;margin: 16px 3px 0px 0px;">
+                        <div class="d-flex navw">
                             <input id="searcht" type="search">
                             <button id="searchb" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>

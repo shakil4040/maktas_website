@@ -1,4 +1,5 @@
 <span class="card card-success detail2">
+    <div class="bclose"> x</div>
     <div class="d-flex justify-content-center my-1 ftitle">
         <div class="scroll-topics title unwan text-center px-4 py-1" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>

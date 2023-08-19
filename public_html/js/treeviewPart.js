@@ -1143,3 +1143,7 @@ $('#mazmoon').click(function() {
 $('#close-overlay').click(function() {
     $('#overlay').hide();
 });
+
+$('.bclose').click(function(){
+    $('.detail2').hide();
+})

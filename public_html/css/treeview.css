@@ -176,9 +176,9 @@
 .detail2 {
     position: fixed;
     left: 5px;
-    top: 48px;
+    top: 60px;
     width: 49%;
-    height: 570px;
+    height: 82vh;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 100;
@@ -798,6 +798,22 @@ input {
   .nav-title{
      text-wrap:nowrap;
   }
+  .navw {
+    width: 46%;
+    margin: 16px 3px 0px 0px;
+}
+.bclose {
+    border: 1px solid #10654e;
+    font-size: 20px;
+    width: 37px;
+    border-radius: 50%;
+    padding-bottom: 11px;
+    padding-top: 0px;
+    margin: 8px 13px -46px 1px;
+    padding-right: 11px;
+    z-index: 999999;
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 1280px) {
     .stopic {
@@ -822,4 +838,22 @@ input {
     .frame {
         display: none;
     }
+}
+@media only screen and (max-width: 400px) {
+.detail2 {
+    height: 65vh;
+}
+.list {
+    width: 98%;
+}
+.detail2 {
+    width: 98%;
+}
+.islam1 {
+    width: 100%;
+}
+.navw {
+    width: 100%;
+}
+
 }
