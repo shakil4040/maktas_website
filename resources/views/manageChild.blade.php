@@ -10,7 +10,7 @@
                            $level ."#".  $child->title }}')"></i>
                     @endif
                 </div>
-                <div class="scroll-topics ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle
+                <div id="{{ $child->title}}" class="scroll-topics ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle
                     (this)">
                     {{ $child->title }}
                     @auth('admin')
@@ -64,7 +64,7 @@
             if (i > 0) {
                 let index = i;
                 let data = $("#ct" + index + "_title").html();
-                $("#ct" + index + "_title").html(data + "&nbsp;&nbsp;&nbsp; >&nbsp;&nbsp");
+                $("#ct" + index + "_title").html('<a href="#'+data+'">'+data+'</a>' + "&nbsp;&nbsp;&nbsp; >&nbsp;&nbsp");
             }
             $("#ct" + splited[0] + "_title").html(splited[1]);
         }

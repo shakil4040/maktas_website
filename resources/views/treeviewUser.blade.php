@@ -1,7 +1,7 @@
 <span class="card card-success detail2">
-    <div class="bclose"> x</div>
+    <div class="bclose"> &#10006;</div>
     <div class="d-flex justify-content-center my-1 ftitle">
-        <div class="scroll-topics title unwan text-center px-4 py-1" title="{{ $tree->title }}">{{ $tree->title }}</div>
+        <div class="scroll-topics title btitle unwan text-center px-4 py-1" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>
     @if($tafseer)
     <div class="row" style="margin: 5px 16px 5px 0px;background: #f1f2f4;padding: 8px;width: 95%;border-radius: 8px;">

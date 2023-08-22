@@ -562,7 +562,7 @@
                                                         aria-hidden="true"></i>
                                                     @endif
                                                 </div>
-                                                <div onclick="setParentTitle('{{ $category->title }}')"
+                                                <div id="{{ $category->title }}" onclick="setParentTitle('{{ $category->title }}')"
                                                     class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
                                                     @if($category->mahol && $category->mahol->status == 'Pending')
@@ -629,7 +629,7 @@
     <script type="application/javascript">
     function setParentTitle(title) {
         $(".nav-title").html("");
-        $("#ct1_title").html(title);
+        $("#ct1_title").html('<a href="#'+title+'">'+title+'</a>');
         $("#ct2_title").html("");
         $("#ct3_title").html("");
         $("#ct4_title").html("");

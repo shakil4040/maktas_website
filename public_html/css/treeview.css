@@ -221,7 +221,7 @@
 .list {
     width: 41%;
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
 }
 
@@ -233,6 +233,7 @@
     font-weight: 100;
     /* letter-spacing: 3px; */
 }
+
 
 .stopic {
     background-color: hsl(220deg 11% 95%);
@@ -803,7 +804,7 @@ input {
     margin: 16px 3px 0px 0px;
 }
 .bclose {
-    border: 1px solid #10654e;
+    /* border: 1px solid #10654e; */
     font-size: 20px;
     width: 37px;
     border-radius: 50%;
@@ -813,6 +814,9 @@ input {
     padding-right: 11px;
     z-index: 999999;
     cursor: pointer;
+}
+.ctitle {
+    scroll-margin-top: 3em;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -842,6 +846,9 @@ input {
 @media only screen and (max-width: 450px) {
 .detail2 {
     height: 65vh;
+}
+.btitle {
+    max-width: 280px;
 }
 .list {
     width: 98%;
