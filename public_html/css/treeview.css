@@ -20,7 +20,7 @@
 }
 
 .tree ul {
-    margin-right: 1em;
+    margin-right: -8px;
     position: relative
 }
 
@@ -839,7 +839,7 @@ input {
         display: none;
     }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
 .detail2 {
     height: 65vh;
 }

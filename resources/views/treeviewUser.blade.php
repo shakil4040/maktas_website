@@ -475,7 +475,7 @@
                 </span>
             </div>
         </div>
-        
+
         @endif
         <!-- <div class="ltopic d-flex align-items-center">
             <div class="dot">
@@ -977,3 +977,8 @@
         </div>
     </div>
     <script src="/js/treeviewPart.js"></script>
+    <script>
+    $('.bclose').click(function() {
+        $('.detail2').hide();
+    });
+    </script>
