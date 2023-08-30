@@ -981,4 +981,7 @@
     $('.bclose').click(function() {
         $('.detail2').hide();
     });
+    $('.detail2').click(function(){
+        $(this).addClass('detail2').removeClass('shrink');
+    });
     </script>

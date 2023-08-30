@@ -638,6 +638,12 @@
         $("#ct7_title").html("");
         $("#ct8_title").html("");
     }
+    $(".nav-title").click(function(){
+        $('.detail2').addClass('shrink').removeClass('detail2');
+    });
+    $('.detail2').click(function(){
+        alert('success');
+    });
     </script>
 </body>
 
