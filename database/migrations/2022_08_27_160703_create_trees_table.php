@@ -16,11 +16,11 @@ class CreateTreesTable extends Migration
         Schema::create('trees', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('sr')->nullable();
-            $table->string('title');
+            $table->longText('title');
             $table->unsignedBigInteger('parent_id');
-            $table->integer('naseeha_com');
-            $table->integer('maktab_com');
-            $table->integer('government_com');
+            $table->integer('naseeha_com')->nullable();
+            $table->integer('maktab_com')->nullable();
+            $table->integer('government_com')->nullable();
             $table->timestamps();
         });
     }

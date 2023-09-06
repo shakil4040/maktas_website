@@ -46,7 +46,7 @@
                     </span>
                 </span>
                 <span class="tooltip2">
-                    <span class="mukhtasar">{{ $detail->detail }}</span>
+                    <span class="mukhtasar" title="{{ $detail->detail }}">{{ $detail->detail }}</span>
                     <span class="tooltiptext2">
                         {{ $detail->detail }}
                     </span>

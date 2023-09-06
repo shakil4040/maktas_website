@@ -19,6 +19,8 @@ class CreateYaadsTable extends Migration
             $table->string('kitni_takrar')->nullable();
             $table->string('revision')->nullable();
             $table->string('ahwal')->nullable();
+            $table->longText('pasaymanzar')->nullable();
+            $table->longText('result')->nullable();
             $table->string('shaz')->nullable();
             $table->longText('hawala')->nullable();
             $table->longText('government_ref')->nullable();

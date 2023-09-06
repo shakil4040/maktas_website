@@ -883,7 +883,7 @@ input {
 }
 .scroll-topics::-webkit-scrollbar {
     width: 5px;
-    height: 2px; 
+    height: 1px; 
 }
 .shrink {
     background-color: hsl(102deg 51% 70%);
