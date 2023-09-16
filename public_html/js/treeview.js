@@ -100,7 +100,6 @@ $(document).ready(function() {
     })
 
 
-    // $(document).on("click" ,".ctitle", function () {
     $(document).on("click" ,".ctitle", function () {
         var id = $(this).siblings('.cid').text();
         var admin = $(this).siblings('.admin').text();
@@ -329,7 +328,7 @@ function getchilds(id, level, title){
 //comparison navigation bar
 
 $(".list_color1").children().children().children(".list").each(function() {
-    var title = $(this).text();
+    var title = $(this).siblings('.title').text();
     var id = $(this).siblings('.cid').text();
     $(this).click(function() {
         $('#ct1_title').html("");
@@ -340,7 +339,7 @@ $(".list_color1").children().children().children(".list").each(function() {
         $('#ct6_title').html("");
         $('#ct7_title').html("");
         $('#ct8_title').html("");
-        $("#ctab7").children('#ct7_title').html(title);
+        $("#ctab7").children('#ct7_title').html('<a href="#'+title+'">'+title+'</a>');
         $.ajax({
             url: "/api/nav/" + id,
             success: function(data) {

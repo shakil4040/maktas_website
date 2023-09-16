@@ -12,6 +12,10 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <link href="/css/treeview.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -452,6 +456,12 @@
     </div>
     <script src="/js/treeview.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+     $(".nav-title").click(function(){
+        $('.detail2').addClass('shrink').removeClass('detail2');
+        $('.bclose').hide();
+    });
+    </script>
 </body>
 
 </html>

@@ -514,7 +514,7 @@
 
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-12 nav-col">
                         <div class="row scroll-topics navigation_bar">
                             <div id="ctab1" class="mx-2 scroll-topics">
                                 <div class="nav-title py-1 scroll-topics" id="ct1_title"></div>
@@ -641,9 +641,7 @@
     $(".nav-title").click(function(){
         $('.detail2').addClass('shrink').removeClass('detail2');
     });
-    $('.detail2').click(function(){
-        alert('success');
-    });
+    
     </script>
 </body>
 

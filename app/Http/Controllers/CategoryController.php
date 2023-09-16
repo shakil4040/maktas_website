@@ -291,6 +291,7 @@ class CategoryController extends Controller
         }
     }
             $data = [
+                'sr' => $sr,
                 'parentTitle' => $parentTitle,
                 'parent2Title' => $parent2Title,
                 'parent3Title' => $parent3Title,

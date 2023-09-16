@@ -251,9 +251,9 @@
 .stopic {
     background-color: hsl(220deg 11% 95%);
     padding: 0px 4px;
-    width: 110px;
+    width: 130px;
     margin: 5px 13px;
-    line-height: 29px;
+    line-height: 38px;
     border-radius: 12px;
     /* text-align: center; */
     color: black;
@@ -296,7 +296,7 @@
 .tabs {
     white-space: nowrap;
     overflow: hidden;
-    width: 90px;
+    width: 100px;
     text-overflow: ellipsis;
 }
 
@@ -337,16 +337,29 @@
     margin-top: 30px;
     margin-bottom: 5px;
 }
+.nav-col{
+    padding-right: unset;
+    padding-left: unset;
+}
+.row {
+    margin-right: unset;
+    margin-left: unset;
+}
+
+.card-body {
+    padding: unset;
+}
 
 .navigation_bar {
     width: 100%;
-    position: fixed;
+    position: sticky;
+    top:0;
     height: 47px;
-    right: 14px;
+    /* right: 14px; */
     background-color: #f1f1f1;
     padding: 8px;
     z-index: 999;
-    margin-top: -20px;
+    /* margin-top: -20px; */
 }
 
 .navigation_barg {
@@ -544,12 +557,17 @@ input {
 }
 
 .comp {
-    position: absolute;
+    /* position: absolute; */
     top: 10px;
 }
 
+.com-head{
+    line-height: 3.6rem !important;
+}
+
 .cbtn button {
-    font-size: 20px !important;
+    font-size: 16px !important;
+    width: 135px;
 }
 
 .cbtn a {
@@ -677,6 +695,10 @@ input {
 .btn-link {
     color: blue !important;
     font-size: 20px;
+}
+
+.card-body {
+    padding-top: 0 !important;
 }
 
 .card-header {
@@ -814,19 +836,10 @@ input {
   }
   .navw {
     width: 46%;
-    margin: 16px 3px 0px 0px;
+    margin: 16px 0px 0px 0px;
 }
 .bclose {
-    /* border: 1px solid #10654e; */
-    font-size: 20px;
-    width: 37px;
-    border-radius: 50%;
-    padding-bottom: 11px;
-    padding-top: 0px;
-    margin: 8px 13px -46px 1px;
-    padding-right: 11px;
-    z-index: 999999;
-    cursor: pointer;
+    display: none;
 }
 .ctitle {
     scroll-margin-top: 3em;
@@ -887,10 +900,12 @@ input {
 }
 .shrink {
     background-color: hsl(102deg 51% 70%);
-    overflow-x: hidden;
-    overflow-y: auto;
+    /* overflow-x: hidden;
+    overflow-y: auto; */
+    overflow:hidden;
     position: fixed;
-    z-index: 100;
+    cursor: pointer;
+    /* z-index: 100; */
     top: 180px;
     width: 80px;
     height: 80px;
@@ -898,6 +913,19 @@ input {
     border-radius: 50%;
     transition: width 2s, height 2s;
     transition-timing-function: ease;
+}
+.bclose {
+    /* border: 1px solid #10654e; */
+    display: block;
+    font-size: 20px;
+    width: 37px;
+    border-radius: 50%;
+    padding-bottom: 11px;
+    padding-top: 0px;
+    margin: 8px 13px -46px 1px;
+    padding-right: 11px;
+    z-index: 999999;
+    cursor: pointer;
 }
 
 }
