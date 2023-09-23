@@ -986,5 +986,6 @@
     });
     $('.detail2').click(function(){
         $(this).addClass('detail2').removeClass('shrink');
+        $('.btitle').css("max-width","260px");
     });
     </script>

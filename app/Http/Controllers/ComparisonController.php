@@ -58,6 +58,7 @@ class ComparisonController extends Controller
                     ->orWhere('hukam', '=', 'واجب')
                     ->orWhere('hukam', '=', 'سنت مؤکدہ')
                     ->orWhere('hukam', '=', 'حرام')
+                    ->orWhere('hukam', '=', 'بنیاد')
                     ->orWhere('hukam', '=', 'مکروہ تحریمی');
             })
             ->orderBy('sr', 'asc')->get();

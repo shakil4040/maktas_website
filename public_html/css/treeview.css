@@ -729,6 +729,7 @@ input {
     background-color: #d9ff00;
     color: black;
     white-space: normal;
+    line-height: 30px;
     overflow-wrap: break-word;
     text-align: center;
     border-radius: 24px;
@@ -845,6 +846,10 @@ input {
     scroll-margin-top: 3em;
 }
 
+.nav-note {
+    display: none;
+}
+
 @media only screen and (max-width: 1280px) {
     .stopic {
         width: 94%;
@@ -875,6 +880,9 @@ input {
 }
 .btitle {
     max-width: 260px;
+    max-width: 260px;
+    position: fixed;
+    z-index: 999999;
 }
 .list {
     width: 98%;
@@ -890,6 +898,7 @@ input {
 }
 .navigation_bar{
     flex-wrap: wrap !important;
+    line-height: 40px;
 }
 .detail2{
     top:165px;
@@ -926,6 +935,29 @@ input {
     padding-right: 11px;
     z-index: 999999;
     cursor: pointer;
+}
+
+.comparison h2{
+    font-size: 1.5rem;
+}
+
+.comparison {
+    height: 180vh;
+}
+
+.udetail {
+    margin-top: 51px;
+}
+.tafseeli {
+    margin-bottom: 20px;
+}
+.nav-note {
+    background-color: #d9ff00;
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 15px;
+    display: block;
+    padding: 0px 3px
 }
 
 }

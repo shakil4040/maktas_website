@@ -38,7 +38,7 @@ Route::get('/tree2',function(){
 Route::view('marhabah','Marhabah');
 Route::get('/tree', 'CategoryController@manageCategory');
 Route::get('/educationist', 'CategoryController@educationist');
-Route::post('add-category','CategoryController@addCategory')->name('add.category');
+// Route::post('add-category','CategoryController@addCategory')->name('add.category');
 Route::get('/home', 'HomeController@index')->name('home');
 
 

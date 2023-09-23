@@ -37,6 +37,7 @@
         <div id="ctab8" class="mx-2">
             <div class="nav-title" id="ct8_title"></div>
         </div>
+        <div class="nav-note">پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔</div>
     </div>
     <div class="row">
     </div>
@@ -202,7 +203,7 @@
                                                         @if($category->government_com == 1)
                                                         <div id="{{ $category->title }}"
                                                             title="پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔"
-                                                            class="ctitle list d-flex justify-content-between align-items-center taqabul">
+                                                            class="ctitle scroll-topics list d-flex justify-content-between align-items-center taqabul">
                                                             {{ $category->title }}
                                                             @auth('admin')
                                                             @if(!count($category->childs))
@@ -223,7 +224,7 @@
                                                         </div>
                                                         @else
                                                         <div
-                                                            class="ctitle list d-flex justify-content-between align-items-center">
+                                                            class="ctitle scroll-topics list d-flex justify-content-between align-items-center">
                                                             {{ $category->title }}
                                                             @auth('admin')
                                                             @if(!count($category->childs))
