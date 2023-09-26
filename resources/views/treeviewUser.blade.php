@@ -982,10 +982,10 @@
         $('.detail2').hide();
     });
     $('.detail2').click(function() {
-        $('.bclose').show();
+        $('.bclose').addClass('sbclose');
     });
     $('.detail2').click(function(){
         $(this).addClass('detail2').removeClass('shrink');
-        $('.btitle').css("max-width","260px");
+        $('.btitle').removeClass('shtitle');
     });
     </script>

@@ -942,7 +942,7 @@ input {
 }
 
 .comparison {
-    height: 180vh;
+    height: 226vw;
 }
 
 .udetail {
@@ -955,9 +955,30 @@ input {
     background-color: #d9ff00;
     border-radius: 10px;
     border: 1px solid;
-    font-size: 15px;
+    font-size: 12px;
     display: block;
     padding: 0px 3px
 }
+.shtitle {
+    max-width: 1px;
+}
+.sbclose {
+    display: block;
+}
 
+}
+
+@media only screen and (min-width: 700px) {
+    .comparison {
+        height: 100vw;
+    }   
+    .tafseeli {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .comparison {
+        height: 100vh;
+    }   
 }

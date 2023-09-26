@@ -640,7 +640,7 @@
     }
     $(".nav-title").click(function(){
         $('.detail2').addClass('shrink').removeClass('detail2');
-        $('.btitle').css("max-width","1px");
+        $('.btitle').addClass('shtitle');
     });
     
     </script>

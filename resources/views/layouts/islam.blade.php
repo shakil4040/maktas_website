@@ -460,8 +460,8 @@
     <script>
      $(".nav-title").click(function(){
         $('.detail2').addClass('shrink').removeClass('detail2');
-        $('.bclose').hide();
-        $('.btitle').css("max-width","1px");
+        $('.bclose').removeClass('sbclose');
+        $('.btitle').addClass('shtitle');
     });
     </script>
 </body>

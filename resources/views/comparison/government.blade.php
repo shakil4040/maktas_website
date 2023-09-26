@@ -37,7 +37,7 @@
         <div id="ctab8" class="mx-2">
             <div class="nav-title" id="ct8_title"></div>
         </div>
-        <div class="nav-note">پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔</div>
+        <div class="nav-note mx-auto">پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔</div>
     </div>
     <div class="row">
     </div>
