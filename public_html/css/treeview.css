@@ -202,9 +202,9 @@
 .detail3 {
     position: fixed;
     right: 5px;
-    top: 20px;
+    top: 62px;
     width: 49%;
-    height: 95vh;
+    height: 82vh;
     overflow: auto;
     z-index: 9999;
     background-color: hsl(102deg 51% 70%);
@@ -252,7 +252,7 @@
     background-color: hsl(220deg 11% 95%);
     padding: 0px 4px;
     width: 130px;
-    margin: 5px 13px;
+    margin: 5px 5px;
     line-height: 38px;
     border-radius: 12px;
     /* text-align: center; */
@@ -264,7 +264,7 @@
     background-color: hsl(220deg 11% 95%);
     padding: 0px 4px;
     width: 360px;
-    margin: 5px 13px;
+    margin: 5px 5px;
     line-height: 37px;
     border-radius: 12px;
     color: black;
@@ -304,7 +304,7 @@
     background-color: hsl(220deg 11% 95%) !important;
     color: black !important;
     padding: 12px 7px !important;
-    width: 127px !important;
+    width: 174px !important;
     border: unset;
     line-height: 29px !important;
     border-radius: 12px !important;
@@ -802,11 +802,11 @@ input {
     background: transparent;
     border: 1px solid #10654e;
     position: absolute;
-    height: 248px;
+    height: 250px;
     border-radius: 15px;
-    width: 59%;
-    top: 55px;
-    right: 134px;
+    width: 57%;
+    top: 56px;
+    right: 139px;
     z-index: -1;
     box-shadow: 0px 0px 14px 2px #10654e;
 }
@@ -850,12 +850,18 @@ input {
     display: none;
 }
 
+.card select , input {
+    font-size: 10px !important;
+}
+
 @media only screen and (max-width: 1280px) {
     .stopic {
         width: 94%;
+        margin-inline: auto;
     }
     .ltopic {
         width: 94%;
+        margin-inline: auto;
     }
     .smahol {
         width: 94%;
@@ -965,6 +971,10 @@ input {
 .sbclose {
     display: block;
 }
+#logo {
+    background-image: url(../images/logo.png);
+    background-size: 90px 88px;
+}
 
 }
 
@@ -975,6 +985,7 @@ input {
     .tafseeli {
         margin-bottom: 20px;
     }
+    
 }
 
 @media only screen and (min-width: 800px) {

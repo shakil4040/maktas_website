@@ -31,28 +31,25 @@
 
 
 
-    <!-- <footer id="footer">
+    <footer id="footer">
 		<div class="container">
 			<section>
 				<article class="col-1">
 					<h3>Contact</h3>
 					<ul>
-						<li class="address"><a href="#">151 W Adams St<br>Detroit, MI 48226</a></li>
-						<li class="mail"><a href="#">contact@harrisonuniversity.com</a></li>
-						<li class="phone last"><a href="#">(971) 536 845 924</a></li>
+						<li class="address"><a href="#">PASARI HOUSE, <br>21-A (East) Block-L,<br> Gulberg III, Lahore-Pakistan</a></li>
+						<li class="mail"><a href="#">contact@wee.com.co</a></li>
+						<li class="phone last"><a href="#">+92-42-5850374</a></li>
 					</ul>
 				</article>
 				<article class="col-2">
-					<h3>Forum topics</h3>
+					<h3>Important Links</h3>
 					<ul>
-						<li><a href="#">Omnis iste natus error sit</a></li>
-						<li><a href="#">Nam libero tempore cum soluta</a></li>
-						<li><a href="#">Totam rem aperiam eaque </a></li>
-						<li><a href="#">Ipsa quae ab illo inventore veritatis </a></li>
-						<li class="last"><a href="#">Architecto beatae vitae dicta sunt </a></li>
+						<li><a href="https://www.wee.com.co/tree">List of Topics</a></li>
+						<li><a href="https://www.wee.com.co/comparison">Courses Comparison</a></li>
 					</ul>
 				</article>
-				<article class="col-3">
+				<!-- <article class="col-3">
 					<h3>Social media</h3>
 					<p>Temporibus autem quibusdam et aut debitis aut rerum necessitatibus saepe.</p>
 					<ul>
@@ -72,11 +69,11 @@
 					<ul>
 						<li><a href="#"></a></li>
 					</ul>
-				</article>
+				</article> -->
 			</section>
-			<p class="copy">Copyright 2014 Harrison High School. Designed by <a href="http://www.vandelaydesign.com/" title="Designed by Vandelay Design" target="_blank">Vandelay Design</a>. All rights reserved.</p>
+			<!-- <p class="copy">Copyright 2014 Harrison High School. Designed by <a href="http://www.vandelaydesign.com/" title="Designed by Vandelay Design" target="_blank">Vandelay Design</a>. All rights reserved.</p> -->
 		</div>
-	</footer> -->
+	</footer>
     <!-- / footer -->
 
     <div id="fancy">

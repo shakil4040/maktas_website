@@ -645,7 +645,7 @@ h1.single{
 	height: 505px;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 94px;
+	margin-bottom: 0px;
 }
 
 .slider .bxslider li {
@@ -1579,7 +1579,7 @@ a.btn.blue,
 	
 	.slider {
 		height: 400px;
-		margin-bottom: 50px;
+		margin-bottom: 0px;
 	}
 	
 	.slider .bxslider li {
@@ -1923,6 +1923,10 @@ a.btn.blue,
 	#footer{
 		padding-top: 60px;
 	}
+	#logo {
+		background-image: url(../images/logo.png) !important;
+		background-size: 90px 88px !important;
+	}
 }
 
 @media screen and (max-width: 700px) {
@@ -1984,7 +1988,7 @@ a.btn.blue,
 	}
 	
 	.slider .info {
-		padding: 60px 15px 40px 15px;
+		padding: 60px 50px 40px 15px;
 	}
 	
 	.slider .info h2 {
@@ -2107,6 +2111,7 @@ a.btn.blue,
 	#sidebar .sidemenu {
 		padding-top: 0;
 	}
+	
 
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	

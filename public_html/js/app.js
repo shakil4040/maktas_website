@@ -25009,28 +25009,31 @@ var _hoisted_9 = {
   "data-target": "#exampleModal"
 };
 var _hoisted_10 = {
+  href: "/tree"
+};
+var _hoisted_11 = {
   key: 0,
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 };
-var _hoisted_11 = {
+var _hoisted_12 = {
   key: 0,
   "class": "mt-2"
 };
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   style: {
     "margin-bottom": "-44px"
   }
 }, "براہِ مہربانی انتظار فرمائیں۔۔۔", -1 /* HOISTED */);
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
   src: "/gauge-yourself",
   height: "650",
   width: "100%",
   title: "Iframe Example"
 }, null, -1 /* HOISTED */);
-var _hoisted_14 = [_hoisted_12, _hoisted_13];
+var _hoisted_15 = [_hoisted_13, _hoisted_14];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
@@ -25055,12 +25058,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, " جی ہاں ")];
     }),
     _: 1 /* STABLE */
-  }), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_6, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_7, " موازنے کے لیے کتاب کی سافٹ کاپی بھیجیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_8, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " موازنے کا نمونہ دیکھیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "javascript:;",
-    onClick: _cache[1] || (_cache[1] = function () {
-      return $options.chart1 && $options.chart1.apply($options, arguments);
-    })
-  }, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_10, " دینی عنوانات کی فہرستیں دیکھیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _ctx.chart2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, _hoisted_14)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"chart4\" class=\"mt-2\">\r\n                <p style=\"margin-bottom:-44px;\">براہِ مہربانی انتظار فرمائیں۔۔۔</p>\r\n                <iframe src=\"/comparison\"  height=\"650\" width=\"100%\" title=\"Iframe Example\"></iframe>\r\n            </div> ")])])]);
+  }), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_6, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_7, " موازنے کے لیے کتاب کی سافٹ کاپی بھیجیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_8, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " موازنے کا نمونہ دیکھیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, [_ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_11, " دینی عنوانات کی فہرستیں دیکھیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _ctx.chart2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, _hoisted_15)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"chart4\" class=\"mt-2\">\r\n                <p style=\"margin-bottom:-44px;\">براہِ مہربانی انتظار فرمائیں۔۔۔</p>\r\n                <iframe src=\"/comparison\"  height=\"650\" width=\"100%\" title=\"Iframe Example\"></iframe>\r\n            </div> ")])])]);
 }
 
 /***/ }),

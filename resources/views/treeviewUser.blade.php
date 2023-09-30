@@ -357,7 +357,9 @@
                 <span class="tooltip2">
                     {{ $easy->shoba }}
                     <span class="tooltiptext2">
-                        {{ $easy->shoba }}
+                    @if($easy->shoba == 'ہر شعبہ')
+                        مذکور بات کا تعلق کسی خاص شعبے سے نہیں۔ بلکہ تمام شعبوں سے ہے۔
+                        @endif
                     </span>
                 </span>
             </div>
@@ -470,7 +472,9 @@
                 <span class="tooltip2">
                     {{ $yaad->ahwal }}
                     <span class="tooltiptext2">
-                        {{ $yaad->ahwal }}
+                    @if($yaad->ahwal == 'تمام احوال')
+                        مذکور بات کا تعلق خاص قسم کے افراد سے نہیں ہے۔ بلکہ تمام لوگوں کے ساتھ ہے۔
+                        @endif
                     </span>
                 </span>
             </div>

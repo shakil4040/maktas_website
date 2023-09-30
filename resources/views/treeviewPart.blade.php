@@ -1,9 +1,10 @@
 <span class="card card-success detail2">
+<div class="bclose"> &#10006;</div>
     <div class="frame">
 
     </div>
     <div class="d-flex justify-content-center my-1 ftitle">
-        <div class="scroll-topics title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
+        <div class="scroll-topics  title unwan py-1 px-5" title="{{ $tree->title }}">{{ $tree->title }}</div>
     </div>
     <div class="d-xl-flex justify-content-between">
         <div class="stopic d-flex align-items-center tooltips">
@@ -617,7 +618,7 @@
             </div>
         </div>
         <div class="ltopic mahol d-flex align-items-center">
-            <div class="frame" style="height: 166px;top: 383px;">
+            <div class="frame" style="height: 203px;top: 455px;">
 
             </div>
             <div class="mr-2 wazahat" title="{{ $easy->muharik }}">
@@ -926,8 +927,8 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-between align-items-center">
-        <i class="fa fa-eye dicon" title="چھپی ہوئی تفصیلات دیکھیں" aria-hidden="true"></i>
+    <div class="d-flex mt-5 justify-content-between align-items-center">
+        <i class="fa fa-eye dicon ml-3" title="چھپی ہوئی تفصیلات دیکھیں" aria-hidden="true"></i>
         <div>
             @if($admin || $memberId)
             <button id="acomment" class="bbuttons my-1 ml-2 ara">آراء دیکھیں</button>
@@ -1094,3 +1095,15 @@
     </div>
 </div>
 <script src="/js/treeviewPart.js"></script>
+<script>
+    $('.bclose').click(function() {
+        $('.detail2').hide();
+    });
+    $('.detail2').click(function() {
+        $('.bclose').addClass('sbclose');
+    });
+    $('.detail2').click(function(){
+        $(this).addClass('detail2').removeClass('shrink');
+        $('.btitle').removeClass('shtitle');
+    });
+    </script>
