@@ -10852,17 +10852,17 @@ body {
   font-size: 30px;
   margin-top: 4px;
   font-weight: 600;
-  color: #8c929c;
+  color: black;
 }
 .form li {
   font-family: "Jameel Noori Nastaleeq";
   font-size: 25px;
-  color: #8c929c;
+  color: black;
   font-weight: 600;
   list-style-type: disc;
 }
 .form h6, .form .h6 {
-  color: #8c929c;
+  color: black;
   font-family: "BebasNeue";
 }
 .form p.second {
@@ -10872,6 +10872,7 @@ body {
   font-family: "Jameel Noori Nastaleeq";
   border: 2px solid #8c929c;
   margin-top: 50px;
+  overflow-y: scroll;
   color: #8c929c;
   border-radius: 39px;
   font-size: 28px;

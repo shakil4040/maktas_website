@@ -11,12 +11,16 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Amiri Quran' rel='stylesheet'>
+    <!-- ================= -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/assets/images/logo.png">
     <link rel="stylesheet" media="all" href="/assets/css/style.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Amiri Quran' rel='stylesheet'>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -45,8 +49,8 @@
 				<article class="col-2">
 					<h3>Important Links</h3>
 					<ul>
-						<li><a href="https://www.wee.com.co/tree">List of Topics</a></li>
-						<li><a href="https://www.wee.com.co/comparison">Courses Comparison</a></li>
+						<li><a href="/tree">List of Topics</a></li>
+						<li><a href="/comparison">Courses Comparison</a></li>
 					</ul>
 				</article>
 				<!-- <article class="col-3">

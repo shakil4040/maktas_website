@@ -519,7 +519,7 @@
                 <span class="tooltip2">
                     {{ $mahol->sunana }}
                     <span class="tooltiptext2">
-                        {{ $mahol->sunana }}
+                    {{ $mahol->sunana }}سال کی عمر میں مذکورہ بات سنانا مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -546,7 +546,7 @@
                 <span class="tooltip2">
                     {{ $mahol->kehalwana }}
                     <span class="tooltiptext2">
-                        {{ $mahol->kehalwana }}
+                    {{ $mahol->kehalwana }}سال کی عمر میں مذکورہ بات کہلوانا مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -572,7 +572,7 @@
                 <span class="tooltip2">
                     {{ $mahol->dekhana }}
                     <span class="tooltiptext2">
-                        {{ $mahol->dekhana }}
+                    {{ $mahol->dekhana }}سال کی عمر میں مذکورہ بات دکھانا مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -598,7 +598,7 @@
                 <span class="tooltip2">
                     {{ $mahol->mashq }}
                     <span class="tooltiptext2">
-                        {{ $mahol->mashq }}
+                    {{ $mahol->mashq }}سال کی عمر میں مذکورہ بات کی مشق مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -624,7 +624,7 @@
                 <span class="tooltip2">
                     {{ $mahol->batana }}
                     <span class="tooltiptext2">
-                        {{ $mahol->batana }}
+                    {{ $mahol->batana }}سال کی عمر میں مذکورہ بات بتانا مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -650,7 +650,7 @@
                 <span class="tooltip2">
                     {{ $mahol->sikhana }}
                     <span class="tooltiptext2">
-                        {{ $mahol->sikhana }}
+                    {{ $mahol->sikhana }}سال کی عمر میں مذکورہ بات سکھانا مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -677,7 +677,7 @@
                 <span class="tooltip2">
                     {{ $mahol->adat }}
                     <span class="tooltiptext2">
-                        {{ $mahol->adat }}
+                    {{ $mahol->adat }}سال کی عمر میں مذکورہ بات کی عادت ڈالنا مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -703,7 +703,7 @@
                 <span class="tooltip2">
                     {{ $mahol->samjhana }}
                     <span class="tooltiptext2">
-                        {{ $mahol->samjhana }}
+                    {{ $mahol->samjhana }}سال کی عمر میں مذکورہ بات سمجھانا مفید ہے۔ 
                     </span>
                 </span>
             </div>
@@ -729,7 +729,7 @@
                 <span class="tooltip2">
                     {{ $mahol->parhana }}
                     <span class="tooltiptext2">
-                        {{ $mahol->parhana }}
+                    {{ $mahol->parhana }}سال کی عمر میں مذکورہ بات پڑھانا مفید ہے۔ 
                     </span>
                 </span>
             </div>

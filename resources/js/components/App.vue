@@ -8,7 +8,7 @@
             </router-link>
             <div class="menu-trigger"></div>
             <nav id="menu">
-                <ul>
+                <ul style="padding-left: 35px !important;">
                     <li>
                         <router-link to="/student" style="text-decoration:none;">
                             <a href="#">Student</a>

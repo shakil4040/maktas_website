@@ -208,7 +208,7 @@ a:hover {
 }
 
 #menu ul {
-	padding: 0 80px !important;
+	padding: 0 65px !important;
 	display: inline-block;
 }
 
@@ -218,10 +218,10 @@ a:hover {
 }
 
 #menu a {
-	font-size: 21px;
+	font-size: 19px;
 	line-height: 28px;
-	color: #8c929c;
-	font-family: 'BebasNeue';
+	color: #3e3f40;
+	font-family: 'Gabarito', cursive;
 	display: block;
 	text-decoration: none;
 }
@@ -1574,7 +1574,7 @@ a.btn.blue,
 	}
 	
 	#menu li {
-		padding: 0 10px;
+		padding: 0 20px;
 	}
 	
 	.slider {
@@ -1972,6 +1972,9 @@ a.btn.blue,
 		float: left;
 		clear: left;
 	}
+	#menu ul {
+        padding: 0 37px !important;
+    }
 	
 	#menu li {
 		padding: 0 10px;

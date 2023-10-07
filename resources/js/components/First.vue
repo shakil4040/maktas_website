@@ -16,7 +16,7 @@
             <li>
               <div class="container mx-5">
                   <div class="info">
-                      <h2><br><span style="font-family: 'jameel noori nastaleeq';">یہ شارع عام نہیں</span></h2>
+                      <h2><br><span style="font-family: 'jameel noori nastaleeq';">یہ شاہراہِ عام نہیں</span></h2>
                       <router-link to="/second" style="font-family: 'jameel noori nastaleeq';">
                         مزید جانیے
                       </router-link>

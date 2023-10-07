@@ -567,7 +567,8 @@ input {
 
 .cbtn button {
     font-size: 16px !important;
-    width: 135px;
+    width: 157px;
+    line-height: 33px;
 }
 
 .cbtn a {
@@ -737,9 +738,9 @@ input {
     position: absolute;
     z-index: 1;
     width: 125px;
-    top: 130%;
+    top: 50px;
     left: 30%;
-    margin-left: -41px;
+    margin-left: -44px;
 }
 
 .tooltip1 .tooltiptext::after {
@@ -774,7 +775,7 @@ input {
     font-size: 16px;
     position: absolute;
     z-index: 1;
-    bottom: 17%;
+    top: 40px;
     left: 31%;
     margin-left: -46px;
 }
@@ -782,12 +783,13 @@ input {
 .tooltip2 .tooltiptext2::after {
     content: "";
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #ffd000fd transparent transparent transparent;
+    border-color: transparent transparent #ffd000fd transparent;
+    
 }
 
 .tooltip2 a {
@@ -976,6 +978,7 @@ input {
     background-size: 90px 88px;
 }
 
+
 }
 
 @media only screen and (min-width: 700px) {
@@ -985,6 +988,7 @@ input {
     .tafseeli {
         margin-bottom: 20px;
     }
+    
     
 }
 
