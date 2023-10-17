@@ -15,7 +15,7 @@
             </li>
             <li>
               <div class="container mx-5">
-                  <div class="info">
+                  <div class="info" style="padding: 26px 115px 0px 0px;">
                       <h2><br><span style="font-family: 'jameel noori nastaleeq';">یہ شاہراہِ عام نہیں</span></h2>
                       <router-link to="/second" style="font-family: 'jameel noori nastaleeq';">
                         مزید جانیے

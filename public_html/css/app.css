@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8"; /*!
+@import url(https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Noto+Nastaliq+Urdu&display=swap);
+@charset "UTF-8";
+/*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
@@ -10848,21 +10850,23 @@ body {
   padding-bottom: 5px;
 }
 .form p {
-  font-family: "Jameel Noori Nastaleeq";
-  font-size: 30px;
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-size: 20px;
+  line-height: 45px;
   margin-top: 4px;
   font-weight: 600;
-  color: black;
+  color: #8c929c;
 }
 .form li {
-  font-family: "Jameel Noori Nastaleeq";
-  font-size: 25px;
-  color: black;
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-size: 20px;
+  line-height: 45px;
+  color: #8c929c;
   font-weight: 600;
   list-style-type: disc;
 }
 .form h6, .form .h6 {
-  color: black;
+  color: #8c929c;
   font-family: "BebasNeue";
 }
 .form p.second {
@@ -10872,7 +10876,6 @@ body {
   font-family: "Jameel Noori Nastaleeq";
   border: 2px solid #8c929c;
   margin-top: 50px;
-  overflow-y: scroll;
   color: #8c929c;
   border-radius: 39px;
   font-size: 28px;
@@ -10916,7 +10919,7 @@ body {
   text-align: center;
 }
 .form .alert img {
-  width: 70%;
+  width: 100%;
 }
 
 .for-login {

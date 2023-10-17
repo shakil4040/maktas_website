@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Noto+Nastaliq+Urdu&display=swap');
 // Variables
 @import 'variables';
 // Bootstrap
@@ -32,16 +33,18 @@ body {
         padding-bottom: 5px;
     }
     p {
-        font-family: 'Jameel Noori Nastaleeq';
-        font-size: 30px;
+        font-family: 'Noto Nastaliq Urdu', serif;
+        font-size: 20px;
+        line-height: 45px;
         margin-top: 4px;
         font-weight: 600;
         color: #8c929c;
     }
     
     li {
-        font-family: 'Jameel Noori Nastaleeq';
-        font-size: 25px;
+        font-family: 'Noto Nastaliq Urdu', serif;
+        font-size: 20px;
+        line-height: 45px;
         color: #8c929c;
         font-weight: 600;
         list-style-type: disc;
@@ -102,7 +105,7 @@ body {
         text-align: center;
     }
     .alert img {
-        width: 70%;
+        width: 100%;
     }
 }
 
