@@ -58,12 +58,15 @@ body {
         font-size: 42px;
     }
     button {
-        font-family: 'Jameel Noori Nastaleeq';
+        font-family: 'Noto Nastaliq Urdu', serif;
         border: 2px solid #8c929c;
         margin-top: 50px;
         color: #8c929c;
         border-radius: 39px;
-        font-size: 28px;
+        font-size: 15px !important;
+        overflow-y: scroll;
+        padding: 0px 15px 6px 15px !important;
+        line-height: 34px;
         padding: 6px 39px;
         margin-left: 15px;
     }
@@ -87,19 +90,19 @@ body {
         border-radius: 6px;
     }
     .blue {
-        font-family: 'Jameel Noori Nastaleeq';
+        font-family: 'Noto Nastaliq Urdu', serif;
         color: blue;
         cursor: pointer;
         border: unset;
     }
     .green {
-        font-family: 'Jameel Noori Nastaleeq';
+        font-family: 'Noto Nastaliq Urdu', serif;
         color: green;
         cursor: pointer;
         border: unset;
     }
     .red {
-        font-family: 'Jameel Noori Nastaleeq';
+        font-family: 'Noto Nastaliq Urdu', serif;
         color: red;
         font-size: 30px;
         text-align: center;
@@ -230,7 +233,7 @@ body {
     margin-bottom: unset;
     text-align: right;
     padding-right: 12px;
-    font-family: 'Jameel Noori Nastaleeq';
+    font-family: 'Noto Nastaliq Urdu', serif;
     border-bottom: unset;
 }
 
