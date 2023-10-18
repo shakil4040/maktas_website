@@ -1517,6 +1517,13 @@ a.btn.blue,
 	line-height: 24px;
 }
 
+.span2 {
+	font-family: 'Noto Nastaliq Urdu', serif !important;
+	font-size: 58px !important;
+	text-align: center;
+	padding: 0px 15px 31px 9px !important;
+}
+
 
 /* Fonts
 ------------------------------------------------------------------------------*/ 
@@ -1993,6 +2000,9 @@ a.btn.blue,
 	.slider .info {
 		padding: 55px 0px 40px 15px;
 	}
+	.slider .info2 {
+		padding: 26px 115px 0px 0px;
+	}
 	
 	.slider .info h2 {
 		font-size: 40px;
@@ -2113,6 +2123,11 @@ a.btn.blue,
 
 	#sidebar .sidemenu {
 		padding-top: 0;
+	}
+	.span2 {
+		font-family: 'Noto Nastaliq Urdu', serif !important;
+		font-size: 25px !important;
+		padding: 0px 15px 15px 10px !important;
 	}
 	
 

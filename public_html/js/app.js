@@ -22528,15 +22528,10 @@ var _hoisted_7 = {
   "class": "container mx-5"
 };
 var _hoisted_8 = {
-  "class": "info",
-  style: {
-    "padding": "26px 115px 0px 0px"
-  }
+  "class": "info info2"
 };
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  style: {
-    "font-family": "'jameel noori nastaleeq'"
-  }
+  "class": "span2"
 }, "یہ شاہراہِ عام نہیں")], -1 /* HOISTED */);
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" مزید جانیے ");
 var _hoisted_11 = {
