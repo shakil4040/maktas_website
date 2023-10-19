@@ -39,16 +39,17 @@
             </div>
            
            
-            <router-link to="chart">
-                <button style="margin-right:105px;" v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    ضروری باتوں کا  طالب علم کی عمر کے حساب سے   چارٹ  
-                </button>
-            </router-link> 
-            <router-link to="chart">
-                <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
-                    ضروری  باتوں کا مکمل چارٹ
-                </button> 
-            </router-link> <br>
+                <a href="/tree">
+                    <button  v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        ضروری باتوں کا  طالب علم کی عمر کے حساب سے   چارٹ
+                    </button>
+                </a>
+                <a href="/tree">
+                    <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+                        ضروری  باتوں کا مکمل چارٹ
+                    </button>
+                </a>
+             <br>
         </div>
     </div>
 </div>

@@ -26,12 +26,12 @@
 
             <br>
 
-            <a href="javascript:;" @click="chart1">
+            <a href="/tree">
                 <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     دینی باتوں کی اجمالی فہرست
                 </button>
             </a>
-            <a href="javascript:;" @click="chart1">
+            <a href="/tree">
                 <button v-if="hidden3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     دینی باتوں کی تفصیلی فہرست
                 </button>

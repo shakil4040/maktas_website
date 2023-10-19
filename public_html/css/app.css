@@ -10879,7 +10879,6 @@ body {
   color: #8c929c;
   border-radius: 39px;
   font-size: 15px !important;
-  overflow-y: scroll;
   padding: 0px 15px 6px 15px !important;
   line-height: 34px;
   padding: 6px 39px;
@@ -10906,6 +10905,8 @@ body {
 .form .blue {
   font-family: "Noto Nastaliq Urdu", serif;
   color: blue;
+  font-size: 20px;
+  line-height: 44px;
   cursor: pointer;
   border: unset;
 }
@@ -10918,7 +10919,7 @@ body {
 .form .red {
   font-family: "Noto Nastaliq Urdu", serif;
   color: red;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
 }
 .form .alert img {
@@ -11039,7 +11040,9 @@ body {
   color: black;
   font-size: 25px;
   border-top: 2px solid #dfe1e5;
-  margin-bottom: unset;
+  font-size: 20px;
+  line-height: 50px;
+  margin-bottom: 6px;
   text-align: right;
   padding-right: 12px;
   font-family: "Noto Nastaliq Urdu", serif;
@@ -11134,5 +11137,8 @@ p.third {
 @media (max-width: 700px) {
   .login-registration {
     margin: 3% 3%;
+  }
+  .form button {
+    overflow-y: scroll;
   }
 }

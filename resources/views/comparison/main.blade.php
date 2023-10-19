@@ -21,7 +21,7 @@
         </div>
         <div class="tooltips tafseeli">
             <a href="/governmentClasses"><button class="btn btn-success my-3 py-3 tooltip1">
-                    سرکاری نصاب کے نصاب کے ساتھ موازنہ
+                    سرکاری نصاب کے ساتھ موازنہ
                     <div class="tooltiptext"  style="top: 122px;" >سرکاری نصاب سے مراد پنجاب ٹیکسٹ بورڈ کا 2022 کا اسلامیات کا نصاب ہے۔</div>
                 </button></a>
         </div>
