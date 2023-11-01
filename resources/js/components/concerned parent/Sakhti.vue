@@ -29,7 +29,7 @@
                             اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے۔ <br>
                         </div>
                         <router-link to="majbori">
-                            <button class="btn btn-primary">آخر ایسی بھی کیا مجبوری ہے کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>
+                            <button class="btn btn-primary" onclick="topFunction()">آخر ایسی بھی کیا مجبوری ہے کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>
                         </router-link>
 
                         <button style="border:solid orange;" class="btn btn-primary">کیا آپ مشق حل کرنا چاہیں گے؟</button>

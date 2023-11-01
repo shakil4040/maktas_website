@@ -1402,7 +1402,7 @@ a.btn.blue,
 }
 
 .student .right {
-	float: right;
+	/* float: right; */
 	padding: 0 4px;
 }
 

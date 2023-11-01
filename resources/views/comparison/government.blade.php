@@ -13,6 +13,7 @@
 
 <div class="col-md-12 nav-col">
     <div class="row scroll-topics navigation_bar">
+        <div class="nav-note col-12 mt-2 text-center mx-auto">پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔</div> 
         <div id="ctab1" class="mx-2">
             <div class="nav-title" id="ct1_title"></div>
         </div>
@@ -37,15 +38,20 @@
         <div id="ctab8" class="mx-2">
             <div class="nav-title" id="ct8_title"></div>
         </div>
-        <div class="nav-note mx-auto">پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔</div>
+
     </div>
     <div class="row">
     </div>
     <div id="token">
         @csrf
     </div>
-    <div class="title islam1 py-4">
-        <h3>مکطس کے نصاب کے ساتھ سرکاری نصاب کو موازنہ </h3>
+    <div class="title islam1 py-4 tooltips">
+        <h2 class="tooltip1">مکطس و عکس کی فہرستوں کے ساتھ دیگر نصابوں کا موازنہ
+            <div class="tooltiptext" style="top: 95px;font-size: 15px;line-height: 44px;right: 0px;">
+                'مکطس' کا مطلب ہے، مسلمان کی طرح سوچنا۔ <br>
+                'عکس' کا مطلب ہے، عمل کر سکنا۔
+            </div>
+        </h2>
     </div>
     <div class="d-flex navw">
         <input id="search" type="search">
@@ -266,5 +272,31 @@
                                                 </div>
                                                 @endforeach
                                                 </ul>
+                                                </div>
+                                                <!-- Button trigger modal -->
+                                                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+                                                            <div class="modal-body"
+                                                                style="line-height: 35px;text-align: center;">
+                                                                جن عنوانات میں پیلا رنگ ہے، وہ کس جماعت میں پڑھائے
+                                                                جائیں، اس کے لیے ہمیں ماہرین کی ضرورت ہے۔
+                                                            </div>
+                                                            <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بند کریں</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 @endsection

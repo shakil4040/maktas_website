@@ -1129,6 +1129,13 @@ $('#pasaymanzar1').click(function() {
 $('#pasaymanzar3').click(function() {
     $('#pasaymanzar2').hide();
 });
+$('#ishkal2').hide();
+$('#ishkal1').click(function() {
+    $('#ishkal2').show();
+});
+$('#ishkal3').click(function() {
+    $('#ishkal2').hide();
+});
 $('#result2').hide();
 $('#result1').click(function() {
     $('#result2').show();

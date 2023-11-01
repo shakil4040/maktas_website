@@ -730,7 +730,7 @@ input {
     background-color: #d9ff00;
     color: black;
     white-space: normal;
-    line-height: 30px;
+    line-height: 40px;
     overflow-wrap: break-word;
     text-align: center;
     border-radius: 24px;
@@ -907,6 +907,8 @@ input {
 .navigation_bar{
     flex-wrap: wrap !important;
     line-height: 40px;
+    max-height: 150px;
+    overflow-y: scroll;
 }
 .detail2{
     top:165px;

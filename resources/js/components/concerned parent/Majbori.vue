@@ -23,7 +23,7 @@
 
                         <button class="btn btn-primary" style="border:2px solid orange;">کیا آپ مشق حل کرنا چاہیں گے؟</button>
                         <router-link to="website">
-                            <button class="btn btn-primary"> ویب سائٹ میں انرول ہوتےوقت مشق حل کر یں گے ۔ ابھی میں ویب سائٹ کے بارے میں مزید جاننا چاہتا ہوں۔</button>
+                            <button class="btn btn-primary"  onclick="topFunction()"> ویب سائٹ میں انرول ہوتےوقت مشق حل کر یں گے ۔ ابھی میں ویب سائٹ کے بارے میں مزید جاننا چاہتا ہوں۔</button>
                         </router-link>
 
                     </div>

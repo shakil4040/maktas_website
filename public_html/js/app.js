@@ -22558,7 +22558,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" / content ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/second",
     style: {
-      "font-family": "'jameel noori nastaleeq'"
+      "font-family": "'Noto Nastaliq Urdu', serif",
+      "font-size": "30px"
     }
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -22643,30 +22644,45 @@ var _hoisted_2 = {
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Are you a ");
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " Student ", -1 /* HOISTED */);
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " Concerned Parent ", -1 /* HOISTED */);
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " Teacher ", -1 /* HOISTED */);
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " Principal ", -1 /* HOISTED */);
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
@@ -22679,65 +22695,25 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "data-target": "#exampleModal"
 }, " Publisher ", -1 /* HOISTED */);
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  style: {
+    "border": "solid orange"
+  },
   type: "button",
   "class": "btn btn-primary",
   "data-toggle": "modal",
   "data-target": "#exampleModal"
 }, " None of these ", -1 /* HOISTED */);
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/student"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/parent"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/teacher"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_7];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/principal"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_8];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/educationist"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_9];
-    }),
-    _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/student\"> "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/parent\"> "), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/teacher\"> "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/principal\"> "), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/educationist\"> "), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </router-link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/publisher"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_10];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/jihaan3"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_11];
-    }),
-    _: 1 /* STABLE */
-  }), _hoisted_12])])])]);
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link to=\"/jihaan3\"> "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </router-link><br> ")])])])]);
 }
 
 /***/ }),
@@ -24048,32 +24024,35 @@ var _hoisted_9 = {
   key: 0,
   "class": "alert"
 };
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" دوائیوں کی طرح ہوتے ہیں Learning Material ");
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Learning Material ");
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" دوائیوں کی طرح ہوتے ہیں۔ ");
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮", -1 /* HOISTED */);
-var _hoisted_12 = [_hoisted_10, _hoisted_11];
-var _hoisted_13 = {
+var _hoisted_14 = [_hoisted_10, _hoisted_11, _hoisted_12, _hoisted_13];
+var _hoisted_15 = {
   key: 1,
   "class": "alert text-center"
 };
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" ہم انسانوں کی مثال اس ہانڈی کی طرح ہے جو چولہے پر رکھی ہے اور نیچے وقت کی آگ جل رہی ہے۔ <br> وقت کے ساتھ ساتھ ہم اپنے ارد گرد سےجو کچھ حاصل کرتے ہیں وہ ہماری ذات پر اپنا اثر چھوڑتی ہیں۔ <br> جیسے اگر ہم اپنی ہانڈی میں نمک ڈالیں گے تو نمک کا ذائقہ آئے گا، مرچیں ڈالیں تو مرچ کا، <br> <br> اور <br><br> کمال یہ ہے کہ سب کچھ ایسا گھل مل جاتا ہے کہ اس کا الگ کرنا ممکن نہیں رہتا <br> ایسے میں اگر <br> کچھ غلط ڈل جائے تو اس کے اثر کو زائل کرنے کے لیے بڑی محنت کرنی پڑتی ہے۔ <br><br> کتابیں یا جو بھی سیکھنے والا مواد ہمارے ارد گرد موجود ہے اس سب کی مثال کسی میڈیکل سٹور میں رکھی ہوئی دوائیوں کی مانند ہے <br><br> کہ <br><br> تمام دوائیاں ہیں تو انسان کو نفع پہنچانے کے لیے مگر کس مریض کو کون سی دوائی کھانی چاہیے، اس کا فیصلہ اگر ڈاکٹر صاحب کریں تو نفع <br> کی غالب امید ہے اور اگر کوئی آدمی اپنی مرضی سے کھاتا چلا جائے تو صحت مندی کی بجائے الٹا اپنی جان کو نقصان پہنچائے گا۔ <br> <br> بالکل اس ہی طرح کون سے شاگرد کو کون سا مواد پڑھنا یا دیکھنا اور سننا چاہیے اور کس قسم کے مواد سے پرہیز کرنا چاہیے اس کا فیصلہ اگر <br> ایک قابل استاد کرے تو امید ہے کہ تھوڑے وقت میں شاگرد کوزیادہ نفع ہو گا اور اس کی زندگی کی ہانڈی خوشبودار اور ذائقےدار ہو گی۔ <br> واللہ اعلم <br>", 36);
-var _hoisted_50 = {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" ہم انسانوں کی مثال اس ہانڈی کی طرح ہے جو چولہے پر رکھی ہے اور نیچے وقت کی آگ جل رہی ہے۔ <br> وقت کے ساتھ ساتھ ہم اپنے ارد گرد سےجو کچھ حاصل کرتے ہیں وہ ہماری ذات پر اپنا اثر چھوڑتی ہیں۔ <br> جیسے اگر ہم اپنی ہانڈی میں نمک ڈالیں گے تو نمک کا ذائقہ آئے گا، مرچیں ڈالیں تو مرچ کا، <br> <br> اور <br><br> کمال یہ ہے کہ سب کچھ ایسا گھل مل جاتا ہے کہ اس کا الگ کرنا ممکن نہیں رہتا <br> ایسے میں اگر <br> کچھ غلط ڈل جائے تو اس کے اثر کو زائل کرنے کے لیے بڑی محنت کرنی پڑتی ہے۔ <br><br> کتابیں یا جو بھی سیکھنے والا مواد ہمارے ارد گرد موجود ہے اس سب کی مثال کسی میڈیکل سٹور میں رکھی ہوئی دوائیوں کی مانند ہے <br><br> کہ <br><br> تمام دوائیاں ہیں تو انسان کو نفع پہنچانے کے لیے مگر کس مریض کو کون سی دوائی کھانی چاہیے، اس کا فیصلہ اگر ڈاکٹر صاحب کریں تو نفع <br> کی غالب امید ہے اور اگر کوئی آدمی اپنی مرضی سے کھاتا چلا جائے تو صحت مندی کی بجائے الٹا اپنی جان کو نقصان پہنچائے گا۔ <br> <br> بالکل اس ہی طرح کون سے شاگرد کو کون سا مواد پڑھنا یا دیکھنا اور سننا چاہیے اور کس قسم کے مواد سے پرہیز کرنا چاہیے اس کا فیصلہ اگر <br> ایک قابل استاد کرے تو امید ہے کہ تھوڑے وقت میں شاگرد کوزیادہ نفع ہو گا اور اس کی زندگی کی ہانڈی خوشبودار اور ذائقےدار ہو گی۔ <br> واللہ اعلم <br>", 36);
+var _hoisted_52 = {
   "class": "alert",
   style: {
     "text-align": "center"
   }
 };
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "red"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br")], -1 /* HOISTED */);
-var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   style: {
     "border": "solid orange"
   },
   "class": "btn btn-primary"
 }, "کیا آپ مشق حل کرنا چاہیں گے؟", -1 /* HOISTED */);
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  onclick: "topFunction()",
   "class": "btn btn-primary"
 }, "آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟", -1 /* HOISTED */);
 
@@ -24089,11 +24068,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.show2 && $options.show2.apply($options, arguments);
     })
-  }, _hoisted_12)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [_hoisted_51, _hoisted_52, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, _hoisted_14)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_52, [_hoisted_53, _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "sakhti"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_53];
+      return [_hoisted_55];
     }),
     _: 1 /* STABLE */
   })])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show\">\r\n                        انرول ہونے سے قبل چند بنیادی مضامین کا پڑھنا ضروری ہے\r\n                    </button>\r\n                    <br>\r\n    \r\n                    <button v-if=\"hidden\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\" @click=\"show2\">\r\n                        دوائیوں کی طرح ہوتے ہیں Learning Material\r\n                    </button>\r\n    \r\n                    <br> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"btn btn-primary\">اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے</button>\r\n                <br>\r\n                <router-link to=\"sakhti\">\r\n                    <button class=\"btn btn-primary\">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>\r\n                </router-link>\r\n                <router-link to=\"jihaan3\">\r\n                    <button class=\"btn btn-primary\">کیا آپ مشق حل کرنا چاہیں گے</button>\r\n                </router-link> ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
@@ -24175,7 +24154,8 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   }
 }, "کیا آپ مشق حل کرنا چاہیں گے؟", -1 /* HOISTED */);
 var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-primary"
+  "class": "btn btn-primary",
+  onclick: "topFunction()"
 }, " ویب سائٹ میں انرول ہوتےوقت مشق حل کر یں گے ۔ ابھی میں ویب سائٹ کے بارے میں مزید جاننا چاہتا ہوں۔", -1 /* HOISTED */);
 var _hoisted_37 = {
   key: 0,
@@ -24319,7 +24299,8 @@ var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "red"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" اگلے مضمون پر جانے کے لئے مشق حل کرنا ضروری ہے۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br")], -1 /* HOISTED */);
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-primary"
+  "class": "btn btn-primary",
+  onclick: "topFunction()"
 }, "آخر ایسی بھی کیا مجبوری ہے کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟", -1 /* HOISTED */);
 var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   style: {
@@ -24587,7 +24568,7 @@ var _hoisted_3 = {
 };
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue text-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("رواجی میڈیا سے کیسے مختلف ہے؟ Learning Website "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Website For Essential Education "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" رواجی میڈیا سے کیسے مختلف ہے؟ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
 var _hoisted_5 = [_hoisted_4];
@@ -24598,85 +24579,85 @@ var _hoisted_6 = {
     "direction": "rtl"
   }
 };
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" قرآن مجید کی آیت <br> <span style=\"font-family:&#39;Amiri Quran&#39;;font-size:25px;border:unset;color:blue;\">يَاأَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا(الحجرات:۶ ) <br></span> میں حکم ہےکہ تحقیق و تصدیق کے بغیربات آگے نقل نہ کی جائے <br> اور دوسرا حضرت علی کا قول ہےکہ <br> <span style=\"font-family:&#39;Amiri Quran&#39;;font-size:25px;border:unset;color:blue;\">قَالَ عَلِيٌّ حَدِّثُوا النَّاسَ بِمَا يَعْرِفُونَ أَتُحِبُّونَ أَنْ يُكَذَّبَ اللَّهُ وَرَسُولُهُ <br><span style=\"font-size:15px;border:unset;color:blue;\">(صحيح البخاري، باب مَنْ خَصَّ بِالْعِلْمِ قَوْمًا دُونَ قَوْمٍ كَرَاهِيَةَ أَنْ لَا يَفْهَمُوا، 1/37، رقم الحديث: 127)</span> <br></span> حضرت علی کرم اللہ وجہہ فرماتے ہیں کہ لوگوں کو ایسی بات بتاؤ جس کو وہ سمجھ سکیں۔ کیا تم یہ پسند کرتے ہو کہ) سادہ لوگ اپنی <br> کم علمی کی وجہ سے ) اللہ اور اس کے رسول ﷺ کی تکذیب کر بیٹھیں۔ <br> لوگوں سے ان کی عقول کے موافق بات کرو ۔ <br> Learning website ان دو اصولوں کا خاص لحاظ رکھتے ہوئے خالصتاً اللہ تعالیٰ کی رضا کے لیے دینِ اسلام کی تعلیمات کے <br> ذریعے انسانیت کی خدمت کرنا چاہتی ہے اور اپنی اس کاوش کا کسی مخلوق سے کوئی بدلہ نہیں لینا چاہتی۔ <br> Learning Website میں کوشش یہ کی گئی ہے کہ قاری کی <br> موجودہ عمر، <br> قلبی استعداد، <br> علمی استعداد، <br> سمجھنے کی استعداد <br> اور طلب کے مطابق <br> اس کو آگے بڑھنے کا راستہ دکھایا جائے۔ <br><br>", 35);
-var _hoisted_42 = [_hoisted_7];
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(" قرآن مجید کی آیت <br> <span style=\"font-family:&#39;Amiri Quran&#39;;font-size:25px;border:unset;color:blue;\">يَاأَيُّهَا الَّذِينَ آمَنُوا إِنْ جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا(الحجرات:۶ ) <br></span> میں حکم ہےکہ تحقیق و تصدیق کے بغیربات آگے نقل نہ کی جائے <br> اور دوسرا حضرت علی کا قول ہےکہ <br> <span style=\"font-family:&#39;Amiri Quran&#39;;font-size:25px;border:unset;color:blue;\">قَالَ عَلِيٌّ حَدِّثُوا النَّاسَ بِمَا يَعْرِفُونَ أَتُحِبُّونَ أَنْ يُكَذَّبَ اللَّهُ وَرَسُولُهُ <br><span style=\"font-size:15px;border:unset;color:blue;\">(صحيح البخاري، باب مَنْ خَصَّ بِالْعِلْمِ قَوْمًا دُونَ قَوْمٍ كَرَاهِيَةَ أَنْ لَا يَفْهَمُوا، 1/37، رقم الحديث: 127)</span> <br></span> حضرت علی کرم اللہ وجہہ فرماتے ہیں کہ لوگوں کو ایسی بات بتاؤ جس کو وہ سمجھ سکیں۔ کیا تم یہ پسند کرتے ہو کہ) سادہ لوگ اپنی <br> کم علمی کی وجہ سے ) اللہ اور اس کے رسول ﷺ کی تکذیب کر بیٹھیں۔ <br> لوگوں سے ان کی عقول کے موافق بات کرو ۔ <br> Website For Essential Education <br> ان دو اصولوں کا خاص لحاظ رکھتے ہوئے خالصتاً اللہ تعالیٰ کی رضا کے لیے دینِ اسلام کی تعلیمات کے <br> ذریعے انسانیت کی خدمت کرنا چاہتی ہے اور اپنی اس کاوش کا کسی مخلوق سے کوئی بدلہ نہیں لینا چاہتی۔ <br> Website For Essential Education <br> میں کوشش یہ کی گئی ہے کہ قاری کی <br> موجودہ عمر، <br> قلبی استعداد، <br> علمی استعداد، <br> سمجھنے کی استعداد <br> اور طلب کے مطابق <br> اس کو آگے بڑھنے کا راستہ دکھایا جائے۔ <br><br>", 39);
+var _hoisted_46 = [_hoisted_7];
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue text-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" سند کیوں ضروری ہے؟ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
-var _hoisted_44 = [_hoisted_43];
-var _hoisted_45 = {
+var _hoisted_48 = [_hoisted_47];
+var _hoisted_49 = {
   key: 2,
   "class": "alert text-center"
 };
-var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" سند دراصل اس بات کا ثبوت ہے کہ سند یافتہ شخص نے کسی ماہر استاد سے باقاعدہ اس علم کو سیکھا ہے۔ ");
-var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" جیسے اگر کوئی صاحب، ڈاکٹر کی سند حاصل کیے بغیر کلینک کھول لیں ");
-var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" اور ");
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" سند دراصل اس بات کا ثبوت ہے کہ سند یافتہ شخص نے کسی ماہر استاد سے باقاعدہ اس علم کو سیکھا ہے۔ ");
 var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" بغیر کسی استاد سے سیکھے لوگوں کے آپریشن کرنا شروع کر دیں تو یقیناً انسانیت کو بہت نقصان پہنچے گا۔ ");
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" جیسے اگر کوئی صاحب، ڈاکٹر کی سند حاصل کیے بغیر کلینک کھول لیں ");
 var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" انسانوں کو انسانوں سے نقصان نہ پہنچے، اس کے لیے ضروری ہے کہ شاگرد، اساتذہ سے باضابطہ تعلیم و تربیت حاصل کریں اور جب ");
-var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" استاد کا اطمینان ہو کہ شاگرد کسی خاص شعبے میں انسانیت کو نفع پہنچانا سیکھ گیا ہے تو استاد فقط اس خاص شعبے میں بحیثیت اس شعبے کے ماہر ");
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" اور ");
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" بغیر کسی استاد سے سیکھے لوگوں کے آپریشن کرنا شروع کر دیں تو یقیناً انسانیت کو بہت نقصان پہنچے گا۔ ");
+var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_58 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ہونے کے شاگرد کو سند دے تاکہ انسان سے انسانیت کو نقصان نہ پہنچے۔ ");
-var _hoisted_60 = [_hoisted_46, _hoisted_47, _hoisted_48, _hoisted_49, _hoisted_50, _hoisted_51, _hoisted_52, _hoisted_53, _hoisted_54, _hoisted_55, _hoisted_56, _hoisted_57, _hoisted_58, _hoisted_59];
-var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" انسانوں کو انسانوں سے نقصان نہ پہنچے، اس کے لیے ضروری ہے کہ شاگرد، اساتذہ سے باضابطہ تعلیم و تربیت حاصل کریں اور جب ");
+var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" استاد کا اطمینان ہو کہ شاگرد کسی خاص شعبے میں انسانیت کو نفع پہنچانا سیکھ گیا ہے تو استاد فقط اس خاص شعبے میں بحیثیت اس شعبے کے ماہر ");
+var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ہونے کے شاگرد کو سند دے تاکہ انسان سے انسانیت کو نقصان نہ پہنچے۔ ");
+var _hoisted_64 = [_hoisted_50, _hoisted_51, _hoisted_52, _hoisted_53, _hoisted_54, _hoisted_55, _hoisted_56, _hoisted_57, _hoisted_58, _hoisted_59, _hoisted_60, _hoisted_61, _hoisted_62, _hoisted_63];
+var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue text-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" سند کون دے سکتا ہے ؟ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
-var _hoisted_62 = [_hoisted_61];
-var _hoisted_63 = {
+var _hoisted_66 = [_hoisted_65];
+var _hoisted_67 = {
   key: 4,
   "class": "alert text-center"
 };
-var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_68 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue text-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" انسانیت کو حقیقی اور دائمی نقصان سے بچانے کے حوالے سے سند یافتہ افراد کون ہیں؟ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
-var _hoisted_65 = [_hoisted_64];
-var _hoisted_66 = {
+var _hoisted_69 = [_hoisted_68];
+var _hoisted_70 = {
   key: 6,
   "class": "alert text-center"
 };
-var _hoisted_67 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_71 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue text-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" انبیاء اور رسل کو سند کون دیتا ہے ؟ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
-var _hoisted_68 = [_hoisted_67];
-var _hoisted_69 = {
+var _hoisted_72 = [_hoisted_71];
+var _hoisted_73 = {
   key: 8,
   "class": "alert text-center"
 };
-var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" چونکہ اللہ تعالیٰ ہی حقیقی تربیت فرمانے والے ہیں، اس لیے بندوں میں سے جس شخص کی تعلیم وتربیت اللہ تعالیٰ براہِ راست، بغیر کسی ");
-var _hoisted_71 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_72 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" واسطے کے فرمائیں وہی سب سے زیادہ تربیت یافتہ اور مستند شمار ہو گا ");
-var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_74 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" تو ");
+var _hoisted_74 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" چونکہ اللہ تعالیٰ ہی حقیقی تربیت فرمانے والے ہیں، اس لیے بندوں میں سے جس شخص کی تعلیم وتربیت اللہ تعالیٰ براہِ راست، بغیر کسی ");
 var _hoisted_75 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_76 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" جی ہاں ");
+var _hoisted_76 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" واسطے کے فرمائیں وہی سب سے زیادہ تربیت یافتہ اور مستند شمار ہو گا ");
 var _hoisted_77 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" انبیاءؑ اور رسلؑ کو سند، اللہ جلَّ جلالہ ٗعطا فرماتے ہیں۔ ");
+var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" تو ");
 var _hoisted_79 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_80 = [_hoisted_70, _hoisted_71, _hoisted_72, _hoisted_73, _hoisted_74, _hoisted_75, _hoisted_76, _hoisted_77, _hoisted_78, _hoisted_79];
-var _hoisted_81 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" جی ہاں ");
+var _hoisted_81 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_82 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" انبیاءؑ اور رسلؑ کو سند، اللہ جلَّ جلالہ ٗعطا فرماتے ہیں۔ ");
+var _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_84 = [_hoisted_74, _hoisted_75, _hoisted_76, _hoisted_77, _hoisted_78, _hoisted_79, _hoisted_80, _hoisted_81, _hoisted_82, _hoisted_83];
+var _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue text-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" میں اللہ تعالیٰ اور سند یافتہ افراد کے بارے میں جاننے کا خواہشمند ہوں۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
-var _hoisted_82 = [_hoisted_81];
-var _hoisted_83 = {
+var _hoisted_86 = [_hoisted_85];
+var _hoisted_87 = {
   key: 10,
   "class": "alert text-center"
 };
-var _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_88 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue",
   style: {
     "color": "black"
@@ -24693,64 +24674,64 @@ var _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 }, "enroll yourself")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" with us. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
-var _hoisted_85 = [_hoisted_84];
-var _hoisted_86 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_89 = [_hoisted_88];
+var _hoisted_90 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "blue"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" اب آپ صرف اوپر دکھائے گئے تمام مضامین کی مشقیں حل کرنے کو کوشش کریں تو ا ٓپ خود بخود انرول ہو جائیں گے۔ "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "arrow2"
 }, "❮")], -1 /* HOISTED */);
-var _hoisted_87 = [_hoisted_86];
-var _hoisted_88 = {
+var _hoisted_91 = [_hoisted_90];
+var _hoisted_92 = {
   key: 11,
   "class": "alert"
 };
-var _hoisted_89 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_93 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "red"
 }, " Exercise Page With MCQs & True False Questions Will Open. ", -1 /* HOISTED */);
-var _hoisted_90 = [_hoisted_89];
+var _hoisted_94 = [_hoisted_93];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "alert",
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.show && $options.show.apply($options, arguments);
     })
-  }, _hoisted_5), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, _hoisted_42)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  }, _hoisted_5), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, _hoisted_46)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 1,
     "class": "alert",
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.show2 && $options.show2.apply($options, arguments);
     })
-  }, _hoisted_44)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_45, _hoisted_60)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  }, _hoisted_48)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_49, _hoisted_64)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 3,
     "class": "alert",
     onClick: _cache[2] || (_cache[2] = function () {
       return $options.show3 && $options.show3.apply($options, arguments);
     })
-  }, _hoisted_62)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_63, " جی آپ بالکل درست سوچ رہے ہیں کہ فقط سند یافتہ افراد ہی سند دے سکتے ہیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  }, _hoisted_66)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_67, " جی آپ بالکل درست سوچ رہے ہیں کہ فقط سند یافتہ افراد ہی سند دے سکتے ہیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 5,
     "class": "alert",
     onClick: _cache[3] || (_cache[3] = function () {
       return $options.show4 && $options.show4.apply($options, arguments);
     })
-  }, _hoisted_65)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_66, " انبیاءؑ اور رسلؑ اس شعبے کے ماہر اور سند یافتہ ہیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  }, _hoisted_69)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_70, " انبیاءؑ اور رسلؑ اس شعبے کے ماہر اور سند یافتہ ہیں۔ ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 7,
     "class": "alert",
     onClick: _cache[4] || (_cache[4] = function () {
       return $options.show5 && $options.show5.apply($options, arguments);
     })
-  }, _hoisted_68)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_69, _hoisted_80)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  }, _hoisted_72)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_73, _hoisted_84)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 9,
     "class": "alert",
     onClick: _cache[5] || (_cache[5] = function () {
       return $options.show6 && $options.show6.apply($options, arguments);
     })
-  }, _hoisted_82)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden6 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_83, _hoisted_85)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, _hoisted_86)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.hidden6 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_87, _hoisted_89)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     id: "enroll",
     "class": "alert",
     onClick: _cache[6] || (_cache[6] = function () {
       return $options.show8 && $options.show8.apply($options, arguments);
     })
-  }, _hoisted_87), _ctx.hidden8 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_88, _hoisted_90)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
+  }, _hoisted_91), _ctx.hidden8 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_92, _hoisted_94)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
 }
 
 /***/ }),

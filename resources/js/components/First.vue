@@ -17,7 +17,7 @@
               <div class="container mx-5">
                   <div class="info info2">
                       <h2><br><span class="span2">یہ شاہراہِ عام نہیں</span></h2>
-                      <router-link to="/second" style="font-family: 'jameel noori nastaleeq';">
+                      <router-link to="/second" style="font-family: 'Noto Nastaliq Urdu', serif;font-size: 30px;">
                         مزید جانیے
                       </router-link>
                   </div>

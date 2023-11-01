@@ -12,7 +12,8 @@
                     </div>
                     <div class="alert" v-if="hidden">
                         <div class="blue text-center" @click="show2">
-                            دوائیوں کی طرح ہوتے ہیں Learning Material
+                            Learning Material <br>
+                            دوائیوں کی طرح ہوتے ہیں۔
                             <div class="arrow2">&#10094;</div>
                         </div>
                     </div>
@@ -38,7 +39,7 @@
                             </div>
                             <button style="border:solid orange;" class="btn btn-primary">کیا آپ مشق حل کرنا چاہیں گے؟</button>
                             <router-link to="sakhti">
-                                <button class="btn btn-primary">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>
+                                <button onclick="topFunction()" class="btn btn-primary">آخر اتنی سختی کیوں کہ مشق حل کئے بغیر آگے نہیں بڑھا جا سکتا ؟</button>
                             </router-link>
     
     

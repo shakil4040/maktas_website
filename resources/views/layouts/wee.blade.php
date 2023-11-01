@@ -18,10 +18,17 @@
     <link href='https://fonts.googleapis.com/css?family=Amiri Quran' rel='stylesheet'>
     <!-- ================= -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="/assets/images/logo.png">
     <link rel="stylesheet" media="all" href="/assets/css/style.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script>
+     $(document).ready(function(){        
+     $('#exampleModal').modal('show');
+    }); 
+    </script>
     <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -32,7 +39,27 @@
     <div id="app">
         @yield('content')
     </div>
-
+                                          <!-- Modal -->
+                                          <div style='font-family: "Noto Nastaliq Urdu", serif;line-height: 56px;font-size: 18px;' class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                             <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+        <button type="button" style="z-index: 99;margin: -35px 10px;" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- </div>  -->
+                                                            <div class="modal-body"
+                                                                style="line-height: 90px;text-align: center;font-size:30px;color:white;background:#13654e;">
+                                                                تحقیق و ترتیب کا کام ابھی جاری ہے <br>
+                                                                لہٰذا کسی چیز کو حتمی نہ سمجھا جائے
+                                                            </div>
+                                                            <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بند کریں</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
 
 
     <footer id="footer">
@@ -137,6 +164,7 @@
                         <option>Doctor</option>
                         <option>Engineer</option>
                         <option>Lawyer</option>
+                        <option>Other</option>
                     </select>
                 </fieldset>
             </div>
@@ -163,6 +191,12 @@
     </script>
     <script src="/assets/js/plugins.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script>
+  function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+    </script>
 </body>
 
 </html>

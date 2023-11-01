@@ -59,6 +59,9 @@
             @if($yaad->result)
             <button id="result1" class="bbuttons my-1 mazmon pasaymanzar mx-2">نتیجہ</button>
             @endif
+            @if($easy->rafe_ishkal)
+            <button id="ishkal1" class="bbuttons my-1 mazmon pasaymanzar mx-2">رفعِ اشکال</button>
+            @endif
         </div>
         <div id="tasheel2" class="ltopic align-items-center tasheel2 udetail">
             <div class="unwanat text-center my-2">تسہیل</div>
@@ -69,7 +72,7 @@
             <button id="tasheel3" class="bbuttons my-1 ml-2 mazmon">بند کریں</button>
         </div>
         <div id="pasaymanzar2" class="ltopic align-items-center pasaymanzar2 udetail"
-            style="position:absolute;width:96%;">
+            style="position:absolute;width:99%;">
             <div class="unwanat text-center my-2">پسِ منظر</div>
             <div class="mr-2 text-wrap" title="{{ $yaad->pasaymanzar }}">
                 <span class="mukhtasar">{{ $yaad->pasaymanzar }}
@@ -77,7 +80,16 @@
             </div>
             <button id="pasaymanzar3" class="bbuttons my-1 ml-2 mazmon" style="position:relative;">بند کریں</button>
         </div>
-        <div id="result2" class="ltopic align-items-center result2 udetail" style="position:absolute;width:96%;">
+        <div id="ishkal2" class="ltopic align-items-center pasaymanzar2 udetail"
+            style="position:absolute;width:99%;">
+            <div class="unwanat text-center my-2">رفعِ اشکال</div>
+            <div class="mr-2 text-wrap" title="{{ $easy->rafe_ishkal }}">
+                <span class="mukhtasar">{{ $easy->rafe_ishkal }}
+                </span>
+            </div>
+            <button id="ishkal3" class="bbuttons my-1 ml-2 mazmon" style="position:relative;">بند کریں</button>
+        </div>
+        <div id="result2" class="ltopic align-items-center result2 udetail" style="position:absolute;width:99%;">
             <div class="unwanat text-center my-2">نتیجہ</div>
             <div class="mr-2 text-wrap" title="{{ $yaad->result }}">
                 <span class="mukhtasar">{{ $yaad->result }}
