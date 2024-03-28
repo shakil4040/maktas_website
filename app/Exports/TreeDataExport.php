@@ -87,7 +87,7 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading
             ];
         }
 
-        // Add data from Detail table
+        // Add data from Detail table 
         foreach ($detailData as $data) {
             $detail[$data->id] = [
                 'abrar_sahb_nmbr_shmar' => $data->abrar_id,

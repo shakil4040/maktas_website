@@ -121,7 +121,7 @@
         @endif
         @if ($category->parent_id >= 6000000 && $category->parent_id < 7000000 && $akhlaq==0) <div
             class="title islam1 py-2 my-3">
-            <h4>{{"اخلاقیات"}} </h4>
+            <h4>{{"اخلاقیات"}} </h4> 
             </div>
 
             @php $akhlaq=1;

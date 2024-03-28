@@ -66,7 +66,7 @@
         <div id="tasheel2" class="ltopic align-items-center tasheel2 udetail">
             <div class="unwanat text-center my-2">تسہیل</div>
             <div class="mr-2 text-wrap" title="{{ $easy->easy }}">
-                <span class="mukhtasar">{{ $easy->easy }}
+                <span class="mukhtasar">{{ $easy->easy }} 
                 </span>
             </div>
             <button id="tasheel3" class="bbuttons my-1 ml-2 mazmon">بند کریں</button>
