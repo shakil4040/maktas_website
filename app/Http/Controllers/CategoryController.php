@@ -132,7 +132,7 @@ class CategoryController extends Controller
             'adat'=> $input['adat'],
             'samjhana'=> $input['samjhana'],
             'parhana'=> $input['parhana'],
-            'status'=> $input['status'],
+            // 'status'=> $input['status'],
         ]);
         $mahol->save();
         return response()->json(['success'=>'نئے عنوان کا اندراج ہو گیا ہے']);
@@ -183,7 +183,9 @@ class CategoryController extends Controller
         $detail->delete();
         $easy->delete();
         $yaad->delete();
-        $mahol->delete();
+        if($mahol != null){
+            $mahol->delete();
+        }
 
         return response()->json(['deletemsg'=>' عنوان ختم ہو گیا ہے']);
     }

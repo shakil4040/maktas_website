@@ -322,6 +322,10 @@
     color: white;
 }
 
+ i:hover {
+    color: #10654e;
+}
+
 .islam {
     width: 46%;
     text-align: center;

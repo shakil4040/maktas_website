@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('mahols', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->longText('sunana')->nullable();
             $table->longText('kehalwana')->nullable();
             $table->longText('dekhana')->nullable();

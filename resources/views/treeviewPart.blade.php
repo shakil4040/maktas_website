@@ -675,12 +675,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سنائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->sunana }}
                     <span class="tooltiptext2">
                     {{ $mahol->sunana }}سال کی عمر میں مذکورہ بات سنانا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic smahol d-flex align-items-center tooltips">
@@ -693,12 +695,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کہلوائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->kehalwana }}
                     <span class="tooltiptext2">
                     {{ $mahol->kehalwana }}سال کی عمر میں مذکورہ بات کہلوانا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic smahol d-flex align-items-center tooltips">
@@ -711,12 +715,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات دکھائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->dekhana }}
                     <span class="tooltiptext2">
                     {{ $mahol->dekhana }}سال کی عمر میں مذکورہ بات دکھانا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic d-flex align-items-center tooltips">
@@ -767,12 +773,14 @@
                         اس خانےمیں وہ عمر درج کی گئی ہے جس میں مذکور بات کی مشق کرائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->mashq }}
                     <span class="tooltiptext2">
                     {{ $mahol->mashq }}سال کی عمر میں مذکورہ بات کی مشق کروانا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic smahol d-flex align-items-center tooltips">
@@ -785,12 +793,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات بتائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->batana }}
                     <span class="tooltiptext2">
                     {{ $mahol->batana }}سال کی عمر میں مذکورہ بات بتانا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic smahol d-flex align-items-center tooltips">
@@ -803,12 +813,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سکھائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->sikhana }}
                     <span class="tooltiptext2">
                     {{ $mahol->sikhana }}سال کی عمر میں مذکورہ بات سکھانا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic d-flex align-items-center tooltips">
@@ -864,12 +876,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات کی عادت ڈالی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->adat }}
                     <span class="tooltiptext2">
                     {{ $mahol->adat }}سال کی عمر میں مذکورہ بات کی عادت ڈالنا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic smahol d-flex align-items-center tooltips">
@@ -882,12 +896,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات سمجھائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->samjhana }}
                     <span class="tooltiptext2">
                     {{ $mahol->samjhana }}سال کی عمر میں مذکورہ بات سمجھانا مفید ہے۔ 
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic smahol d-flex align-items-center tooltips">
@@ -900,12 +916,14 @@
                         اس خانے میں وہ عمر درج کی گئی ہے جس میں مذکور بات پڑھائی جائے۔
                     </span>
                 </span>
+                @if($mahol)
                 <span class="tooltip2">
                     {{ $mahol->parhana }}
                     <span class="tooltiptext2">
                     {{ $mahol->parhana }}سال کی عمر میں مذکورہ بات پڑھانا مفید ہے۔  
                     </span>
                 </span>
+                @endif
             </div>
         </div>
         <div class="stopic d-flex align-items-center tooltips">

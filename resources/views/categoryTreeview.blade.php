@@ -5,25 +5,25 @@
     <title>اسلام</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <link href="/css/treeview.css" rel="stylesheet">
-    
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div id="loader" style="display:none;width:100%;height:100%;position:absolute;z-index:9999999;background:#4548485c;position:fixed;" class="row justify-content-center align-items-center" role="status">
+    <img  src="/assets/images/spinner.gif" width="5%" alt="loading">
+    </div>
     <div class="preloader"></div>
     <div id="confirmation"></div>
     <div class="container">
@@ -549,25 +549,27 @@
                             <button id="searchb" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
                         <ul id="tree1">
+                            @php
+                            $counter =0;
+                            @endphp
                             @foreach($categories as $category)
                             <div class="row">
                                 <div class="col-md-12">
                                     <li title="{{ $category->title }}" class="list_color level-1">
                                         <span class="detail1">
                                             <div class="d-flex align-items-center">
-                                                <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }}, 1, '{{ "1#". $category->title }}')
-                                                    ">
+                                                @php
+                                                $counter++;
+                                                @endphp
+                                                <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }},1, '{{ "1#". $category->title }}')">
                                                     @if(count($category->childs))
-                                                    <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}"
-                                                        aria-hidden="true"></i>
+                                                    <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}" aria-hidden="true"></i>
                                                     @endif
                                                 </div>
-                                                <div id="{{ $category->title }}" onclick="setParentTitle('{{ $category->title }}')"
-                                                    class="ctitle list d-flex justify-content-between align-items-center">
+                                                <div id="{{ $category->title }}" onclick="setParentTitle('{{ $category->title }}')" class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
                                                     @if($category->mahol && $category->mahol->status == 'Pending')
-                                                    <span
-                                                        style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
+                                                    <span style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
                                                         {{'...Pending'}}
                                                     </span>
                                                     @endif
@@ -625,24 +627,32 @@
         </div>
     </div>
     <script src="/js/treeview.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ajaxSend(function(event, request, settings) {
+            $('#loader').show();
+        });
+        $(document).ajaxComplete(function(event, request, settings) {
+            $('#loader').hide();
+        });
+    </script>
     <script type="application/javascript">
-    function setParentTitle(title) {
-        $(".nav-title").html("");
-        $("#ct1_title").html('<a href="#'+title+'">'+title+'</a>');
-        $("#ct2_title").html("");
-        $("#ct3_title").html("");
-        $("#ct4_title").html("");
-        $("#ct5_title").html("");
-        $("#ct6_title").html("");
-        $("#ct7_title").html("");
-        $("#ct8_title").html("");
-    }
-    $(".nav-title").click(function(){
-        $('.detail2').addClass('shrink').removeClass('detail2');
-        $('.btitle').addClass('shtitle');
-    });
-    
+        function setParentTitle(title) {
+            $(".nav-title").html("");
+            $("#ct1_title").html('<a href="#' + title + '">' + title + '</a>');
+            $("#ct2_title").html("");
+            $("#ct3_title").html("");
+            $("#ct4_title").html("");
+            $("#ct5_title").html("");
+            $("#ct6_title").html("");
+            $("#ct7_title").html("");
+            $("#ct8_title").html("");
+        }
+        $(".nav-title").click(function() {
+            $('.detail2').addClass('shrink').removeClass('detail2');
+            $('.btitle').addClass('shtitle');
+        });
     </script>
 </body>
 

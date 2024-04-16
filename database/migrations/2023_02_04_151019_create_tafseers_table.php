@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tafseers', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->longText('topic1')->nullable();
             $table->longText('topic2')->nullable();
             $table->longText('topic3')->nullable();
