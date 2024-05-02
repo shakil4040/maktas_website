@@ -545,8 +545,13 @@
                             <h1 style="font-size:35px;margin-bottom:1.5rem;">اسلام</h1>
                         </div>
                         <div class="d-flex navw">
-                            <input id="searcht" type="search">
-                            <button id="searchb" class="btn btn-success"><i class="fa fa-search"></i></button>
+                            <input id="searcht" style="padding: 0px 10px;" placeholder="موجودہ صفحے میں تلاش عنوان تلاش کرنے کے لیے یہاں لکھیں" type="search">
+                            <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
+                            <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
+                        </div>
+                        <div id="sframe" class="col-md-6" style="position: absolute;left:5px;top:53px;z-index: 9999999;height:55%">
+                            <i id="frclose" style="position: absolute;left: 20px;top: 15px;" class="fa fa-close"></i>
+                            <iframe  src="/allSearch" height="100%" width="100%" title="Iframe Example"></iframe>
                         </div>
                         <ul id="tree1">
                             @php
@@ -652,6 +657,13 @@
         $(".nav-title").click(function() {
             $('.detail2').addClass('shrink').removeClass('detail2');
             $('.btitle').addClass('shtitle');
+        });
+        $('#sframe').hide();
+        $('#searchb').click(function(){
+            $('#sframe').show();
+        });
+        $('#frclose').click(function(){
+            $('#sframe').hide();
         });
     </script>
 </body>

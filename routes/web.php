@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Mail;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/allSearch','SearchController@index');
+
+Route::get('/mySearch','SearchController@search');
 
 // Route::get('newvisitor','VisitorsController@index');
 Auth::routes();
