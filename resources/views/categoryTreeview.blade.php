@@ -545,7 +545,7 @@
                             <h1 style="font-size:35px;margin-bottom:1.5rem;">اسلام</h1>
                         </div>
                         <div class="d-flex navw">
-                            <input id="searcht" style="padding: 0px 10px;" placeholder="موجودہ صفحے میں تلاش عنوان تلاش کرنے کے لیے یہاں لکھیں" type="search">
+                            <input id="searcht" style="padding: 0px 10px;" placeholder="موجودہ صفحے میں عنوان تلاش کرنے کے لیے یہاں لکھیں" type="search">
                             <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
