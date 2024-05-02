@@ -550,7 +550,7 @@
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
                         <div id="sframe" class="col-md-6" style="position: absolute;left:5px;top:53px;z-index: 9999999;height:55%">
-                            <i id="frclose" style="position: absolute;left: 20px;top: 15px;" class="fa fa-close"></i>
+                            <i id="frclose" style="position: absolute;left: 34px;top: 15px;" class="fa fa-close"></i>
                             <iframe  src="/allSearch" height="100%" width="100%" title="Iframe Example"></iframe>
                         </div>
                         <ul id="tree1">

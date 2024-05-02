@@ -71,7 +71,7 @@ class SearchController extends Controller
      }
     $output.='<tr>'.
     '<td>'.$tree->sr.'</td>'.
-    '<td class = "title" onclick="detail(\''.$tree->detail->detail.'\',\''.$tree->title.'\')">'.$tree->title.'</td>'.
+    '<td style="line-height:32px;" class = "title" onclick="detail(\''.$tree->detail->detail.'\',\''.$tree->title.'\')">'.$tree->title.'</td>'.
     '<td>'.$parent.'</td>'.
     '</tr>';
     }
