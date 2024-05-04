@@ -18,6 +18,7 @@ class SearchController extends Controller
     {
     $output="";
     $trees=Tree::where('title','LIKE','%'.$request->search."%")->get();
+    $parent= null;
     if($trees)
     {
     foreach ($trees as $key => $tree) {

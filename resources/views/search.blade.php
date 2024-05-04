@@ -12,6 +12,9 @@
 </head>
 
 <body style="font-family:'Noto Nastaliq Urdu', serif;font-size:14px;direction:rtl;">
+<div id="loader" style="display:none;width:100%;height:100%;position:absolute;z-index:9999999;background:#4548485c;position:fixed;" class="row justify-content-center align-items-center" role="status">
+    <img style="position: fixed;top: 50%;right: 40%;"  src="{{asset('/assets/images/spinner.gif')}}" width="10%" alt="loading">
+    </div>
     <div id="all" style="line-height: 40px;display:none;width: 100%;height:100%;z-index:999;background-color:#00000078;position:fixed;">
         <div id="detail"  class="row align-items" style="box-shadow:2px 3px 9px 12px #504747;z-index:99999;display:none;position: fixed;padding: 29px;text-align: center;top: 195px;border-radius: 23px;width: 70%;right: 18%;height: 200px;background: whitesmoke;overflow-y: auto;">
         </div>
@@ -24,7 +27,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <input type="text" class="form-controller" id="search" name="search"></input>
+                        <input style="line-height: 0px;" type="text" class="form-controller" id="search" name="search"></input>
                     </div>
                     <table class="table table-bordered table-hover">
                         <thead>
@@ -72,6 +75,15 @@
             headers: {
                 'csrftoken': '{{ csrf_token() }}'
             }
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ajaxSend(function(event, request, settings) {
+            $('#loader').show();
+        });
+        $(document).ajaxComplete(function(event, request, settings) {
+            $('#loader').hide();
         });
     </script>
 </body>
