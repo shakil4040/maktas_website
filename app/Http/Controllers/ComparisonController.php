@@ -62,8 +62,7 @@ class ComparisonController extends Controller
                     ->orWhere('hukam', '=', 'مکروہ تحریمی');
             })
             ->orderBy('sr', 'asc')->get();
-        $allCategories = Tree::pluck('title', 'sr')->all();
-        return view('comparison.government', compact('categories', 'allCategories'));
+        return view('comparison.government', compact('categories'));
     }
     public function governmentDetailed($class)
     {

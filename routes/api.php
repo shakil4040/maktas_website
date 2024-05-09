@@ -39,3 +39,4 @@ Route::get('/delete/{id}','CategoryController@destroy');
 Route::get('/edit/{id}','CategoryController@edit');
 Route::get('/nav/{sr}','CategoryController@nav');
 Route::get('/comment','CategoryController@comment');
+Route::post('/course','CategoryController@course');

@@ -314,4 +314,13 @@ class CategoryController extends Controller
         return view('manageChild',
             compact('childs', 'level', 'navigation'));
     }
+
+    public function course(Request $request) {
+        $age = $request->age;
+        $shoba = $request->occupation;
+        $categories = Tree::whereRelation('mahol', 'parhana', '=', $age)->orWhereHas('easy', function ($query) use ($shoba) {
+            $query->where('shoba', '=', $shoba);
+        })->orderBy('sr', 'asc')->get();
+        return view('comparison.course', compact('categories'));
+    }
 }

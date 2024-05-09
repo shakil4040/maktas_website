@@ -541,11 +541,12 @@
                                 <div class="nav-title py-1 scroll-topics" id="ct8_title"></div>
                             </div>
                         </div>
+                        <button data-toggle="modal" data-target="#exampleModal" style="position: fixed;left: 0px;z-index: 999999999;" class="btn btn-success">اپنا نصاب بنائیں</button>
                         <div class="title islam1">
                             <h1 style="font-size:35px;margin-bottom:1.5rem;">اسلام</h1>
                         </div>
                         <div class="d-flex navw">
-                            <input id="searcht" style="padding: 0px 10px;" placeholder="موجودہ صفحے میں عنوان تلاش کرنے کے لیے یہاں لکھیں" type="search">
+                            <input id="searcht" style="padding: 0px 10px;" placeholder="نظر آنے والے عنوانات میں  تلاش کرنے کے لیے یہاں لکھیں" type="search">
                             <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
@@ -631,6 +632,35 @@
             </div>
         </div>
     </div>
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" style="direction: rtl;font-family:'Noto Nastaliq Urdu', serif;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-between">
+        <h5 class="modal-title" id="exampleModalLabel">براہِ مہربانی مندرجہ ذیل معلومات فراہم کریں</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <form action="/api/course"  enctype="multipart/form-data" method="post">
+          <div class="modal-body">
+            <input style="padding: 7px 7px;margin: 11px 0px;line-height: 0;" type="text" placeholder="آپ کا نام" name="name">
+            <input style="padding: 7px 7px;margin: 11px 0px;line-height: 0;" min="0" type="number" placeholder="آپ کی عمر" name="age">
+            <input style="padding: 7px 7px;margin: 11px 0px;line-height: 0;" type="text" placeholder="آپ کا شعبہ" name="occupation" >
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">بند کریں</button>
+            <button type="submit" class="btn btn-primary">درج کریں</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
     <script src="/js/treeview.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -665,6 +695,19 @@
         $('#frclose').click(function(){
             $('#sframe').hide();
         });
+    </script>
+    <script>
+        var header = document.getElementById("tree1");
+var btns = header.getElementsByClassName("list");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) {
+            current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+    });
+}
     </script>
 </body>
 
