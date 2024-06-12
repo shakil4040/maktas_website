@@ -1,11 +1,12 @@
 <?php
 
+use App\Mail\DeleteMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ViewsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ComparisonController;
-use App\Mail\DeleteMail;
-use Illuminate\Support\Facades\Mail;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -52,6 +53,8 @@ Route::get('/login/member', 'Auth\LoginController@showMemberLoginForm')->name('l
 Route::post('/login/member', 'Auth\LoginController@memberLogin');
 Route::view('/member', 'dashboards.member');
 Route::get('/get-child/{id}/{level}/{title}','CategoryController@getChild');
+Route::get('/get-child2/{id}/{level}/{title}','CategoryController@getChild2');
+
 
 Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');

@@ -2,26 +2,19 @@
 
 namespace App\Models;
 
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tree extends Model
+class Course extends Model
 {
     // use HasFactory;
-
     public $fillable = ['title','parent_id','id','sr'];
 
     public function childs() {
-        return $this->hasMany(Tree::class,'parent_id','sr')->orderBy('sr', 'asc');
+        return $this->hasMany(Course::class,'parent_id','sr')->orderBy('sr', 'asc');
     }
-    public function parent()
-    {
-        return $this->belongsTo(Tree::class, 'parent_id','sr');
-    }
-
-    public function children()
-    {
-        return $this->hasMany(Tree::class, 'parent_id','sr');
+    public function parent() {
+        return $this->hasOne(Course::class,'sr','parent_id')->orderBy('sr', 'asc');
     }
     public function detail() {
         return $this->hasOne('App\Models\Detail','id','id');
@@ -41,7 +34,7 @@ class Tree extends Model
         return $this->hasOne('App\Models\Tafseer','id','id');
     }
     public function comments() {
-        return $this->hasMany('App\Models\Comment','tree_id','sr') ;
+        return $this->hasMany('App\Models\Comment','Course_id','sr') ;
     }
 
 }

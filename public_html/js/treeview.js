@@ -322,6 +322,22 @@ function getchilds(id, level, title){
         $("#child-" + id+ " ul").remove();
     }
 }
+function getchilds2(id, level, title){
+    console.log("#child-" + id);
+    let childlen = $("#child-" + id + " ul").length;
+
+    if (childlen == 0) {
+        $.ajax({
+            url: "/get-child2/" + id + '/' + level + '/' + btoa(encodeURIComponent(title)),
+            success: function (data) {
+                $("#child-" + id).html(data);
+            }
+        });
+    } else {
+        $("#child-" + id+ " ul").remove();
+    }
+}
+
 //getting data from cotnroller
 //==================================================
 
