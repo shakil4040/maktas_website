@@ -1,2 +1,2 @@
 # maktas
- An Islamic education website
+ An Islamic educational website.
