@@ -45,7 +45,9 @@
                                 </td>
                                 <td><a href="/branch/{{ $branch->id }}/edit"><button class="btn btn-dark">Edit</button></a></td>
                                 <td><a href="/delete2/{{ $branch->id }}"><button class="btn btn-dark">Delete</button></a></td>
-                                <td><a href="/approve/{{ $branch->id }}"><button class="btn btn-dark">Approve</button></a></td>
+                                @if($branch->temp == 1)
+                                    <td><a href="/approve/{{ $branch->id }}"><button class="btn btn-dark">Approve</button></a></td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>
