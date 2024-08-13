@@ -98,11 +98,29 @@ class LoginController extends Controller
         }
     }
 
+    /**
+     * Show the login form for temporary members.
+     *
+     * This function returns the view for the login page, specifying that the 
+     * login is for a temporary member by passing the 'url' parameter.
+     *
+     * @return \Illuminate\View\View
+     */
     public function showTempMemberLoginForm()
     {
         return view('auth.login', ['url' => 'temporary-member']);
     }
 
+    /**
+     * Handle the login request for a temporary member.
+     *
+     * This function validates the login credentials provided by the temporary member.
+     * It then attempts to authenticate the user using the 'temporary-member' guard.
+     * If successful, the user is redirected to the intended page. 
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function tempMemberLogin(Request $request)
     {
         $this->validate($request, [
@@ -117,5 +135,4 @@ class LoginController extends Controller
             return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
         }
     }
-
 }
