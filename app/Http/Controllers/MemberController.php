@@ -69,9 +69,56 @@ class MemberController extends Controller
             throw $th;
         }
     }
-    // Temporary Member
+    /**
+     * Display the profile page for the temporary member.
+     *
+     * This function returns the view for the temporary member's profile.
+     *
+     * @return \Illuminate\View\View
+     */
     public function tempMemberProfile()
     {
         return view('temporary-member.temp-member-profile');
+    }
+
+    /**
+     * Show the form for editing the specified temporary member's profile.
+     *
+     * This function returns the view to edit the temporary member's profile,
+     * passing the specific member's data to the view.
+     *
+     * @param \App\Models\Member $member
+     * @return \Illuminate\View\View
+     */
+    public function editTempMember(Member $member)
+    {
+        return view('temporary-member.edit-temp-member', compact('member'));
+    }
+
+    /**
+     * Update the specified temporary member's profile.
+     *
+     * This function handles the validation and updating of the temporary 
+     * member's profile based on the provided data. If successful, the user 
+     * is redirected to the temporary member's page with a success message.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Member $member
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Throwable
+     */
+    public function updateTempMember(Request $request, Member $member)
+    {
+        try {
+            $data = request()->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255'],
+
+            ]);
+            auth('temporary-member')->user()->update($data);
+            return redirect('/temporary-member')->with('success', 'Profile Updated Successfully');
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 }
