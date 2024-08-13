@@ -21,8 +21,8 @@ class CreateTreesTable extends Migration
             $table->integer('naseeha_com')->nullable();
             $table->integer('maktab_com')->nullable();
             $table->integer('government_com')->nullable();
-            $table->string('status')->after('government_com'); // Add status column
-            $table->string('added_by')->nullable()->after('status');
+            $table->string('status'); // Add status column
+            $table->string('added_by')->nullable();
             $table->timestamps();
         });
     }
