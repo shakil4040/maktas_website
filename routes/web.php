@@ -31,7 +31,7 @@ Route::controller(ViewsController::class)->group(function(){
 });
 
 
-
+Route::post('/add-topic','CategoryController@addTopic');
 
 Route::post('/deleteMail','MailController@deleteMail');
 Route::post('/AddMail','MailController@AddMail');
@@ -76,6 +76,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::get('/member/{member}/edit', 'AdminController@editMember');
     Route::patch('/member/{member}', 'AdminController@updateMember');
     Route::get('delete2/{member}','AdminController@destroy');
+    Route::get('/pending-topics', 'AdminController@pendingTopics');
 
 });
 

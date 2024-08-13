@@ -9,7 +9,7 @@ class Tree extends Model
 {
     // use HasFactory;
 
-    public $fillable = ['title','parent_id','id','sr'];
+    public $fillable = ['title','parent_id','id','sr', 'status', 'added_by'];
 
     public function childs() {
         return $this->hasMany(Tree::class,'parent_id','sr')->orderBy('sr', 'asc');

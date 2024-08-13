@@ -66,4 +66,20 @@ class AdminController extends Controller
     {
         return Excel::download(new TreeDataExport(), 'tree_data.xlsx');
     }
+    /**
+     * Display topics with 'pending' status in the admin dashboard.
+     *
+     * This function retrieves all topics from the Tree model where the status 
+     * is set to 'pending'.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function pendingTopics(){
+
+    // Fetch topics with 'pending' status
+    $pendingTopics = Tree::where('status', 'pending')->get();
+
+    // Return view with pending topics
+    return view('admin.pendingTopics', compact('pendingTopics'));
+    }
 }

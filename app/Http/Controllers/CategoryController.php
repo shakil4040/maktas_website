@@ -21,7 +21,7 @@ class CategoryController extends Controller
 {
     public function manageCategory()
     {
-        $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'asc')->get();
+        $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'desc')->get();
         $allCategories = Tree::pluck('title', 'sr')->all();
         return view('categoryTreeview', compact('categories', 'allCategories'));
     }
@@ -55,7 +55,74 @@ class CategoryController extends Controller
             return response()->json(['success' => 'رائے  کا اندراج ہو گیا ہے']);
         }
     }
+    /**
+     * Add a new topic to the tree and associated details.
+     *
+     * This function validates the incoming request, creates a new entry in the 
+     * Tree model, and also creates related entries in the Detail, Easy, Yaad, 
+     * and Mahol models.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Tree $tree
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addTopic(Request $request, Tree $tree)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'detail' => 'required',
+            'hawala' => 'required',
+            'easy'=> 'required',
+            'sunana' => 'nullable',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()->all()]);
+        }
+        $serialNumber = $tree->max('sr') + 1;
+        // Create a new Tree entry
+        $user = Auth::guard('member')->user();
+        $status = 'pending'; // Default status
+        $addedBy = null; // Default value if no user is logged in
+    
+        if ($user) {
+            $status = 'pending'; // Set status to pending if user is a member
+            $addedBy = $user->name; // Set the name of the member
+        }
+        $treeEntry = $tree->create([
+            'title' => $request->title,
+            'sr' => $serialNumber,
+            'parent_id' => 0, // Default parent_id to 0 if not provided
+            'status' => $status, 
+            'added_by' => $addedBy, 
+        ]);
+        // Create a new Detail entry
+        $detail = new Detail([
+            'id' => $treeEntry->id, // Use the ID of the newly created Tree entry
+            'detail' => $request->detail,
+        ]);
+        $detail->save();
+    
+        $easy = new Easy([
+            'id' => $treeEntry->id,
+            'easy' => $request->detail,
+        ]);
+        $easy->save();
 
+        // Create a new Yaad entry
+        $yaad = new Yaad([
+            'id' => $treeEntry->id, // Use the ID of the newly created Tree entry
+        ]);
+        $yaad->save();
+    
+        $mahol = new Mahol([
+            'id' => $treeEntry->id,
+            'sunana' => $request->input('sunana', null), // Use the 'sunana' from the request, default to null
+        ]);
+        $mahol->save();
+    
+        return response()->json(['success' => 'نئے عنوان کا اندراج ہو گیا ہے']);
+    }
     public function addCategory(Request $request, Tree $tree)
     {
         $validator = Validator::make($request->all(), [
