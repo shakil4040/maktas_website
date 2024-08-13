@@ -77,4 +77,21 @@ class AdminController extends Controller
         $branches = Member::all();
         return view('admin.members', compact('branches'));
     }
+    
+    /**
+     * Display topics with 'pending' status in the admin dashboard.
+     *
+     * This function retrieves all topics from the Tree model where the status 
+     * is set to 'pending'.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function pendingTopics(){
+
+    // Fetch topics with 'pending' status
+    $pendingTopics = Tree::where('status', 'pending')->get();
+
+    // Return view with pending topics
+    return view('admin.pendingTopics', compact('pendingTopics'));
+    }
 }
