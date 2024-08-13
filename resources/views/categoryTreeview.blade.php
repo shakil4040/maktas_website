@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>اسلام</title>
@@ -550,6 +550,11 @@
                             <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
+                        @auth('member')
+                        <div class="mt-2">
+                            <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
+                        </div>
+                        @endauth
                         <div id="sframe" class="col-md-6" style="position: absolute;left:5px;top:53px;z-index: 99999;height:55%">
                             <i id="frclose" style="position: absolute;left: 34px;top: 15px;" class="fa fa-close"></i>
                             <iframe  src="/allSearch" height="100%" width="100%" title="Iframe Example"></iframe>
@@ -600,6 +605,18 @@
                                                     @endif
                                                     @endauth
                                                 </div>
+                                                @auth('admin')
+                                                <div>
+                                                    <span style="margin-right: 10px;">Status: 
+                                                        @if($category->status === 'pending')
+                                                            <span style="color: orange;">{{ $category->status }}</span>
+                                                        @else
+                                                            {{ $category->status }}
+                                                        @endif
+                                                    </span>
+                                                    <span style="margin-right: 10px;">Added By: {{ $category->added_by ?? 'Unknown' }}</span>
+                                                </div>
+                                                @endauth
                                                 <div class="cid d-none">{{ $category->id }}</div>
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
@@ -661,6 +678,46 @@
     </div>
   </div>
 </div>
+<!-- Modal to add new topics -->
+<div class="modal fade" style="direction: rtl; font-family: 'Noto Nastaliq Urdu', serif;" id="addTopicModal" tabindex="-1" aria-labelledby="addTopicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button style="text-align: right;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 style="text-align: left; display: block;" class="modal-title" id="addTopicModalLabel">Add New Topic</h5>
+            </div>
+            <div class="modal-body">
+                <form id="addCategoryForm">
+                    <div class="form-group">
+                        <label style="text-align: right; display: block;" for="title">عنوان</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align: right; display: block;" for="detail">مختصر وضاحت</label>
+                        <textarea class="form-control" id="detail" name="detail" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align: right; display: block;" for="hawala">Hawala</label>
+                        <input type="text" class="form-control" id="hawala" name="hawala" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align: right; display: block;" for="easy">Easy</label>
+                        <input type="text" class="form-control" id="easy" name="easy" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align: right; display: block;" for="sunana">sunana</label>
+                        <input type="text" class="form-control" id="sunana" name="sunana">
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">محفوظ کریں</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="/js/treeview.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -708,6 +765,38 @@ for (var i = 0; i < btns.length; i++) {
         this.className += " active";
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('addCategoryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch('/add-topic', { // replace with your actual route
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.error) {
+                    alert('Error: ' + result.error.join(', '));
+                } else {
+                    const modalElement = document.getElementById('addTopicModal');
+                    const modal = new bootstrap.Modal(modalElement);
+                    alert('Success: ' + result.success);
+                    modal.hide();
+                    setTimeout(() => {
+                        window.location.reload(); // Delay reload to ensure modal has time to close
+                    }, 500);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
     </script>
 </body>
 
