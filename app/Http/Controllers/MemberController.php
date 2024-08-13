@@ -20,7 +20,6 @@ class MemberController extends Controller
     }
     public function editMember(Member $member)
     {
-        dd('dfdf');
         return view('member.edit-member', compact('member'));
     }
     public function updateMember(Request $request, Member $member)
