@@ -40,6 +40,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:member')->except('logout');
         $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:temporary-member')->except('logout');
     }
     public function vuelogin(Request $request)
     {
@@ -69,13 +70,12 @@ class LoginController extends Controller
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-
         if (\Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             return redirect()->intended('/admin');
         }
         else{
-        return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
+            return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
         }
     }
 
@@ -92,10 +92,30 @@ class LoginController extends Controller
         ]);
 
         if (\Auth::guard('member')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
             return redirect()->intended('/member');
+        } else{
+            return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
         }
-        return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
+    }
+
+    public function showTempMemberLoginForm()
+    {
+        return view('auth.login', ['url' => 'temporary-member']);
+    }
+
+    public function tempMemberLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+
+        // Attempt to log in using the temporary-member guard
+        if (\Auth::guard('temporary-member')->attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->intended('/temporary-member');
+        } else {
+            return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
+        }
     }
 
 }

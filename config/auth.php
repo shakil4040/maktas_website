@@ -54,6 +54,10 @@ return [
             'driver' => 'session',
             'provider' => 'members',
         ],
+        'temporary-member' => [
+            'driver' => 'session',
+            'provider' => 'members',
+        ],
     ],
 
     /*
@@ -121,6 +125,12 @@ return [
             'throttle' => 60,
         ],
         'members' => [
+            'provider' => 'members',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'temporary-members' => [
             'provider' => 'members',
             'table' => 'password_resets',
             'expire' => 60,

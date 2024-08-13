@@ -79,6 +79,18 @@ Route::group(['middleware' => ['auth.admin']], function () {
 
 });
 
+// Member Routes
+Route::group(['middleware' => ['auth.member']], function () {
+    Route::get('/member-profile', 'MemberController@profile');
+    Route::get('/member/{member}/edit', 'MemberController@editMember');
+    Route::patch('/member/{member}', 'MemberController@updateMember');
+    Route::get('/member/upload', 'MemberController@upload');
+    Route::post('/member/upload-File', 'MemberController@uploadFile');
+    Route::get('/member/download', 'MemberController@download');
+});
+// Search Request 
+Route::post('/searchTopic', 'CategoryController@searchCategory');
+
 Route::prefix('admin')->namespace('Auth\Admin')->group(function(){
     Route::get('password/reset','ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     Route::post('password/email','ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
@@ -96,6 +108,15 @@ Route::get('/governmentClasses','ComparisonController@governmentClasses');
 Route::get('/governmentBasic/{class}','ComparisonController@governmentBasic');
 Route::get('/governmentDetailed/{class}','ComparisonController@governmentDetailed');
 
+// Temporary Member Dashboard Route
+Route::group(['middleware' => ['auth.temporary-member']], function () {
+    Route::get('/login/temporary-member', 'Auth\LoginController@showTempMemberLoginForm')->name('login/temp-member');
+    Route::post('/login/temporary-member', 'Auth\LoginController@tempMemberLogin');
+    Route::view('/temporary-member', 'dashboards.temporary-member');
+    Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
+    Route::get('/temp-member/{temp-member}/edit', 'MemberController@editMember');
+    Route::patch('/temp-member/{temp-member}', 'MemberController@updateMember');
+});
 
 // Route::any('/who-you-are', 'UserCheckController@userCheckView')->name('userCheck');
 // Route::any('/login', 'UserCheckController@toLoginView')->name('login');
