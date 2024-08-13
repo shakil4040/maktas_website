@@ -109,14 +109,12 @@ Route::get('/governmentBasic/{class}','ComparisonController@governmentBasic');
 Route::get('/governmentDetailed/{class}','ComparisonController@governmentDetailed');
 
 // Temporary Member Dashboard Route
-Route::group(['middleware' => ['auth.temporary-member']], function () {
-    Route::get('/login/temporary-member', 'Auth\LoginController@showTempMemberLoginForm')->name('login/temp-member');
-    Route::post('/login/temporary-member', 'Auth\LoginController@tempMemberLogin');
-    Route::view('/temporary-member', 'dashboards.temporary-member');
-    Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
-    Route::get('/temp-member/{temp-member}/edit', 'MemberController@editMember');
-    Route::patch('/temp-member/{temp-member}', 'MemberController@updateMember');
-});
+Route::get('/login/temporary-member', 'Auth\LoginController@showTempMemberLoginForm')->name('login/temp-member');
+Route::post('/login/temporary-member', 'Auth\LoginController@tempMemberLogin');
+Route::view('/temporary-member', 'dashboards.temporary-member');
+Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
+Route::get('/temp-member/{temp-member}/edit', 'MemberController@editMember');
+Route::patch('/temp-member/{temp-member}', 'MemberController@updateMember');
 
 // Route::any('/who-you-are', 'UserCheckController@userCheckView')->name('userCheck');
 // Route::any('/login', 'UserCheckController@toLoginView')->name('login');
