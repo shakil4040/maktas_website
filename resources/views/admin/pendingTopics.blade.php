@@ -27,7 +27,7 @@
                     @foreach($pendingTopics as $topic)
                         <tr>
                             <td>{{ $topic->title }}</td>
-                            <td>{{ $topic->status }}</td>
+                            <td class="badge bg-primary mt-2 ml-2">{{ $topic->status }}</td>
                             <td>{{ $topic->added_by }}</td>
                             <td>
                                 <div class="d-flex">

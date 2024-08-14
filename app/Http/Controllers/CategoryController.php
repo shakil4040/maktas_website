@@ -21,8 +21,29 @@ class CategoryController extends Controller
 {
     public function manageCategory()
     {
-        $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'desc')->get();
+        // Get the current logged-in user (temporary or permanent member)
+        $temporaryMember = Auth::guard('temporary-member')->user();
+        $permanentMember = Auth::guard('member')->user();
+
+        // Check if a temporary member is logged in
+        if ($temporaryMember) {
+            // Fetch categories added by the temporary member
+            $categories = Tree::where('parent_id', '=', 0)
+                ->where('added_by', $temporaryMember->name) // or $temporaryMember->id if you store IDs
+                ->orderBy('sr', 'desc')
+                ->get();
+        } else if ($permanentMember) {
+            // Fetch categories added by the permanent member
+            $categories = Tree::where('parent_id', '=', 0)
+                ->where('added_by', $permanentMember->name) // or $member->id if you store IDs
+                ->orderBy('sr', 'desc')
+                ->get();
+        }
+        else {
+            $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'desc')->get();
+        }
         $allCategories = Tree::pluck('title', 'sr')->all();
+
         return view('categoryTreeview', compact('categories', 'allCategories'));
     }
     public function educationist()
@@ -81,14 +102,12 @@ class CategoryController extends Controller
 
         // Check if a temporary or permanent member is logged in
         $member = Auth::guard('temporary-member')->user() ?? Auth::guard('member')->user();
-        $status = 'pending';
-        $addedBy = $member ? $member->name : null;
         $treeEntry = $tree->create([
             'title' => $request->title,
             'sr' => $serialNumber,
             'parent_id' => 0, // Default parent_id to 0 if not provided
-            'status' => $status, 
-            'added_by' => $addedBy, 
+            'status' => $member && Auth::guard('temporary-member')->check() ? 'Pending' : '', 
+            'added_by' => $member->name ?? null, 
         ]);
         
         // Create related entries

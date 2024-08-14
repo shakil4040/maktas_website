@@ -615,14 +615,14 @@
                                                 </div>
                                                 @auth('admin')
                                                 <div>
-                                                    <span style="margin-right: 10px;">Status: 
-                                                        @if($category->status === 'pending')
+                                                    @if($category->status === 'pending')
+                                                        <span style="margin-right: 10px;">Status: 
                                                             <span style="color: orange;">{{ $category->status }}</span>
-                                                        @else
-                                                            {{ $category->status }}
-                                                        @endif
-                                                    </span>
-                                                    <span style="margin-right: 10px;">Added By: {{ $category->added_by ?? 'Unknown' }}</span>
+                                                        </span>
+                                                    @endif
+                                                    @if($category->added_by)
+                                                        <span style="margin-right: 10px;">Added By: {{ $category->added_by }}
+                                                    @endif
                                                 </div>
                                                 @endauth
                                                 <div class="cid d-none">{{ $category->id }}</div>

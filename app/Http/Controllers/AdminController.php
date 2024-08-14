@@ -87,11 +87,7 @@ class AdminController extends Controller
      * @return \Illuminate\View\View
      */
     public function pendingTopics(){
-
-    // Fetch topics with 'pending' status
-    $pendingTopics = Tree::where('status', 'pending')->get();
-
-    // Return view with pending topics
-    return view('admin.pendingTopics', compact('pendingTopics'));
+        $pendingTopics = Tree::where('status', 'pending')->get();
+        return view('admin.pendingTopics', compact('pendingTopics'));
     }
 }
