@@ -550,7 +550,7 @@
                             <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
-                        @auth('member')
+                        @auth('member', 'temporary-member')
                         <div class="mt-2">
                             <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
                         </div>
@@ -596,14 +596,17 @@
                                                         <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
                                                     </div>
                                                     @endauth
-                                                    @auth('member')
                                                     @if(count($category->childs) == null)
-                                                    <div class="d-flex">
-                                                        <i class="fa fa-edit mx-2 sedit"></i>
-                                                        <i class="fa fa-times-circle mx-2 delete"></i>
-                                                    </div>
+                                                        <div class="d-flex">
+                                                            @auth('member')
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                                <i class="fa fa-times-circle mx-2 delete"></i>
+                                                            @endauth
+                                                            @auth('temporary-member')
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                            @endauth
+                                                        </div>
                                                     @endif
-                                                    @endauth
                                                 </div>
                                                 @auth('admin')
                                                 <div>
