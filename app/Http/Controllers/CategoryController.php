@@ -68,27 +68,21 @@ class CategoryController extends Controller
      */
     public function addTopic(Request $request, Tree $tree)
     {
-        $validator = Validator::make($request->all(), [
+        // Validate the request
+        $validatedData = $request->validate([
             'title' => 'required',
             'detail' => 'required',
             'hawala' => 'required',
-            'easy'=> 'required',
+            'easy' => 'required',
             'sunana' => 'nullable',
         ]);
-    
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()->all()]);
-        }
+        // Determine the serial number
         $serialNumber = $tree->max('sr') + 1;
-        // Create a new Tree entry
-        $user = Auth::guard('member')->user();
-        $status = 'pending'; // Default status
-        $addedBy = null; // Default value if no user is logged in
-    
-        if ($user) {
-            $status = 'pending'; // Set status to pending if user is a member
-            $addedBy = $user->name; // Set the name of the member
-        }
+
+        // Check if a temporary or permanent member is logged in
+        $member = Auth::guard('temporary-member')->user() ?? Auth::guard('member')->user();
+        $status = 'pending';
+        $addedBy = $member ? $member->name : null;
         $treeEntry = $tree->create([
             'title' => $request->title,
             'sr' => $serialNumber,
@@ -96,31 +90,13 @@ class CategoryController extends Controller
             'status' => $status, 
             'added_by' => $addedBy, 
         ]);
-        // Create a new Detail entry
-        $detail = new Detail([
-            'id' => $treeEntry->id, // Use the ID of the newly created Tree entry
-            'detail' => $request->detail,
-        ]);
-        $detail->save();
-    
-        $easy = new Easy([
-            'id' => $treeEntry->id,
-            'easy' => $request->detail,
-        ]);
-        $easy->save();
+        
+        // Create related entries
+        $treeEntry->detail()->create(['detail' => $validatedData['detail']]);
+        $treeEntry->easy()->create(['easy' => $validatedData['easy']]);
+        $treeEntry->yaad()->create();
+        $treeEntry->mahol()->create(['sunana' => $validatedData['sunana'] ?? null]);
 
-        // Create a new Yaad entry
-        $yaad = new Yaad([
-            'id' => $treeEntry->id, // Use the ID of the newly created Tree entry
-        ]);
-        $yaad->save();
-    
-        $mahol = new Mahol([
-            'id' => $treeEntry->id,
-            'sunana' => $request->input('sunana', null), // Use the 'sunana' from the request, default to null
-        ]);
-        $mahol->save();
-    
         return response()->json(['success' => 'نئے عنوان کا اندراج ہو گیا ہے']);
     }
     public function addCategory(Request $request, Tree $tree)
