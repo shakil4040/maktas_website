@@ -550,7 +550,12 @@
                             <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
-                        @auth('member', 'temporary-member')
+                        @auth('member')
+                        <div class="mt-2">
+                            <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
+                        </div>
+                        @endauth
+                        @auth('temporary-member')
                         <div class="mt-2">
                             <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
                         </div>
