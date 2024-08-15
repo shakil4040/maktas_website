@@ -40,6 +40,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:member')->except('logout');
         $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:temporary-member')->except('logout');
     }
     public function vuelogin(Request $request)
     {
@@ -69,13 +70,12 @@ class LoginController extends Controller
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-
         if (\Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             return redirect()->intended('/admin');
         }
         else{
-        return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
+            return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
         }
     }
 
@@ -92,10 +92,47 @@ class LoginController extends Controller
         ]);
 
         if (\Auth::guard('member')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
             return redirect()->intended('/member');
+        } else{
+            return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
         }
-        return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
     }
 
+    /**
+     * Show the login form for temporary members.
+     *
+     * This function returns the view for the login page, specifying that the 
+     * login is for a temporary member by passing the 'url' parameter.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showTempMemberLoginForm()
+    {
+        return view('auth.login', ['url' => 'temporary-member']);
+    }
+
+    /**
+     * Handle the login request for a temporary member.
+     *
+     * This function validates the login credentials provided by the temporary member.
+     * It then attempts to authenticate the user using the 'temporary-member' guard.
+     * If successful, the user is redirected to the intended page. 
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function tempMemberLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+
+        // Attempt to log in using the temporary-member guard
+        if (\Auth::guard('temporary-member')->attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->intended('/temporary-member');
+        } else {
+            return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
+        }
+    }
 }

@@ -66,4 +66,15 @@ class AdminController extends Controller
     {
         return Excel::download(new TreeDataExport(), 'tree_data.xlsx');
     }
+
+    /**
+     * @method members
+     * @param none
+     * @return View
+     */
+    public function members()
+    {
+        $branches = Member::all();
+        return view('admin.members', compact('branches'));
+    }
 }
