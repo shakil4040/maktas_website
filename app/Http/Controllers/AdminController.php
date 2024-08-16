@@ -62,7 +62,57 @@ class AdminController extends Controller
         return Redirect::to('/upload');
     }
 
-    public function download()
+    /**
+     * Show the file download view with available options.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showDownloadFileOptions(){
+        // Fetch only the 'title' and 'id' columns from the 'tree' table
+        $topics = Tree::pluck('title', 'id');
+
+        // Check if the $topics collection is empty, and handle the case accordingly
+        if ($topics->isEmpty()) {
+            return view('admin.downloadFile', ['topics' => [], 'message' => 'No topics available for download.']);
+        }
+        return view('admin.downloadFile', compact('topics'));
+    }
+
+    /**
+     * Handle the download of an Excel file based on selected topic titles.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public function downloadFileByTitles(Request $request){
+
+        $selectedIds = $request->input('topics', []);
+        $topics = Tree::whereIn('id', $selectedIds)->get();
+        // Convert the collection to an array of titles
+        $selectedTitles = $topics->pluck('title')->toArray();
+        // Generate and return the file download
+        return Excel::download(new TreeDataExport($selectedTitles), 'selected_topics.xlsx');
+    }
+    
+    /**
+     * Download topics within a specified date range.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public function downloadFileByDate(Request $request){
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        $validatedData = $request->validate([
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+        ]);
+
+        return Excel::download(new TreeDataExport([], $startDate, $endDate), 'tree_data_by_date_range.xlsx');
+    }
+
+    public function downloadFile()
     {
         return Excel::download(new TreeDataExport(), 'tree_data.xlsx');
     }
