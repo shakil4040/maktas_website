@@ -391,8 +391,26 @@ class CategoryController extends Controller
             compact('childs', 'level', 'navigation')
         );
     }
-   
-    
-    
 
+    /**
+     * Search for categories based on the provided search parameters.
+     *
+     * This function retrieves all records from the `Tree` model that match the
+     * specified title search criteria.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\View\View
+     */
+    public function searchCategory(Request $request) {
+        $searchParams = $request->input('searchParams', '');
+        // Retrieve all records that match the search criteria
+        $matchingMenus = Tree::where('title', 'like', "%$searchParams%")
+        ->whereIn('parent_id', function($query) use ($searchParams) {
+            $query->select('parent_id')
+                ->from('trees')
+                ->where('title', 'like', "%$searchParams%");
+        })
+        ->get();
+        return view('showCategory', compact('matchingMenus'));
+    }
 }

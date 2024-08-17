@@ -127,5 +127,15 @@ class AdminController extends Controller
     public function pendingTopics(){
         $pendingTopics = Tree::where('status', 'pending')->get();
         return view('admin.pendingTopics', compact('pendingTopics'));
+
+    /**
+     * @method members
+     * @param none
+     * @return View
+     */
+    public function members()
+    {
+        $branches = Member::all();
+        return view('admin.members', compact('branches'));
     }
 }

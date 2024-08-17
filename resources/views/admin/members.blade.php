@@ -23,19 +23,31 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Type</th>
                                 <th scope="col" colspan="2">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $counter = 1;
+                            @endphp
                             @foreach($branches as $branch)
                             <tr>
-                                <th scope="row">{{$x++}}</th>
-                                <td>{{$branch->name}}</td>
-                                <td>{{$branch->email}}</td>
-                                <td><a href="/branch/{{$branch->id}}/edit"><button
-                                            class="btn btn-dark">Edit</button></a></td>
-                                <td><a href="/delete2/{{$branch->id}}"><button
-                                            class="btn btn-dark">Delete</button></a></td>
+                                <th scope="row">{{ $counter++ }}</th>
+                                <td>{{ $branch->name }}</td>
+                                <td>{{ $branch->email }}</td>
+                                <td>
+                                    @if($branch->temp == 1)
+                                    <span class="badge bg-primary">Temporary</span>
+                                    @else
+                                    <span class="badge bg-primary">Permanent</span>
+                                    @endif
+                                </td>
+                                <td><a href="/branch/{{ $branch->id }}/edit"><button class="btn btn-dark">Edit</button></a></td>
+                                <td><a href="/delete2/{{ $branch->id }}"><button class="btn btn-dark">Delete</button></a></td>
+                                @if($branch->temp == 1)
+                                    <td><a href="/approve/{{ $branch->id }}"><button class="btn btn-dark">Approve</button></a></td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>
