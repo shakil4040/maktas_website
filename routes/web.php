@@ -93,7 +93,7 @@ Route::group(['middleware' => ['auth.member']], function () {
     Route::get('/member/download', 'MemberController@download');
 });
 // Search Request 
-Route::post('/searchTopic', 'CategoryController@searchCategory');
+Route::get('/searchTopic', 'CategoryController@searchCategory');
 
 Route::prefix('admin')->namespace('Auth\Admin')->group(function(){
     Route::get('password/reset','ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
