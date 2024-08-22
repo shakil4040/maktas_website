@@ -134,7 +134,47 @@ class AdminController extends Controller
      */
     public function members()
     {
-        $branches = Member::all();
-        return view('admin.members', compact('branches'));
+        $members = Member::all();
+        return view('admin.members', compact('members'));
     }
+
+    /**
+     * Approve a member by setting their type to 0.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function approveMember($id)
+    {
+        $member = Member::find($id);
+
+        // Check if the member exists
+        if (!$member) {
+            return redirect()->back()->with('error', 'Member not found.');
+        }
+        // Set the member's type to 0 (approved)
+        $member->temp = 0;
+        $member->save();
+
+        return redirect()->back()->with('success', 'Member approved successfully!');
+    }
+
+    /**
+     * Delete a member.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteMember($id)
+    {
+        $member = Member::find($id);
+        // Check if the member exists
+        if (!$member) {
+            return redirect()->back()->with('error', 'Member not found.');
+        }
+        $member->delete();
+
+        return redirect()->back()->with('success', 'Member deleted successfully.');
+    }
+
 }

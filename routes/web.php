@@ -80,6 +80,8 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::get('/download-file', 'AdminController@downloadFile');
     Route::post('/download-by-titles', 'AdminController@downloadFileByTitles');
     Route::post('/download-by-date', 'AdminController@downloadFileByDate');
+    Route::patch('/member/{id}/approve', 'AdminController@approveMember')->name('member.approve');
+    Route::post('/member/delete/{id}', 'AdminController@deleteMember')->name('member.delete');
 
 });
 

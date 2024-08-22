@@ -89,7 +89,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request['password']),
             'temp' => 1, // Set the 'temp' column to 1 as the default value for new members
         ]);
-        return redirect()->intended('/admin')->with('success','Member Added Successfully');
+        return redirect()->intended('/members')->with('success','Member Added Successfully');
     }
 
 
