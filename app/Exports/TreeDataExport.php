@@ -137,19 +137,23 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading
             'Sr: No' => $data->id,
             'نصابی نمبر' => $detail[$data->id]['nsaby_nmbr'],
             'parent' => $data->parent_id,
-            'ویب سائٹ نمبر شمار' => $data->sr,
-            'bunyadi_unwan' => $structure['bunyadi_unwan'],
-            'zayalunwan_1' => key_exists('zayalunwan_1', $structure) ? $structure['zayalunwan_1'] : '',
-            'zayalunwan_2' => key_exists('zayalunwan_2', $structure) ? $structure['zayalunwan_2'] : "",
-            'zayalunwan_3' => key_exists('zayalunwan_3', $structure) ? $structure['zayalunwan_3'] : "",
-            'zayalunwan_4' => key_exists('zayalunwan_4', $structure) ? $structure['zayalunwan_4'] : "",
-            'zayalunwan_5' => key_exists('zayalunwan_5', $structure) ? $structure['zayalunwan_5'] : "",
-            'zayalunwan_6' => key_exists('zayalunwan_6', $structure) ? $structure['zayalunwan_6'] : "",
-            'zayalunwan_7' => key_exists('zayalunwan_7', $structure) ? $structure['zayalunwan_7'] : "",
-            'zayalunwan_8' => key_exists('zayalunwan_8', $structure) ? $structure['zayalunwan_8'] : "",
-            'zayalunwan_9' => key_exists('zayalunwan_9', $structure) ? $structure['zayalunwan_9'] : "",
-            'zayalunwan_10' => key_exists('zayalunwan_10', $structure) ? $structure['zayalunwan_10'] : "",
-            'اجمالی عنوان' => $data->title,
+            'ویب سائٹ نمبر شمار' => $data->sr
+            ];
+            if(!empty($structure['bunyadi_unwan'])) {
+                $exportData[$data->id] = array_merge($exportData[$data->id],['bunyadi_unwan' => $structure['bunyadi_unwan'],
+                'zayalunwan_1' => key_exists('zayalunwan_1', $structure) ? $structure['zayalunwan_1'] : '',
+                'zayalunwan_2' => key_exists('zayalunwan_2', $structure) ? $structure['zayalunwan_2'] : "",
+                'zayalunwan_3' => key_exists('zayalunwan_3', $structure) ? $structure['zayalunwan_3'] : "",
+                'zayalunwan_4' => key_exists('zayalunwan_4', $structure) ? $structure['zayalunwan_4'] : "",
+                'zayalunwan_5' => key_exists('zayalunwan_5', $structure) ? $structure['zayalunwan_5'] : "",
+                'zayalunwan_6' => key_exists('zayalunwan_6', $structure) ? $structure['zayalunwan_6'] : "",
+                'zayalunwan_7' => key_exists('zayalunwan_7', $structure) ? $structure['zayalunwan_7'] : "",
+                'zayalunwan_8' => key_exists('zayalunwan_8', $structure) ? $structure['zayalunwan_8'] : "",
+                'zayalunwan_9' => key_exists('zayalunwan_9', $structure) ? $structure['zayalunwan_9'] : "",
+                'zayalunwan_10' => key_exists('zayalunwan_10', $structure) ? $structure['zayalunwan_10'] : ""]);
+            }
+            
+            $exportData[$data->id] = array_merge($exportData[$data->id],['اجمالی عنوان' => $data->title,
             'مختصر تفصیل' => $detail[$data->id]['mkhtsr_tfsyl'],
             'پس منظر' => $yaad[$data->id]['ps_mnthr'],
             'طرز عمل' => $yaad[$data->id]['trz_aaml'],
@@ -188,8 +192,7 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading
             'adat' => $mahol[$data->id]['adat'],
             'samjhana' => $mahol[$data->id]['samjhana'],
             'parhana' => $mahol[$data->id]['parhana'],
-
-            ];
+            ]);
         }
         return collect($exportData);
     }
