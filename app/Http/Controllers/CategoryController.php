@@ -28,19 +28,24 @@ class CategoryController extends Controller
         // Check if a temporary member is logged in
         if ($temporaryMember) {
             // Fetch categories added by the temporary member
-            $categories = Tree::where('parent_id', '=', 0)
-                ->where('added_by', $temporaryMember->name) // or $temporaryMember->id if you store IDs
-                ->orderBy('sr', 'desc')
-                ->get();
+            $categories = Tree::where([
+                ['parent_id', '=', 0],
+                ['added_by', '=', $temporaryMember->name], // or $temporaryMember->id if you store IDs
+                ['status', '=', 'Approved'],
+            ])
+            ->orderBy('sr', 'asc')
+            ->get();
         } else if ($permanentMember) {
             // Fetch categories added by the permanent member
-            $categories = Tree::where('parent_id', '=', 0)
-                ->where('added_by', $permanentMember->name) // or $member->id if you store IDs
-                ->orderBy('sr', 'desc')
-                ->get();
+            $categories = Tree::where([
+                ['parent_id', '=', 0],
+                ['added_by', '=', $permanentMember->name] // or ['added_by', '=', $member->id] if you store IDs
+            ])
+            ->orderBy('sr', 'asc')
+            ->get();
         }
         else {
-            $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'desc')->get();
+            $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'asc')->get();
         }
         $allCategories = Tree::pluck('title', 'sr')->all();
 

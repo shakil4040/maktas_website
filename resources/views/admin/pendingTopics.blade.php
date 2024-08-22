@@ -2,6 +2,20 @@
 
 @section('content')
 <div class="container">
+    <!-- Display success or error message -->
+    @if(session('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong> {{ session('success') }}</strong>
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger alert-block">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>{{ session('error') }}</strong>
+        </div>
+    @endif
     <div class="row justify-content-center">
 
     <div class="col-md-4">
@@ -31,8 +45,13 @@
                             <td>{{ $topic->added_by }}</td>
                             <td>
                                 <div class="d-flex">
-                                    <span style="cursor:pointer; font-size: 14px; width: 70px; height: 25px;" class="badge bg-success mx-2">Accept</span>
-                                    <span style="cursor:pointer; font-size: 14px; width: 70px; height: 25px;" class="badge bg-danger mx-2">Reject</span>
+                                    <form action="{{ route('topic.accept', $topic->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @if($topic->status !== 'Approved')
+                                            <button type="submit" class="btn btn-success mx-2">Accept</button>
+                                        @endif
+                                    </form>
+                                    <button type="submit" class="btn btn-danger mx-2">Reject</button>
                                 </div>
                             </td>
                         </tr>

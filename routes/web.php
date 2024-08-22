@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::post('/download-by-date', 'AdminController@downloadFileByDate');
     Route::patch('/member/{id}/approve', 'AdminController@approveMember')->name('member.approve');
     Route::post('/member/delete/{id}', 'AdminController@deleteMember')->name('member.delete');
-
+    Route::post('/topic/accept/{id}', 'AdminController@acceptTopic')->name('topic.accept');
 });
 
 // Member Routes
@@ -122,6 +122,24 @@ Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
 Route::get('/temp-member/{member}/edit', 'MemberController@editTempMember');
 Route::patch('/temp-member/{member}', 'MemberController@updateTempMember');
 
+Route::post('/logout', function () {
+    // Define an array of guard => redirect path pairs
+    $guards = [
+        'admin' => '/login/admin',
+        'temporary-member' => '/login/temporary-member',
+        'member' => '/login/member',
+    ];
+    // Iterate through the guards to find the one that is currently authenticated
+    foreach ($guards as $guard => $redirectPath) {
+        if (auth($guard)->check()) {
+            auth($guard)->logout();
+            return redirect($redirectPath);
+        }
+    }
+    // Fallback for default user type
+    auth()->logout();
+    return redirect('/login');
+})->name('logout');
 // Route::any('/who-you-are', 'UserCheckController@userCheckView')->name('userCheck');
 // Route::any('/login', 'UserCheckController@toLoginView')->name('login');
 Route::get('{any}','UserCheckController@userCheckView')->where('any','.*');

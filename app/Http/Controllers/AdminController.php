@@ -125,7 +125,7 @@ class AdminController extends Controller
      * @return \Illuminate\View\View
      */
     public function pendingTopics(){
-        $pendingTopics = Tree::where('status', 'pending')->get();
+        $pendingTopics = Tree::whereIn('status', ['pending', 'approved'])->get();
         return view('admin.pendingTopics', compact('pendingTopics'));
     }
     /**
@@ -177,4 +177,24 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Member deleted successfully.');
     }
 
+    /**
+     * Approve a topic from 'pending' to 'approve'.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function acceptTopic($id)
+    {
+        $topic = Tree::where('status', 'Pending')->find($id);
+
+        if (!$topic) {
+            return redirect()->back()->with('error', 'Topic not found');
+        }
+        // Update the status to 'approve' if it's 'pending'
+        if ($topic->status === 'Pending') {
+            $topic->status = 'Approved';
+            $topic->save();
+        }
+        return redirect()->back()->with('success', 'Topic status updated to approve.');
+    }
 }
