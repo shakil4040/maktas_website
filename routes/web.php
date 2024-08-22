@@ -45,18 +45,20 @@ Route::get('/educationist', 'CategoryController@educationist');
 // Route::post('add-category','CategoryController@addCategory')->name('add.category');
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/login/{guard}', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login/{guard}', 'Auth\LoginController@login');
 
-Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm')->name('login/admin');
+// Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm')->name('login/admin');
 Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm')->middleware('guest:admin');
 
-Route::get('/login/member', 'Auth\LoginController@showMemberLoginForm')->name('login/member');
-Route::post('/login/member', 'Auth\LoginController@memberLogin');
+// Route::get('/login/member', 'Auth\LoginController@showMemberLoginForm')->name('login/member');
+// Route::post('/login/member', 'Auth\LoginController@memberLogin');
 Route::view('/member', 'dashboards.member');
 Route::get('/get-child/{id}/{level}/{title}','CategoryController@getChild');
 Route::get('/get-child2/{id}/{level}/{title}','CategoryController@getChild2');
 
 
-Route::post('/login/admin', 'Auth\LoginController@adminLogin');
+// Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');
 
 Route::view('/admin', 'dashboards.admin')->middleware('auth.admin');
@@ -115,12 +117,14 @@ Route::get('/governmentBasic/{class}','ComparisonController@governmentBasic');
 Route::get('/governmentDetailed/{class}','ComparisonController@governmentDetailed');
 
 // Temporary Member Dashboard Route
-Route::get('/login/temporary-member', 'Auth\LoginController@showTempMemberLoginForm')->name('login/temp-member');
-Route::post('/login/temporary-member', 'Auth\LoginController@tempMemberLogin');
-Route::view('/temporary-member', 'dashboards.temporary-member');
-Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
-Route::get('/temp-member/{member}/edit', 'MemberController@editTempMember');
-Route::patch('/temp-member/{member}', 'MemberController@updateTempMember');
+Route::group(['middleware' => ['auth.temporary-member']], function () {
+    // Route::get('/login/temporary-member', 'Auth\LoginController@showTempMemberLoginForm')->name('login/temp-member');
+    // Route::post('/login/temporary-member', 'Auth\LoginController@tempMemberLogin');
+    Route::view('/temporary-member', 'dashboards.temporary-member');
+    Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
+    Route::get('/temp-member/{member}/edit', 'MemberController@editTempMember');
+    Route::patch('/temp-member/{member}', 'MemberController@updateTempMember');
+});
 
 Route::post('/logout', function () {
     // Define an array of guard => redirect path pairs

@@ -31,7 +31,7 @@ class MemberController extends Controller
 
             ]);
             auth('member')->user()->update($data);
-            return redirect('/member')->with('success', 'Profile Updated Successfully');
+            return redirect('/member-profile')->with('success', 'Profile Updated Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -116,7 +116,7 @@ class MemberController extends Controller
 
             ]);
             auth('temporary-member')->user()->update($data);
-            return redirect('/temporary-member')->with('success', 'Profile Updated Successfully');
+            return redirect('/temp-member-profile')->with('success', 'Profile Updated Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }

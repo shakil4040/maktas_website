@@ -59,6 +59,46 @@ class LoginController extends Controller
         } 
     }
 
+    /**
+     * Show the login form for different Members.
+     *
+     * @param  string  $guard
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response
+     */
+    public function showLoginForm($guard)
+    {
+        // Validate the guard to prevent invalid URLs
+        if (!in_array($guard, ['admin', 'member', 'temporary-member'])) {
+            abort(404); // Return a 404 error if the guard is invalid
+        }
+
+        // Return the login view with the specified guard
+        return view('auth.login', ['url' => $guard]);
+    }
+
+    /**
+     * Handle the login request for different guards.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $guard
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
+    public function login(Request $request, $guard)
+    {
+        // Validate the guard to ensure the correct guard is being used
+        if (!in_array($guard, ['admin', 'member', 'temporary-member'])) {
+            abort(404); // Return a 404 error if the guard is invalid
+        }
+        $this->validate($request, ['email' => 'required|email', 'password' => 'required|min:6']);
+
+        // Attempt to log in using the specified guard
+        if (Auth::guard($guard)->attempt($request->only('email', 'password'), $request->filled('remember'))) {
+            // Redirect to the appropriate dashboard based on the guard
+            return redirect()->intended("/$guard");
+        }
+        return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
+    }
+    /*
     public function showAdminLoginForm()
     {
         return view('auth.login', ['url' => 'admin']);
@@ -96,7 +136,7 @@ class LoginController extends Controller
         } else{
             return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
         }
-    }
+    }*/
 
     /**
      * Show the login form for temporary members.
@@ -106,10 +146,10 @@ class LoginController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function showTempMemberLoginForm()
+    /* public function showTempMemberLoginForm()
     {
         return view('auth.login', ['url' => 'temporary-member']);
-    }
+    }*/
 
     /**
      * Handle the login request for a temporary member.
@@ -121,7 +161,7 @@ class LoginController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function tempMemberLogin(Request $request)
+    /* public function tempMemberLogin(Request $request)
     {
         $this->validate($request, [
             'email'   => 'required|email',
@@ -134,5 +174,5 @@ class LoginController extends Controller
         } else {
             return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
         }
-    }
+    }*/
 }
