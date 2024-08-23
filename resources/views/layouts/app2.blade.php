@@ -251,14 +251,14 @@
         });
     });
 </script>
-<script>
+<!-- <script>
     $(window).on('beforeunload', function() {
         $('#loader').show();
     });
     $(window).on('load', function() {
         $('#loader').hide();
     });
-</script>
+</script> -->
 @yield('scripts')
 </body>
 
