@@ -125,7 +125,7 @@ class AdminController extends Controller
      * @return \Illuminate\View\View
      */
     public function pendingTopics(){
-        $pendingTopics = Tree::whereIn('status', ['pending', 'approved'])->get();
+        $pendingTopics = Tree::whereIn('status', ['pending', 'approved', 'rejected'])->get();
         return view('admin.pendingTopics', compact('pendingTopics'));
     }
     /**
@@ -196,5 +196,25 @@ class AdminController extends Controller
             $topic->save();
         }
         return redirect()->back()->with('success', 'Topic status updated to approve.');
+    }
+
+    /**
+     * Reject a topic by removing it from the list.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function reject($id)
+    {
+        $topic = Tree::find($id);
+        // Check if the topic exists
+        if (!$topic) {
+            return redirect()->back()->with('error', 'Topic not found.');
+        }
+        // Update the topic's status to 'Rejected'
+        $topic->status = 'Rejected';
+        $topic->save();
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Topic rejected and removed successfully.');
     }
 }

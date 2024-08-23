@@ -5,6 +5,7 @@
             <ul>
                 <li><a href="/temporary-member">Home</a></li>
                 <li><a href="/temp-member-profile">Profile</a></li>
+                <li><a href="/tree">Topics</a></li>
             </ul>
         </div>
     </div>

@@ -690,35 +690,35 @@
 <div class="modal fade" style="direction: rtl; font-family: 'Noto Nastaliq Urdu', serif;" id="addTopicModal" tabindex="-1" aria-labelledby="addTopicModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <button style="text-align: right;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h5 style="text-align: left; display: block;" class="modal-title" id="addTopicModalLabel">Add New Topic</h5>
+            <div class="modal-header d-flex justify-content-between">
+                <h5 class="modal-title" id="exampleModalLabel">نیا عنوان درج کریں</h5>
             </div>
             <div class="modal-body">
                 <form id="addCategoryForm">
                     <div class="form-group">
-                        <label style="text-align: right; display: block;" for="title">عنوان</label>
-                        <input type="text" class="form-control" id="title" name="title" required>
+                        <label class="text-right d-block" for="title">عنوان</label>
+                        <input type="text" class="form-control my-2 py-3" id="title" name="title" required>
                     </div>
                     <div class="form-group">
-                        <label style="text-align: right; display: block;" for="detail">مختصر وضاحت</label>
-                        <textarea class="form-control" id="detail" name="detail" rows="4" required></textarea>
+                        <label class="text-right d-block" for="detail">مختصر وضاحت</label>
+                        <textarea class="form-control my-2" id="detail" name="detail" rows="4" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label style="text-align: right; display: block;" for="hawala">Hawala</label>
-                        <input type="text" class="form-control" id="hawala" name="hawala" required>
+                        <label class="text-right d-block" for="hawala">Hawala</label>
+                        <input type="text" class="form-control my-2 py-3" id="hawala" name="hawala" required>
                     </div>
                     <div class="form-group">
-                        <label style="text-align: right; display: block;" for="easy">Easy</label>
-                        <input type="text" class="form-control" id="easy" name="easy" required>
+                        <label class="text-right d-block" for="easy">Easy</label>
+                        <input type="text" class="form-control my-2 py-3" id="easy" name="easy" required>
                     </div>
                     <div class="form-group">
-                        <label style="text-align: right; display: block;" for="sunana">sunana</label>
-                        <input type="text" class="form-control" id="sunana" name="sunana">
+                        <label class="text-right d-block" for="sunana">sunana</label>
+                        <input type="text" class="form-control my-2 py-3" id="sunana" name="sunana">
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">محفوظ کریں</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">بند کریں</button>
+                        <button type="submit" class="btn btn-primary">درج کریں</button>
+                    </div>
                 </form>
             </div>
         </div>

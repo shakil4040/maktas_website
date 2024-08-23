@@ -30,7 +30,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Type</th>
-                                <th scope="col" colspan="2">Action</th>
+                                <th scope="col" colspan="3">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,22 +49,23 @@
                                     <span class="badge bg-primary">Permanent</span>
                                     @endif
                                 </td>
-                                <td><a href="/member/{{ $member->id }}/edit"><button class="btn btn-dark">Edit</button></a></td>
+                                <td class="pt-0"><a href="/member/{{ $member->id }}/edit"><button class="btn btn-dark">Edit</button></a></td>
                                 <td>
-                                    <form action="{{ route('member.delete', $member->id) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('members.delete', $member->id) }}" method="POST" style="display:inline;">
                                         @csrf
+                                        @method('DELETE')
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this member?');">Delete</button>
                                     </form>
                                 </td>
-                                @if($member->temp == 1)
                                 <td>
-                                    <form action="{{ route('member.approve', $member->id) }}" method="POST">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button type="submit" class="btn btn-success">Approve</button>
-                                    </form>
+                                    @if($member->temp == 1)
+                                        <form action="{{ route('members.approve', $member->id) }}" method="POST">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit" class="btn btn-success">Approve</button>
+                                        </form>
+                                    @endif
                                 </td>
-                                @endif
                             </tr>
                             @endforeach
                         </tbody>

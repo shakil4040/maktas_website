@@ -43,6 +43,33 @@
     body {
         background-color: white !important;
     }
+    /* Loader CSS */
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999; /* Ensure the loader is on top of all content */
+    }
+
+    .spinner {
+        border: 8px solid rgba(0, 0, 0, 0.1);
+        border-left: 8px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
     .card {
         color:white !important;
     }
@@ -88,6 +115,10 @@
 
 <body>
     <div id="app2">
+        <!-- Loader HTML -->
+        <div id="loader" class="loader" style="display:none;">
+            <div class="spinner"></div>
+        </div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
@@ -222,8 +253,15 @@
         });
     });
 </script>
-
-    @yield('scripts')
+<script>
+    $(window).on('beforeunload', function() {
+        $('#loader').show();
+    });
+    $(window).on('load', function() {
+        $('#loader').hide();
+    });
+</script>
+@yield('scripts')
 </body>
 
 </html>

@@ -30,7 +30,7 @@ class CategoryController extends Controller
             // Fetch categories added by the temporary member
             $categories = Tree::where([
                 ['parent_id', '=', 0],
-                ['added_by', '=', $temporaryMember->name], // or $temporaryMember->id if you store IDs
+                ['added_by', '=', $temporaryMember->name],
                 ['status', '=', 'Approved'],
             ])
             ->orderBy('sr', 'asc')
@@ -39,7 +39,7 @@ class CategoryController extends Controller
             // Fetch categories added by the permanent member
             $categories = Tree::where([
                 ['parent_id', '=', 0],
-                ['added_by', '=', $permanentMember->name] // or ['added_by', '=', $member->id] if you store IDs
+                ['added_by', '=', $permanentMember->name]
             ])
             ->orderBy('sr', 'asc')
             ->get();
