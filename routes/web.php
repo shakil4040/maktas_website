@@ -43,7 +43,6 @@ Route::view('marhabah','Marhabah');
 Route::get('/tree', 'CategoryController@manageCategory');
 Route::get('/educationist', 'CategoryController@educationist');
 // Route::post('add-category','CategoryController@addCategory')->name('add.category');
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/login/{guard}', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login/{guard}', 'Auth\LoginController@login');
@@ -145,6 +144,7 @@ Route::post('/logout', function () {
     auth()->logout();
     return redirect('/login');
 })->name('logout');
+Route::get('/home', 'HomeController@index')->name('home');
 // Route::any('/who-you-are', 'UserCheckController@userCheckView')->name('userCheck');
 // Route::any('/login', 'UserCheckController@toLoginView')->name('login');
 Route::get('{any}','UserCheckController@userCheckView')->where('any','.*');

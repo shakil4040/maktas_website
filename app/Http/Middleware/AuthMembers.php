@@ -19,7 +19,7 @@ class AuthMembers
     public function handle($request, Closure $next)
     {
         if (false == Auth::guard('member')->check()) {
-            return redirect()->route('login/member');
+            return redirect()->route('login', ["guard" => "member"]);
         }
         return $next($request);
     }

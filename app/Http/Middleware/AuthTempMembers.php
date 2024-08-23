@@ -19,7 +19,7 @@ class AuthTempMembers
     public function handle($request, Closure $next)
     {
         if (false == Auth::guard('temporary-member')->check()) {
-            return redirect()->route('login/temporary-member');
+            return redirect()->route('login', ["guard" => "temporary-member"]);
         }
         return $next($request);
     }
