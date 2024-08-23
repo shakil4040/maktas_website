@@ -19,6 +19,20 @@ class Tree extends Model
         return $this->belongsTo(Tree::class, 'parent_id','sr');
     }
 
+    public function ancestors()
+    {
+        $ancestors = collect([]);
+
+        $parent = $this->parent;
+
+        while ($parent) {
+            $ancestors->push($parent);
+            $parent = $parent->parent;
+        }
+
+        return $ancestors;
+    }
+
     public function children()
     {
         return $this->hasMany(Tree::class, 'parent_id','sr');

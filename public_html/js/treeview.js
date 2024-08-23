@@ -89,27 +89,29 @@ $(document).ready(function () {
     });
     //search for tree
     $("#searcht").keyup(function () {
-        $(".ctitle").each(function () {
-            $(this).parent().parent(".detail1").hide();
-        });
-        searchValue = $("#searcht").val();
-        $.ajax({
-            url: "/searchTopic",
-            method: "get",
-            data: { searchParams: searchValue },
-            success: function (data) {
-                console.log("Data Data", data);
-                $("#tree1").html(data);
-            },
-            error: function (error) {},
-        });
-        $(".ctitle").each(function () {
-            var title = $(this).text();
-            if (title.includes(searchValue)) {
-                $(this).parent().parent(".detail1").show();
-                $(this).parent().parent(".detail1").parent().show();
-            }
-        });
+        const searchValue = $("#searcht").val();
+        if(searchValue.length !== 0 && searchValue !== "") {
+            $(".ctitle").each(function () {
+                $(this).parent().parent(".detail1").hide();
+            });
+            $.ajax({
+                url: "/searchTopic",
+                method: "get",
+                data: { searchParams: searchValue },
+                success: function (data) {
+                    console.log("Data Data", data);
+                    $("#tree1").html(data);
+                },
+                error: function (error) {},
+            });
+            $(".ctitle").each(function () {
+                var title = $(this).text();
+                if (title.includes(searchValue)) {
+                    $(this).parent().parent(".detail1").show();
+                    $(this).parent().parent(".detail1").parent().show();
+                }
+            });
+        }
     });
 
     $(document).on("click", ".ctitle", function () {

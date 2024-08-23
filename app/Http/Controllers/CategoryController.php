@@ -407,102 +407,56 @@ class CategoryController extends Controller
      * @return \Illuminate\View\View
      */
     public function searchCategory(Request $request) {
+        $matchingMenus = [];
         $searchParams = trim($request->input('searchParams', ''));
-        // Search in the Tree table using the keyword in the title field
-        // $matchingMenus = Tree::where('title', 'LIKE', "%{$searchParams}%")
-        // ->orderBy('sr', 'desc')
-        // ->get(['title']);
-        // // Convert results to an array and use var_dump to output
-        // $matchingMenus = $matchingMenus->pluck('title')->toArray();
-        // var_dump($titles);
-        // Retrieve all records that match the search criteria
-        $matchingMenus = Tree::where('title', 'like', "%$searchParams%")->get();
-        $parent = [];
-        $childerns = [];
-        // Build the hierarchy
-        $treeHierarchy = $this->buildTree($matchingMenus);
-        
-        // dd($this->displayTree($treeHierarchy));
-
-
-
-        // $trees =  \DB::select("
-        //     WITH RECURSIVE tree_hierarchy AS (
-        //         SELECT id, title, parent_id, CAST(id AS CHAR(100)) AS path, 0 AS level
-        //         FROM trees
-        //         WHERE parent_id = '0.0'
-        //         UNION ALL
-        //         SELECT t.id, t.title, t.parent_id, CONCAT(th.path, '.', CAST(t.id AS CHAR(100))) AS path, th.level + 1
-        //         FROM trees t
-        //         JOIN tree_hierarchy th ON t.parent_id = th.id
-        //     )
-        //     SELECT * 
-        //     FROM tree_hierarchy
-        //     WHERE title LIKE '%نماز%'
-        //     ORDER BY path;
-        // ");
-        // // Build the tree
-        // $tree = $this->buildTree($trees);
-
-        // dd($this->renderTree($tree));
-
-        return view('showCategory', compact('matchingMenus'));
-    }
-    // Filter for titles containing 'نماز'
-    function filterTreeByTitle($tree, $searchTerm) {
-        $result = [];
-
-        foreach ($tree as $node) {
-            if (strpos($node->title, $searchTerm) !== false) {
-                $result[] = $node;
+        if(!empty($searchParams)) {
+            // Retrieve all records that match the search criteria
+            \DB::enableQueryLog();
+//            $filteredRecords = Tree::where('title','like','%'.$searchParams.'%');
+//            $treeLastChildrenRecords = $filteredRecords->whereNotIn('parent_id',$filteredRecords->pluck('sr'))->get();
+            $tree = Tree::with(['children' => function ($query) use ($searchParams) {
+                $query->where('title','LIKE',"%$searchParams%");
+            }])->where('title','LIKE',"%$searchParams%")->get();
+            $mapping = [];
+            if($tree->count() > 0) {
+                    $this->getChildren($tree, $mapping, $searchParams, 0);
+//                $this->getParentRecord($treeLastChildrenRecords, $mapping, $searchParams, 0);
             }
+        }
+        return view('showCategory', compact('mapping', "searchParams"));
+    }
 
-            if (!empty($node->children)) {
-                $children = filterTreeByTitle($node->children, $searchTerm);
-                if ($children) {
-                    $node->children = $children;
-                    $result[] = $node;
+    private function getParentRecord($tree, &$mapping, $searchParams, $level): void
+    {
+        foreach($tree   as $node) {
+            if(!is_null($node)) {
+                $node->level = $level;
+                if($node->ancestors()->count() > 0) {
+                    $this->getParentRecord($node->ancestors()->filter(function ($value) use ($searchParams) {
+                        return strpos($value->title, $searchParams);
+                    }), $mapping, $searchParams ,$level +1);
+                }
+                if (!isset($mapping[$node->sr])) {
+                    $mapping[$node->sr] = $node;
                 }
             }
-        }
 
-        return $result;
-    }
-    // Function to render tree as HTML
-    function renderTree(array $tree) {
-        $html = '<ul>';
-        foreach ($tree as $node) {
-            $html .= '<li>' . $node->title;
-            if (isset($node->children) && count($node->children) > 0) {
-                $html .= renderTree($node->children);
-            }
-            $html .= '</li>';
         }
-        $html .= '</ul>';
-        return $html;
     }
-    function displayTree($tree, $level = 0) {
-        foreach ($tree as $node) {
-            echo str_repeat('-', $level) . ' ' . $node->title . PHP_EOL;
-            if (!empty($node->children)) {
-                displayTree($node->children, $level + 1);
+
+    private function getChildren($tree, &$mapping, $searchParams, $level) {
+        foreach($tree as $node) {
+            $node->level = $level;
+            if($node->children->count() > 0) {
+                $node->children = $node->children->filter(function ($value) use ($searchParams) {
+                    return strpos($value->title, $searchParams);
+                });
+                $this->getChildren($node->children, $mapping, $searchParams ,$level +1);
+            }
+            if (!isset($mapping[$node->sr])) {
+                $mapping[$node->sr] = $node;
             }
         }
     }
 
-    function buildTree($elements, $parentId = '0.0') {
-        $branch = [];
-
-        foreach ($elements as $element) {
-            if ($element->parent_id == $parentId) {
-                $children = buildTree($elements, $element->sr);
-                if ($children) {
-                    $element->children = $children;
-                }
-                $branch[] = $element;
-            }
-        }
-
-        return $branch;
-    }
 }
