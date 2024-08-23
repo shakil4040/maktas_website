@@ -217,23 +217,21 @@
                         </li>
                         @else
                         @if (Route::has('login'))
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ __('Login') }}
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('login', ['guard' => 'admin']) }}">{{ __('Admin Login') }}</a>
-                                    <a class="dropdown-item" href="{{ route('login', ['guard' => 'member']) }}">{{ __('Permanent Member Login') }}</a>
-                                    <a class="dropdown-item" href="{{ route('login', ['guard' => 'temporary-member']) }}">{{ __('Temporary Member Login') }}</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login', ['guard' => 'admin']) }}">{{ __('Admin Login') }} |</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login', ['guard' => 'member']) }}">{{ __('Permanent Member Login') }} |</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login', ['guard' => 'temporary-member']) }}">{{ __('Temporary Member Login') }} |</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
                         @endif
                         @endif
                     </ul>
