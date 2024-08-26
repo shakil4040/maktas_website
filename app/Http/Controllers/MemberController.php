@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Exception;
 use App\Models\Tree;
+use App\Models\Easy;
+use App\Models\Yaad;
+use App\Models\Mahol;
+use App\Models\Detail;
 
 class MemberController extends Controller
 {

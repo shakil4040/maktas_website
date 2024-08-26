@@ -78,7 +78,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::patch('/member/{member}', 'AdminController@updateMember');
     Route::get('delete2/{member}','AdminController@destroy');
     Route::get('/pending-topics', 'AdminController@pendingTopics');
-    Route::get('/download-file', 'AdminController@downloadFile');
+    Route::get('/admin-download-file', 'AdminController@downloadFile');
     Route::post('/download-by-titles', 'AdminController@downloadFileByTitles');
     Route::post('/download-by-date', 'AdminController@downloadFileByDate');
     Route::patch('/member/{id}/approve', 'AdminController@approveMember')->name('members.approve');
@@ -93,7 +93,7 @@ Route::group(['middleware' => ['auth.member']], function () {
     Route::get('/member/{member}/edit', 'MemberController@editMember');
     Route::patch('/member/{member}', 'MemberController@updateMember');
     Route::get('/member/upload', 'MemberController@upload');
-    Route::post('/member/upload-File', 'MemberController@uploadFile');
+    Route::post('/member/uploadFile', 'MemberController@uploadFile');
     Route::get('/download-options', 'MemberController@showDownloadFileOptions');
     Route::get('/download-file', 'MemberController@download');
     Route::post('/download-by-titles', 'MemberController@downloadFileByTitles');

@@ -16,7 +16,7 @@
                         <h4>Download all data</h4>
                         <div class="form-group row">
                             <div class="col-md-2">
-                                <a href="/download-file"><button class="btn btn-dark">Download</button></a>
+                                <a href="/admin-download-file"><button class="btn btn-dark">Download</button></a>
                             </div>
                         </div>
                     </div>

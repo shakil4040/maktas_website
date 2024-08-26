@@ -36,7 +36,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
             $matched = false;
             $matching_columns = ['bunyadi_unwan', 'zayalunwan'];
             $treeArray = $easyArray = $yaadArray = $detailArray = $maholArray =  [];
-            foreach ($array as $index => $row) {//dd($row);
+            foreach ($array as $index => $row) {
                 foreach ($row as $key => $value) {
                     if(($key == $matching_columns[0] || str_contains($key, $matching_columns[1]))){
                         $structure[$index][$key] = $value;
@@ -52,7 +52,6 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                             $matched == false;
                             if(!isset($row['agmaly_aanoan'])){
                                 echo $key .'===='. $value. '@@@@@ <br>';
-                                dd($row, $treeArray, $value, $key);
                             }
                             $treeArray[] = [
                                 'id' => $count,
@@ -146,7 +145,6 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
         } catch (Exception $e) {
             dd($e->getMessage());
         }
-//        dd($treeArray, $detailArray, $easyArray, $maholArray, $yaadArray);
     }
 
     public function chunkSize(): int
