@@ -6,7 +6,7 @@
                     <li><a href="/branch">Home</a></li>
                     <li><a href="/member-profile">Profile</a></li>
                     <li><a href="/member/upload">Upload File</a></li>
-                    <li><a href="/member/download">Download File</a></li>
+                    <li><a href="/download-options">Download File</a></li>
                     <li><a href="/tree">Topics</a></li>
                     <!-- <li><a href="/consignments/create ">Add Consignment</a></li>
                     <li><a href="/consignments2">Consignments</a></li> -->

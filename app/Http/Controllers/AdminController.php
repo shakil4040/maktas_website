@@ -68,14 +68,18 @@ class AdminController extends Controller
      * @return \Illuminate\View\View
      */
     public function showDownloadFileOptions(){
-        // Fetch only the 'title' and 'id' columns from the 'tree' table
-        $topics = Tree::pluck('title', 'id');
+        try {
+            // Fetch only the 'title' and 'id' columns from the 'tree' table
+            $topics = Tree::pluck('title', 'id');
 
-        // Check if the $topics collection is empty, and handle the case accordingly
-        if ($topics->isEmpty()) {
-            return view('admin.downloadFile', ['topics' => [], 'message' => 'No topics available for download.']);
+            // Check if the $topics collection is empty, and handle the case accordingly
+            if ($topics->isEmpty()) {
+                return view('admin.downloadFile', ['topics' => [], 'message' => 'No topics available for download.']);
+            }
+            return view('admin.downloadFile', compact('topics'));
+        } catch (\Throwable $th) {
+            throw $th;
         }
-        return view('admin.downloadFile', compact('topics'));
     }
 
     /**
@@ -84,14 +88,17 @@ class AdminController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
-    public function downloadFileByTitles(Request $request){
-
-        $selectedIds = $request->input('topics', []);
-        $topics = Tree::whereIn('id', $selectedIds)->get();
-        // Convert the collection to an array of titles
-        $selectedTitles = $topics->pluck('title')->toArray();
-        // Generate and return the file download
-        return Excel::download(new TreeDataExport($selectedTitles), 'selected_topics.xlsx');
+    public function downloadFileByTitles(Request $request) {
+        try {
+            $selectedIds = $request->input('topics', []);
+            $topics = Tree::whereIn('id', $selectedIds)->get();
+            // Convert the collection to an array of titles
+            $selectedTitles = $topics->pluck('title')->toArray();
+            // Generate and return the file download
+            return Excel::download(new TreeDataExport($selectedTitles), 'selected_topics.xlsx');
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
     
     /**
@@ -101,15 +108,19 @@ class AdminController extends Controller
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
     public function downloadFileByDate(Request $request){
-        $startDate = $request->input('start_date');
-        $endDate = $request->input('end_date');
+        try {
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
 
-        $validatedData = $request->validate([
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after_or_equal:start_date',
-        ]);
+            $validatedData = $request->validate([
+                'start_date' => 'required|date',
+                'end_date' => 'required|date|after_or_equal:start_date',
+            ]);
 
-        return Excel::download(new TreeDataExport([], $startDate, $endDate), 'tree_data_by_date_range.xlsx');
+            return Excel::download(new TreeDataExport([], $startDate, $endDate), 'tree_data_by_date_range.xlsx');
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function downloadFile()
@@ -125,8 +136,17 @@ class AdminController extends Controller
      * @return \Illuminate\View\View
      */
     public function pendingTopics(){
-        $pendingTopics = Tree::whereIn('status', ['pending', 'approved', 'rejected'])->get();
-        return view('admin.pendingTopics', compact('pendingTopics'));
+        try {
+            $pendingTopics = Tree::whereIn('status', ['pending', 'approved', 'rejected'])->get();
+    
+            if ($pendingTopics->isEmpty()) {
+                // Handle the case when there are no pending topics
+                return redirect()->back()->with('error', 'No pending topics found.');
+            }
+            return view('admin.pendingTopics', compact('pendingTopics'));
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
     /**
      * @method members
@@ -134,8 +154,16 @@ class AdminController extends Controller
      */
     public function members()
     {
-        $members = Member::all();
-        return view('admin.members', compact('members'));
+        try {
+            $members = Member::all();
+            if ($members->isEmpty()) {
+                // Handle the case when there are no members
+                return redirect()->back()->with('error', 'No members found.');
+            }
+            return view('admin.members', compact('members'));
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
@@ -146,17 +174,21 @@ class AdminController extends Controller
      */
     public function approveMember($id)
     {
-        $member = Member::find($id);
+        try {
+            $member = Member::find($id);
 
-        // Check if the member exists
-        if (!$member) {
-            return redirect()->back()->with('error', 'Member not found.');
+            // Check if the member exists
+            if (!$member) {
+                return redirect()->back()->with('error', 'Member not found.');
+            }
+            // Set the member's type to 0 (approved)
+            $member->temp = 0;
+            $member->save();
+
+            return redirect()->back()->with('success', 'Member approved successfully!');
+        } catch (\Throwable $th) {
+            throw $th;
         }
-        // Set the member's type to 0 (approved)
-        $member->temp = 0;
-        $member->save();
-
-        return redirect()->back()->with('success', 'Member approved successfully!');
     }
 
     /**
@@ -167,14 +199,18 @@ class AdminController extends Controller
      */
     public function deleteMember($id)
     {
-        $member = Member::find($id);
-        // Check if the member exists
-        if (!$member) {
-            return redirect()->back()->with('error', 'Member not found.');
-        }
-        $member->delete();
+        try {
+            $member = Member::find($id);
+            // Check if the member exists
+            if (!$member) {
+                return redirect()->back()->with('error', 'Member not found.');
+            }
+            $member->delete();
 
-        return redirect()->back()->with('success', 'Member deleted successfully.');
+            return redirect()->back()->with('success', 'Member deleted successfully.');
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
@@ -185,17 +221,21 @@ class AdminController extends Controller
      */
     public function acceptTopic($id)
     {
-        $topic = Tree::where('status', 'Pending')->find($id);
+        try {
+            $topic = Tree::where('status', 'Pending')->find($id);
 
-        if (!$topic) {
-            return redirect()->back()->with('error', 'Topic not found');
+            if (!$topic) {
+                return redirect()->back()->with('error', 'Topic not found');
+            }
+            // Update the status to 'approve' if it's 'pending'
+            if ($topic->status === 'Pending') {
+                $topic->status = 'Approved';
+                $topic->save();
+            }
+            return redirect()->back()->with('success', 'Topic status updated to approve.');
+        } catch (\Throwable $th) {
+            throw $th;
         }
-        // Update the status to 'approve' if it's 'pending'
-        if ($topic->status === 'Pending') {
-            $topic->status = 'Approved';
-            $topic->save();
-        }
-        return redirect()->back()->with('success', 'Topic status updated to approve.');
     }
 
     /**
@@ -206,15 +246,19 @@ class AdminController extends Controller
      */
     public function reject($id)
     {
-        $topic = Tree::find($id);
-        // Check if the topic exists
-        if (!$topic) {
-            return redirect()->back()->with('error', 'Topic not found.');
+        try {
+            $topic = Tree::find($id);
+            // Check if the topic exists
+            if (!$topic) {
+                return redirect()->back()->with('error', 'Topic not found.');
+            }
+            // Update the topic's status to 'Rejected'
+            $topic->status = 'Rejected';
+            $topic->save();
+            // Redirect back with a success message
+            return redirect()->back()->with('success', 'Topic rejected and removed successfully.');
+        } catch (\Throwable $th) {
+            throw $th;
         }
-        // Update the topic's status to 'Rejected'
-        $topic->status = 'Rejected';
-        $topic->save();
-        // Redirect back with a success message
-        return redirect()->back()->with('success', 'Topic rejected and removed successfully.');
     }
 }

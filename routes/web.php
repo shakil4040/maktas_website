@@ -70,7 +70,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::post('/register/member', 'Auth\RegisterController@createMember');
     Route::get('/members', 'AdminController@members');
     Route::get('/upload', 'AdminController@upload');
-    Route::get('/download-options', 'AdminController@showDownloadFileOptions');
+    Route::get('/admin-download-options', 'AdminController@showDownloadFileOptions');
     Route::post('/admin/uploadFile', 'AdminController@uploadFile');
     Route::get('/admin/{admin}/edit', 'AdminController@editAdmin');
     Route::patch('/admin/{admin}', 'AdminController@updateAdmin');
@@ -94,7 +94,10 @@ Route::group(['middleware' => ['auth.member']], function () {
     Route::patch('/member/{member}', 'MemberController@updateMember');
     Route::get('/member/upload', 'MemberController@upload');
     Route::post('/member/upload-File', 'MemberController@uploadFile');
-    Route::get('/member/download', 'MemberController@download');
+    Route::get('/download-options', 'MemberController@showDownloadFileOptions');
+    Route::get('/download-file', 'MemberController@download');
+    Route::post('/download-by-titles', 'MemberController@downloadFileByTitles');
+    Route::post('/download-by-date', 'MemberController@downloadFileByDate');
 });
 // Search Request 
 Route::get('/searchTopic', 'CategoryController@searchCategory');
