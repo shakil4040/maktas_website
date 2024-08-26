@@ -1,14 +1,14 @@
 <ul >
-    @foreach ($mapping as $node)
+    @foreach ($mapping as $key => $node)
         <li title="{{ $node->title }}" class="list_color level-1">
             <span class="detail1">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="d-flex align-items-center">
-                            <div id="{{ $node->title}}" class="ctitle child list" onclick="setTitle(this)"  style="color: {{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1'][$node->level] }}">
+                            <div id="{{ $node->title}}" class="ctitle child list" onclick="setTitle(this)"  style="color: {{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)'][$node->level] ?? '' }}">
                                 {!! str_repeat('&mdash;&nbsp;', $node->level) !!} {{ $node->title }}
                                 @auth('admin')
-                                    @if($node->level > 0))
+                                    @if(count($node->childs) == null)
                                         <div class="d-flex">
                                             <i class="fa fa-edit mx-2 sedit"></i>
                                             <i class="fa fa-times-circle mx-2 delete"></i>
@@ -19,11 +19,11 @@
                                     </div>
                                 @endauth
                                 @auth('member')
-                                    @if($node->level > 0))
+                                    @if(count($node->childs) == null)
                                         <div class="d-flex">
-                                    <i class="fa fa-edit mx-2 sedit"></i>
-                                    <i class="fa fa-times-circle mx-2 delete"></i>
-                                </div>
+                                            <i class="fa fa-edit mx-2 sedit"></i>
+                                            <i class="fa fa-times-circle mx-2 delete"></i>
+                                        </div>
                                     @endif
                                 @endauth
                             </div>

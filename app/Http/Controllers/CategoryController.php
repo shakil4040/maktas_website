@@ -406,57 +406,44 @@ class CategoryController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\View\View
      */
-    public function searchCategory(Request $request) {
+    public function searchCategory(Request $request): \Illuminate\View\View
+    {
         $matchingMenus = [];
         $searchParams = trim($request->input('searchParams', ''));
         if(!empty($searchParams)) {
             // Retrieve all records that match the search criteria
             \DB::enableQueryLog();
-//            $filteredRecords = Tree::where('title','like','%'.$searchParams.'%');
-//            $treeLastChildrenRecords = $filteredRecords->whereNotIn('parent_id',$filteredRecords->pluck('sr'))->get();
-            $tree = Tree::with(['children' => function ($query) use ($searchParams) {
-                $query->where('title','LIKE',"%$searchParams%");
-            }])->where('title','LIKE',"%$searchParams%")->get();
+            $filteredRecords = Tree::where('title','like','%'.$searchParams.'%');
+            $treeLastChildrenRecords = $filteredRecords->with('parent')->whereNotIn('parent_id',$filteredRecords->pluck('sr'))->get();
             $mapping = [];
-            if($tree->count() > 0) {
-                    $this->getChildren($tree, $mapping, $searchParams, 0);
-//                $this->getParentRecord($treeLastChildrenRecords, $mapping, $searchParams, 0);
+            if($treeLastChildrenRecords->count() > 0) {
+                $this->getParentRecord($treeLastChildrenRecords, $mapping);
             }
         }
         return view('showCategory', compact('mapping', "searchParams"));
     }
 
-    private function getParentRecord($tree, &$mapping, $searchParams, $level): void
+    /**
+     * @param $tree
+     * @param $mapping
+     * @return void
+     */
+    private function getParentRecord($tree, &$mapping): void
     {
-        foreach($tree   as $node) {
-            if(!is_null($node)) {
-                $node->level = $level;
-                if($node->ancestors()->count() > 0) {
-                    $this->getParentRecord($node->ancestors()->filter(function ($value) use ($searchParams) {
-                        return strpos($value->title, $searchParams);
-                    }), $mapping, $searchParams ,$level +1);
-                }
-                if (!isset($mapping[$node->sr])) {
-                    $mapping[$node->sr] = $node;
-                }
-            }
-
-        }
-    }
-
-    private function getChildren($tree, &$mapping, $searchParams, $level) {
         foreach($tree as $node) {
-            $node->level = $level;
-            if($node->children->count() > 0) {
-                $node->children = $node->children->filter(function ($value) use ($searchParams) {
-                    return strpos($value->title, $searchParams);
-                });
-                $this->getChildren($node->children, $mapping, $searchParams ,$level +1);
+            if(!is_null($node)) {
+                $node->level = $node->ancestors()->count();
+                if($node->ancestors()->count() > 0) {
+                    $parents = [];
+                    foreach($node->ancestors() as $key => $ancestor) {
+                        $ancestor->level = $node->ancestors()->count() - ($key +1);
+                        $parents[] = $ancestor;
+                    }
+                    $mapping = array_merge($mapping, array_reverse($parents));
+                }
+                    $mapping[] = $node;
             }
-            if (!isset($mapping[$node->sr])) {
-                $mapping[$node->sr] = $node;
-            }
+
         }
     }
-
 }
