@@ -77,10 +77,10 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::get('/member/{member}/edit', 'AdminController@editMember');
     Route::patch('/member/{member}', 'AdminController@updateMember');
     Route::get('delete2/{member}','AdminController@destroy');
-    Route::get('/pending-topics', 'AdminController@pendingTopics');
+    Route::get('/pending-topics', 'AdminController@pendingTopics')->name('admin.pendingTopics');;
     Route::get('/admin-download-file', 'AdminController@downloadFile');
-    Route::post('/download-by-titles', 'AdminController@downloadFileByTitles');
-    Route::post('/download-by-date', 'AdminController@downloadFileByDate');
+    Route::post('/admin-download-by-titles', 'AdminController@downloadFileByTitles');
+    Route::post('/admin-download-by-date', 'AdminController@downloadFileByDate');
     Route::patch('/member/{id}/approve', 'AdminController@approveMember')->name('members.approve');
     Route::delete('/member/{id}/delete', 'AdminController@deleteMember')->name('members.delete');
     Route::patch('/topics/{id}/accept', 'AdminController@acceptTopic')->name('topics.accept');

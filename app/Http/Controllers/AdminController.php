@@ -141,7 +141,8 @@ class AdminController extends Controller
     
             if ($pendingTopics->isEmpty()) {
                 // Handle the case when there are no pending topics
-                return redirect()->back()->with('error', 'No pending topics found.');
+                $error = 'Oops! No pending topics found.';
+                return view('admin.pendingTopics', compact('pendingTopics', 'error'));
             }
             return view('admin.pendingTopics', compact('pendingTopics'));
         } catch (\Throwable $th) {

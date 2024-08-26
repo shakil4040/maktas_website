@@ -24,7 +24,7 @@
                     <!-- Download Selected Topics Section -->
                     <div class="section mt-4">
                         <h4>Download Selected Topics</h4>
-                        <form method="POST" action="/download-by-titles" id="downloadForm">
+                        <form method="POST" action="/admin-download-by-titles" id="downloadForm">
                             @csrf
                             <div class="form-group">
     
@@ -42,7 +42,7 @@
                     <!-- Download by Date Range Section -->
                     <div class="section mt-4">
                         <h4>Download by Date Range</h4>
-                        <form method="POST" action="/download-by-date" id="dateRangeForm">
+                        <form method="POST" action="/admin-download-by-date" id="dateRangeForm">
                             @csrf
                             <div class="form-group">
                                 <label for="startDate">Start Date:</label>
