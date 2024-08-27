@@ -1,11 +1,11 @@
-<ul >
+<ul>
     @foreach ($mapping as $key => $node)
         <li title="{{ $node->title }}" class="list_color level-1">
             <span class="detail1">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="d-flex align-items-center">
-                            <div id="{{ $node->title}}" class="ctitle child list" onclick="setTitle(this)"  style="color: {{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)'][$node->level] ?? '' }}">
+                            <div id="{{ $node->title}}" class="ctitle child list" onclick="setTitle(this, {{$node}})"  style="color: {{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)'][$node->level] ?? '' }}">
                                 {!! str_repeat('&mdash;&nbsp;', $node->level) !!} {{ $node->title }}
                                 @auth('admin')
                                     @if(count($node->childs) == null)
@@ -44,21 +44,3 @@
         </li>
     @endforeach
 </ul>
-
-<script>
-    function setTitle(item){
-        $(".nav-title").html("");
-        var navigation = $(item).siblings('.navigation').text();
-        var strArray = navigation.split(",");
-        // Display array values on page
-        for (var i = 0; i < strArray.length; i++) {
-            var splited = strArray[i].split("#");
-            if (i > 0) {
-                let index = i;
-                let data = $("#ct" + index + "_title").html();
-                $("#ct" + index + "_title").html('<a href="#'+data+'">'+data+'</a>' + "&nbsp;&nbsp;&nbsp; >&nbsp;&nbsp");
-            }
-            $("#ct" + splited[0] + "_title").html(splited[1]);
-        }
-    }
-</script>

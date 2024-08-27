@@ -642,3 +642,55 @@ $(".list_color1")
             });
         });
     });
+
+const setTitle = function (el, node) {
+    $("#ct1_title").html("");
+    $("#ct2_title").html("");
+    $("#ct3_title").html("");
+    $("#ct4_title").html("");
+    $("#ct5_title").html("");
+    $("#ct6_title").html("");
+    $("#ct7_title").html("");
+    $("#ct8_title").html("");
+    $("#ct9_title").html("");
+    navigationBadges(node);
+}
+
+const parents = function (node) {
+    let ancestors = [];
+
+    let parent = node.parent;
+    while (parent) {
+        ancestors.push(parent);
+        parent = parent.parent;
+    }
+    ancestors.sort((a,b) => a.sr - b.sr);
+    return ancestors;
+}
+
+const navigationBadges = function (node) {
+    /** @var array Collection */
+    let ancestors = parents(node);
+    let level = 0;
+    if( ancestors.length > 0) {
+        ancestors.forEach( (item, index) => {
+            level = index + 1;
+            $("#ctab"+level)
+                .children("#ct"+level+"_title")
+                .css("color", "{{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)']["+level+"] ?? '' }}")
+                .html(
+                    item.title +
+                    '<span style="color:#f1f1f1; margin-left:5px; margin-right:5px;"></span>' +
+                    "&#62;"
+                );
+        })
+    }
+    level += 1
+    $("#ctab"+level)
+        .children("#ct"+level+"_title")
+        .css("color", "{{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)']["+level+"] ?? '' }}")
+        .html(
+            node.title
+        );
+
+}
