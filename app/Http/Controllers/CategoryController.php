@@ -414,13 +414,13 @@ class CategoryController extends Controller
             // Retrieve all records that match the search criteria
             \DB::enableQueryLog();
             $filteredRecords = Tree::where('title','like','%'.$searchParams.'%');
-            $treeLastChildrenRecords = $filteredRecords->with('parent')->whereNotIn('parent_id',$filteredRecords->pluck('sr'))->get();
+            $treeLastChildrenRecords = $filteredRecords->with('parent')->whereNotIn('parent_id',$filteredRecords->pluck('sr'))->paginate(10);
             $mapping = [];
             if($treeLastChildrenRecords->count() > 0) {
                 $this->getParentRecord($treeLastChildrenRecords, $mapping);
             }
         }
-        return view('showCategory', compact('mapping', "searchParams"));
+        return view('showCategory', compact('mapping', "treeLastChildrenRecords"));
     }
 
     /**
@@ -433,14 +433,14 @@ class CategoryController extends Controller
         foreach($tree as $node) {
             if(!is_null($node)) {
                 $node->level = $node->ancestors()->count();
-                if($node->ancestors()->count() > 0) {
-                    $parents = [];
-                    foreach($node->ancestors() as $key => $ancestor) {
-                        $ancestor->level = $node->ancestors()->count() - ($key +1);
-                        $parents[] = $ancestor;
-                    }
-                    $mapping = array_merge($mapping, array_reverse($parents));
-                }
+//                if($node->ancestors()->count() > 0) {
+//                    $parents = [];
+//                    foreach($node->ancestors() as $key => $ancestor) {
+//                        $ancestor->level = $node->ancestors()->count() - ($key +1);
+//                        $parents[] = $ancestor;
+//                    }
+//                    $mapping = array_merge($mapping, array_reverse($parents));
+//                }
                     $mapping[] = $node;
             }
 

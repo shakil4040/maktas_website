@@ -694,3 +694,17 @@ const navigationBadges = function (node) {
         );
 
 }
+
+const fetchData = function (url) {
+    const searchValue = $("#searcht").val();
+    $.ajax({
+        url: url,
+        method: "get",
+        data: { searchParams: searchValue },
+        success: function (data) {
+            console.log("Data Data", data);
+            $("#tree1").html(data);
+        },
+        error: function (error) {},
+    });
+}
