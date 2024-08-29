@@ -17,6 +17,9 @@
         .pagination .page-item:last-child .page-link {
             border-radius: .25rem 0 0 .25rem;
         }
+        .pagination .page-item .page-link:focus {
+            box-shadow: 0 0 5px .2rem hsl(164deg 72% 23% / 85%);
+        }
     </style>
     <nav>
         <ul class="pagination">

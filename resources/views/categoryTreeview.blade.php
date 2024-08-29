@@ -517,28 +517,31 @@
                     <div class="col-md-12 nav-col">
                         <div class="row scroll-topics navigation_bar">
                             <div id="ctab1" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct1_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct1_title"></div>
                             </div>
                             <div id="ctab2" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct2_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct2_title"></div>
                             </div>
                             <div id="ctab3" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct3_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct3_title"></div>
                             </div>
                             <div id="ctab4" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct4_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct4_title"></div>
                             </div>
                             <div id="ctab5" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct5_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct5_title"></div>
                             </div>
                             <div id="ctab6" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct6_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct6_title"></div>
                             </div>
                             <div id="ctab7" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct7_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct7_title"></div>
                             </div>
                             <div id="ctab8" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct8_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct8_title"></div>
+                            </div>
+                            <div id="ctab9" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct9_title"></div>
                             </div>
                         </div>
                         <button data-toggle="modal" data-target="#exampleModal" style="position: fixed;left: 0px;z-index: 999999999;" class="btn btn-success">اپنا نصاب بنائیں</button>
@@ -726,6 +729,19 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script>
+        /**
+         * Global Variables
+         */
+        let admin = null;
+        let user = null;
+        let userId = 0;
+        @auth()
+            admin = "{{ auth('admin')->user() }}";
+        user = "{{ auth()->user() }}";
+        userId = "{{ auth()->user() ? auth()->user()->id : 0  }}";
+        @endauth
+    </script>
     <script src="/js/treeview.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

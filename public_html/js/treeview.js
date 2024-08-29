@@ -115,11 +115,14 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".ctitle", function () {
-        var id = $(this).siblings(".cid").text();
-        var admin = $(this).siblings(".admin").text();
-        var user = $(this).siblings(".user").text();
-        var userId = $(this).siblings(".userId").text();
-        var memberId = $(this).siblings(".memberId").text();
+        const details = $(this).find("span").data('details');
+        var id = $(this).siblings(".cid").text().trim() || details?.id;
+        var admin = $(this).siblings(".admin").text().trim() || admin;
+        var user = $(this).siblings(".user").text().trim() || user;
+        var userId = $(this).siblings(".userId").text().trim() || userId;
+        var memberId = $(this).siblings(".memberId").text().trim();
+
+
         $.ajax({
             url: "/api/test/" + id,
             data: {
@@ -643,7 +646,7 @@ $(".list_color1")
         });
     });
 
-const setTitle = function (el, node) {
+const setTitleCategory = function (el, node) {
     $("#ct1_title").html("");
     $("#ct2_title").html("");
     $("#ct3_title").html("");
@@ -680,7 +683,7 @@ const navigationBadges = function (node) {
                 .css("color", "{{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)']["+level+"] ?? '' }}")
                 .html(
                     item.title +
-                    '<span style="color:#f1f1f1; margin-left:5px; margin-right:5px;"></span>' +
+                    `<span style="color:#f1f1f1; margin-left:5px; margin-right:5px;" data-details='${JSON.stringify(item ?? {})}'></span>` +
                     "&#62;"
                 );
         })
@@ -690,7 +693,8 @@ const navigationBadges = function (node) {
         .children("#ct"+level+"_title")
         .css("color", "{{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)']["+level+"] ?? '' }}")
         .html(
-            node.title
+            node.title +
+            `<span style="color:#f1f1f1; margin-left:5px; margin-right:5px;" data-details='${JSON.stringify(node ?? {})}'></span>`
         );
 
 }
