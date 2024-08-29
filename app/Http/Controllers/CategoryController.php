@@ -408,14 +408,12 @@ class CategoryController extends Controller
      */
     public function searchCategory(Request $request): \Illuminate\View\View
     {
-        $matchingMenus = [];
         $searchParams = trim($request->input('searchParams', ''));
+        $mapping = [];
+        $treeLastChildrenRecords = null;
         if(!empty($searchParams)) {
-            // Retrieve all records that match the search criteria
-            \DB::enableQueryLog();
             $filteredRecords = Tree::where('title','like','%'.$searchParams.'%');
             $treeLastChildrenRecords = $filteredRecords->with('parent')->whereNotIn('parent_id',$filteredRecords->pluck('sr'))->paginate(10);
-            $mapping = [];
             if($treeLastChildrenRecords->count() > 0) {
                 $this->getParentRecord($treeLastChildrenRecords, $mapping);
             }
