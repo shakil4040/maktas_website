@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="d-flex align-items-center">
-                            <div id="{{ $node->title}}" class="ctitle child list" onclick="setTitleCategory(this, {{$node}})"  style="color: {{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)'][$node->level] ?? '' }}">
+                            <div id="{{ $node->title}}" class="ctitle child list d-flex justify-content-between align-items-center" onclick="setTitleCategory(this, {{$node}})"  style="color: {{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)'][$node->level] ?? '' }}">
                                 {!! str_repeat('&mdash;&nbsp;', $node->level) !!} {{ $node->title }}
                                 @auth('admin')
                                     @if(count($node->childs) == null)
@@ -50,6 +50,18 @@
 </div>
 @else
     <p class="text-danger p-5">{{__("tree.no record found!")}}</p>
+    <script>
+        $("#ct1_title").html("");
+        $("#ct2_title").html("");
+        $("#ct3_title").html("");
+        $("#ct4_title").html("");
+        $("#ct5_title").html("");
+        $("#ct6_title").html("");
+        $("#ct7_title").html("");
+        $("#ct8_title").html("");
+        $("#ct9_title").html("");
+        $("#div1").html("");
+    </script>
 @endif
 <script>
     document.querySelectorAll('.pagination a.page-link').forEach(function(link) {
