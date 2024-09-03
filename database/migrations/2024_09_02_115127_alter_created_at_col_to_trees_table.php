@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('trees', function (Blueprint $table) {
-            $table->timestamp('created_at')->useCurrent()->change();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate()->change();
+            $table->dropColumn(['created_at', 'updated_at']);
+        });
+
+        Schema::table('trees', function (Blueprint $table) {
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrent()->useCurrentOnUpdate();
         });
     }
 
