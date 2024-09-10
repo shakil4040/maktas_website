@@ -23,7 +23,8 @@ return new class extends Migration
             $table->longText('topic6')->nullable();
             $table->longText('topic7')->nullable();
             $table->longText('topic8')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrent()->useCurrentOnUpdate();
         });
     }
 

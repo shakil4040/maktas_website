@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('masters', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('sr')->nullable();
             $table->string('bunyadi');
             $table->string('zayli1');
             $table->string('zayli2');

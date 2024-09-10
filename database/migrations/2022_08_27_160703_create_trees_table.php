@@ -15,15 +15,18 @@ class CreateTreesTable extends Migration
     {
         Schema::create('trees', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('sr')->nullable();
+            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->foreign('parent_id')->references('id')->on('trees')->onDelete('NO ACTION')->onUpdate('NO ACTION');
+            $table->tinyInteger('levels');
             $table->longText('title');
-            $table->unsignedBigInteger('parent_id');
             $table->integer('naseeha_com')->nullable();
             $table->integer('maktab_com')->nullable();
             $table->integer('government_com')->nullable();
-            $table->string('status'); // Add status column
+            $table->tinyInteger('status')->default(true); // Add status column
             $table->string('added_by')->nullable();
-            $table->timestamps();
+            $table->json('structure')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrent()->useCurrentOnUpdate();
         });
     }
 
