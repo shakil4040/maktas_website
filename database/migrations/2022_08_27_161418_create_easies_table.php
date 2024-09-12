@@ -34,6 +34,7 @@ class CreateEasiesTable extends Migration
             $table->string('taleem')->nullable();
             $table->string('amli_mashq')->nullable();
             $table->string('taluq')->nullable();
+            $table->string('muharik')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrent()->useCurrentOnUpdate();
             $table->index('id');

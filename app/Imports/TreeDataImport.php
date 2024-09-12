@@ -20,13 +20,14 @@ use Maatwebsite\Excel\Concerns\ToArray;
 
 class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHeadingRow
 {
+    private $row;
     public static function afterImport(AfterImport $event)
     {
         Log::info('After import excel file');
     }
 
     /**
-     * @param  array  $array
+     * @param array $array
      */
     public function array(array $array)
     {
@@ -35,127 +36,122 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
             $tempArray = $structure = $marchesCols = [];
             $matched = false;
             $matching_columns = ['bunyadi_unwan', 'zayalunwan'];
-            $treeArray = $easyArray = $yaadArray = $detailArray = $maholArray = $titles = $parents =[];
+            $treeArray = $easyArray = $yaadArray = $detailArray = $maholArray = $titles = $parents = [];
             foreach ($array as $index => $row) {
+                $this->row = $row;
+                if(is_null($row)) {
+                    continue;
+                }
                 foreach ($row as $key => $value) {
                     if (($key == $matching_columns[0] || str_contains($key, $matching_columns[1]))) {
                         $structure[$index][$key] = $value;
                     }
                 }
-                foreach ($row as $key => $value) {
-                    for($children = 1; $children < 11; $children++) {
-                        if(empty($row['zayalunwan_'.$children])) {
-                            $level = $children - 1;
-                            $row['title']   = $row['zayalunwan_'.$level] ?? $row['bunyadi_unwan'];
-                            $row['levels']  = $level;
-                            if($level == 0){
-                                $row["parentTitle"] = 0;
-                            } else {
-                                $row["parentTitle"] = $level === 1 ? $row['bunyadi_unwan'] : $row['zayalunwan_'.($level - 1)];
-                            }
-                            break;
+
+                for ($children = 1; $children < 11; $children++) {
+                    if (empty($row['zayalunwan_' . $children])) {
+                        $level = $children - 1;
+                        $row['title'] = $row['zayalunwan_' . $level] ?? $row['bunyadi_unwan'];
+                        $row['levels'] = $level;
+                        if ($level == 0) {
+                            $row["parentTitle"] = 0;
+                        } else {
+                            $row["parentTitle"] = $level === 1 ? $row['bunyadi_unwan'] : $row['zayalunwan_' . ($level - 1)];
                         }
+                        break;
                     }
-                    if (isset($value) && ($key == $matching_columns[0] || str_contains($key, $matching_columns[1]))) {
+                }
+//                if (isset($value) && ($key == $matching_columns[0] || str_contains($key, $matching_columns[1]))) {
 
 //                        if (key_exists($key, $tempArray) && $tempArray[$key] == $value) {
 //                            $matched == true;
 //                            continue;
 //                        }else{
-                            $matched == false;
-                            if(!isset($row['agmaly_aanoan'])){
-                                echo $key .'===='. $value. '@@@@@ <br>';
-                            }
-                            if(in_array($row['title'], $titles)) {
-                                continue;
-                            }
-                            if(!isset($parents[$row['parentTitle']])) {
-                                $parentTitle = Tree::whereTitle($row["parentTitle"])->first();
-                                $parents[$row['parentTitle']] = $parentTitle;
-                            } else {
-                                $parentTitle = $parents[$row['parentTitle']];
-                            }
-
-                            $tree = new Tree;
-                            $tree->title            = $row['title'];
-                            $tree->government_com   = $row["government_com"] ?? 0;
-                            $tree->parent()->associate($parentTitle ?? null);
-                            $tree->structure        = json_encode($structure[$index]);
-                            $tree->levels           = $row["levels"] ?? 0;
-                            $tree->save();
-                            if($tree) {
-                                $titles[]       = $row['title'];
-                            }
-
-                            $detail             = new Detail;
-                            $detail->abrar_id   = $row["abrar_sahb_nmbr_shmar"];
-                            $detail->asif_id    = $row["asf_sahb_nmbr_shmar"];
-                            $detail->age        = 1;
-                            $detail->age_sr     = $row["blhath_aamr"];
-                            $detail->course_no  = $count;
-                            $detail->detail     = $row["mkhtsr_tfsyl"];
-                            $detail->tree()->associate($tree);
-                            $detail->save();
-//
-//                            $tempArray = $row;
-//                            $easyArray[$count] = [
-//                                'id' => $count,
-//                                'easy' => $row["tsyl"],
-//                                'mukhatab' => $row["aaoam_khoas_mktdaaa"],
-//                                'rafe_ishkal' => $row["rfaa_ashkal"],
-//                                'qaida' => $row["kly_akthry_gzoyastthnaaa"],
-//                                'rahe_adal' => $row["kanonadyan_ahsanamksodmksod_balthatthrayaa"],
-//                                'husool' => $row["hsol_ka_tryk"],
-//                                'tamheed_khas' => $row["khas"],
-//                                'hukam' => $row["hkmbnyaddfaa_mdrt"],
-//                                'hasiat' => $row["anfrady_agtmaaay"],
-//                                'shoba' => $row["akrokylggmalk"],
-//                                'class' => $row["gmaaat"],
-//                                'jins' => $row["mrd_aaort_dono_k_ly"],
-//                                'zamana' => $row["zman"],
-//                                'taleem' => $row["aalmy_o_aamly"],
-//                                'amli_mashq' => $row["aamly_mshky"],
-//                                'taluq' => $row["thary_batny"],
-//                                'muharik' => $row["mhrkat_onthryat"],
-//                            ];
-//                            $yaadArray[$count] = [
-//                                'id' => $count,
-//                                'yad_dehani' => $row["tkrar_aalmy_aamly"],
-//                                'kitni_takrar' => $row["ktny_bar_tkrar_kry"],
-//                                'revision' => $row["pchly_ktab_ky_drayy"],
-//                                'ahwal' => $row["daralhrbno_mslmanda"],
-//                                'pasaymanzar' => $row["ps_mnthr"],
-//                                'result' => $row["trz_aaml"],
-//                                'shaz' => $row["shath_msayl"],
-//                                'hawala' => $row["ktab"],
-//                                'government_ref' => $row["srkary_ktab"]
-//                            ];
-//
-//                            $detailArray[$count] = [
-//                                'id' => $count,
-//                                'abrar_id' => $row["abrar_sahb_nmbr_shmar"],
-//                                'asif_id' => $row["asf_sahb_nmbr_shmar"],
-//                                'age' => 1,//$row["age_group_mahol_mya_krnanyk_shbt_aaadt_alna_btana_sykana_smgana_pana"],
-//                                'age_sr' => $row["blhath_aamr"],
-//                                'course_no' => $count,
-//                                'detail' => $row["mkhtsr_tfsyl"],
-//                            ];
-//
-//                            $maholArray[$count] = [
-//                                'id' => $count,
-//                                'sunana' => $row["sunana"],
-//                                'kehalwana' => $row["kehalwan"],
-//                                'dekhana' => $row["dekhana"],
-//                                'mashq' => $row["mashq"],
-//                                'batana' => $row["batana"],
-//                                'sikhana' => $row["sikhana"],
-//                                'adat' => $row["adat"],
-//                                'samjhana' => $row["samjhana"],
-//                                'parhana' => $row["parhana"],
-//                            ];
-//                        }
+                    $matched == false;
+//                    if (!isset($row['agmaly_aanoan'])) {
+//                        echo $key . '====' . $value . '@@@@@ <br>';
+//                    }
+                    if (!isset($row['title']) && in_array($row['title'], $titles)) {
+                        continue;
                     }
-                }
+                    if (!isset($parents[$row['parentTitle']])) {
+                        $parentTitle = Tree::whereTitle($row["parentTitle"])->first();
+                        $parents[$row['parentTitle']] = $parentTitle;
+                    } else {
+                        $parentTitle = $parents[$row['parentTitle']];
+                    }
+                    DB::transaction(function () use ($row, $structure, $index, $count, $parentTitle, &$titles) {
+                        $tree = new Tree;
+                        $tree->title = $row['title'];
+                        $tree->government_com = $row["government_com"] ?? 0;
+                        $tree->parent()->associate($parentTitle ?? null);
+                        $tree->structure = json_encode($structure[$index]);
+                        $tree->levels = $row["levels"] ?? 0;
+                        $tree->save();
+                        if ($tree) {
+                            $titles[] = $row['title'];
+                        }
+
+                        $detail = new Detail;
+                        $detail->abrar_id = $row["abrar_sahb_nmbr_shmar"];
+                        $detail->asif_id = $row["asf_sahb_nmbr_shmar"];
+                        $detail->age = 1;
+                        $detail->age_sr = $row["blhath_aamr"];
+                        $detail->course_no = $row["nsaby_nmbr"];
+                        $detail->detail = $row["mkhtsr_tfsyl"];
+                        $detail->tree()->associate($tree);
+                        $detail->save();
+
+                        $easy = new Easy();
+                        $easy->easy = $row["tsyl"];
+                        $easy->mukhatab = $row["aaoam_khoas_mktdaaa"];
+                        $easy->rafe_ishkal = $row["rfaa_ashkal"];
+                        $easy->qaida = $row["kly_akthry_gzoyastthnaaa"];
+                        $easy->rahe_adal = $row["kanonadyan_ahsanamksodmksod_balthatthrayaa"];
+                        $easy->husool = $row["hsol_ka_tryk"];
+                        $easy->tamheed_khas = $row["khas"];
+                        $easy->hukam = $row["hkmbnyaddfaa_mdrt"];
+                        $easy->hasiat = $row["anfrady_agtmaaay"];
+                        $easy->shoba = $row["akrokylggmalk"];
+                        $easy->class = $row["gmaaat"];
+                        $easy->jins = $row["mrd_aaort_dono_k_ly"];
+                        $easy->zamana = $row["zman"];
+                        $easy->taleem = $row["aalmy_o_aamly"];
+                        $easy->amli_mashq = $row["aamly_mshky"];
+                        $easy->taluq = $row["thary_batny"];
+                        $easy->muharik = $row["mhrkat_onthryat"];
+                        $easy->tree()->associate($tree);
+                        $easy->save();
+
+                        $mahol = new Mahol();
+                        $mahol->sunana = $row["sunana"];
+                        $mahol->kehalwana = $row["kehalwan"];
+                        $mahol->dekhana = $row["dekhana"];
+                        $mahol->mashq = $row["mashq"];
+                        $mahol->batana = $row["batana"];
+                        $mahol->sikhana = $row["sikhana"];
+                        $mahol->adat = $row["adat"];
+                        $mahol->samjhana = $row["samjhana"];
+                        $mahol->parhana = $row["parhana"];
+                        $mahol->tree()->associate($tree);
+                        $mahol->save();
+
+                        $yaad = new Yaad();
+                        $yaad->yad_dehani = $row["tkrar_aalmy_aamly"];
+                        $yaad->kitni_takrar = $row["ktny_bar_tkrar_kry"];
+                        $yaad->revision = $row["pchly_ktab_ky_drayy"];
+                        $yaad->ahwal = $row["daralhrbno_mslmanda"];
+                        $yaad->pasaymanzar = $row["ps_mnthr"];
+                        $yaad->result = $row["trz_aaml"];
+                        $yaad->shaz = $row["shath_msayl"];
+                        $yaad->hawala = $row["ktab"];
+                        $yaad->government_ref = $row["srkary_ktab"];
+                        $yaad->tree()->associate($tree);
+                        $yaad->save();
+//                            $tempArray = $row;
+//                        }
+                    }, 5);
+//                }
                 $count++;
             }
 //            foreach (array_chunk(array_values($treeArray),1000) as $t)
@@ -180,7 +176,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
 //                Yaad::insert(array_values($t));
 //            }
         } catch (Exception $e) {
-            dd($e->getMessage());
+            dd($e->getMessage(), $this->row );
         }
     }
 
