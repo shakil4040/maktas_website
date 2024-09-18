@@ -667,7 +667,7 @@ const parents = function (node) {
         ancestors.push(parent);
         parent = parent.parent;
     }
-    ancestors.sort((a,b) => a.sr - b.sr);
+    ancestors.sort((a,b) => a.id - b.id);
     return ancestors;
 }
 

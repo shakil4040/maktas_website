@@ -40,7 +40,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
             $titles = $parents = [];
 
             foreach (array_chunk($array, 1000) as $index => $rowChunk) {
-                foreach ($rowChunk as $row) {
+                foreach ($rowChunk as $keyChunk => $row) {
                     $this->row = $row;
                     if (is_null($row)) {
                         continue;
@@ -51,36 +51,25 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         }
                     }
 
-                    for ($children = 1; $children < 11; $children++) {
-                        if (empty($row['zayalunwan_' . $children])) {
-                            $level = $children - 1;
-                            $row['title'] = $row['zayalunwan_' . $level] ?? $row['bunyadi_unwan'];
-                            $row['levels'] = $level;
-                            if ($level == 0) {
-                                $row["parentTitle"] = 0;
-                            } else {
-                                $row["parentTitle"] = $level === 1 ? $row['bunyadi_unwan'] : $row['zayalunwan_' . ($level - 1)];
+                    for ($children = 0; $children < 11; $children++) {
+                        if($children === 0) { // parent
+                            $row['title']   = $row['bunyadi_unwan'];
+                            $row['levels']  = $children;
+                            $row["parentTitle"] = null;
+                        } else {
+                            $childrenCol        = $row['zayalunwan_'.$children];
+                            if(empty($childrenCol)) {
+                                break;
                             }
-                            break;
-                        }
-                        if($children === 10 && $row['zayalunwan_' . $children]) {
-                            $level = $children - 1;
-                            $row['title'] = $row['zayalunwan_' . $level];
-                            $row['levels'] = $level;
-                            $row["parentTitle"] = $row['zayalunwan_' . ($level - 1)];
+                            $row['title']       = $childrenCol;
+                            $row['levels']      = $children;
+                            $row["parentTitle"] = $children - 1 == 0 ? $row['bunyadi_unwan'] : $row['zayalunwan_' . ($children - 1)];
                         }
                     }
-//                if (isset($value) && ($key == $matching_columns[0] || str_contains($key, $matching_columns[1]))) {
-
-//                        if (key_exists($key, $tempArray) && $tempArray[$key] == $value) {
-//                            $matched == true;
-//                            continue;
-//                        }else{
-                    $matched == false;
-//                    if (!isset($row['agmaly_aanoan'])) {
-//                        echo $key . '====' . $value . '@@@@@ <br>';
-//                    }
-                    if (!isset($row['title']) && in_array($row['title'], $titles)) {
+                    if(!isset($row['title'])) {
+                        dd($row);
+                    }
+                    if (!isset($row['title']) || in_array($row['title'], $titles)) {
                         continue;
                     }
                     if (!isset($parents[$row['parentTitle']])) {
@@ -157,35 +146,12 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $yaad->government_ref = $row["srkary_ktab"];
                         $yaad->tree()->associate($tree);
                         $yaad->save();
-//                            $tempArray = $row;
-//                        }
                     }, 5);
                     $this->row = $row;
-//                }
                     $count++;
                 }
             }
-//            foreach (array_chunk(array_values($treeArray),1000) as $t)
-//            {
-//
-//                Tree::insert(array_values($t));
-//            }
-//            foreach (array_chunk(array_values($detailArray),1000) as $t)
-//            {
-//                Detail::insert(array_values($t));
-//            }
-//            foreach (array_chunk(array_values($easyArray),1000) as $t)
-//            {
-//                Easy::insert(array_values($t));
-//            }
-//            foreach (array_chunk(array_values($maholArray),1000) as $t)
-//            {
-//                Mahol::insert(array_values($t));
-//            }
-//            foreach (array_chunk(array_values($yaadArray),1000) as $t)
-//            {
-//                Yaad::insert(array_values($t));
-//            }
+
         } catch (Exception $e) {
             dd($e->getMessage(), $this->row);
         }
