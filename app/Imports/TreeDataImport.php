@@ -8,8 +8,6 @@ use App\Models\Mahol;
 use App\Models\Tree;
 use App\Models\Yaad;
 use Exception;
-use Illuminate\Support\Collection;
-use Maatwebsite\Excel\Concerns\ToCollection;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -38,7 +36,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
             $matched = false;
             $matching_columns = ['bunyadi_unwan', 'zayalunwan'];
             $titles = $parents = [];
-
+            $existsTitles = Tree::all()->pluck('id', 'title')->toArray();
             foreach (array_chunk($array, 1000) as $index => $rowChunk) {
                 foreach ($rowChunk as $keyChunk => $row) {
                     $this->row = $row;
@@ -66,10 +64,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                             $row["parentTitle"] = $children - 1 == 0 ? $row['bunyadi_unwan'] : $row['zayalunwan_' . ($children - 1)];
                         }
                     }
-                    if(!isset($row['title'])) {
-                        dd($row);
-                    }
-                    if (!isset($row['title']) || in_array($row['title'], $titles)) {
+                    if (!isset($row['title']) || in_array($row['title'], $titles) || isset($existsTitles[$row['title']])) {
                         continue;
                     }
                     if (!isset($parents[$row['parentTitle']])) {
