@@ -23,17 +23,14 @@
                     <hr style="color: black;"/>
                     <!-- Download Selected Topics Section -->
                     <div class="section mt-4">
-                        <h4>Download Selected Topics</h4>
+                        <h4 class="{{ config('app.locale') == 'ur' ? 'text-right' : 'text-left' }}">@lang("tree.Choose Topic Title")</h4>
                         <form method="POST" action="/admin-download-by-titles" id="downloadForm">
                             @csrf
                             <div class="form-group">
     
                             <div id="loader" style="display: none;">Loading...</div>
-                            <select id="topics" name="topics[]" class="form-select" aria-label=".form-select" multiple>
-                            @foreach ($topics as $id => $title)
-                                    <option value="{{ $id }}">{{ $title }}</option>
-                                @endforeach
-                                </select>
+                            <select id="titleFilter" name="titleId" class="form-select" aria-label=".form-select">
+                            </select>
                             </div>
                             <button type="submit" class="btn btn-dark mt-3">Download Topics</button>
                         </form>
@@ -63,7 +60,39 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript">
+            $(document).ready(function() {
+            // Initialize the Select2 component
+            $('#titleFilter').select2({
+                ajax: {
+                    url: "{{ route('admin.filterTitle') }}",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function(params) {
+                        return {
+                            title: params.term // search term
+                        };
+                    },
+                    processResults: function(data) {
+                        // Transform the response into the format expected by Select2
+                        return {
 
+                            results: data.filterTitles.map(function(item) {
+                                return {
+                                    id: item.id, // Adjust as needed based on your response data
+                                    text: item.title // Adjust as needed based on your response data
+                                };
+                            })
+                        };
+                    },
+                    cache: true
+                },
+                placeholder: "@lang("tree.select a title")",
+                minimumInputLength: 1,
+                dir: "rtl",
+            });
+        });
+    </script>
 @endsection
 
 @section('styles')

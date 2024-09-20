@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::get('/members', 'AdminController@members');
     Route::get('/upload', 'AdminController@upload');
     Route::get('/admin-download-options', 'AdminController@showDownloadFileOptions');
+    Route::get("/filter-by-title", "AdminController@filterByTitle")->name("admin.filterTitle");
     Route::post('/admin/uploadFile', 'AdminController@uploadFile');
     Route::get('/admin/{admin}/edit', 'AdminController@editAdmin');
     Route::patch('/admin/{admin}', 'AdminController@updateAdmin');
