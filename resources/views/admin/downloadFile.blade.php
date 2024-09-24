@@ -27,10 +27,9 @@
                         <form method="POST" action="/admin-download-by-titles" id="downloadForm">
                             @csrf
                             <div class="form-group">
-    
-                            <div id="loader" style="display: none;">Loading...</div>
-                            <select id="titleFilter" name="titleId" class="form-select" aria-label=".form-select">
-                            </select>
+                                <div id="loader" style="display: none;">Loading...</div>
+                                <select id="titleFilter" name="titleId" class="form-select" aria-label=".form-select">
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-dark mt-3">Download Topics</button>
                         </form>

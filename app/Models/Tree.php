@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static whereTitle(mixed $title)
+ * @method static whereParentId(mixed $id)
  * @property mixed $title
  * @property int|mixed $government_com
  * @property false|mixed|string $structure
  * @property int|mixed $levels
+ * @property mixed $id
  */
 class Tree extends Model
 {

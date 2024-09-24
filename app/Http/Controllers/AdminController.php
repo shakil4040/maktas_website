@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Easy;
 use App\Models\Tree;
-use App\Models\Yaad;
 use App\Models\Admin;
-use App\Models\Mahol;
-use App\Models\Detail;
 use App\Models\Member;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Imports\TreeDataImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
 use App\Exports\TreeDataExport;
 
 class AdminController extends Controller
@@ -66,17 +62,11 @@ class AdminController extends Controller
      * Show the file download view with available options.
      *
      * @return \Illuminate\View\View
+     * @throws \Throwable
      */
     public function showDownloadFileOptions(){
         try {
-            // Fetch only the 'title' and 'id' columns from the 'tree' table
-            $topics = Tree::pluck('title', 'id');
-
-            // Check if the $topics collection is empty, and handle the case accordingly
-            if ($topics->isEmpty()) {
-                return view('admin.downloadFile', ['topics' => [], 'message' => 'No topics available for download.']);
-            }
-            return view('admin.downloadFile', compact('topics'));
+            return view('admin.downloadFile');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -90,12 +80,8 @@ class AdminController extends Controller
      */
     public function downloadFileByTitles(Request $request) {
         try {
-            $selectedIds = $request->input('topics', []);
-            $topics = Tree::whereIn('id', $selectedIds)->get();
-            // Convert the collection to an array of titles
-            $selectedTitles = $topics->pluck('title')->toArray();
-            // Generate and return the file download
-            return Excel::download(new TreeDataExport($selectedTitles), 'selected_topics.xlsx');
+            $selectedId = $request->input('titleId' ,0);
+            return Excel::download(new TreeDataExport(Tree::with('children')->find($selectedId)), 'export_courses.xlsx');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -261,5 +247,17 @@ class AdminController extends Controller
         } catch (\Throwable $th) {
             throw $th;
         }
+    }
+
+    /**
+     * @method searchByTitle
+     * @param Request $request
+     * @return JsonResponse
+     * @author Muhammad ali khalid ramay
+     */
+    public function filterByTitle(Request $request): JsonResponse
+    {
+        $titles = !empty($request->get("title")) ? Tree::where('title','LIKE',trim($request->get("title"))."%")->get(['title','id']) : [];
+        return response()->json(["filterTitles" => $titles ]);
     }
 }
