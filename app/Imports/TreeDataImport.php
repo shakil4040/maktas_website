@@ -80,6 +80,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $tree->parent()->associate($parentTitle ?? null);
                         $tree->structure = json_encode($structure[$index]);
                         $tree->levels = $row["levels"] ?? 0;
+                        $tree->added_by = \Auth::user()->name ?? NULL;
                         $tree->save();
                         if ($tree) {
                             $titles[] = $row['title'];

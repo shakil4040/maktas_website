@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property false|mixed|string $structure
  * @property int|mixed $levels
  * @property mixed $id
+ * @property mixed|null $added_by
  */
 class Tree extends Model
 {
