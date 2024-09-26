@@ -54,7 +54,7 @@ class AdminController extends Controller
         ]);
 
         Excel::queueImport(new TreeDataImport, $request->file);
-        Session::flash('message', 'Tree data Imported successfully.');
+        Session::flash('message', 'Courses Imported successfully.');
         return Redirect::to('/upload');
     }
 
@@ -103,7 +103,7 @@ class AdminController extends Controller
                 'end_date' => 'required|date|after_or_equal:start_date',
             ]);
 
-            return Excel::download(new TreeDataExport([], $startDate, $endDate), 'tree_data_by_date_range.xlsx');
+            return Excel::download(new TreeDataExport(null, $startDate, $endDate), 'courses_by_date_range.xlsx');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -111,7 +111,7 @@ class AdminController extends Controller
 
     public function downloadFile()
     {
-        return Excel::download(new TreeDataExport(), 'tree_data.xlsx');
+        return Excel::download(new TreeDataExport(), 'all_courses.xlsx');
     }
     /**
      * Display topics with 'pending' status in the admin dashboard.

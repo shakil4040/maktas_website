@@ -42,11 +42,11 @@
                             @csrf
                             <div class="form-group">
                                 <label for="startDate">Start Date:</label>
-                                <input type="date" id="startDate" name="start_date" class="form-control" required>
+                                <input type="date" id="startDate" name="start_date" value="{{ now()->subDay()->format("Y-m-d") }}" class="form-control" required>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="endDate">End Date:</label>
-                                <input type="date" id="endDate" name="end_date" class="form-control" required>
+                                <input type="date" id="endDate" name="end_date" value="{{ now()->format("Y-m-d") }}" placeholder="{{ now()->format("m/d/Y") }}" class="form-control" required>
                             </div>
                             <button type="submit" class="btn btn-dark mt-3">Download by Date</button>
                         </form>

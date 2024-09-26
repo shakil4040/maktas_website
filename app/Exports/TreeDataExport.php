@@ -27,7 +27,7 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
     protected ?Carbon $endDate;
     protected array $topicsId =[];
 
-    public function __construct(Tree $selectedTitle = null, $startDate = null, $endDate = null){
+    public function __construct(?Tree $selectedTitle = null, $startDate = null, $endDate = null){
         $this->selectedTitle = $selectedTitle;
         // Parse and validate dates using Carbon
         $this->startDate = $startDate ? Carbon::parse($startDate)->startOfDay() : null;
@@ -73,18 +73,18 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
             $detail     = Detail::whereIn('tree_id', $this->topicsId)->get()->keyBy('tree_id');
         } else if ($this->startDate && $this->endDate){
             // Fetch the data based on date selected
-            $treeData = Tree::whereBetween('created_at', [$this->startDate, $this->endDate])->get();
-            $maholData = Mahol::whereIn('id', $treeData->pluck('id'))->get();
-            $yaadData = Yaad::whereIn('id', $treeData->pluck('id'))->get();
-            $easyData = Easy::whereIn('id', $treeData->pluck('id'))->get();
-            $detailData = Detail::whereIn('id', $treeData->pluck('id'))->get();
+            $topics     = Tree::whereBetween('created_at', [$this->startDate, $this->endDate])->get();
+            $mahol      = Mahol::whereIn('id', $topics->pluck('id'))->get()->keyBy('tree_id');
+            $yaad       = Yaad::whereIn('id', $topics->pluck('id'))->get()->keyBy('tree_id');
+            $easy       = Easy::whereIn('id', $topics->pluck('id'))->get()->keyBy('tree_id');
+            $detail     = Detail::whereIn('id', $topics->pluck('id'))->get()->keyBy('tree_id');
         } else {
             // Fetch all data 
-            $treeData = Tree::all();
-            $maholData = Mahol::all();
-            $yaadData = Yaad::all();
-            $easyData = Easy::all();
-            $detailData = Detail::all();
+            $topics     = Tree::all();
+            $mahol      = Mahol::all()->keyBy('tree_id');
+            $yaad       = Yaad::all()->keyBy('tree_id');
+            $easy       = Easy::all()->keyBy('tree_id');
+            $detail     = Detail::all()->keyBy('tree_id');
         }
         $exportData = [];
         foreach ($topics as $data) {
