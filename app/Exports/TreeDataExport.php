@@ -25,7 +25,7 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
     protected ?Tree $selectedTitle;
     protected ?Carbon $startDate;
     protected ?Carbon $endDate;
-    protected array $topicsId;
+    protected array $topicsId =[];
 
     public function __construct(Tree $selectedTitle = null, $startDate = null, $endDate = null){
         $this->selectedTitle = $selectedTitle;
@@ -34,16 +34,6 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
         $this->endDate = $endDate ? Carbon::parse($endDate)->endOfDay() : null;
     }
 
-    private function getAllChildren($node) {
-        $title = Tree::with('children')->find($node->id);
-        $allChildren = [];
-
-        if ($title) {
-            $allChildren = $title->children()->with('children')->get();
-        }
-
-        return $allChildren;
-    }
 
     /**
      * @param Tree|null $item
@@ -54,11 +44,14 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
         $children = [];
         $children[]         = $item;
         $this->topicsId[]   = $item->id;
-        // Recursively retrieve each child and their children
-        foreach ($item->children as $child) {
-            $children[]         = $child;
-            $children           = array_merge($this->getChildrenRecursive($child), $children); // Fetch children of this child
-            $this->topicsId[]   = $child->id;
+        // Convert children collection to array and then reverse the order
+        $reversedChildren = array_reverse($item->children->toArray());
+
+        // Recursively retrieve each child and their children in reverse order
+        foreach ($reversedChildren as $child) {
+            // Fetch children of this child and merge them at the end
+            $children = array_merge($children, $this->getChildrenRecursive(Tree::find($child['id']))); // Use find() to get Tree instance
+            $this->topicsId[] = $child['id'];
         }
 
         return $children;
@@ -74,8 +67,6 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
             // Fetch data based on selected titles
             /** @var  $topics */
             $topics     = $this->getChildrenRecursive($this->selectedTitle);
-//            krsort($topics);
-//            dd($topics);
             $mahol      = Mahol::whereIn('tree_id', $this->topicsId)->get()->keyBy('tree_id');
             $yaad       = Yaad::whereIn('tree_id', $this->topicsId)->get()->keyBy('tree_id');
             $easy       = Easy::whereIn('tree_id', $this->topicsId)->get()->keyBy('tree_id');
