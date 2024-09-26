@@ -16,7 +16,8 @@ Route::get('/allSearch','SearchController@index');
 Route::get('/mySearch','SearchController@search');
 
 // Route::get('newvisitor','VisitorsController@index');
-Auth::routes();
+// TODO :: Need to work on these routes - duplication
+//Auth::routes();
 
 //New site
 Route::controller(ViewsController::class)->group(function(){
