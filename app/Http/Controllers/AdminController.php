@@ -43,12 +43,8 @@ class AdminController extends Controller
 
     public function uploadFile(Request $request)
     {
-//        Tree::truncate();
-//        Detail::truncate();
-//        Easy::truncate();
-//        Mahol::truncate();
-//        Yaad::truncate();
         ini_set('max_execution_time', 3600);
+        ini_set('memory_limit', -1);
         $this->validate($request, [
             'file' => 'required'
         ]);

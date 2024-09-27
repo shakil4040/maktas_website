@@ -32,8 +32,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
     {
         try {
             $count = 1;
-            $tempArray = $structure = $marchesCols = [];
-            $matched = false;
+            $structure = [];
             $matching_columns = ['bunyadi_unwan', 'zayalunwan'];
             $titles = $parents = [];
             $existsTitles = Tree::all()->pluck('id', 'title')->toArray();
