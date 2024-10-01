@@ -47,10 +47,10 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                             $structure[$index][$key] = $value;
                         }
                     }
-
+                    $row["titleStructure"]  = "";
                     for ($children = 0; $children < 11; $children++) {
                         if($children === 0) { // parent
-                            $row['title']   = $row['bunyadi_unwan'];
+                            $row['title']   = trim($row['bunyadi_unwan']);
                             $row['levels']  = $children;
                             $row["parentTitle"] = null;
                         } else {
@@ -58,19 +58,20 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                             if(empty($childrenCol)) {
                                 break;
                             }
-                            $row['title']       = $childrenCol;
+                            $row['title']       = trim($childrenCol);
                             $row['levels']      = $children;
-                            $row["parentTitle"] = $children - 1 == 0 ? $row['bunyadi_unwan'] : $row['zayalunwan_' . ($children - 1)];
+                            $row["parentTitle"] = trim($children - 1 == 0 ? $row['bunyadi_unwan'] : $row['zayalunwan_' . ($children - 1)]);
                         }
+                        $row["titleStructure"]  .=  ','.$row["title"];
                     }
-                    if (!isset($row['title']) || in_array($row['title'], $titles) || isset($existsTitles[$row['title']])) {
+                    if (!isset($row['title']) || in_array($row['titleStructure'], $titles)) {
                         continue;
                     }
-                    if (!isset($parents[$row['parentTitle']])) {
-                        $parentTitle = Tree::whereTitle($row["parentTitle"])->first();
-                        $parents[$row['parentTitle']] = $parentTitle;
+                    if (!isset($parents[$row["titleStructure"]])) {
+                        $parentTitle = Tree::whereTitle($row["parentTitle"])->orderBy("id","desc")->first();
+                        $parents[$row["titleStructure"]] = $parentTitle;
                     } else {
-                        $parentTitle = $parents[$row['parentTitle']];
+                        $parentTitle = $parents[$row["titleStructure"]];
                     }
                     DB::transaction(function () use ($row, $structure, $index, $count, $parentTitle, &$titles) {
                         $tree = new Tree;
@@ -82,7 +83,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $tree->added_by = \Auth::user()->name ?? NULL;
                         $tree->save();
                         if ($tree) {
-                            $titles[] = $row['title'];
+                            $titles[] = $row["titleStructure"];
                         }
 
                         $detail = new Detail;
