@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static whereTitle(mixed $title)
  * @method static whereParentId(mixed $id)
+ * @method static find(mixed $shnakht)
  * @property mixed $title
  * @property int|mixed $government_com
  * @property false|mixed|string $structure

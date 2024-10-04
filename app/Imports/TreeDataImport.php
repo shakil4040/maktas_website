@@ -15,10 +15,27 @@ use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Events\AfterImport;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\ToArray;
+use Illuminate\Support\MessageBag;
 
 class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHeadingRow
 {
     private $row;
+    private array $courses;
+    /** @var MessageBag $creatorMsgBag */
+    private MessageBag $creatorMsgBag;
+    /** @var MessageBag $updaterMsgBag */
+    private MessageBag $updaterMsgBag;
+    /** @var MessageBag $errorsMsgBag */
+    private MessageBag $errorsMsgBag;
+
+    private int $count = 1;
+
+    public function __construct()
+    {
+        $this->creatorMsgBag = new MessageBag;
+        $this->updaterMsgBag = new MessageBag;
+        $this->errorsMsgBag  = new MessageBag;
+    }
 
     public static function afterImport(AfterImport $event)
     {
@@ -31,11 +48,12 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
     public function array(array $array)
     {
         try {
-            $count = 1;
             $structure = [];
             $matching_columns = ['bunyadi_unwan', 'zayalunwan'];
             $titles = $parents = [];
-            $existsTitles = Tree::all()->pluck('id', 'title')->toArray();
+            $tree = Tree::all();
+            $existsTitles = $tree->pluck('id', 'title')->toArray();
+            $this->courses = $tree->keyBy('id')->toArray();
             foreach (array_chunk($array, 1000) as $index => $rowChunk) {
                 foreach ($rowChunk as $keyChunk => $row) {
                     $this->row = $row;
@@ -47,6 +65,12 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                             $structure[$index][$key] = $value;
                         }
                     }
+
+                    if(!empty($row['parent_id']) || !empty($row["shnakht"])) {
+                        $this->updateSheet();
+                        continue;
+                    }
+
                     $row["titleStructure"]  = "";
                     for ($children = 0; $children < 11; $children++) {
                         if($children === 0) { // parent
@@ -73,7 +97,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                     } else {
                         $parentTitle = $parents[$row["titleStructure"]];
                     }
-                    DB::transaction(function () use ($row, $structure, $index, $count, $parentTitle, &$titles) {
+                    DB::transaction(function () use ($row, $structure, $index, $parentTitle, &$titles) {
                         $tree = new Tree;
                         $tree->title = $row['title'];
                         $tree->government_com = $row["government_com"] ?? 0;
@@ -144,12 +168,14 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $yaad->save();
                     }, 5);
                     $this->row = $row;
-                    $count++;
+                    $this->count++;
                 }
             }
 
         } catch (Exception $e) {
-            dd($e->getMessage(), $this->row);
+            \Log::error("Create & Update Error! ",[$e->getMessage(), "row" => $this->row]);
+            \Log::error("Create & Update Detailed Error! ",[$e, "row" => $this->row]);
+            $this->errorsMsgBag->add("errors","Oops! Something went wrong.");
         }
     }
 
@@ -167,5 +193,98 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
     public function headingRow(): int
     {
         return 1;
+    }
+
+    /**
+     * @return void
+     */
+    private function updateSheet():void {
+        if(!empty($this->row["shnakht"])){
+            DB::transaction(function () {
+                /** @var Tree $tree */
+                $tree                   = Tree::find($this->row["shnakht"]);
+                if(!is_null($tree)) {
+                    $structure = json_decode($tree->structure, true);
+                    $title = trim($this->row['agmaly_aanoan']);
+                    $structure[intval($tree->levels) === 0 ? "bunyadi_unwan" : "zayalunwan_$tree->levels"] = $title;
+
+                    $tree->title = $title;
+                    $tree->government_com = $this->row["government_com"] ?? 0;
+                    $tree->structure = json_encode($structure);
+                    $tree->added_by = \Auth::user()->name ?? NULL;
+                    $tree->save();
+
+                    $detail = Detail::whereTreeId($tree->id)->first();
+                    if (is_null($detail)) {
+                        $detail = new Detail();
+                    }
+                    $detail->abrar_id = $this->row["abrar_sahb_nmbr_shmar"];
+                    $detail->asif_id = $this->row["asf_sahb_nmbr_shmar"];
+                    $detail->age = 1;
+                    $detail->age_sr = $this->row["blhath_aamr"];
+                    $detail->course_no = $this->row["nsaby_nmbr"];
+                    $detail->detail = $this->row["mkhtsr_tfsyl"];
+                    $detail->tree()->associate($tree);
+                    $detail->save();
+
+                    $easy = Easy::whereTreeId($tree->id)->first();
+                    if (is_null($easy)) {
+                        $easy = new Easy();
+                    }
+                    $easy->easy = $this->row["tsyl"];
+                    $easy->mukhatab = $this->row["aaoam_khoas_mktdaaa"];
+                    $easy->rafe_ishkal = $this->row["rfaa_ashkal"];
+                    $easy->qaida = $this->row["kly_akthry_gzoyastthnaaa"];
+                    $easy->rahe_adal = $this->row["kanonadyan_ahsanamksodmksod_balthatthrayaa"];
+                    $easy->husool = $this->row["hsol_ka_tryk"];
+                    $easy->tamheed_khas = $this->row["khas"];
+                    $easy->hukam = $this->row["hkmbnyaddfaa_mdrt"];
+                    $easy->hasiat = $this->row["anfrady_agtmaaay"];
+                    $easy->shoba = $this->row["akrokylggmalk"];
+                    $easy->class = $this->row["gmaaat"];
+                    $easy->jins = $this->row["mrd_aaort_dono_k_ly"];
+                    $easy->zamana = $this->row["zman"];
+                    $easy->taleem = $this->row["aalmy_o_aamly"];
+                    $easy->amli_mashq = $this->row["aamly_mshky"];
+                    $easy->taluq = $this->row["thary_batny"];
+                    $easy->muharik = $this->row["mhrkat_onthryat"];
+                    $easy->tree()->associate($tree);
+                    $easy->save();
+
+                    $mahol = Mahol::whereTreeId($tree->id)->first();
+                    if (is_null($mahol)) {
+                        $mahol = new Mahol();
+                    }
+                    $mahol->sunana = $this->row["sunana"];
+                    $mahol->kehalwana = $this->row["kehalwan"];
+                    $mahol->dekhana = $this->row["dekhana"];
+                    $mahol->mashq = $this->row["mashq"];
+                    $mahol->batana = $this->row["batana"];
+                    $mahol->sikhana = $this->row["sikhana"];
+                    $mahol->adat = $this->row["adat"];
+                    $mahol->samjhana = $this->row["samjhana"];
+                    $mahol->parhana = $this->row["parhana"];
+                    $mahol->tree()->associate($tree);
+                    $mahol->save();
+
+                    $yaad = Yaad::whereTreeId($tree->id)->first();
+                    if (is_null($yaad)) {
+                        $yaad = new Yaad();
+                    }
+                    $yaad->yad_dehani = $this->row["tkrar_aalmy_aamly"];
+                    $yaad->kitni_takrar = $this->row["ktny_bar_tkrar_kry"];
+                    $yaad->revision = $this->row["pchly_ktab_ky_drayy"];
+                    $yaad->ahwal = $this->row["daralhrbno_mslmanda"];
+                    $yaad->pasaymanzar = $this->row["ps_mnthr"];
+                    $yaad->result = $this->row["trz_aaml"];
+                    $yaad->shaz = $this->row["shath_msayl"];
+                    $yaad->hawala = $this->row["ktab"];
+                    $yaad->government_ref = $this->row["srkary_ktab"];
+                    $yaad->tree()->associate($tree);
+                    $yaad->save();
+                    $this->count++;
+                }
+            }, 5);
+        }
     }
 }

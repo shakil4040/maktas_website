@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $age_sr
  * @property int|mixed $course_no
  * @property mixed $detail
+ * @method static whereTreeId($id)
  */
 class Detail extends Model
 {

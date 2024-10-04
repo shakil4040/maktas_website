@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $amli_mashq
  * @property mixed $taluq
  * @property mixed $muharik
+ * @method static whereTreeId($id)
  */
 class Easy extends Model
 {

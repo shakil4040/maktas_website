@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $shaz
  * @property mixed $hawala
  * @property mixed $government_ref
+ * @method static whereTreeId($id)
  */
 class Yaad extends Model
 {

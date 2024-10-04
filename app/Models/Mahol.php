@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $samjhana
  * @property mixed $parhana
  *
+ * @method static whereTreeId($id)
  */
 class Mahol extends Model
 {
