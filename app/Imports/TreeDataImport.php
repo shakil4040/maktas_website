@@ -88,7 +88,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         }
                         $row["titleStructure"]  .=  ','.$row["title"];
                     }
-                    if (!isset($row['title']) || in_array($row['titleStructure'], $titles) || isset($existsTitles[$row['title']])) {
+                    if (!isset($row['title']) || empty($row['title']) || in_array($row['titleStructure'], $titles) || isset($existsTitles[$row['title']])) {
                         continue;
                     }
                     if (!isset($parents[$row["titleStructure"]])) {
