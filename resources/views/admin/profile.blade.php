@@ -10,9 +10,9 @@
                 <div class="card">
                     <div class="card-header">Admin Profile</div>
                     <div class="card-body">
-                        <p class="mb-2"><strong>Name:</strong> {{ auth('admin')->user()->name }}</p>
-                        <p class="mb-3"><strong>Email:</strong> {{ auth('admin')->user()->email }}</p>
-                        <a href="/admin/{{ auth('admin')->user()->id }}/edit"><button class="btn btn-dark">Update</button></a>
+                        <p class="mb-2"><strong>Name:</strong> {{ Auth::user()->admin->name }}</p>
+                        <p class="mb-3"><strong>Email:</strong> {{ Auth::user()->admin->email }}</p>
+                        <a href="/admin/{{ Auth::user()->admin->id }}/edit"><button class="btn btn-dark">Update</button></a>
                     </div>
                 </div>
             </div>

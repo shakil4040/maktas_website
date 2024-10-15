@@ -23,7 +23,7 @@ class Member extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'is_approve',
     ];
 
     /**
@@ -48,5 +48,13 @@ class Member extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification2($token));
+    }
+
+    /**
+     * A member can have one user.
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class, 'user_type_id');
     }
 }

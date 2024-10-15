@@ -38,9 +38,9 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->middleware('guest:member')->except('logout');
-        $this->middleware('guest:admin')->except('logout');
-        $this->middleware('guest:temporary-member')->except('logout');
+        // $this->middleware('guest:member')->except('logout');
+        // $this->middleware('guest:admin')->except('logout');
+        // $this->middleware('guest:temporary-member')->except('logout');
     }
     public function vuelogin(Request $request)
     {
@@ -60,41 +60,43 @@ class LoginController extends Controller
     }
 
     /**
-     * Show the login form for different Members.
+     * Show the login form.
      *
-     * @param  string  $guard
      * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response
      */
-    public function showLoginForm($guard)
+    public function showLoginForm()
     {
-        // Validate the guard to prevent invalid URLs
-        if (!in_array($guard, ['admin', 'member', 'temporary-member'])) {
-            abort(404); // Return a 404 error if the guard is invalid
-        }
-
-        // Return the login view with the specified guard
-        return view('auth.login', ['url' => $guard]);
+        return view('auth.login');
     }
 
     /**
      * Handle the login request for different guards.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  string  $guard
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function login(Request $request, $guard)
+    public function login(Request $request)
     {
-        // Validate the guard to ensure the correct guard is being used
-        if (!in_array($guard, ['admin', 'member', 'temporary-member'])) {
-            abort(404); // Return a 404 error if the guard is invalid
-        }
-        $this->validate($request, ['email' => 'required|email', 'password' => 'required|min:6']);
+        // Validate login inputs
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+        // Attempt to log the user in
+        if (Auth::guard('web')->attempt($request->only('email', 'password'), $request->filled('remember'))) {
+            $user = Auth::user();  // Get the logged-in user
 
-        // Attempt to log in using the specified guard
-        if (Auth::guard($guard)->attempt($request->only('email', 'password'), $request->filled('remember'))) {
-            // Redirect to the appropriate dashboard based on the guard
-            return redirect()->intended("/$guard");
+            // Check user type and redirect accordingly
+            if ($user->user_type === 'App\Models\Admin') {
+                return redirect()->intended('/admin');
+            } elseif ($user->user_type === 'App\Models\Member') {
+                return redirect()->intended('/member');
+            } elseif ($user->user_type === 'App\Models\Member') {
+                return redirect()->intended('/temporary-member');
+            }
+
+            // Default redirection if no role match
+            return redirect()->intended('/home');
         }
         return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
     }

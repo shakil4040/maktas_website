@@ -8,16 +8,9 @@ use App\Http\Controllers\ViewsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ComparisonController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/allSearch','SearchController@index');
 
 Route::get('/mySearch','SearchController@search');
-
-// Route::get('newvisitor','VisitorsController@index');
-// TODO :: Need to work on these routes - duplication
-//Auth::routes();
 
 //New site
 Route::controller(ViewsController::class)->group(function(){
@@ -43,31 +36,27 @@ Route::get('/tree2',function(){
 Route::view('marhabah','Marhabah');
 Route::get('/tree', 'CategoryController@manageCategory');
 Route::get('/educationist', 'CategoryController@educationist');
-// Route::post('add-category','CategoryController@addCategory')->name('add.category');
 
-Route::get('/login/{guard}', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/login/{guard}', 'Auth\LoginController@login');
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
 
-// Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm')->name('login/admin');
 Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm')->middleware('guest:admin');
 
-// Route::get('/login/member', 'Auth\LoginController@showMemberLoginForm')->name('login/member');
-// Route::post('/login/member', 'Auth\LoginController@memberLogin');
 Route::view('/member', 'dashboards.member');
 Route::get('/get-child/{id}/{level}/{title}','CategoryController@getChild');
 Route::get('/get-child2/{id}/{level}/{title}','CategoryController@getChild2');
 
 
-// Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');
 
-Route::view('/admin', 'dashboards.admin')->middleware('auth.admin');
+Route::view('/admin', 'dashboards.admin');
+// ->middleware('auth.admin');
 
 
-Route::group(['middleware' => ['auth.admin']], function () {
+Route::group([], function () {
 
     Route::get('admin-profile','AdminController@profile');
-    Route::get('/register/member', 'Auth\RegisterController@showMemberRegisterForm');
+    Route::get('/register/member', 'Auth\RegisterController@showMemberRegisterForm')->name('register.member');
     Route::post('/register/member', 'Auth\RegisterController@createMember');
     Route::get('/members', 'AdminController@members');
     Route::get('/upload', 'AdminController@upload');
@@ -90,7 +79,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
 });
 
 // Member Routes
-Route::group(['middleware' => ['auth.member']], function () {
+// Route::group(['middleware' => ['auth.member']], function () {
     Route::get('/member-profile', 'MemberController@profile');
     Route::get('/member/{member}/edit', 'MemberController@editMember');
     Route::patch('/member/{member}', 'MemberController@updateMember');
@@ -100,7 +89,7 @@ Route::group(['middleware' => ['auth.member']], function () {
     Route::get('/download-file', 'MemberController@download');
     Route::post('/download-by-titles', 'MemberController@downloadFileByTitles');
     Route::post('/download-by-date', 'MemberController@downloadFileByDate');
-});
+// });
 // Search Request 
 Route::get('/searchTopic', 'CategoryController@searchCategory');
 
@@ -123,8 +112,6 @@ Route::get('/governmentDetailed/{class}','ComparisonController@governmentDetaile
 
 // Temporary Member Dashboard Route
 Route::group(['middleware' => ['auth.temporary-member']], function () {
-    // Route::get('/login/temporary-member', 'Auth\LoginController@showTempMemberLoginForm')->name('login/temp-member');
-    // Route::post('/login/temporary-member', 'Auth\LoginController@tempMemberLogin');
     Route::view('/temporary-member', 'dashboards.temporary-member');
     Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
     Route::get('/temp-member/{member}/edit', 'MemberController@editTempMember');
@@ -132,24 +119,21 @@ Route::group(['middleware' => ['auth.temporary-member']], function () {
 });
 
 Route::post('/logout', function () {
-    // Define an array of guard => redirect path pairs
-    $guards = [
-        'admin' => '/login/admin',
-        'temporary-member' => '/login/temporary-member',
-        'member' => '/login/member',
-    ];
-    // Iterate through the guards to find the one that is currently authenticated
-    foreach ($guards as $guard => $redirectPath) {
-        if (auth($guard)->check()) {
-            auth($guard)->logout();
-            return redirect($redirectPath);
+    // Get the currently authenticated user
+    $user = auth()->user();
+
+    // Check if the user is authenticated and has a user_type
+    if ($user && $user->user_type) {
+        if (in_array($user->user_type, ['App\Models\Admin', 'App\Models\Member', 'App\Models\TemporaryMember'])) {
+            auth()->logout();
+            return redirect('/login');
         }
     }
-    // Fallback for default user type
+    // Fallback if no user is authenticated or user_type doesn't match
     auth()->logout();
     return redirect('/login');
 })->name('logout');
-Route::get('/home', 'HomeController@index')->name('home');
-// Route::any('/who-you-are', 'UserCheckController@userCheckView')->name('userCheck');
-// Route::any('/login', 'UserCheckController@toLoginView')->name('login');
+
+
 Route::get('{any}','UserCheckController@userCheckView')->where('any','.*');
+Route::get('/home', 'HomeController@index')->name('home');

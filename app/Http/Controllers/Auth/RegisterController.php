@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use App\Models\Admin;
 use App\Models\Member;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
@@ -42,7 +42,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // $this->middleware('guest'); //TODO::Need to Discussion
     }
 
     /**
@@ -55,7 +55,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users', 'unique:admins', 'unique:members'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users', 'unique:admins'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -77,21 +77,37 @@ class RegisterController extends Controller
 
     public function showMemberRegisterForm()
     {
-        return view('auth.register', ['url' => 'member']);
+        return view('auth.register');
     }
 
-    protected function createMember(Request $request)
+    public function createMember(Request $request)
     {
-        $this->validator($request->all())->validate();
-        $member = Member::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            'temp' => 1, // Set the 'temp' column to 1 as the default value for new members
-        ]);
-        return redirect()->intended('/members')->with('success','Member Added Successfully');
-    }
+        try {
+            $this->validator($request->all())->validate();
+            // Use a transaction to ensure both the User and Member are created together
+            return \DB::transaction(function () use ($request) {
+                // Create the Member record
+                $member = Member::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'is_approve' => 0, // Automatically approve the member
+                ]);
+                // Create the corresponding user entry in the 'users' table
+                User::create([
+                    'username' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'user_type_id' => $member->id,
+                    'user_type' => Member::class,
+                ]);
 
+                // Return success message with redirection
+                return redirect()->intended('/members')->with('success', 'Member Added Successfully');
+            }, 5);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 
     public function showAdminRegisterForm()
     {

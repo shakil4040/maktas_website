@@ -12,6 +12,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Exports\TreeDataExport;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -19,20 +20,20 @@ class AdminController extends Controller
         return view('admin.profile');
     }
 
-
     public function editAdmin(Admin $admin)
     {
         return view('admin.edit-admin', compact( 'admin'));
     }
+    
     public function updateAdmin(Request $request, Admin $admin)
     {
-        $data=request()->validate([
+        $data = request()->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
 
           ]);
 
-        auth('admin')->user()->update($data);
+          Auth::user()->admin->update($data);
         return redirect('/admin')->with('success','Profile Updated Successfully');
     }
 
@@ -164,8 +165,8 @@ class AdminController extends Controller
             if (!$member) {
                 return redirect()->back()->with('error', 'Member not found.');
             }
-            // Set the member's type to 0 (approved)
-            $member->temp = 0;
+            // Set the member's type to 1 (approved)
+            $member->is_approve = 1;
             $member->save();
 
             return redirect()->back()->with('success', 'Member approved successfully!');
@@ -175,7 +176,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Delete a member.
+     * Delete a member and the associated user.
      *
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
@@ -184,15 +185,24 @@ class AdminController extends Controller
     {
         try {
             $member = Member::find($id);
+            
             // Check if the member exists
             if (!$member) {
                 return redirect()->back()->with('error', 'Member not found.');
             }
+            
+            // Delete the associated user if it exists
+            if ($member->user) {
+                $member->user->delete();
+            }
+            // Delete the member
             $member->delete();
 
             return redirect()->back()->with('success', 'Member deleted successfully.');
         } catch (\Throwable $th) {
-            throw $th;
+            dd($th);
+            // Handle the exception
+            return redirect()->back()->with('error', 'An error occurred while deleting the member.');
         }
     }
 

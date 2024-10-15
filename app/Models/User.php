@@ -1,14 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, LaratrustUserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password', 'user_type_id', 'user_type',
     ];
 
     /**
@@ -39,5 +40,31 @@ class User extends Authenticatable
 
     public function comments() {
         return $this->hasMany(Models\Comment::class) ;
+    }
+
+    /**
+     * A user can have many roles.
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    /**
+     * A user can have many permissions through roles.
+     */
+    public function permissions()
+    {
+        return $this->hasManyThrough(Permission::class, Role::class);
+    }
+
+    public function admin()
+    {
+        return $this->hasOne(Admin::class, 'id');
+    }
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class, 'id');
     }
 }
