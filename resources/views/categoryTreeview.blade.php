@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>اسلام</title>
@@ -517,39 +517,52 @@
                     <div class="col-md-12 nav-col">
                         <div class="row scroll-topics navigation_bar">
                             <div id="ctab1" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct1_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct1_title"></div>
                             </div>
                             <div id="ctab2" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct2_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct2_title"></div>
                             </div>
                             <div id="ctab3" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct3_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct3_title"></div>
                             </div>
                             <div id="ctab4" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct4_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct4_title"></div>
                             </div>
                             <div id="ctab5" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct5_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct5_title"></div>
                             </div>
                             <div id="ctab6" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct6_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct6_title"></div>
                             </div>
                             <div id="ctab7" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct7_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct7_title"></div>
                             </div>
                             <div id="ctab8" class="mx-2 scroll-topics">
-                                <div class="nav-title py-1 scroll-topics" id="ct8_title"></div>
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct8_title"></div>
+                            </div>
+                            <div id="ctab9" class="mx-2 scroll-topics">
+                                <div class="nav-title py-1 scroll-topics ctitle" id="ct9_title"></div>
                             </div>
                         </div>
                         <button data-toggle="modal" data-target="#exampleModal" style="position: fixed;left: 0px;z-index: 999999999;" class="btn btn-success">اپنا نصاب بنائیں</button>
-                        <div class="title islam1">
+                        <div class="title islam1 mr-1">
                             <h1 style="font-size:35px;margin-bottom:1.5rem;">اسلام</h1>
                         </div>
                         <div class="d-flex navw">
-                            <input id="searcht" style="padding: 0px 10px;" placeholder="نظر آنے والے عنوانات میں  تلاش کرنے کے لیے یہاں لکھیں" type="search">
-                            <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
+                            <input id="searcht" class="mr-1 input-field-size" style="padding: 0px 10px;" placeholder="نظر آنے والے عنوانات میں  تلاش کرنے کے لیے یہاں لکھیں" type="search">
+                            <button id="searchButton" class="btn ml-1 mr-1 btn-primary">@lang("tree.Search")<i class="fa fa-search mr-1"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
+                        @auth('member')
+                        <div class="mt-2">
+                            <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
+                        </div>
+                        @endauth
+                        @auth('temporary-member')
+                        <div class="mt-2">
+                            <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
+                        </div>
+                        @endauth
                         <div id="sframe" class="col-md-6" style="position: absolute;left:5px;top:53px;z-index: 99999;height:55%">
                             <i id="frclose" style="position: absolute;left: 34px;top: 15px;" class="fa fa-close"></i>
                             <iframe  src="/allSearch" height="100%" width="100%" title="Iframe Example"></iframe>
@@ -591,15 +604,30 @@
                                                         <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
                                                     </div>
                                                     @endauth
-                                                    @auth('member')
                                                     @if(count($category->childs) == null)
-                                                    <div class="d-flex">
-                                                        <i class="fa fa-edit mx-2 sedit"></i>
-                                                        <i class="fa fa-times-circle mx-2 delete"></i>
-                                                    </div>
+                                                        <div class="d-flex">
+                                                            @auth('member')
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                                <i class="fa fa-times-circle mx-2 delete"></i>
+                                                            @endauth
+                                                            @auth('temporary-member')
+                                                                <i class="fa fa-edit mx-2 sedit"></i>
+                                                            @endauth
+                                                        </div>
                                                     @endif
-                                                    @endauth
                                                 </div>
+                                                @auth('admin')
+                                                <div>
+                                                    @if($category->status === 'pending')
+                                                        <span style="margin-right: 10px;">Status: 
+                                                            <span style="color: orange;">{{ $category->status }}</span>
+                                                        </span>
+                                                    @endif
+                                                    @if($category->added_by)
+                                                        <span style="margin-right: 10px;">Added By: {{ $category->added_by }}
+                                                    @endif
+                                                </div>
+                                                @endauth
                                                 <div class="cid d-none">{{ $category->id }}</div>
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
@@ -661,6 +689,59 @@
     </div>
   </div>
 </div>
+<!-- Modal to add new topics -->
+<div class="modal fade" style="direction: rtl; font-family: 'Noto Nastaliq Urdu', serif;" id="addTopicModal" tabindex="-1" aria-labelledby="addTopicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+                <h5 class="modal-title" id="exampleModalLabel">نیا عنوان درج کریں</h5>
+            </div>
+            <div class="modal-body">
+                <form id="addCategoryForm">
+                    <div class="form-group">
+                        <label class="text-right d-block" for="title">عنوان</label>
+                        <input type="text" class="form-control my-2 py-3" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right d-block" for="detail">مختصر وضاحت</label>
+                        <textarea class="form-control my-2" id="detail" name="detail" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right d-block" for="hawala">Hawala</label>
+                        <input type="text" class="form-control my-2 py-3" id="hawala" name="hawala" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right d-block" for="easy">Easy</label>
+                        <input type="text" class="form-control my-2 py-3" id="easy" name="easy" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right d-block" for="sunana">sunana</label>
+                        <input type="text" class="form-control my-2 py-3" id="sunana" name="sunana">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">بند کریں</button>
+                        <button type="submit" class="btn btn-primary">درج کریں</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script>
+        /**
+         * Global Variables
+         */
+        let admin = null;
+        let user = null;
+        let userId = 0;
+        @auth()
+            admin = "{{ auth('admin')->user() }}";
+        user = "{{ auth()->user() }}";
+        userId = "{{ auth()->user() ? auth()->user()->id : 0  }}";
+        @endauth
+    </script>
     <script src="/js/treeview.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -708,6 +789,38 @@ for (var i = 0; i < btns.length; i++) {
         this.className += " active";
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('addCategoryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch('/add-topic', { // replace with your actual route
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.error) {
+                    alert('Error: ' + result.error.join(', '));
+                } else {
+                    const modalElement = document.getElementById('addTopicModal');
+                    const modal = new bootstrap.Modal(modalElement);
+                    alert('Success: ' + result.success);
+                    modal.hide();
+                    setTimeout(() => {
+                        window.location.reload(); // Delay reload to ensure modal has time to close
+                    }, 500);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
     </script>
 </body>
 

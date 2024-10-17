@@ -4,32 +4,67 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   
-    
     <title>{{ 'مکطس' }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://unpkg.com/vue-router@4"></script>
+    {{-- CSS LINKS   --}}
+        <!-- Include Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- Include Bootstrap v4.5.2 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Include Select 2 -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Amiri Quran' rel='stylesheet'>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <!-- Custom Styling -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- CSS LINKS END --}}
 
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Amiri Quran' rel='stylesheet'>
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- JS LINKS   --}}
+        <!-- JQUERY JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Select2 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+        <!-- BootStrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <!-- Custom JS -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://unpkg.com/vue-router@4"></script>
+    {{-- JS LINKS END   --}}
     <style>
     body {
         background-color: white !important;
+    }
+    /* Loader CSS */
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999; /* Ensure the loader is on top of all content */
+    }
+
+    .spinner {
+        border: 8px solid rgba(0, 0, 0, 0.1);
+        border-left: 8px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
     .card {
         color:white !important;
@@ -60,20 +95,26 @@
         color: black;
         display: block;
         transition: 0.3s;
-
     }
     .card-body a:hover{
   color: #b80000 !important;
 }
-    .card-body ul {
-       list-style-type: none;
+.card-body ul {
+    list-style-type: none;
 
-    }
+}
+@keyframes l3 {
+  to { transform: rotate(1turn); }
+}
     </style>
 </head>
 
 <body>
     <div id="app2">
+        <!-- Loader HTML -->
+        <div id="loader" class="loader" style="display:none;">
+            <div class="spinner"></div>
+        </div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
@@ -133,7 +174,24 @@
                                 </form>
                             </div>
                         </li>
+                        @elseif(auth('temporary-member')->user())
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ auth('temporary-member')->user()->name }}
+                            </a>
 
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
 
                         @elseif(auth()->user())
                         <li class="nav-item dropdown">
@@ -155,15 +213,21 @@
                         </li>
                         @else
                         @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login', ['guard' => 'admin']) }}">{{ __('Admin Login') }} |</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login', ['guard' => 'member']) }}">{{ __('Permanent Member Login') }} |</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login', ['guard' => 'temporary-member']) }}">{{ __('Temporary Member Login') }} |</a>
+                            </li>
                         @endif
 
                         @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
                         @endif
                         @endif
                     </ul>
@@ -175,6 +239,7 @@
             @yield('content')
         </main>
     </div>
+@yield('scripts')
 </body>
 
 </html>

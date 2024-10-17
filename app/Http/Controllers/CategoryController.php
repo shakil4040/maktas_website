@@ -21,14 +21,39 @@ class CategoryController extends Controller
 {
     public function manageCategory()
     {
-        $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'asc')->get();
-        $allCategories = Tree::pluck('title', 'sr')->all();
+        // Get the current logged-in user (temporary or permanent member)
+        $temporaryMember = Auth::guard('temporary-member')->user();
+        $permanentMember = Auth::guard('member')->user();
+
+        // Check if a temporary member is logged in
+        if ($temporaryMember) {
+            // Fetch categories added by the temporary member
+            $categories = Tree::where([
+                ['parent_id', '=', 0],
+                ['added_by', '=', $temporaryMember->name],
+                ['status', '=', 'Approved'],
+            ])
+            ->orderBy('id', 'asc')
+            ->get();
+        } else if ($permanentMember) {
+            // Fetch categories added by the permanent member
+            $categories = Tree::where([
+                ['parent_id', '=', 0],
+                ['added_by', '=', $permanentMember->name]
+            ])
+            ->orderBy('id', 'asc')
+            ->get();
+        }
+        else {
+            $categories = Tree::whereNull('parent_id')->orderBy('id', 'asc')->get();
+        }
+        $allCategories = Tree::pluck('title', 'id')->all();
         return view('categoryTreeview', compact('categories', 'allCategories'));
     }
     public function educationist()
     {
-        $categories = Tree::where('parent_id', '=', 0)->orderBy('sr', 'asc')->get();
-        $allCategories = Tree::pluck('title', 'sr')->all();
+        $categories = Tree::where('parent_id', '=', 0)->orderBy('id', 'asc')->get();
+        $allCategories = Tree::pluck('title', 'id')->all();
         return view('educationist', compact('categories', 'allCategories'));
     }
 
@@ -55,12 +80,53 @@ class CategoryController extends Controller
             return response()->json(['success' => 'رائے  کا اندراج ہو گیا ہے']);
         }
     }
+    /**
+     * Add a new topic to the tree and associated details.
+     *
+     * This function validates the incoming request, creates a new entry in the 
+     * Tree model, and also creates related entries in the Detail, Easy, Yaad, 
+     * and Mahol models.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Tree $tree
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addTopic(Request $request, Tree $tree)
+    {
+        // Validate the request
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'detail' => 'required',
+            'hawala' => 'required',
+            'easy' => 'required',
+            'sunana' => 'nullable',
+        ]);
+        // Determine the serial number
+        $serialNumber = $tree->max('id') + 1;
 
+        // Check if a temporary or permanent member is logged in
+        $member = Auth::guard('temporary-member')->user() ?? Auth::guard('member')->user();
+        $treeEntry = $tree->create([
+            'title' => $request->title,
+            'id' => $serialNumber,
+            'parent_id' => 0, // Default parent_id to 0 if not provided
+            'status' => $member && Auth::guard('temporary-member')->check() ? 'Pending' : '', 
+            'added_by' => $member->name ?? null, 
+        ]);
+        
+        // Create related entries
+        $treeEntry->detail()->create(['detail' => $validatedData['detail']]);
+        $treeEntry->easy()->create(['easy' => $validatedData['easy']]);
+        $treeEntry->yaad()->create();
+        $treeEntry->mahol()->create(['sunana' => $validatedData['sunana'] ?? null]);
+
+        return response()->json(['success' => 'نئے عنوان کا اندراج ہو گیا ہے']);
+    }
     public function addCategory(Request $request, Tree $tree)
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required',
-            'sr' => 'unique:trees'
+            'id' => 'unique:trees'
         ]);
 
         if ($validator->fails()) {
@@ -71,7 +137,6 @@ class CategoryController extends Controller
             $input['parent_id'] = empty($input['parent_id']) ? 0 : $input['parent_id'];
             $tree->create([
                 'id' => $input['id'],
-                'sr' => $input['sr'],
                 'title' => $input['title'],
                 'parent_id' => $input['parent_id'],
             ]);
@@ -214,7 +279,7 @@ class CategoryController extends Controller
         $easy = Easy::find($id);
         $yaad = Yaad::find($id);
         $mahol = Mahol::find($id);
-        $allCategories = Tree::pluck('title', 'sr')->all();
+        $allCategories = Tree::pluck('title', 'id')->all();
         return view('edit', compact('tree', 'detail', 'easy', 'yaad', 'allCategories', 'mahol'));
     }
     public function comment(Request $request)
@@ -253,10 +318,10 @@ class CategoryController extends Controller
     public function nav($id)
     {
         $tab = Tree::find($id);
-        $sr = $tab['sr'];
+        $id = $tab['id'];
         $parenId = $tab['parent_id'];
-        $parentTitle = Tree::where('sr', '=', $parenId)->pluck('title')->toArray();
-        $parentPid = Tree::where('sr', '=', $parenId)->get()->toArray();
+        $parentTitle = Tree::where('id', '=', $parenId)->pluck('title')->toArray();
+        $parentPid = Tree::where('id', '=', $parenId)->get()->toArray();
         $parent2Title = null;
         $parent3Title = null;
         $parent4Title = null;
@@ -265,29 +330,29 @@ class CategoryController extends Controller
         $parent7Title = null;
         $parent8Title = null;
         if ($parentTitle != []) {
-            $parentPid = Tree::where('sr', '=', $parenId)->get()->toArray();
+            $parentPid = Tree::where('id', '=', $parenId)->get()->toArray();
             $one = $parentPid[0]['parent_id'];
-            $parent2Title = Tree::where('sr', '=', $one)->pluck('title')->toArray();
+            $parent2Title = Tree::where('id', '=', $one)->pluck('title')->toArray();
             if ($parent2Title != []) {
-                $parentPid2 = Tree::where('sr', '=', $one)->get()->toArray();
+                $parentPid2 = Tree::where('id', '=', $one)->get()->toArray();
                 $two = $parentPid2[0]['parent_id'];
-                $parent3Title = Tree::where('sr', '=', $two)->pluck('title')->toArray();
+                $parent3Title = Tree::where('id', '=', $two)->pluck('title')->toArray();
                 if ($parent3Title != []) {
-                    $parentPid3 = Tree::where('sr', '=', $two)->get()->toArray();
+                    $parentPid3 = Tree::where('id', '=', $two)->get()->toArray();
                     $three = $parentPid3[0]['parent_id'];
-                    $parent4Title = Tree::where('sr', '=', $three)->pluck('title')->toArray();
+                    $parent4Title = Tree::where('id', '=', $three)->pluck('title')->toArray();
                     if ($parent4Title != []) {
-                        $parentPid4 = Tree::where('sr', '=', $three)->get()->toArray();
+                        $parentPid4 = Tree::where('id', '=', $three)->get()->toArray();
                         $four = $parentPid4[0]['parent_id'];
-                        $parent5Title = Tree::where('sr', '=', $four)->pluck('title')->toArray();
+                        $parent5Title = Tree::where('id', '=', $four)->pluck('title')->toArray();
                         if ($parent5Title != []) {
-                            $parentPid5 = Tree::where('sr', '=', $four)->get()->toArray();
+                            $parentPid5 = Tree::where('id', '=', $four)->get()->toArray();
                             $five = $parentPid5[0]['parent_id'];
-                            $parent6Title = Tree::where('sr', '=', $five)->pluck('title')->toArray();
+                            $parent6Title = Tree::where('id', '=', $five)->pluck('title')->toArray();
                             if ($parent6Title != []) {
-                                $parentPid6 = Tree::where('sr', '=', $five)->get()->toArray();
+                                $parentPid6 = Tree::where('id', '=', $five)->get()->toArray();
                                 $six = $parentPid6[0]['parent_id'];
-                                $parent7Title = Tree::where('sr', '=', $six)->pluck('title');
+                                $parent7Title = Tree::where('id', '=', $six)->pluck('title');
                             }
                         }
                     }
@@ -295,7 +360,7 @@ class CategoryController extends Controller
             }
         }
         $data = [
-            'sr' => $sr,
+            'id' => $id,
             'parentTitle' => $parentTitle,
             'parent2Title' => $parent2Title,
             'parent3Title' => $parent3Title,
@@ -329,8 +394,52 @@ class CategoryController extends Controller
             compact('childs', 'level', 'navigation')
         );
     }
-   
-    
-    
 
+    /**
+     * Search for categories based on the provided search parameters.
+     *
+     * This function retrieves all records from the `Tree` model that match the
+     * specified title search criteria.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\View\View
+     */
+    public function searchCategory(Request $request): \Illuminate\View\View
+    {
+        $searchParams = trim($request->input('searchParams', ''));
+        $mapping = [];
+        $treeLastChildrenRecords = null;
+        if(!empty($searchParams)) {
+            $filteredRecords = Tree::where('title','like','%'.$searchParams.'%');
+            $treeLastChildrenRecords = $filteredRecords->with('parent')->whereNotIn('parent_id',$filteredRecords->pluck('id'))->paginate(10);
+            if($treeLastChildrenRecords->count() > 0) {
+                $this->getParentRecord($treeLastChildrenRecords, $mapping);
+            }
+        }
+        return view('showCategory', compact('mapping', "treeLastChildrenRecords"));
+    }
+
+    /**
+     * @param $tree
+     * @param $mapping
+     * @return void
+     */
+    private function getParentRecord($tree, &$mapping): void
+    {
+        foreach($tree as $node) {
+            if(!is_null($node)) {
+                $node->level = $node->ancestors()->count();
+//                if($node->ancestors()->count() > 0) {
+//                    $parents = [];
+//                    foreach($node->ancestors() as $key => $ancestor) {
+//                        $ancestor->level = $node->ancestors()->count() - ($key +1);
+//                        $parents[] = $ancestor;
+//                    }
+//                    $mapping = array_merge($mapping, array_reverse($parents));
+//                }
+                    $mapping[] = $node;
+            }
+
+        }
+    }
 }

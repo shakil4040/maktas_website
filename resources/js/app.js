@@ -1,6 +1,8 @@
 require('./bootstrap')
     // 1. Define route components.
     // These can be imported from other files
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS (includes Popper.js)
 import * as VueRouter from 'vue-router';
 import * as Vue from 'vue';
 import App from './components/App';

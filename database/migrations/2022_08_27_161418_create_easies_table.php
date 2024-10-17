@@ -15,6 +15,8 @@ class CreateEasiesTable extends Migration
     {
         Schema::create('easies', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('tree_id')->nullable();
+            $table->foreign('tree_id')->references('id')->on('trees')->onDelete('NO ACTION')->onUpdate('NO ACTION');
             $table->string('easy')->nullable();
             $table->string('mukhatab')->nullable();
             $table->string('rafe_ishkal')->nullable();
@@ -33,7 +35,8 @@ class CreateEasiesTable extends Migration
             $table->string('amli_mashq')->nullable();
             $table->string('taluq')->nullable();
             $table->string('muharik')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrent()->useCurrentOnUpdate();
             $table->index('id');
         });
     }
