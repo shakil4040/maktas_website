@@ -11,6 +11,9 @@
     background-position-x: center;
     background-position-y: center;
 }
+.input-field-size {
+    width: 77%;
+}
 
 .tree,
 .tree ul {

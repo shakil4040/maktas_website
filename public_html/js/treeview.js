@@ -87,10 +87,10 @@ $(document).ready(function () {
             }
         });
     });
-    //search for tree
-    $("#searcht").keyup(function () {
+    // Search for tree when search button is clicked
+    $("#searchButton").click(function () {
         const searchValue = $("#searcht").val();
-        if(searchValue.length !== 0 && searchValue !== "") {
+        if (searchValue.length !== 0 && searchValue !== "") {
             $(".ctitle").each(function () {
                 $(this).parent().parent(".detail1").hide();
             });
@@ -111,6 +111,13 @@ $(document).ready(function () {
                     $(this).parent().parent(".detail1").parent().show();
                 }
             });
+        }
+    });
+    // Automatically reload tree data when the input field is cleared (keyup event)
+    $("#searcht").on("keyup", function () {
+        const searchValue = $(this).val().trim();
+        if (searchValue.length === 0) {
+            location.reload();
         }
     });
 

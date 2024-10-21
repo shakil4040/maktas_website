@@ -545,12 +545,12 @@
                             </div>
                         </div>
                         <button data-toggle="modal" data-target="#exampleModal" style="position: fixed;left: 0px;z-index: 999999999;" class="btn btn-success">اپنا نصاب بنائیں</button>
-                        <div class="title islam1">
+                        <div class="title islam1 mr-1">
                             <h1 style="font-size:35px;margin-bottom:1.5rem;">اسلام</h1>
                         </div>
                         <div class="d-flex navw">
-                            <input id="searcht" style="padding: 0px 10px;" placeholder="نظر آنے والے عنوانات میں  تلاش کرنے کے لیے یہاں لکھیں" type="search">
-                            <button class="btn ml-1 btn-primary"><i class="fa fa-search"></i></button>
+                            <input id="searcht" class="mr-1 input-field-size" style="padding: 0px 10px;" placeholder="نظر آنے والے عنوانات میں  تلاش کرنے کے لیے یہاں لکھیں" type="search">
+                            <button id="searchButton" class="btn ml-1 mr-1 btn-primary">@lang("tree.Search")<i class="fa fa-search mr-1"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
                         @if(auth()->user()->isMember())

@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail;
+use App\Models\Easy;
+use App\Models\Mahol;
 use App\Models\Tree;
 use App\Models\Admin;
 use App\Models\Member;
+use App\Models\Yaad;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Imports\TreeDataImport;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -346,5 +351,21 @@ class AdminController extends Controller
     {
         $titles = !empty($request->get("title")) ? Tree::where('title','LIKE',trim($request->get("title"))."%")->get(['title','id']) : [];
         return response()->json(["filterTitles" => $titles ]);
+    }
+
+    /**
+     * @method truncateAllCourses
+     * @return JsonResponse
+     * @author Muhammad ali khalid ramay
+     */
+    public function truncateAllCourses() : JsonResponse {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Yaad::truncate();
+        Mahol::truncate();
+        Easy::truncate();
+        Detail::truncate();
+        Tree::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        return response()->json(["truncateAllCourses" => true ]);
     }
 }

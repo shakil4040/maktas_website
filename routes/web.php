@@ -48,14 +48,16 @@ Route::get('/get-child2/{id}/{level}/{title}','CategoryController@getChild2');
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');
 
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::view('/dashboard', 'dashboards.dashboard');
-    Route::get('/dashboard/profile','AdminController@profile');
-    Route::get('/dashboard/register', 'Auth\RegisterController@showMemberRegisterForm')->name('register.member');
-    Route::post('/dashboard/register', 'Auth\RegisterController@createMember');
-    Route::get('/dashboard/members', 'AdminController@members');
-    Route::get('/dashboard/upload', 'AdminController@upload');
-    Route::get('/dashboard/download-file-options', 'AdminController@showDownloadFileOptions');
+
+Route::group(['middleware' => ['auth.admin']], function () {
+
+    Route::get('admin-profile','AdminController@profile');
+    Route::get('/register/member', 'Auth\RegisterController@showMemberRegisterForm');
+    Route::post('/register/member', 'Auth\RegisterController@createMember');
+    Route::get('/members', 'AdminController@members');
+    Route::get('/upload', 'AdminController@upload');
+    Route::get('/clearCourses', 'AdminController@truncateAllCourses');
+    Route::get('/admin-download-options', 'AdminController@showDownloadFileOptions');
     Route::get("/filter-by-title", "AdminController@filterByTitle")->name("admin.filterTitle");
     Route::post('/dashboard/uploadFile', 'AdminController@uploadFile');
     Route::get('/dashboard/{id}/edit', 'AdminController@editUser');
