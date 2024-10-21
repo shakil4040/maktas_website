@@ -3,16 +3,16 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        @if(auth()->user()->admin)
+        @if(auth()->user()->isAdmin())
         <div class="col-md-4">
-            @include('partials.admin-sidebar')
+            @include('partials.sidebar')
         </div>
         @endif
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Member Regiter</div>
+                <div class="card-header">Create Member</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ url('register/member') }}">
+                    <form method="POST" action="{{ url('/dashboard/register') }}">
                         @csrf
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -77,7 +77,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-dark">
-                                    {{ __('Register') }}
+                                    {{ __('Submit') }}
                                 </button>
                             </div>
                         </div>

@@ -22,7 +22,7 @@ class CreateTreesTable extends Migration
             $table->integer('naseeha_com')->nullable();
             $table->integer('maktab_com')->nullable();
             $table->integer('government_com')->nullable();
-            $table->tinyInteger('status')->default(true); // Add status column
+            $table->string('status')->nullable(); // Add status column
             $table->string('added_by')->nullable();
             $table->json('structure')->nullable();
             $table->timestamp('created_at')->useCurrent();

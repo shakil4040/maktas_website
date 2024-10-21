@@ -38,9 +38,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        // $this->middleware('guest:member')->except('logout');
-        // $this->middleware('guest:admin')->except('logout');
-        // $this->middleware('guest:temporary-member')->except('logout');
     }
     public function vuelogin(Request $request)
     {
@@ -85,96 +82,18 @@ class LoginController extends Controller
         // Attempt to log the user in
         if (Auth::guard('web')->attempt($request->only('email', 'password'), $request->filled('remember'))) {
             $user = Auth::user();  // Get the logged-in user
-
             // Check user type and redirect accordingly
-            if ($user->user_type === 'App\Models\Admin') {
-                return redirect()->intended('/admin');
-            } elseif ($user->user_type === 'App\Models\Member') {
-                return redirect()->intended('/member');
-            } elseif ($user->user_type === 'App\Models\Member') {
-                return redirect()->intended('/temporary-member');
+            if ($user->isAdmin()) {
+                return redirect()->intended('/dashboard');
+            } elseif ($user->isMember() && $user->userable->is_approve == 1) {
+                return redirect()->intended('/dashboard');
+            } elseif ($user->isMember() && $user->userable->is_approve == 0) {
+                return redirect()->intended('/dashboard');
+            } else {
+                // Default redirection if no role match
+                return redirect()->intended('/home');
             }
-
-            // Default redirection if no role match
-            return redirect()->intended('/home');
         }
         return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
     }
-    /*
-    public function showAdminLoginForm()
-    {
-        return view('auth.login', ['url' => 'admin']);
-    }
-
-    public function adminLogin(Request $request)
-    {
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
-        ]);
-        if (\Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
-            return redirect()->intended('/admin');
-        }
-        else{
-            return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
-        }
-    }
-
-    public function showMemberLoginForm()
-    {
-        return view('auth.login', ['url' => 'member']);
-    }
-
-    public function memberLogin(Request $request)
-    {
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
-        ]);
-
-        if (\Auth::guard('member')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            return redirect()->intended('/member');
-        } else{
-            return back()->with('flash_message_error','Invalid Username or Password')->withInput($request->only('email', 'remember'));
-        }
-    }*/
-
-    /**
-     * Show the login form for temporary members.
-     *
-     * This function returns the view for the login page, specifying that the 
-     * login is for a temporary member by passing the 'url' parameter.
-     *
-     * @return \Illuminate\View\View
-     */
-    /* public function showTempMemberLoginForm()
-    {
-        return view('auth.login', ['url' => 'temporary-member']);
-    }*/
-
-    /**
-     * Handle the login request for a temporary member.
-     *
-     * This function validates the login credentials provided by the temporary member.
-     * It then attempts to authenticate the user using the 'temporary-member' guard.
-     * If successful, the user is redirected to the intended page. 
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    /* public function tempMemberLogin(Request $request)
-    {
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6',
-        ]);
-
-        // Attempt to log in using the temporary-member guard
-        if (\Auth::guard('temporary-member')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/temporary-member');
-        } else {
-            return back()->with('flash_message_error', 'Invalid Username or Password')->withInput($request->only('email', 'remember'));
-        }
-    }*/
 }

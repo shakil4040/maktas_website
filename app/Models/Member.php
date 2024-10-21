@@ -13,7 +13,6 @@ class Member extends Authenticatable
     // use HasFactory, Notifiable;
 
 
-    protected $guard = 'member';
 
     /**
      * The attributes that are mass assignable.
@@ -51,10 +50,10 @@ class Member extends Authenticatable
     }
 
     /**
-     * A member can have one user.
+     * Define the one-to-many polymorphic relationship
      */
-    public function user()
+    public function users()
     {
-        return $this->hasOne(User::class, 'user_type_id');
+        return $this->morphMany(User::class, 'userable');
     }
 }

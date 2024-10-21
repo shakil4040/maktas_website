@@ -42,54 +42,33 @@ Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm')->middleware('guest:admin');
 
-Route::view('/member', 'dashboards.member');
 Route::get('/get-child/{id}/{level}/{title}','CategoryController@getChild');
 Route::get('/get-child2/{id}/{level}/{title}','CategoryController@getChild2');
 
-
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');
 
-Route::view('/admin', 'dashboards.admin');
-// ->middleware('auth.admin');
 
-
-Route::group([], function () {
-
-    Route::get('admin-profile','AdminController@profile');
-    Route::get('/register/member', 'Auth\RegisterController@showMemberRegisterForm')->name('register.member');
-    Route::post('/register/member', 'Auth\RegisterController@createMember');
-    Route::get('/members', 'AdminController@members');
-    Route::get('/upload', 'AdminController@upload');
-    Route::get('/admin-download-options', 'AdminController@showDownloadFileOptions');
+Route::group(['middleware' => 'auth'], function () {
+    Route::view('/dashboard', 'dashboards.dashboard');
+    Route::get('/dashboard/profile','AdminController@profile');
+    Route::get('/dashboard/register', 'Auth\RegisterController@showMemberRegisterForm')->name('register.member');
+    Route::post('/dashboard/register', 'Auth\RegisterController@createMember');
+    Route::get('/dashboard/members', 'AdminController@members');
+    Route::get('/dashboard/upload', 'AdminController@upload');
+    Route::get('/dashboard/download-file-options', 'AdminController@showDownloadFileOptions');
     Route::get("/filter-by-title", "AdminController@filterByTitle")->name("admin.filterTitle");
-    Route::post('/admin/uploadFile', 'AdminController@uploadFile');
-    Route::get('/admin/{admin}/edit', 'AdminController@editAdmin');
-    Route::patch('/admin/{admin}', 'AdminController@updateAdmin');
-    Route::get('/member/{member}/edit', 'AdminController@editMember');
-    Route::patch('/member/{member}', 'AdminController@updateMember');
-    Route::get('delete2/{member}','AdminController@destroy');
-    Route::get('/pending-topics', 'AdminController@pendingTopics')->name('admin.pendingTopics');;
-    Route::get('/admin-download-file', 'AdminController@downloadFile');
-    Route::post('/admin-download-by-titles', 'AdminController@downloadFileByTitles');
-    Route::post('/admin-download-by-date', 'AdminController@downloadFileByDate');
-    Route::patch('/member/{id}/approve', 'AdminController@approveMember')->name('members.approve');
-    Route::delete('/member/{id}/delete', 'AdminController@deleteMember')->name('members.delete');
-    Route::patch('/topics/{id}/accept', 'AdminController@acceptTopic')->name('topics.accept');
-    Route::patch('/topics/{id}/reject', 'AdminController@reject')->name('topics.reject');
+    Route::post('/dashboard/uploadFile', 'AdminController@uploadFile');
+    Route::get('/dashboard/{id}/edit', 'AdminController@editUser');
+    Route::patch('/dashboard/{id}', 'AdminController@updateUser');
+    Route::get('/dashboard/pending-topics', 'AdminController@pendingTopics')->name('admin.pendingTopics');
+    Route::get('/dashboard/download-file', 'AdminController@downloadFile');
+    Route::post('/dashboard/download-by-titles', 'AdminController@downloadFileByTitles');
+    Route::post('/dashboard/download-by-date', 'AdminController@downloadFileByDate');
+    Route::patch('/dashboard/member/{id}/approve', 'AdminController@approveMember')->name('members.approve');
+    Route::delete('/dashboard/member/{id}/delete', 'AdminController@deleteMember')->name('members.delete');
+    Route::patch('/dashboard/topics/{id}/accept', 'AdminController@acceptTopic')->name('topics.accept');
+    Route::patch('/dashboard/topics/{id}/reject', 'AdminController@reject')->name('topics.reject');
 });
-
-// Member Routes
-// Route::group(['middleware' => ['auth.member']], function () {
-    Route::get('/member-profile', 'MemberController@profile');
-    Route::get('/member/{member}/edit', 'MemberController@editMember');
-    Route::patch('/member/{member}', 'MemberController@updateMember');
-    Route::get('/member/upload', 'MemberController@upload');
-    Route::post('/member/uploadFile', 'MemberController@uploadFile');
-    Route::get('/download-options', 'MemberController@showDownloadFileOptions');
-    Route::get('/download-file', 'MemberController@download');
-    Route::post('/download-by-titles', 'MemberController@downloadFileByTitles');
-    Route::post('/download-by-date', 'MemberController@downloadFileByDate');
-// });
 // Search Request 
 Route::get('/searchTopic', 'CategoryController@searchCategory');
 
@@ -110,30 +89,23 @@ Route::get('/governmentClasses','ComparisonController@governmentClasses');
 Route::get('/governmentBasic/{class}','ComparisonController@governmentBasic');
 Route::get('/governmentDetailed/{class}','ComparisonController@governmentDetailed');
 
-// Temporary Member Dashboard Route
-Route::group(['middleware' => ['auth.temporary-member']], function () {
-    Route::view('/temporary-member', 'dashboards.temporary-member');
-    Route::get('/temp-member-profile', 'MemberController@tempMemberProfile');
-    Route::get('/temp-member/{member}/edit', 'MemberController@editTempMember');
-    Route::patch('/temp-member/{member}', 'MemberController@updateTempMember');
-});
-
 Route::post('/logout', function () {
     // Get the currently authenticated user
     $user = auth()->user();
 
     // Check if the user is authenticated and has a user_type
-    if ($user && $user->user_type) {
-        if (in_array($user->user_type, ['App\Models\Admin', 'App\Models\Member', 'App\Models\TemporaryMember'])) {
+    if ($user && $user->userable_type) {
+        // Define an array of allowed user types
+        $allowedUserTypes = ['App\Models\Admin', 'App\Models\Member'];
+        if (in_array($user->userable_type, $allowedUserTypes)) {
             auth()->logout();
-            return redirect('/login');
+            return redirect('/login')->with('success', 'You have been logged out successfully.');;
         }
     }
     // Fallback if no user is authenticated or user_type doesn't match
     auth()->logout();
-    return redirect('/login');
+    return redirect('/login')->withErrors('Unable to logout.');;
 })->name('logout');
 
-
 Route::get('{any}','UserCheckController@userCheckView')->where('any','.*');
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

@@ -10,11 +10,18 @@
 <div class="container">
     <div class="row justify-content-center my-5">
         <div class="col-md-8">
-            @if($message= Session::get('flash_message_error'))
-            <div class="alert alert-danger alert-block">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong>{{ $message }}</strong>
-            </div>
+            @if(Session::has('flash_message_error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{ Session::get('flash_message_error') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if(Session::has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
+                    <strong>{{ Session::get('success') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             @endif
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -69,3 +76,12 @@
     </div>
 </div>
 @endsection
+<script>
+    window.setTimeout(function() {
+        const successAlert = document.getElementById('success-alert');
+        if (successAlert) {
+            successAlert.classList.add('fade');
+            successAlert.style.display = 'none';
+        }
+    }, 5000); // 5 seconds
+</script>

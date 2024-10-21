@@ -12,7 +12,6 @@ class Admin extends Authenticatable
 {
     use Notifiable;
 
-    protected $guard = 'admin';
 
     /**
      * The attributes that are mass assignable.
@@ -48,8 +47,11 @@ class Admin extends Authenticatable
         $this->notify(new ResetPasswordNotification($token));
     }
 
+    /**
+     * Define polymorphic relationship
+    */
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_type_id');
+        return $this->morphOne(User::class, 'userable');
     }
 }

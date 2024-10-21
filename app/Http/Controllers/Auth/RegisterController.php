@@ -97,12 +97,12 @@ class RegisterController extends Controller
                     'username' => $request->name,
                     'email' => $request->email,
                     'password' => Hash::make($request->password),
-                    'user_type_id' => $member->id,
-                    'user_type' => Member::class,
+                    'userable_id' => $member->id,
+                    'userable_type' => Member::class,
                 ]);
 
                 // Return success message with redirection
-                return redirect()->intended('/members')->with('success', 'Member Added Successfully');
+                return redirect()->intended('/dashboard/members')->with('success', 'Member Added Successfully');
             }, 5);
         } catch (\Throwable $th) {
             throw $th;

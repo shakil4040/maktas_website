@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password', 'user_type_id', 'user_type',
+        'username', 'email', 'password', 'userable_id', 'userable_type',
     ];
 
     /**
@@ -58,13 +58,34 @@ class User extends Authenticatable
         return $this->hasManyThrough(Permission::class, Role::class);
     }
 
-    public function admin()
+    public function userable()
     {
-        return $this->hasOne(Admin::class, 'id');
+        return $this->morphTo();
     }
 
-    public function member()
+    public function isAdmin()
     {
-        return $this->belongsTo(Member::class, 'id');
+        return $this->userable_type == Admin::class;
+    }
+
+    public function isMember()
+    {
+        return $this->userable_type == Member::class;
+    }
+
+    public function getMember()
+    {
+        if ($this->isMember()) {
+            return $this->userable;
+        }
+        return null;
+    }
+
+    public function getAdmin()
+    {
+        if ($this->isAdmin()) {
+            return $this->userable;
+        }
+        return null;
     }
 }

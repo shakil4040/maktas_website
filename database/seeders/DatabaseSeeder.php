@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
             'username' => Str::slug($admin->name, '_'),
             'email' => $admin->email,
             'password' => Hash::make('password'), // Password hashing
-            'user_type_id' => $admin->id, // Using admin's ID as user_type_id
-            'user_type' => Admin::class, // Store the full class path for the admin model
+            'userable_id' => $admin->id,
+            'userable_type' => Admin::class, // Store the full class path for the admin model
             'remember_token' => Str::random(30),
             'created_at' => now(),
             'updated_at' => now(),

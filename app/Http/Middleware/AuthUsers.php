@@ -19,7 +19,7 @@ class AuthUsers
     public function handle($request, Closure $next)
     {
         if (false == Auth::guard('web')->check()) {
-            return redirect()->route('login');
+            return redirect('login');
         }
         return $next($request);
     }
