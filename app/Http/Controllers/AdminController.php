@@ -146,8 +146,9 @@ class AdminController extends Controller
         try {
             $members = Member::all();
             if ($members->isEmpty()) {
-                // Handle the case when there are no members
-                return redirect()->back()->with('error', 'No members found.');
+                // Handle the case when there are no pending topics
+                $error = 'Oops! No members found.';
+                return view('admin.members', compact('members', 'error'));
             }
             return view('admin.members', compact('members'));
         } catch (\Throwable $th) {
