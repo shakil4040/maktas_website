@@ -6,17 +6,15 @@
 
 <div class="container">
     @if($message= Session::get('success'))
-    <div class="alert alert-success alert-block">
-        <button type="button" class="close" data-dismiss="alert">x</button>
-        <strong>{{ $message }}</strong>
-    </div>
+        <div id="successMessage" class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>{{ $message }}</strong>
+        </div>
     @endif
     <div class="row justify-content-center">
-
-    <div class="col-md-4">
+        <div class="col-md-4">
             @include('partials.admin-sidebar')
         </div>
-
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
@@ -46,7 +44,11 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 @endsection
+<script>
+    setTimeout(function() {
+        document.getElementById('successMessage').style.display = 'none';
+    }, 3000);
+</script>

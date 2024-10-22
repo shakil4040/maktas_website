@@ -17,6 +17,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Exports\TreeDataExport;
+use Illuminate\Http\RedirectResponse;
 
 class AdminController extends Controller
 {
@@ -264,10 +265,10 @@ class AdminController extends Controller
 
     /**
      * @method truncateAllCourses
-     * @return JsonResponse
+     * @return RedirectResponse
      * @author Muhammad ali khalid ramay
      */
-    public function truncateAllCourses() : JsonResponse {
+    public function truncateAllCourses() : RedirectResponse {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Yaad::truncate();
         Mahol::truncate();
@@ -275,6 +276,8 @@ class AdminController extends Controller
         Detail::truncate();
         Tree::truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        return response()->json(["truncateAllCourses" => true ]);
+
+        // Flash the success message and redirect back
+        return redirect()->back()->with('success', 'Courses Successfully Cleared!');
     }
 }

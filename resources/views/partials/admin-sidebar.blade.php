@@ -10,6 +10,7 @@
                 <li><a href="/upload">Upload File</a></li>
                 <li><a href="/admin-download-options">Download File</a></li>
                 <li><a href="/pending-topics">Pending Topics</a></li>
+                <li><a href="/clearCourses">Clear Courses</a></li>
                 <!-- <li><a href="/consignments/create ">Add Consignment</a></li>
                 <li><a href="/consignments ">Consignments</a></li> -->
             </ul>
