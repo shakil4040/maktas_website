@@ -47,23 +47,22 @@ Route::get('/get-child2/{id}/{level}/{title}','CategoryController@getChild2');
 
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');
 
-
-
-Route::group(['middleware' => ['auth.admin']], function () {
-
-    Route::get('admin-profile','AdminController@profile');
-    Route::get('/register/member', 'Auth\RegisterController@showMemberRegisterForm');
-    Route::post('/register/member', 'Auth\RegisterController@createMember');
-    Route::get('/members', 'AdminController@members');
-    Route::get('/upload', 'AdminController@upload');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', function() {
+        return view('dashboards.index');
+    })->name('dashboard');
+    Route::get('/dashboard/profile','AdminController@profile');
+    Route::get('/dashboard/register', 'Auth\RegisterController@showMemberRegisterForm');
+    Route::post('/dashboard/register', 'Auth\RegisterController@createMember');
+    Route::get('/dashboard/members', 'AdminController@members');
+    Route::get('/dashboard/upload', 'AdminController@upload');
     Route::get('/clearCourses', 'AdminController@truncateAllCourses');
-    Route::get('/admin-download-options', 'AdminController@showDownloadFileOptions');
+    Route::get('/dashboard/download-file-options', 'AdminController@showDownloadFileOptions');
     Route::get("/filter-by-title", "AdminController@filterByTitle")->name("admin.filterTitle");
     Route::post('/dashboard/uploadFile', 'AdminController@uploadFile');
     Route::get('/dashboard/{id}/edit', 'AdminController@editUser');
     Route::patch('/dashboard/{id}', 'AdminController@updateUser');
     Route::get('/dashboard/pending-topics', 'AdminController@pendingTopics')->name('admin.pendingTopics');
-    Route::get('/dashboard/download-file', 'AdminController@downloadFile');
     Route::post('/dashboard/download-by-titles', 'AdminController@downloadFileByTitles');
     Route::post('/dashboard/download-by-date', 'AdminController@downloadFileByDate');
     Route::patch('/dashboard/member/{id}/approve', 'AdminController@approveMember')->name('members.approve');

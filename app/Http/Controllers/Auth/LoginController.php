@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -82,13 +83,10 @@ class LoginController extends Controller
         // Attempt to log the user in
         if (Auth::guard('web')->attempt($request->only('email', 'password'), $request->filled('remember'))) {
             $user = Auth::user();  // Get the logged-in user
+
             // Check user type and redirect accordingly
-            if ($user->isAdmin()) {
-                return redirect()->intended('/dashboard');
-            } elseif ($user->isMember() && $user->userable->is_approve == 1) {
-                return redirect()->intended('/dashboard');
-            } elseif ($user->isMember() && $user->userable->is_approve == 0) {
-                return redirect()->intended('/dashboard');
+            if ($user->isAdmin() || $user->isMember()) {
+                return redirect()->intended('/dashboard')->with('success', 'You have successfully logged in');
             } else {
                 // Default redirection if no role match
                 return redirect()->intended('/home');

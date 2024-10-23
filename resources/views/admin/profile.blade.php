@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-block">
+            <div id="successMessage" class="alert alert-success alert-block">
                 <button type="button" class="close" data-dismiss="alert">x</button>
                 <strong>{{ $message }}</strong>
             </div>
@@ -46,3 +46,8 @@
         </div>
     </div>
 @endsection
+<script>
+    setTimeout(function() {
+        document.getElementById('successMessage').style.display = 'none';
+    }, 3000);
+</script>
