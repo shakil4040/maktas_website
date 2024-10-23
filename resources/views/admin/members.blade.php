@@ -8,10 +8,10 @@
         <strong>{{ $message }}</strong>
     </div>
     @endif
-    @if(session('error'))
+    @if (!empty($error))
         <div class="alert alert-danger alert-block">
             <button type="button" class="close" data-dismiss="alert">x</button>
-            <strong> {{ session('error') }}</strong>
+            <strong>{{ $error }}</strong>
         </div>
     @endif
     <div class="row justify-content-center">

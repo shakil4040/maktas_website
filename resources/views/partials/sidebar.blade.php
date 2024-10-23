@@ -9,6 +9,7 @@
                     <li><a href="/dashboard/register">Add Member</a></li>
                     <li><a href="/dashboard/members">Members</a></li>
                     <li><a href="/dashboard/pending-topics">Pending Topics</a></li>
+                    <li><a href="/clearCourses">Clear Courses</a></li>
                 @endif
                 @if(auth()->user()->isAdmin() || auth()->user()->userable->is_approve == 1)
                     <li><a href="/dashboard/upload">Upload File</a></li>
