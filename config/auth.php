@@ -46,18 +46,22 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
-        'member' => [
-            'driver' => 'session',
-            'provider' => 'members',
-        ],
-        'temporary-member' => [
-            'driver' => 'session',
-            'provider' => 'members',
-        ],
+        // 'user' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
+        // 'admin' => [
+        //     'driver' => 'session',
+        //     'provider' => 'admins',
+        // ],
+        // 'member' => [
+        //     'driver' => 'session',
+        //     'provider' => 'members',
+        // ],
+        // 'temporary-member' => [
+        //     'driver' => 'session',
+        //     'provider' => 'members',
+        // ],
     ],
 
     /*
@@ -80,16 +84,16 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\User::class,
         ],
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
-        'members' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Member::class,
-        ],
+        // 'admins' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Admin::class,
+        // ],
+        // 'members' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Member::class,
+        // ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

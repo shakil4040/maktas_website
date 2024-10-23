@@ -6,7 +6,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-4">
-            @include('partials.admin-sidebar')
+            @include('partials.sidebar')
         </div>
         <div class="col-md-8">
             @if(session()->get('message'))
@@ -21,7 +21,7 @@
                 <div class="card-header">{{ 'Upload FIle' }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/admin/uploadFile" enctype="multipart/form-data">
+                    <form method="POST" action="/dashboard/uploadFile" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-4">
-            @include('partials.admin-sidebar')
+            @include('partials.sidebar')
         </div>
         <div class="col-md-8">
             <div class="card">
@@ -16,7 +16,7 @@
                         <h4>Download all data</h4>
                         <div class="form-group row">
                             <div class="col-md-2">
-                                <a href="/admin-download-file"><button class="btn btn-dark">Download</button></a>
+                                <a href="download-file"><button class="btn btn-dark">Download</button></a>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                     <!-- Download Selected Topics Section -->
                     <div class="section mt-4">
                         <h4 class="{{ config('app.locale') == 'ur' ? 'text-right' : 'text-left' }}">@lang("tree.Choose Topic Title")</h4>
-                        <form method="POST" action="/admin-download-by-titles" id="downloadForm">
+                        <form method="POST" action="/dashboard/download-by-titles" id="downloadForm">
                             @csrf
                             <div class="form-group">
                                 <div id="loader" style="display: none;">Loading...</div>
@@ -38,7 +38,7 @@
                     <!-- Download by Date Range Section -->
                     <div class="section mt-4">
                         <h4>Download by Date Range</h4>
-                        <form method="POST" action="/admin-download-by-date" id="dateRangeForm">
+                        <form method="POST" action="/dashboard/download-by-date" id="dateRangeForm">
                             @csrf
                             <div class="form-group">
                                 <label for="startDate">Start Date:</label>

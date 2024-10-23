@@ -6,7 +6,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-3">
-            @include('partials.admin-sidebar')
+            @include('partials.sidebar')
         </div>
         <div class="col-md-8">
             <div class="card">

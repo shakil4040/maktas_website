@@ -462,14 +462,14 @@
 												</div>
 												<div class="ctitle list d-flex justify-content-between align-items-center">
 													{{ $category->title }}
-													@auth('admin')
-													@if(count($category->childs) == null)
-													<div class="d-flex">
-														<i class="fa fa-edit mx-2 sedit"></i>
-														<i class="fa fa-times-circle mx-2 delete"></i>
-													</div>
+													@if(auth()->user()->isAdmin())
+														@if(count($category->childs) == null)
+														<div class="d-flex">
+															<i class="fa fa-edit mx-2 sedit"></i>
+															<i class="fa fa-times-circle mx-2 delete"></i>
+														</div>
+														@endif
 													@endif
-													@endauth
 													@auth('member')
 													@if(count($category->childs) == null)
 													<div class="d-flex">

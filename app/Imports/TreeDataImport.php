@@ -98,6 +98,8 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $parentTitle = $parents[$row["titleStructure"]];
                     }
                     DB::transaction(function () use ($row, $structure, $index, $parentTitle, &$titles) {
+                        
+
                         $tree = new Tree;
                         $tree->title = $row['title'];
                         $tree->government_com = $row["government_com"] ?? 0;
@@ -105,14 +107,20 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $tree->structure = json_encode($structure[$index]);
                         $tree->levels = $row["levels"] ?? 0;
                         $tree->added_by = \Auth::user()->name ?? NULL;
+                        // if($row["title"] == "آپ  ﷺ  کے آباء واجداد") {
+                        //     dd($row, $structure, $parentTitle, $row["titleStructure"], $tree);
+                        // }
+                        // Log::info('Start row excel file1', [$row, $structure, $parentTitle, $row["titleStructure"], $tree]);
                         $tree->save();
                         if ($tree) {
+                            // dd($tree);
+                            // Log::info('Start row excel file2', [$row, $structure, $parentTitle, $row["titleStructure"], $tree]);
                             $titles[] = $row["titleStructure"];
                         }
-
+                        // Log::info('Start row excel file3', [$row, $structure, $parentTitle, $row["titleStructure"], $tree]);
                         $detail = new Detail;
                         $detail->abrar_id = $row["abrar_sahb_nmbr_shmar"];
-                        $detail->asif_id = $row["asf_sahb_nmbr_shmar"];
+                        $detail->asif_id  = $row["asf_sahb_nmbr_shmar"];
                         $detail->age = 1;
                         $detail->age_sr = $row["blhath_aamr"];
                         $detail->course_no = $row["nsaby_nmbr"];
@@ -173,6 +181,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
             }
 
         } catch (Exception $e) {
+            dd($e);
             \Log::error("Create & Update Error! ",[$e->getMessage(), "row" => $this->row]);
             \Log::error("Create & Update Detailed Error! ",[$e, "row" => $this->row]);
             $this->errorsMsgBag->add("errors","Oops! Something went wrong.");

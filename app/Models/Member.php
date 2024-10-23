@@ -13,7 +13,6 @@ class Member extends Authenticatable
     // use HasFactory, Notifiable;
 
 
-    protected $guard = 'member';
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +22,7 @@ class Member extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'is_approve',
     ];
 
     /**
@@ -48,5 +47,13 @@ class Member extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification2($token));
+    }
+
+    /**
+     * Define the one-to-many polymorphic relationship
+     */
+    public function users()
+    {
+        return $this->morphMany(User::class, 'userable');
     }
 }

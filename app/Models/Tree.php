@@ -49,24 +49,24 @@ class Tree extends Model
         return $this->hasMany(Tree::class, 'parent_id','id');
     }
     public function detail() {
-        return $this->hasOne('App\Models\Detail','id','id');
+        return $this->hasOne(Detail::class,'id','id');
     }
 
     public function easy() {
-        return $this->hasOne('App\Models\Easy','id','id');
+        return $this->hasOne(Easy::class,'id','id');
     }
 
     public function yaad() {
-        return $this->hasOne('App\Models\Yaad','id','id');
+        return $this->hasOne(Yass::class,'id','id');
     }
     public function mahol() {
-        return $this->hasOne('App\Models\Mahol','id','id');
+        return $this->hasOne(Mahol::class,'id','id');
     }
     public function tafseer() {
-        return $this->hasOne('App\Models\Tafseer','id','id');
+        return $this->hasOne(Tafseer::class,'id','id');
     }
     public function comments() {
-        return $this->hasMany('App\Models\Comment','tree_id','id') ;
+        return $this->hasMany(Comment::class,'tree_id','id') ;
     }
 
 }

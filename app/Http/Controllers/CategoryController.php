@@ -19,37 +19,59 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
+    /**
+     * Manage categories based on the user type (temporary member, permanent member, or admin).
+     * - Temporary members can view only their approved categories.
+     * - Permanent members can view all their categories.
+     * - Admins can view all categories.
+     * 
+     * Includes authentication checks and error handling via try-catch to manage any unexpected issues.
+     * 
+     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     */
     public function manageCategory()
     {
-        // Get the current logged-in user (temporary or permanent member)
-        $temporaryMember = Auth::guard('temporary-member')->user();
-        $permanentMember = Auth::guard('member')->user();
+        try {
+            // Initialize $allCategories to avoid undefined variable error
+            $allCategories = [];
+            $categories = [];
 
-        // Check if a temporary member is logged in
-        if ($temporaryMember) {
-            // Fetch categories added by the temporary member
-            $categories = Tree::where([
-                ['parent_id', '=', 0],
-                ['added_by', '=', $temporaryMember->name],
-                ['status', '=', 'Approved'],
-            ])
-            ->orderBy('id', 'asc')
-            ->get();
-        } else if ($permanentMember) {
-            // Fetch categories added by the permanent member
-            $categories = Tree::where([
-                ['parent_id', '=', 0],
-                ['added_by', '=', $permanentMember->name]
-            ])
-            ->orderBy('id', 'asc')
-            ->get();
+            // Get authenticated user
+            $user = Auth::user();
+            // Ensure the user is authenticated
+            if (!$user) {
+                return redirect('login');
+            }
+            // Check if the user is a member
+            if ($user->isMember()) {
+                // Check if the member is approved (permanent) or not approved (temporary)
+                if ($user->userable->is_approve == 0) {
+                    $temporaryMember = $user->userable->name;
+                    $categories = Tree::where([
+                        ['parent_id', '=', 0],
+                        ['added_by', '=', $temporaryMember],
+                        ['status', '=', 'Approved'],
+                    ])->orderBy('id', 'asc')->get();
+                } elseif ($user->userable->is_approve == 1) {
+                    $permanentMember = $user->userable->name;
+                    $categories = Tree::where([
+                        ['parent_id', '=', 0],
+                        ['added_by', '=', $permanentMember]
+                    ])->orderBy('id', 'asc')->get();
+                }
+            } 
+            // If the user is an admin
+            else if ($user->isAdmin()) {
+                $categories = Tree::whereNull('parent_id')->orderBy('id', 'asc')->get();
+                $allCategories = Tree::pluck('title', 'id')->all();
+            }
+            // Return the view with the categories and allCategories (admin case)
+            return view('categoryTreeview', compact('categories', 'allCategories'));
+        } catch (\Throwable $th) {
+            throw $th;
         }
-        else {
-            $categories = Tree::whereNull('parent_id')->orderBy('id', 'asc')->get();
-        }
-        $allCategories = Tree::pluck('title', 'id')->all();
-        return view('categoryTreeview', compact('categories', 'allCategories'));
     }
+
     public function educationist()
     {
         $categories = Tree::where('parent_id', '=', 0)->orderBy('id', 'asc')->get();
@@ -93,35 +115,57 @@ class CategoryController extends Controller
      */
     public function addTopic(Request $request, Tree $tree)
     {
-        // Validate the request
-        $validatedData = $request->validate([
-            'title' => 'required',
-            'detail' => 'required',
-            'hawala' => 'required',
-            'easy' => 'required',
-            'sunana' => 'nullable',
-        ]);
-        // Determine the serial number
-        $serialNumber = $tree->max('id') + 1;
+        try {
+            // Ensure the user is authenticated
+            $user = Auth::user();
+            if (!$user) {
+                return redirect('login');
+            }
 
-        // Check if a temporary or permanent member is logged in
-        $member = Auth::guard('temporary-member')->user() ?? Auth::guard('member')->user();
-        $treeEntry = $tree->create([
-            'title' => $request->title,
-            'id' => $serialNumber,
-            'parent_id' => 0, // Default parent_id to 0 if not provided
-            'status' => $member && Auth::guard('temporary-member')->check() ? 'Pending' : '', 
-            'added_by' => $member->name ?? null, 
-        ]);
-        
-        // Create related entries
-        $treeEntry->detail()->create(['detail' => $validatedData['detail']]);
-        $treeEntry->easy()->create(['easy' => $validatedData['easy']]);
-        $treeEntry->yaad()->create();
-        $treeEntry->mahol()->create(['sunana' => $validatedData['sunana'] ?? null]);
+            // Validate the request
+            $validatedData = $request->validate([
+                'title' => 'required',
+                'detail' => 'required',
+                'hawala' => 'required',
+                'easy' => 'required',
+                'sunana' => 'nullable',
+            ]);
 
-        return response()->json(['success' => 'نئے عنوان کا اندراج ہو گیا ہے']);
+            // Check if the user is a member
+            if ($user->isMember()) {
+                // Check if the member is approved (permanent) or not approved (temporary)
+                if ($user->userable->is_approve == 0) {
+                    $status = 'Pending';
+                } elseif ($user->userable->is_approve == 1) {
+                    $status = '';
+                }
+                // Determine the serial number
+                $serialNumber = $tree->max('id') + 1;
+
+                // Create the new Tree entry
+                $treeEntry = $tree->create([
+                    'title' => $request->title,
+                    'id' => $serialNumber,
+                    'parent_id' => 0, // Default parent_id to 0 if not provided
+                    'status' => $status,
+                    'added_by' => $user->userable->name,
+                ]);
+
+                // Create related entries for detail, easy, yaad, and mahol
+                $treeEntry->detail()->create(['detail' => $validatedData['detail']]);
+                $treeEntry->easy()->create(['easy' => $validatedData['easy']]);
+                $treeEntry->yaad()->create();
+                $treeEntry->mahol()->create(['sunana' => $validatedData['sunana'] ?? null]);
+
+                return response()->json(['success' => 'نئے عنوان کا اندراج ہو گیا ہے']);
+            } else {
+                return response()->json(['error' => 'Unauthorized access'], 401);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'An error occurred: ' . $e->getMessage()], 500);
+        }
     }
+
     public function addCategory(Request $request, Tree $tree)
     {
         $validator = Validator::make($request->all(), [

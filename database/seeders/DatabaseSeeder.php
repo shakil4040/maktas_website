@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Admin;
+use App\Models\User;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,16 +15,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('admins')->insert([
-            [
-                'name' => 'Super Admin',
-                'email' => 'admin@wee.com',
-                'password' => Hash::make('password'), // Password hashing
-                'is_super' => true,
-                'remember_token' => \Str::random(10),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+        // Insert admin data using the Admin model
+        $admin = Admin::create([
+            'name' => 'Super Admin',
+            'email' => 'admin@wee.com',
+            'is_super' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        // Insert corresponding user data dynamically based on the admin data using the User model
+        User::create([
+            'username' => Str::slug($admin->name, '_'),
+            'email' => $admin->email,
+            'password' => Hash::make('password'), // Password hashing
+            'userable_id' => $admin->id,
+            'userable_type' => Admin::class, // Store the full class path for the admin model
+            'remember_token' => Str::random(30),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }

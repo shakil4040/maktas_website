@@ -16,7 +16,7 @@
     @endif
     <div class="row justify-content-center">
         <div class="col-md-4">
-            @include('partials.admin-sidebar')
+            @include('partials.sidebar')
         </div>
         <div class="col-md-8">
             <div class="card">
@@ -43,13 +43,14 @@
                                 <td>{{ $member->name }}</td>
                                 <td>{{ $member->email }}</td>
                                 <td>
-                                    @if($member->temp == 1)
+                                    @if($member->is_approve == 0)
                                     <span class="badge bg-primary">Temporary</span>
                                     @else
                                     <span class="badge bg-primary">Permanent</span>
                                     @endif
                                 </td>
-                                <td class="pt-0"><a href="/member/{{ $member->id }}/edit"><button class="btn btn-dark">Edit</button></a></td>
+                                <td class="pt-0"><a href=""><button class="btn btn-dark">Edit</button></a></td>
+                                <!-- <td class="pt-0"><a href="/member/{{ $member->id }}/edit"><button class="btn btn-dark">Edit</button></a></td> -->
                                 <td>
                                     <form action="{{ route('members.delete', $member->id) }}" method="POST" style="display:inline;">
                                         @csrf
@@ -58,7 +59,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    @if($member->temp == 1)
+                                    @if($member->is_approve == 0)
                                         <form action="{{ route('members.approve', $member->id) }}" method="POST">
                                             @csrf
                                             @method('PATCH')

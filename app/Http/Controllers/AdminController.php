@@ -17,6 +17,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Exports\TreeDataExport;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\RedirectResponse;
 
 class AdminController extends Controller
@@ -25,39 +27,118 @@ class AdminController extends Controller
         return view('admin.profile');
     }
 
-
-    public function editAdmin(Admin $admin)
+    /**
+     * Edit admin or members based on the authenticated user.
+     * 
+     * This function checks the authenticated user's type. If the user is an admin,
+     * it fetches the admin data. If the user is a permanent or temporary member, it fetches the relevant
+     * member data based on approval status. If the user is not authenticated, 
+     * they are redirected to the login page.
+     *
+     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
+     */
+    public function editUser()
     {
-        return view('admin.edit-admin', compact( 'admin'));
+        try {
+            // Ensure the user is authenticated
+            $user = Auth::user();
+            if (!$user) {
+                return redirect('login');
+            }
+            // Determine the data based on user type and approval status
+            return view('admin.edit');
+        } catch (\Exception $e) {
+            // Log the exception for debugging purposes
+            Log::error('Error editing user: ' . $e->getMessage());
+            return back()->with('flash_message_error', 'An error occurred while trying to edit the user.');
+        }
     }
-    public function updateAdmin(Request $request, Admin $admin)
+
+    /**
+     * Update the profile of the authenticated user.
+     * 
+     * This function validates the input data (name and email) and updates
+     * the profile for either a permanent, temporary or an admin, based on the user's type.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateUser(Request $request)
     {
-        $data=request()->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+        try {
+            // Validate input data
+            $data = $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255'],
+            ]);
 
-          ]);
+            // Get authenticated user
+            $user = Auth::user();
 
-        auth('admin')->user()->update($data);
-        return redirect('/admin')->with('success','Profile Updated Successfully');
+            // Ensure the user is authenticated
+            if (!$user) {
+                return redirect('login');
+            }
+            // Update profile based on user type
+            if ($user->isMember()) {
+                $user->userable->update($data);
+            } elseif ($user->isAdmin()) {
+                $user->userable->update($data);
+            }
+            return redirect('/dashboard/profile')->with('success', 'Profile updated successfully.');
+        } catch (\Exception $e) {
+            // Log the exception for debugging purposes
+            Log::error('Profile update error: ' . $e->getMessage());
+            return redirect('/dashboard/profile')->withErrors('An error occurred while updating the profile.');
+        }
     }
 
+    /**
+     * Display the file upload page for the admin.
+     * 
+     * This function passes the authenticated admin data to the view
+     * to allow file uploads.
+     * 
+     * @param \App\Models\Admin $admin
+     * @return \Illuminate\View\View
+     */
     public function upload(Admin $admin)
     {
-        return view('admin.uploadfile', compact( 'admin'));
+        return view('admin.uploadfile', compact('admin'));
     }
 
+    /**
+     * Handle the file upload and import process.
+     * 
+     * This function validates the uploaded file, sets necessary PHP configurations
+     * to handle large files, and uses a queued import to process the file data.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function uploadFile(Request $request)
     {
-        ini_set('max_execution_time', 36000);
-        ini_set('memory_limit', -1);
-        $this->validate($request, [
-            'file' => 'required'
-        ]);
+        try {
+            // Set PHP configuration for large files and extended execution time
+            ini_set('max_execution_time', 36000);
+            ini_set('memory_limit', -1);
 
-        Excel::queueImport(new TreeDataImport, $request->file);
-        Session::flash('message', 'Courses Imported successfully.');
-        return Redirect::to('/upload');
+            // Validate that a file is provided in the request
+            $this->validate($request, [
+                'file' => 'required|file',
+            ]);
+
+            // Use queued import to handle large file upload (TreeDataImport should be defined)
+            Excel::queueImport(new TreeDataImport, $request->file);
+
+            // Flash a success message to the session and redirect to the upload page
+            Session::flash('message', 'File uploaded and processing started successfully.');
+            return Redirect::to('/dashboard/upload');
+
+        } catch (\Exception $e) {
+            // Handle any exceptions that occur during the upload process
+            return Redirect::to('/dashboard/upload')->withErrors('An error occurred during file upload. Please try again.');
+        }
     }
 
     /**
@@ -104,7 +185,8 @@ class AdminController extends Controller
                 'start_date' => 'required|date',
                 'end_date' => 'required|date|after_or_equal:start_date',
             ]);
-
+            ini_set('max_execution_time', 36000);
+            ini_set('memory_limit', -1);
             return Excel::download(new TreeDataExport(null, $startDate, $endDate), 'courses_by_date_range.xlsx');
         } catch (\Throwable $th) {
             throw $th;
@@ -113,6 +195,8 @@ class AdminController extends Controller
 
     public function downloadFile()
     {
+        ini_set('max_execution_time', 36000);
+        ini_set('memory_limit', -1);
         return Excel::download(new TreeDataExport(), 'all_courses.xlsx');
     }
     /**
@@ -171,8 +255,8 @@ class AdminController extends Controller
             if (!$member) {
                 return redirect()->back()->with('error', 'Member not found.');
             }
-            // Set the member's type to 0 (approved)
-            $member->temp = 0;
+            // Set the member's type to 1 (approved)
+            $member->is_approve = 1;
             $member->save();
 
             return redirect()->back()->with('success', 'Member approved successfully!');
@@ -182,7 +266,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Delete a member.
+     * Delete a member and the associated user.
      *
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
@@ -191,15 +275,22 @@ class AdminController extends Controller
     {
         try {
             $member = Member::find($id);
+            
             // Check if the member exists
             if (!$member) {
                 return redirect()->back()->with('error', 'Member not found.');
             }
+            // Delete the associated user if it exists
+            if ($member->user) {
+                $member->user->delete();
+            }
+            // Delete the member
             $member->delete();
 
             return redirect()->back()->with('success', 'Member deleted successfully.');
         } catch (\Throwable $th) {
-            throw $th;
+            // Handle the exception
+            return redirect()->back()->with('error', 'An error occurred while deleting the member.');
         }
     }
 

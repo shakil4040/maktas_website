@@ -553,16 +553,11 @@
                             <button id="searchButton" class="btn ml-1 mr-1 btn-primary">@lang("tree.Search")<i class="fa fa-search mr-1"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
-                        @auth('member')
+                        @if(auth()->user()->isMember())
                         <div class="mt-2">
                             <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
                         </div>
-                        @endauth
-                        @auth('temporary-member')
-                        <div class="mt-2">
-                            <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
-                        </div>
-                        @endauth
+                        @endif
                         <div id="sframe" class="col-md-6" style="position: absolute;left:5px;top:53px;z-index: 99999;height:55%">
                             <i id="frclose" style="position: absolute;left: 34px;top: 15px;" class="fa fa-close"></i>
                             <iframe  src="/allSearch" height="100%" width="100%" title="Iframe Example"></iframe>
@@ -592,7 +587,7 @@
                                                         {{'...Pending'}}
                                                     </span>
                                                     @endif
-                                                    @auth('admin')
+                                                    @if(auth()->user()->isAdmin())
                                                     @if(count($category->childs) == null)
                                                     <div class="d-flex">
                                                         <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
@@ -603,20 +598,20 @@
                                                     <div class="d-flex">
                                                         <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
                                                     </div>
-                                                    @endauth
+                                                    @endif
                                                     @if(count($category->childs) == null)
                                                         <div class="d-flex">
-                                                            @auth('member')
+                                                            @if(auth()->check() && auth()->user()->isMember())
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
                                                                 <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            @endauth
-                                                            @auth('temporary-member')
+                                                            @endif
+                                                            @if(auth()->check() && (auth()->user()->isMember() && auth()->user()->userable->is_approve == 0))
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
-                                                            @endauth
+                                                            @endif
                                                         </div>
                                                     @endif
                                                 </div>
-                                                @auth('admin')
+                                                @if(auth()->user()->isAdmin())
                                                 <div>
                                                     @if($category->status === 'pending')
                                                         <span style="margin-right: 10px;">Status: 
@@ -627,19 +622,19 @@
                                                         <span style="margin-right: 10px;">Added By: {{ $category->added_by }}
                                                     @endif
                                                 </div>
-                                                @endauth
+                                                @endif
                                                 <div class="cid d-none">{{ $category->id }}</div>
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
-                                                <div class="admin d-none">{{ auth('admin')->user() }}</div>
+                                                <div class="admin d-none">{{ auth()->user()->isAdmin() }}</div>
                                                 <div class="user d-none">{{ auth()->user() }}</div>
                                                 @auth()
-                                                <div class="userId d-none">{{ auth()->user()->id }}</div>
+                                                <div class="userId d-none">{{ auth()->user()->userable->id }}</div>
                                                 @endauth
-                                                @auth('member')
-                                                <div class="memberId d-none">{{ auth('member')->user()->id }}</div>
-                                                @endauth
+                                                @if(auth()->check() && auth()->user()->isMember())
+                                                <div class="memberId d-none">{{ auth()->user()->userable->id }}</div>
+                                                @endif
                                             </div>
                                         </span>
                                         @if(count($category->childs))
@@ -715,8 +710,12 @@
                         <input type="text" class="form-control my-2 py-3" id="easy" name="easy" required>
                     </div>
                     <div class="form-group">
-                        <label class="text-right d-block" for="sunana">sunana</label>
+                        <label class="text-right d-block" for="sunana">Sunana</label>
                         <input type="text" class="form-control my-2 py-3" id="sunana" name="sunana">
+                    </div>
+                    <div class="form-group">
+                        <label class="text-right d-block" for="level">Level</label>
+                        <input type="text" class="form-control my-2 py-3" id="levels" name="levels">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">بند کریں</button>
@@ -737,9 +736,9 @@
         let user = null;
         let userId = 0;
         @auth()
-            admin = "{{ auth('admin')->user() }}";
-        user = "{{ auth()->user() }}";
-        userId = "{{ auth()->user() ? auth()->user()->id : 0  }}";
+            admin = "{{ auth()->user()->getAdmin() }}";
+            user = "{{ auth()->user()->getMember() }}";
+            userId = "{{ auth()->user()->getMember() ? auth()->user()->getMember()->id : 0  }}";
         @endauth
     </script>
     <script src="/js/treeview.js"></script>

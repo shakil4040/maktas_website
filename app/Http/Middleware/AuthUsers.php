@@ -7,7 +7,7 @@ use Closure;
 use Auth;
 use Illuminate\Support\Facades\Session;
 
-class AuthMembers
+class AuthUsers
 {
     /**
      * Handle an incoming request.
@@ -18,8 +18,8 @@ class AuthMembers
      */
     public function handle($request, Closure $next)
     {
-        if (false == Auth::guard('member')->check()) {
-            return redirect()->route('login', ["guard" => "member"]);
+        if (false == Auth::guard('web')->check()) {
+            return redirect('login');
         }
         return $next($request);
     }
