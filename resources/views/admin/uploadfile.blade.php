@@ -4,6 +4,10 @@
 
 <div class="container">
 
+    <!-- Loader -->
+    <div id="loader" style="display:none;width:100%;height:100%;position:absolute;z-index:9999999;background:#4548485c;position:fixed;" class="row justify-content-center align-items-center" role="status">
+        <img src="../../../public_html/assets/images/spinner.gif" width="5%" alt="loading">
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-4">
             @include('partials.sidebar')
@@ -18,10 +22,10 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">{{ 'Upload FIle' }}</div>
+                <div class="card-header">{{ 'Upload File' }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/dashboard/uploadFile" enctype="multipart/form-data">
+                    <form id="uploadForm" method="POST" action="/dashboard/uploadFile" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -40,8 +44,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-dark">
@@ -55,4 +57,14 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('scripts')
+<script>
+    // Show loader on form submit
+    document.getElementById('uploadForm').addEventListener('submit', function() {
+        document.getElementById('loader').style.display = 'flex';  // Show loader
+    });
+</script>
 @endsection

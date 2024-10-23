@@ -57,12 +57,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard/members', 'AdminController@members');
     Route::get('/dashboard/upload', 'AdminController@upload');
     Route::get('/clearCourses', 'AdminController@truncateAllCourses');
-    Route::get('/dashboard/download-file-options', 'AdminController@showDownloadFileOptions');
     Route::get("/filter-by-title", "AdminController@filterByTitle")->name("admin.filterTitle");
     Route::post('/dashboard/uploadFile', 'AdminController@uploadFile');
     Route::get('/dashboard/{id}/edit', 'AdminController@editUser');
     Route::patch('/dashboard/{id}', 'AdminController@updateUser');
     Route::get('/dashboard/pending-topics', 'AdminController@pendingTopics')->name('admin.pendingTopics');
+    Route::get('/dashboard/download-file-options', 'AdminController@showDownloadFileOptions');
+    Route::get('/dashboard/download-file', 'AdminController@downloadFile');
     Route::post('/dashboard/download-by-titles', 'AdminController@downloadFileByTitles');
     Route::post('/dashboard/download-by-date', 'AdminController@downloadFileByDate');
     Route::patch('/dashboard/member/{id}/approve', 'AdminController@approveMember')->name('members.approve');
