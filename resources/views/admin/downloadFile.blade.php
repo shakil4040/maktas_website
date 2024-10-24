@@ -2,10 +2,6 @@
 
 @section('content')
 <div class="container">
-    <!-- Loader -->
-    <div id="loader" style="display:none;width:100%;height:100%;position:absolute;z-index:9999999;background:#4548485c;position:fixed;" class="row justify-content-center align-items-center" role="status">
-        <img src="../../../public_html/assets/images/spinner.gif" width="5%" alt="loading">
-    </div>
     <div class="row justify-content-center">
         <div class="col-md-4">
             @include('partials.sidebar')
@@ -96,12 +92,6 @@
             });
         });
     </script>
-    <script>
-    // Show loader on form submit
-    document.getElementById('downloadForm').addEventListener('submit', function() {
-        document.getElementById('loader').style.display = 'flex';  // Show loader
-    });
-</script>
 @endsection
 
 @section('styles')

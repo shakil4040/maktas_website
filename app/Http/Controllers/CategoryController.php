@@ -42,26 +42,17 @@ class CategoryController extends Controller
             if (!$user) {
                 return redirect('login');
             }
-            // Check if the user is a member
-            if ($user->isMember()) {
-                // Check if the member is approved (permanent) or not approved (temporary)
-                if ($user->userable->is_approve == 0) {
-                    $temporaryMember = $user->userable->name;
-                    $categories = Tree::where([
-                        ['parent_id', '=', 0],
-                        ['added_by', '=', $temporaryMember],
-                        ['status', '=', 'Approved'],
-                    ])->orderBy('id', 'asc')->get();
-                } elseif ($user->userable->is_approve == 1) {
-                    $permanentMember = $user->userable->name;
-                    $categories = Tree::where([
-                        ['parent_id', '=', 0],
-                        ['added_by', '=', $permanentMember]
-                    ])->orderBy('id', 'asc')->get();
-                }
-            } 
-            // If the user is an admin
-            else if ($user->isAdmin()) {
+            // Check if the user is a temporary member
+            if ($user->isMember() && $user->userable->is_approve == 0) {
+                $temporaryMember = $user->userable->name;
+                $categories = Tree::where([
+                    ['parent_id', '=', 0],
+                    ['added_by', '=', $temporaryMember],
+                    ['status', '=', 'Approved'],
+                ])->orderBy('id', 'asc')->get();
+            }
+            // If the user is an admin or member
+            else if ($user->isAdmin() || $user->isMember()) {
                 $categories = Tree::whereNull('parent_id')->orderBy('id', 'asc')->get();
                 $allCategories = Tree::pluck('title', 'id')->all();
             }
@@ -78,7 +69,6 @@ class CategoryController extends Controller
         $allCategories = Tree::pluck('title', 'id')->all();
         return view('educationist', compact('categories', 'allCategories'));
     }
-
 
     /**
      * Show the application dashboard.
@@ -146,7 +136,7 @@ class CategoryController extends Controller
                 $treeEntry = $tree->create([
                     'title' => $request->title,
                     'id' => $serialNumber,
-                    'parent_id' => 0, // Default parent_id to 0 if not provided
+                    'parent_id' => 0,
                     'status' => $status,
                     'added_by' => $user->userable->name,
                 ]);
