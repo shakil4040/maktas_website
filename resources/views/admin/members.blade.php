@@ -49,8 +49,7 @@
                                     <span class="badge bg-primary">Permanent</span>
                                     @endif
                                 </td>
-                                <td class="pt-0"><a href=""><button class="btn btn-dark">Edit</button></a></td>
-                                <!-- <td class="pt-0"><a href="/member/{{ $member->id }}/edit"><button class="btn btn-dark">Edit</button></a></td> -->
+                                <td class="pt-0"><a href="{{ route('members.edit', $member->id) }}"><button class="btn btn-dark">Edit</button></a></td>
                                 <td>
                                     <form action="{{ route('members.delete', $member->id) }}" method="POST" style="display:inline;">
                                         @csrf

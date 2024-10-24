@@ -40,12 +40,12 @@ Route::get('/educationist', 'CategoryController@educationist');
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm')->middleware('guest:admin');
+// Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm'); // TODO Delete
 
 Route::get('/get-child/{id}/{level}/{title}','CategoryController@getChild');
 Route::get('/get-child2/{id}/{level}/{title}','CategoryController@getChild2');
 
-Route::post('/register/admin', 'Auth\RegisterController@createAdmin')->middleware('guest:admin');
+// Route::post('/register/admin', 'Auth\RegisterController@createAdmin'); // TODO Delete 
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', function() {
@@ -66,6 +66,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard/download-file', 'AdminController@downloadFile');
     Route::post('/dashboard/download-by-titles', 'AdminController@downloadFileByTitles');
     Route::post('/dashboard/download-by-date', 'AdminController@downloadFileByDate');
+    Route::get('/dashboard/members/{id}/edit', 'AdminController@edit')->name('members.edit');
+    Route::post('/dashboard/members/{id}', 'AdminController@update')->name('members.update');
     Route::patch('/dashboard/member/{id}/approve', 'AdminController@approveMember')->name('members.approve');
     Route::delete('/dashboard/member/{id}/delete', 'AdminController@deleteMember')->name('members.delete');
     Route::patch('/dashboard/topics/{id}/accept', 'AdminController@acceptTopic')->name('topics.accept');

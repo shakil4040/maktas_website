@@ -26,6 +26,44 @@ class AdminController extends Controller
     public function profile(){
         return view('admin.profile');
     }
+    
+    /**
+     * Show the edit form for a specific member.
+     * 
+     * @method edit
+     * @param int $id
+     * @return \Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $member = Member::findOrFail($id);
+        return view('admin.edit-member', compact('member'));
+    }
+
+    /**
+     * Update the specified member's details.
+     * 
+     * @method update
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $id)
+    {
+        $member = Member::findOrFail($id);
+
+        // Validate the request
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'is_approve' => 'required|string',
+        ]);
+
+        // Update the member details
+        $member->update($validatedData);
+
+        return redirect('/dashboard/members')->with('success', 'Member updated successfully');
+    }
 
     /**
      * Edit admin or members based on the authenticated user.
