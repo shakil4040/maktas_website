@@ -38,12 +38,8 @@ class CategoryController extends Controller
 
             // Get authenticated user
             $user = Auth::user();
-            // Ensure the user is authenticated
-            if (!$user) {
-                return redirect('login');
-            }
             // Check if the user is a temporary member
-            if ($user->isMember() && $user->userable->is_approve == 0) {
+            if (Auth::check() && $user && $user->isMember() && $user->userable->is_approve == 0) {
                 $temporaryMember = $user->userable->name;
                 $categories = Tree::where([
                     ['parent_id', '=', 0],
@@ -52,10 +48,10 @@ class CategoryController extends Controller
                 ])->orderBy('id', 'asc')->get();
             }
             // If the user is an admin or member
-            else if ($user->isAdmin() || $user->isMember()) {
+            else  {
                 $categories = Tree::whereNull('parent_id')->orderBy('id', 'asc')->get();
                 $allCategories = Tree::pluck('title', 'id')->all();
-            }
+            } 
             // Return the view with the categories and allCategories (admin case)
             return view('categoryTreeview', compact('categories', 'allCategories'));
         } catch (\Throwable $th) {
