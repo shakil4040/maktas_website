@@ -553,7 +553,7 @@
                             <button id="searchButton" class="btn ml-1 mr-1 btn-primary">@lang("tree.Search")<i class="fa fa-search mr-1"></i></button>
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
-                        @if(auth()->user()->isMember())
+                        @if(!empty(auth()->user()) && auth()->user()->isMember())
                         <div class="mt-2">
                             <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
                         </div>
@@ -587,7 +587,7 @@
                                                         {{'...Pending'}}
                                                     </span>
                                                     @endif
-                                                    @if(auth()->user()->isAdmin())
+                                                    @if(!empty(auth()->user()) && auth()->user()->isAdmin())
                                                     @if(count($category->childs) == null)
                                                     <div class="d-flex">
                                                         <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
@@ -611,7 +611,7 @@
                                                         </div>
                                                     @endif
                                                 </div>
-                                                @if(auth()->user()->isAdmin())
+                                                @if(!empty(auth()->user()) && auth()->user()->isAdmin())
                                                 <div>
                                                     @if($category->status === 'pending')
                                                         <span style="margin-right: 10px;">Status: 
@@ -627,13 +627,13 @@
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
-                                                <div class="admin d-none">{{ auth()->user()->isAdmin() }}</div>
-                                                <div class="user d-none">{{ auth()->user() }}</div>
+                                                <div class="admin d-none">{{ auth()->user() ?  auth()->user()->isAdmin() : "" }}</div>
+                                                <div class="user d-none">{{ auth()->user() ?? "" }}</div>
                                                 @auth()
-                                                <div class="userId d-none">{{ auth()->user()->userable->id }}</div>
+                                                <div class="userId d-none">{{ auth()->user()->userable->id ?? 0}}</div>
                                                 @endauth
                                                 @if(auth()->check() && auth()->user()->isMember())
-                                                <div class="memberId d-none">{{ auth()->user()->userable->id }}</div>
+                                                <div class="memberId d-none">{{ auth()->user()->userable->id ?? 0 }}</div>
                                                 @endif
                                             </div>
                                         </span>
@@ -712,10 +712,6 @@
                     <div class="form-group">
                         <label class="text-right d-block" for="sunana">Sunana</label>
                         <input type="text" class="form-control my-2 py-3" id="sunana" name="sunana">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-right d-block" for="level">Level</label>
-                        <input type="text" class="form-control my-2 py-3" id="levels" name="levels">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">بند کریں</button>

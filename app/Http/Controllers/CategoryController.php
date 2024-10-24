@@ -39,7 +39,7 @@ class CategoryController extends Controller
             // Get authenticated user
             $user = Auth::user();
             // Check if the user is a temporary member
-            if (Auth::check() && $user && $user->isMember() && $user->userable->is_approve == 0) {
+            if (Auth::check() && !empty($user) && $user->isMember() && $user->userable->is_approve == 0) {
                 $temporaryMember = $user->userable->name;
                 $categories = Tree::where([
                     ['parent_id', '=', 0],
