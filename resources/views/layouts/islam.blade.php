@@ -433,10 +433,10 @@
             </div>
             <div class="d-flex justify-content-end align-items-center">
                 <div>
-                    @auth('member')
-                        <input type="text" class="d-none" name="member_id" value="{{auth('member')->user()->id}}">
-                        <input type="text" class="d-none" name="member_name" value="{{auth('member')->user()->name}}">
-                    @endauth
+                    @if(auth()->check() && auth()->user()->isMember())
+                        <input type="text" class="d-none" name="member_id" value="{{auth()->user()->userable->id}}">
+                        <input type="text" class="d-none" name="member_name" value="{{auth()->user()->userable->name}}">
+                    @endif
                     <button class="bbuttons my-1 ml-2 addition">اندراج کریں</button>
                     <button class="bbuttons my-1 ml-3" type="button" id="fclose">بند کریں</button>
                 </div>

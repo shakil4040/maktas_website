@@ -625,7 +625,7 @@
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
-                                                <div class="admin d-none">{{ !empty(auth()->user()) ??auth()->user()->isAdmin() }}</div>
+                                                <div class="admin d-none">{{ !empty(auth()->user()) ?? auth()->user()->isAdmin() }}</div>
                                                 <div class="user d-none">{{ auth()->user() }}</div>
                                                 @auth()
                                                 <div class="userId d-none">{{ auth()->user()->userable->id }}</div>

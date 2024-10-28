@@ -219,14 +219,14 @@
                                                             </div>
                                                             @endif
                                                             @endauth
-                                                            @auth('member')
-                                                            @if(!count($category->childs))
-                                                            <div class="d-flex">
-                                                                <i class="fa fa-edit mx-2 sedit"></i>
-                                                                <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            </div>
+                                                            @if(auth()->check() && auth()->user()->isMember())
+                                                                @if(!count($category->childs))
+                                                                <div class="d-flex">
+                                                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                                                </div>
+                                                                @endif
                                                             @endif
-                                                            @endauth
                                                         </div>
                                                         @else
                                                         <div
@@ -240,30 +240,30 @@
                                                             </div>
                                                             @endif
                                                             @endauth
-                                                            @auth('member')
-                                                            @if(!count($category->childs))
-                                                            <div class="d-flex">
-                                                                <i class="fa fa-edit mx-2 sedit"></i>
-                                                                <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            </div>
+                                                            @if(auth()->check() && auth()->user()->isMember())
+                                                                @if(!count($category->childs))
+                                                                <div class="d-flex">
+                                                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                                                </div>
+                                                                @endif
                                                             @endif
-                                                            @endauth
                                                         </div>
                                                         @endif
                                                         <div class="cid d-none">{{ $category->id }}</div>
                                                         <div class="sr d-none">{{ $category->sr }}</div>
                                                         <div class="title d-none">{{ $category->title }}</div>
-                                                        <div class="admin d-none">{{ auth('admin')->user() }}</div>
+                                                        <div class="admin d-none">{{ auth()->user()->getAdmin() }}</div>
                                                         <div class="user d-none">{{ auth()->user() }}</div>
                                                         @auth()
-                                                        <div class="userId d-none">{{ auth()->user()->id }}</div>
+                                                        <div class="userId d-none">{{ auth()->user()->userable->id  ?? 0 }}</div>
                                                         @endauth
-                                                        @auth('member')
-                                                        <div class="memberName d-none">
-                                                            {{ auth('member')->user()->name }}</div>
-                                                        <div class="memberId d-none">{{ auth('member')->user()->id }}
-                                                        </div>
-                                                        @endauth
+                                                        @if(auth()->check() && auth()->user()->isMember())
+                                                            <div class="memberName d-none">
+                                                                {{ auth()->user()->getMember()->name }}</div>
+                                                            <div class="memberId d-none">{{ auth()->user()->getMember()->id }}
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 </span>
 

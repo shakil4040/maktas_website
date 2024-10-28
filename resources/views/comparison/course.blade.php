@@ -134,14 +134,14 @@
                                                         <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
                                                     </div>
                                                     @endauth
-                                                    @auth('member')
-                                                    @if(count($category->childs) == null)
-                                                    <div class="d-flex">
-                                                        <i class="fa fa-edit mx-2 sedit"></i>
-                                                        <i class="fa fa-times-circle mx-2 delete"></i>
-                                                    </div>
+                                                    @if(auth()->check() && auth()->user()->isMember())
+                                                        @if(count($category->childs) == null)
+                                                        <div class="d-flex">
+                                                            <i class="fa fa-edit mx-2 sedit"></i>
+                                                            <i class="fa fa-times-circle mx-2 delete"></i>
+                                                        </div>
+                                                        @endif
                                                     @endif
-                                                    @endauth
                                                 </div>
                                                 <div class="cid d-none">{{ $category->id }}</div>
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
@@ -149,14 +149,14 @@
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
                                                 <div class="shoba d-none">{{ $shoba }}</div>
                                                 <div class="age d-none">{{ $age }}</div>
-                                                <div class="admin d-none">{{ auth('admin')->user() }}</div>
+                                                <div class="admin d-none">{{ auth()->user()->getAdmin() }}</div>
                                                 <div class="user d-none">{{ auth()->user() }}</div>
                                                 @auth()
-                                                <div class="userId d-none">{{ auth()->user()->id }}</div>
+                                                <div class="userId d-none">{{ auth()->user()->userable->id ?? 0 }}</div>
                                                 @endauth
-                                                @auth('member')
-                                                <div class="memberId d-none">{{ auth('member')->user()->id }}</div>
-                                                @endauth
+                                                @if(auth()->check() && auth()->user()->isMember())
+                                                    <div class="memberId d-none">{{ auth()->user()->getMember()->id }}</div>
+                                                @endif
                                             </div>
                                         </span>
                                         @if(count($category->childs))

@@ -162,41 +162,41 @@
                                                             </div>
                                                             @endif
                                                             @endauth
-                                                            @auth('member')
-                                                            @if(!count($category->childs))
-                                                            <div class="d-flex">
-                                                                <i class="fa fa-edit mx-2 sedit"></i>
-                                                                <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            </div>
+                                                            @if(auth()->check() && auth()->user()->isMember())
+                                                                @if(!count($category->childs))
+                                                                <div class="d-flex">
+                                                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                                                </div>
+                                                                @endif
                                                             @endif
-                                                            @endauth
                                                         </div>
                                                         @else
                                                         <div class="ctitle list d-flex justify-content-between align-items-center">
                                                             {{ $category->title }}
-                                                            @auth('admin')
-                                                            @if(!count($category->childs))
-                                                            <div class="d-flex">
-                                                                <i class="fa fa-edit mx-2 sedit"></i>
-                                                                <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            </div>
+                                                            @if(auth()->check() && auth()->user()->isAdmin())
+                                                                @if(!count($category->childs))
+                                                                <div class="d-flex">
+                                                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                                                </div>
+                                                                @endif
                                                             @endif
-                                                            @endauth
-                                                            @auth('member')
-                                                            @if(!count($category->childs))
-                                                            <div class="d-flex">
-                                                                <i class="fa fa-edit mx-2 sedit"></i>
-                                                                <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            </div>
+                                                            @if(auth()->check() && auth()->user()->isMember())
+                                                                @if(!count($category->childs))
+                                                                <div class="d-flex">
+                                                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                                                </div>
+                                                                @endif
                                                             @endif
-                                                            @endauth
                                                         </div>
                                                         @endif
                                                         <div class="cid d-none">{{ $category->id }}</div>
-                                                        <div class="admin d-none">{{ auth('admin')->user() }}</div>
+                                                        <div class="admin d-none">{{ auth()->user()->getAdmin() }}</div>
                                                         <div class="user d-none">{{ auth()->user() }}</div>
                                                         @auth()
-                                                        <div class="userId d-none">{{ auth()->user()->id }}</div>
+                                                        <div class="userId d-none">{{ auth()->user()->userable->id  ?? 0 }}</div>
                                                         @endauth
                                                     </div>
                                                 </span>
