@@ -42,10 +42,10 @@ class CategoryController extends Controller
             if (Auth::check() && !empty($user) && $user->isMember() && $user->userable->is_approve == 0) {
                 $temporaryMember = $user->userable->name;
                 $categories = Tree::where([
-                    ['parent_id', '=', 0],
                     ['added_by', '=', $temporaryMember],
                     ['status', '=', 'Approved'],
                 ])->orderBy('id', 'asc')->get();
+                $allCategories = Tree::pluck('title', 'id')->all();
             }
             // If the user is an admin or member
             else  {
@@ -120,24 +120,54 @@ class CategoryController extends Controller
             // Check if the user is a member
             if ($user->isMember()) {
                 // Check if the member is approved (permanent) or not approved (temporary)
-                if ($user->userable->is_approve == 0) {
+                $status = '';
+                if ($user->userable->is_approve === 0) {
                     $status = 'Pending';
-                } elseif ($user->userable->is_approve == 1) {
-                    $status = '';
                 }
-                // Determine the serial number
-                $serialNumber = $tree->max('id') + 1;
+
+                $level = 0; // Default level if no parent is found
+                $structure = [];
+
+                // Check if parentTitleId is provided
+                $parentTitleId = $request->input('parentTitleId');
+                if (!empty($parentTitleId)) {
+                    // Fetch data from the trees table where the parent_id matches the parentTitleId
+                    $treeData = Tree::where('id', $parentTitleId)->first();
+                    if ($treeData) {
+                        $level = $treeData->levels + 1;
+                        $structure = json_decode($treeData->structure, true) ?? [];
+
+                        if (json_last_error() !== JSON_ERROR_NONE) {
+                            return response()->json(['error' => 'Invalid JSON structure in parent tree data'], 400);
+                        }
+                    }
+                }
+
+                // Add a new level entry in the structure
+                $title = $request->title;
+                if (empty($title)) {
+                    return response()->json(['error' => 'Title is required'], 400);
+                }
+
+                $structure['zayalunwan_' . $level] = $title;
 
                 // Create the new Tree entry
-                $treeEntry = $tree->create([
-                    'title' => $request->title,
-                    'id' => $serialNumber,
-                    'parent_id' => 0,
+                $treeEntry = Tree::create([
+                    'title' => $title,
+                    'parent_id' => $treeData->id ?? null, // Use null if treeData is empty
                     'status' => $status,
                     'added_by' => $user->userable->name,
+                    'levels' => $level, // Set level based on parent or default
+                    'structure' => json_encode($structure),
                 ]);
 
-                // Create related entries for detail, easy, yaad, and mahol
+                // Validate and create related entries for detail, easy, yaad, and mahol
+                $validatedData = $request->validate([
+                    'detail' => 'required|string',
+                    'easy' => 'required|string',
+                    'sunana' => 'nullable|string'
+                ]);
+
                 $treeEntry->detail()->create(['detail' => $validatedData['detail']]);
                 $treeEntry->easy()->create(['easy' => $validatedData['easy']]);
                 $treeEntry->yaad()->create();
@@ -147,6 +177,7 @@ class CategoryController extends Controller
             } else {
                 return response()->json(['error' => 'Unauthorized access'], 401);
             }
+
         } catch (\Exception $e) {
             return response()->json(['error' => 'An error occurred: ' . $e->getMessage()], 500);
         }

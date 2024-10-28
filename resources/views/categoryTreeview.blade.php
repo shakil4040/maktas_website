@@ -5,19 +5,17 @@
     <title>اسلام</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <link href="/css/treeview.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"  />
+    <link href="/css/treeview.css" rel="stylesheet">
+    <!-- Include Select 2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- END CSS LINKS -->
 </head>
 
 <body>
@@ -627,13 +625,13 @@
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
-                                                <div class="admin d-none">{{ auth()->user() ?  auth()->user()->isAdmin() : "" }}</div>
-                                                <div class="user d-none">{{ auth()->user() ?? "" }}</div>
+                                                <div class="admin d-none">{{ !empty(auth()->user()) ??auth()->user()->isAdmin() }}</div>
+                                                <div class="user d-none">{{ auth()->user() }}</div>
                                                 @auth()
-                                                <div class="userId d-none">{{ auth()->user()->userable->id ?? 0}}</div>
+                                                <div class="userId d-none">{{ auth()->user()->userable->id }}</div>
                                                 @endauth
                                                 @if(auth()->check() && auth()->user()->isMember())
-                                                <div class="memberId d-none">{{ auth()->user()->userable->id ?? 0 }}</div>
+                                                <div class="memberId d-none">{{ auth()->user()->userable->id }}</div>
                                                 @endif
                                             </div>
                                         </span>
@@ -693,6 +691,12 @@
             </div>
             <div class="modal-body">
                 <form id="addCategoryForm">
+                    <!-- Dropdown Field -->
+                    <div class="form-group">
+                        <label class="text-right d-block" for="category">بنیادی عنوان</label>
+                        <select id="titleFilter" name="parentTitleId" class="form-control form-select" aria-label=".form-select">
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label class="text-right d-block" for="title">عنوان</label>
                         <input type="text" class="form-control my-2 py-3" id="title" name="title" required>
@@ -722,8 +726,44 @@
         </div>
     </div>
 </div>
+<!-- JQUERY JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<!-- Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Initialize the Select2 component
+        $('#titleFilter').select2({
+            ajax: {
+                url: "{{ route('admin.filterTitle') }}",
+                dataType: 'json',
+                delay: 250,
+                data: function(params) {
+                    return {
+                        title: params.term // search term
+                    };
+                },
+                processResults: function(data) {
+                    // Transform the response into the format expected by Select2
+                    return {
+
+                        results: data.filterTitles.map(function(item) {
+                            return {
+                                id: item.id, // Adjust as needed based on your response data
+                                text: item.title // Adjust as needed based on your response data
+                            };
+                        })
+                    };
+                },
+                cache: true
+            },
+            placeholder: "@lang("tree.select a title")",
+            minimumInputLength: 1,
+            dir: "rtl",
+        });
+    });
+</script>
     <script>
         /**
          * Global Variables
@@ -738,8 +778,6 @@
         @endauth
     </script>
     <script src="/js/treeview.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ajaxSend(function(event, request, settings) {
             $('#loader').show();

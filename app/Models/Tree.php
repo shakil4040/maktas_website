@@ -57,7 +57,7 @@ class Tree extends Model
     }
 
     public function yaad() {
-        return $this->hasOne(Yass::class,'id','id');
+        return $this->hasOne(Yaad::class,'id','id');
     }
     public function mahol() {
         return $this->hasOne(Mahol::class,'id','id');

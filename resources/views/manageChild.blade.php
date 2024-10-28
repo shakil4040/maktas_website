@@ -13,7 +13,7 @@
                 <div id="{{ $child->title}}" class="scroll-topics ctitle child list d-flex justify-content-between align-items-center" onclick="setTitle
                     (this)">
                     {{ $child->title }}
-                    @if(auth()->user()->isAdmin())
+                    @if(!empty(auth()->user()) && auth()->user()->isAdmin())
                         @if(count($child->childs) == null)
                             <div class="d-flex">
                                 <i class="fa fa-edit mx-2 sedit"></i>
@@ -24,7 +24,7 @@
                             <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
                            </div>
                     @endif
-                    @if(auth()->user()->isMember())
+                    @if(!empty(auth()->user()) && auth()->user()->isMember())
                         @if(count($child->childs) == null)
                             <div class="d-flex">
                         <i class="fa fa-edit mx-2 sedit"></i>
@@ -37,11 +37,11 @@
                 <div class="navigation d-none">{{$navigation .",". $level ."#".  $child->title }}</div>
                 <div class="sr d-none">{{ $child->sr }}</div>
                 <div class="parentId d-none">{{ $child->parent_id }}</div>
-                <div class="admin d-none">{{ auth()->user()->isAdmin() }}</div>
-                <div class="admin d-none">{{ auth()->user()->isAdmin() }}</div>
-                <div class="user d-none">{{ auth()->user() }}</div>
+                <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
+                <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
+                <div class="user d-none">{{ auth()->user() ?? "" }}</div>
                 @auth()
-                    <div class="userId d-none">{{ auth()->user()->userable->id }}</div>
+                    <div class="userId d-none">{{ auth()->user()->userable->id ?? 0 }}</div>
                 @endauth
             </div>
         </span>

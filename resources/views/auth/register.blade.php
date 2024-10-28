@@ -9,7 +9,7 @@
         </div>
     @endif
     <div class="row justify-content-center">
-        @if(auth()->user()->isAdmin())
+        @if(auth()->user() && auth()->user()->isAdmin())
         <div class="col-md-4">
             @include('partials.sidebar')
         </div>

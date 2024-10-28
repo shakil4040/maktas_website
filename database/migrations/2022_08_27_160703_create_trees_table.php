@@ -17,7 +17,7 @@ class CreateTreesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')->references('id')->on('trees')->onDelete('NO ACTION')->onUpdate('NO ACTION');
-            $table->tinyInteger('levels');
+            $table->tinyInteger('levels')->default(0);
             $table->longText('title');
             $table->integer('naseeha_com')->nullable();
             $table->integer('maktab_com')->nullable();

@@ -8,7 +8,7 @@
                         <div class="d-flex align-items-center">
                             <div id="{{ $node->title}}" class="ctitle child list d-flex justify-content-between align-items-center" onclick="setTitleCategory(this, {{$node}})"  style="color: {{ ['rgb(61, 151, 230)', 'rgb(230, 122, 51)', 'rgb(255, 181, 20)', 'rgb(221, 39, 42)', 'rgb(68, 173, 26)', '#6f42c1', 'rgb(108, 110, 121)', 'rgb(255, 0, 255)'][$node->level] ?? '' }}">
                                 {!! str_repeat('&mdash;&nbsp;', $node->level) !!} {{ $node->title }}
-                                @if(auth()->user()->isAdmin())
+                                @if(!empty(auth()->user()) && auth()->user()->isAdmin())
                                     @if(count($node->childs) == null)
                                         <div class="d-flex">
                                             <i class="fa fa-edit mx-2 sedit"></i>
@@ -19,7 +19,7 @@
                                         <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
                                     </div>
                                 @endif
-                                @if(auth()->user()->isMember())
+                                @if(!empty(auth()->user()) && auth()->user()->isMember())
                                     @if(count($node->childs) == null)
                                         <div class="d-flex">
                                             <i class="fa fa-edit mx-2 sedit"></i>
@@ -32,11 +32,11 @@
                             <div class="navigation d-none">{{$node->title }}</div>
                             <div class="sr d-none">{{ $node->sr }}</div>
                             <div class="parentId d-none">{{ $node->parent_id }}</div>
-                            <div class="admin d-none">{{ auth()->user()->isAdmin() }}</div>
-                            <div class="admin d-none">{{ auth()->user()->isAdmin() }}</div>
-                            <div class="user d-none">{{ auth()->user() }}</div>
+                            <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
+                            <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
+                            <div class="user d-none">{{ auth()->user() ?? "" }}</div>
                             @auth()
-                                <div class="userId d-none">{{ auth()->user()->userable->id }}</div>
+                                <div class="userId d-none">{{ auth()->user()->userable->id ?? 0 }}</div>
                             @endauth
                         </div>
                     </div>
