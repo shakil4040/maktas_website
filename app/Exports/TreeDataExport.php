@@ -44,10 +44,7 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
         $children = [];
         $children[]         = $item;
         $this->topicsId[]   = $item->id;
-        // Convert children collection to array and then reverse the order
-        $reversedChildren = array_reverse($item->children->toArray());
-
-        // Recursively retrieve each child and their children in reverse order
+        $reversedChildren   = $item->children->toArray();
         foreach ($reversedChildren as $child) {
             // Fetch children of this child and merge them at the end
             $children = array_merge($children, $this->getChildrenRecursive(Tree::find($child['id']))); // Use find() to get Tree instance
@@ -156,7 +153,6 @@ class TreeDataExport implements FromCollection, WithHeadings, WithChunkReading, 
                 'parhana' => $mahol[$data->id]->parhana ?? "",
             ]);
         }
-
         return collect($exportData);
     }
 
