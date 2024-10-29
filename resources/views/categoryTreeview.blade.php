@@ -678,8 +678,8 @@
   </div>
 </div>
 <!-- Modal to add new topics -->
-<div class="modal fade" style="direction: rtl; font-family: 'Noto Nastaliq Urdu', serif;" id="addTopicModal" tabindex="-1" aria-labelledby="addTopicModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" style="direction: rtl; font-family: 'Noto Nastaliq Urdu', serif;" id="addTopicModal" tabindex="-1" aria-labelledby="addTopicModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
                 <h5 class="modal-title" id="exampleModalLabel">نیا عنوان درج کریں</h5>
@@ -689,7 +689,7 @@
                     <!-- Dropdown Field -->
                     <div class="form-group">
                         <label class="text-right d-block" for="category">بنیادی عنوان</label>
-                        <select id="titleFilter" name="parentTitleId" class="form-control form-select" aria-label=".form-select">
+                        <select id="titleFilter" name="parentTitleId" class="form-select custom-select" aria-label=".form-select">
                         </select>
                     </div>
                     <div class="form-group">
@@ -860,5 +860,9 @@ for (var i = 0; i < btns.length; i++) {
     });
     </script>
 </body>
-
+<style>
+    .custom-select{
+        width: 760px;
+    }
+</style>
 </html>
