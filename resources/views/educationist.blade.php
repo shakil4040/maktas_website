@@ -480,13 +480,13 @@
 													@endif
 												</div>
 												<div class="cid d-none">{{ $category->id }}</div>
-												<div class="admin d-none">{{ auth()->user()->getAdmin() }}</div>
+												<div class="admin d-none">{{ auth()->user() ? auth()->user()->getAdmin() : "" }}</div>
 												<div class="user d-none">{{ auth()->user() }}</div>
 												@auth()
-												<div class="userId d-none">{{ auth()->user()->id }}</div>
+												<div class="userId d-none">{{ auth()->user() ? auth()->user()->userable->id : 0 }}</div>
 												@endauth
 												@if(auth()->check() && auth()->user()->isMember())
-												<div class="memberId d-none">{{ auth()->user()->userable->id }}</div>
+												<div class="memberId d-none">{{ auth()->user() && auth()->user()->userable->id }}</div>
 												@endif
 											</div>
 										</span>

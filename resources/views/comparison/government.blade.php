@@ -211,14 +211,14 @@
                                                             title="پیلے رنگ کا مطلب یہ ہے کہ یہ عنوان سرکاری نصاب میں موجود نہیں۔"
                                                             class="ctitle scroll-topics list d-flex justify-content-between align-items-center taqabul">
                                                             {{ $category->title }}
-                                                            @auth('admin')
-                                                            @if(!count($category->childs))
-                                                            <div class="d-flex">
-                                                                <i class="fa fa-edit mx-2 sedit"></i>
-                                                                <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            </div>
+                                                            @if(!empty(auth()->user()) && auth()->user()->isAdmin())
+                                                                @if(!count($category->childs))
+                                                                <div class="d-flex">
+                                                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                                                </div>
+                                                                @endif
                                                             @endif
-                                                            @endauth
                                                             @if(auth()->check() && auth()->user()->isMember())
                                                                 @if(!count($category->childs))
                                                                 <div class="d-flex">
@@ -232,14 +232,14 @@
                                                         <div
                                                             class="ctitle scroll-topics list d-flex justify-content-between align-items-center">
                                                             {{ $category->title }}
-                                                            @auth('admin')
-                                                            @if(!count($category->childs))
-                                                            <div class="d-flex">
-                                                                <i class="fa fa-edit mx-2 sedit"></i>
-                                                                <i class="fa fa-times-circle mx-2 delete"></i>
-                                                            </div>
+                                                            @if(!empty(auth()->user()) && auth()->user()->isAdmin())
+                                                                @if(!count($category->childs))
+                                                                <div class="d-flex">
+                                                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                                                </div>
+                                                                @endif
                                                             @endif
-                                                            @endauth
                                                             @if(auth()->check() && auth()->user()->isMember())
                                                                 @if(!count($category->childs))
                                                                 <div class="d-flex">
@@ -253,10 +253,10 @@
                                                         <div class="cid d-none">{{ $category->id }}</div>
                                                         <div class="sr d-none">{{ $category->sr }}</div>
                                                         <div class="title d-none">{{ $category->title }}</div>
-                                                        <div class="admin d-none">{{ auth()->user()->getAdmin() }}</div>
-                                                        <div class="user d-none">{{ auth()->user() }}</div>
+                                                        <div class="admin d-none">{{ auth()->user() ? auth()->user()->getAdmin() : "" }}</div>
+                                                        <div class="user d-none">{{ auth()->user() ?? "" }}</div>
                                                         @auth()
-                                                        <div class="userId d-none">{{ auth()->user()->userable->id  ?? 0 }}</div>
+                                                            <div class="userId d-none">{{ auth()->user()->userable->id  ?? 0 }}</div>
                                                         @endauth
                                                         @if(auth()->check() && auth()->user()->isMember())
                                                             <div class="memberName d-none">

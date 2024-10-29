@@ -122,18 +122,18 @@
                                                         {{'...Pending'}}
                                                     </span>
                                                     @endif
-                                                    @auth('admin')
-                                                    @if(count($category->childs) == null)
-                                                    <div class="d-flex">
-                                                        <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
-                                                        <i class="fa fa-edit mx-2 sedit"></i>
-                                                        <i class="fa fa-times-circle mx-2 delete"></i>
-                                                    </div>
+                                                    @if(!empty(auth()->user()) && auth()->user()->isAdmin())
+                                                        @if(count($category->childs) == null)
+                                                        <div class="d-flex">
+                                                            <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
+                                                            <i class="fa fa-edit mx-2 sedit"></i>
+                                                            <i class="fa fa-times-circle mx-2 delete"></i>
+                                                        </div>
+                                                        @endif
+                                                        <div class="d-flex">
+                                                            <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
+                                                        </div>
                                                     @endif
-                                                    <div class="d-flex">
-                                                        <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
-                                                    </div>
-                                                    @endauth
                                                     @if(auth()->check() && auth()->user()->isMember())
                                                         @if(count($category->childs) == null)
                                                         <div class="d-flex">
@@ -149,8 +149,8 @@
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
                                                 <div class="shoba d-none">{{ $shoba }}</div>
                                                 <div class="age d-none">{{ $age }}</div>
-                                                <div class="admin d-none">{{ auth()->user()->getAdmin() }}</div>
-                                                <div class="user d-none">{{ auth()->user() }}</div>
+                                                <div class="admin d-none">{{ auth()->user() ? auth()->user()->getAdmin() : "" }}</div>
+                                                <div class="user d-none">{{ auth()->user() ?? "" }}</div>
                                                 @auth()
                                                 <div class="userId d-none">{{ auth()->user()->userable->id ?? 0 }}</div>
                                                 @endauth

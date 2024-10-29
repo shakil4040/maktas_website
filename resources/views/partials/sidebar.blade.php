@@ -11,6 +11,9 @@
                     <li><a href="/dashboard/pending-topics">Pending Topics</a></li>
                     <li><a href="/clearCourses">Clear Courses</a></li>
                 @endif
+                @if(auth()->user()->isMember() && auth()->user()->userable->is_approve == 0)
+                    <li><a href="/dashboard/pending-topics">Pending Topics</a></li>
+                @endif
                 @if(auth()->user()->isAdmin() || auth()->user()->userable->is_approve == 1)
                     <li><a href="/dashboard/upload">Upload File</a></li>
                     <li><a href="/dashboard/download-file-options">Download File</a></li>

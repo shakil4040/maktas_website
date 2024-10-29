@@ -511,7 +511,6 @@
                     <div id="div1">
 
                     </div>
-
                     <div class="col-md-12 nav-col">
                         <div class="row scroll-topics navigation_bar">
                             <div id="ctab1" class="mx-2 scroll-topics">
@@ -552,9 +551,9 @@
                             <button id="searchb" title="مکطس کے تمام عنوانات  میں تلاش کرنے کے لیے یہ بٹن دبائیں" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
                         @if(!empty(auth()->user()) && auth()->user()->isMember())
-                        <div class="mt-2">
-                            <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
-                        </div>
+                            <div class="mt-2">
+                                <button data-toggle="modal" data-target="#addTopicModal" class="btn btn-info">نیا عنوان درج کریں</button>
+                            </div>
                         @endif
                         <div id="sframe" class="col-md-6" style="position: absolute;left:5px;top:53px;z-index: 99999;height:55%">
                             <i id="frclose" style="position: absolute;left: 34px;top: 15px;" class="fa fa-close"></i>
@@ -562,7 +561,7 @@
                         </div>
                         <ul id="tree1">
                             @php
-                            $counter =0;
+                                $counter = 0;
                             @endphp
                             @foreach($categories as $category)
                             <div class="row">
@@ -571,7 +570,7 @@
                                         <span class="detail1">
                                             <div class="d-flex align-items-center">
                                                 @php
-                                                $counter++;
+                                                    $counter++;
                                                 @endphp
                                                 <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }},1, '{{ "1#". $category->title }}')">
                                                     @if(count($category->childs))
@@ -581,21 +580,21 @@
                                                 <div id="{{ $category->title }}" onclick="setParentTitle('{{ $category->title }}')" class="ctitle list d-flex justify-content-between align-items-center">
                                                     {{ $category->title }}
                                                     @if($category->mahol && $category->mahol->status == 'Pending')
-                                                    <span style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
-                                                        {{'...Pending'}}
-                                                    </span>
+                                                        <span style="background: #ffc107;padding: 0px 11px;color: #ffffff;font-weight: 500;font-size: 19px;border-radius: 23px;">
+                                                            {{'...Pending'}}
+                                                        </span>
                                                     @endif
                                                     @if(!empty(auth()->user()) && auth()->user()->isAdmin())
-                                                    @if(count($category->childs) == null)
-                                                    <div class="d-flex">
-                                                        <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
-                                                        <i class="fa fa-edit mx-2 sedit"></i>
-                                                        <i class="fa fa-times-circle mx-2 delete"></i>
-                                                    </div>
-                                                    @endif
-                                                    <div class="d-flex">
-                                                        <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
-                                                    </div>
+                                                        @if(count($category->childs) == null)
+                                                        <div class="d-flex">
+                                                            <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
+                                                            <i class="fa fa-edit mx-2 sedit"></i>
+                                                            <i class="fa fa-times-circle mx-2 delete"></i>
+                                                        </div>
+                                                        @endif
+                                                        <div class="d-flex">
+                                                            <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
+                                                        </div>
                                                     @endif
                                                     @if(count($category->childs) == null)
                                                         <div class="d-flex">
@@ -610,34 +609,34 @@
                                                     @endif
                                                 </div>
                                                 @if(!empty(auth()->user()) && auth()->user()->isAdmin())
-                                                <div>
-                                                    @if($category->status === 'pending')
-                                                        <span style="margin-right: 10px;">Status: 
-                                                            <span style="color: orange;">{{ $category->status }}</span>
-                                                        </span>
-                                                    @endif
-                                                    @if($category->added_by)
-                                                        <span style="margin-right: 10px;">Added By: {{ $category->added_by }}
-                                                    @endif
-                                                </div>
+                                                    <div>
+                                                        @if($category->status === 'pending')
+                                                            <span style="margin-right: 10px;">Status: 
+                                                                <span style="color: orange;">{{ $category->status }}</span>
+                                                            </span>
+                                                        @endif
+                                                        @if($category->added_by)
+                                                            <span style="margin-right: 10px;">Added By: {{ $category->added_by }}
+                                                        @endif
+                                                    </div>
                                                 @endif
                                                 <div class="cid d-none">{{ $category->id }}</div>
                                                 <div class="navigation d-none">{{"1#". $category->title }}</div>
                                                 <div class="sr d-none">{{ $category->sr }}</div>
                                                 <div class="parentId d-none">{{ $category->parent_id }}</div>
-                                                <div class="admin d-none">{{ !empty(auth()->user()) ?? auth()->user()->isAdmin() }}</div>
+                                                <div class="admin d-none">{{ auth()->user() ? auth()->user()->getAdmin() : "" }}</div>
                                                 <div class="user d-none">{{ auth()->user() }}</div>
                                                 @auth()
-                                                <div class="userId d-none">{{ auth()->user()->userable->id }}</div>
+                                                    <div class="userId d-none">{{ auth()->user() ? auth()->user()->userable->id : 0 }}</div>
                                                 @endauth
                                                 @if(auth()->check() && auth()->user()->isMember())
-                                                <div class="memberId d-none">{{ auth()->user()->userable->id }}</div>
+                                                    <div class="memberId d-none">{{ auth()->user()->userable->id }}</div>
                                                 @endif
                                             </div>
                                         </span>
                                         @if(count($category->childs))
-                                        <div class="child-div" id="child-{{ $category->id }}">
-                                        </div>
+                                            <div class="child-div" id="child-{{ $category->id }}">
+                                            </div>
                                         @endif
                                     </li>
                                 </div>
@@ -645,11 +644,7 @@
                             @endforeach
                         </ul>
                     </div>
-
-
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -700,6 +695,7 @@
                     <div class="form-group">
                         <label class="text-right d-block" for="title">عنوان</label>
                         <input type="text" class="form-control my-2 py-3" id="title" name="title" required>
+                        <span id="titleError" class="text-danger"></span> <!-- Error display for title field -->
                     </div>
                     <div class="form-group">
                         <label class="text-right d-block" for="detail">مختصر وضاحت</label>
@@ -823,12 +819,15 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('addCategoryForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
+
+            // Clear previous error message for title
+            document.getElementById('titleError').innerText = '';
 
             fetch('/add-topic', { // replace with your actual route
                 method: 'POST',
@@ -840,14 +839,19 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(result => {
                 if (result.error) {
-                    alert('Error: ' + result.error.join(', '));
+                    // Display specific error for title field if exists
+                    if (result.errors && result.errors.title) {
+                        document.getElementById('titleError').innerText = result.errors.title[0];
+                    } else {
+                        alert('Error: ' + result.error);
+                    }
                 } else {
                     const modalElement = document.getElementById('addTopicModal');
                     const modal = new bootstrap.Modal(modalElement);
                     alert('Success: ' + result.success);
                     modal.hide();
                     setTimeout(() => {
-                        window.location.reload(); // Delay reload to ensure modal has time to close
+                        window.location.reload();
                     }, 500);
                 }
             })

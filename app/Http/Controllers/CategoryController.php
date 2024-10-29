@@ -35,7 +35,7 @@ class CategoryController extends Controller
             // Initialize $allCategories to avoid undefined variable error
             $allCategories = [];
             $categories = [];
-
+            $excludedStatuses = ['Pending', 'Rejected'];
             // Get authenticated user
             $user = Auth::user();
             // Check if the user is a temporary member
@@ -49,8 +49,19 @@ class CategoryController extends Controller
             }
             // If the user is an admin or member
             else  {
-                $categories = Tree::whereNull('parent_id')->orderBy('id', 'asc')->get();
-                $allCategories = Tree::pluck('title', 'id')->all();
+                $categories = Tree::whereNull('parent_id')
+                ->where(function ($query) use ($excludedStatuses) {
+                    $query->whereNotIn('status', $excludedStatuses)
+                        ->orWhereNull('status');
+                })
+                ->orderBy('id', 'asc')
+                ->get();
+                $allCategories = Tree::where(function ($query) use ($excludedStatuses) {
+                    $query->whereNotIn('status', $excludedStatuses)
+                        ->orWhereNull('status');
+                })
+                ->pluck('title', 'id')
+                ->all();
             } 
             // Return the view with the categories and allCategories (admin case)
             return view('categoryTreeview', compact('categories', 'allCategories'));
@@ -110,7 +121,7 @@ class CategoryController extends Controller
 
             // Validate the request
             $validatedData = $request->validate([
-                'title' => 'required',
+                'title' => 'required|unique:trees,title',
                 'detail' => 'required',
                 'hawala' => 'required',
                 'easy' => 'required',

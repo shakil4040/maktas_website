@@ -21,6 +21,10 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
+                    @php
+                        $user = auth()->user();
+                        $userable = $user->userable;
+                    @endphp
                     <div class="card-header">Temporary Member Topics List</div>
                     <div class="card-body">
                         <table style="color: black; border-color: black;" class="table table-bordered card-body">
@@ -48,25 +52,27 @@
                                         <td>{{ $topic->added_by }}</td>
                                         <td>
                                             <div class="d-flex">
-                                                <!-- Check if the status is not 'Rejected' to show the buttons -->
-                                                @if ($topic->status !== 'Rejected')
-                                                    <!-- Accept Button -->
-                                                    <form action="{{ route('topics.accept', $topic->id) }}" method="POST" style="display:inline;">
-                                                        @csrf
-                                                        @method('PATCH') <!-- Use PATCH for partial updates -->
-                                                        @if ($topic->status !== 'Approved')
-                                                            <button type="submit" class="btn btn-success mx-2">Accept</button>
-                                                        @endif
-                                                    </form>
+                                                @if($user->userable_type === 'App\Models\Admin')
+                                                    <!-- Check if the status is not 'Rejected' to show the buttons -->
+                                                    @if ($topic->status !== 'Rejected')
+                                                        <!-- Accept Button -->
+                                                        <form action="{{ route('topics.accept', $topic->id) }}" method="POST" style="display:inline;">
+                                                            @csrf
+                                                            @method('PATCH') <!-- Use PATCH for partial updates -->
+                                                            @if ($topic->status !== 'Approved')
+                                                                <button type="submit" class="btn btn-success mx-2">Accept</button>
+                                                            @endif
+                                                        </form>
 
-                                                    <!-- Reject Button -->
-                                                    <form action="{{ route('topics.reject', $topic->id) }}" method="POST" style="display:inline;">
-                                                        @csrf
-                                                        @method('PATCH')
-                                                        @if ($topic->status !== 'Approved')
-                                                            <button type="submit" class="btn btn-danger mx-2">Reject</button>
-                                                        @endif
-                                                    </form>
+                                                        <!-- Reject Button -->
+                                                        <form action="{{ route('topics.reject', $topic->id) }}" method="POST" style="display:inline;">
+                                                            @csrf
+                                                            @method('PATCH')
+                                                            @if ($topic->status !== 'Approved')
+                                                                <button type="submit" class="btn btn-danger mx-2">Reject</button>
+                                                            @endif
+                                                        </form>
+                                                    @endif
                                                 @endif
                                             </div>
                                         </td>
