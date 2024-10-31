@@ -20,17 +20,17 @@
                                     <i class="fa fa-edit mx-2 sedit"></i>
                                     <i class="fa fa-times-circle mx-2 delete"></i>
                                 </div>
-                                @endif
+                            @endif
                                 <div class="d-flex">
-                                <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
-                            </div>
+                                    <i class="fa fa-edit mx-2 tedit" style="color:orange;"></i>
+                                </div>
                         @endif
                         @if(!empty(auth()->user()) && auth()->user()->isMember())
                             @if(count($child->childs) == null)
                                 <div class="d-flex">
-                            <i class="fa fa-edit mx-2 sedit"></i>
-                            <i class="fa fa-times-circle mx-2 delete"></i>
-                        </div>
+                                    <i class="fa fa-edit mx-2 sedit"></i>
+                                    <i class="fa fa-times-circle mx-2 delete"></i>
+                                </div>
                             @endif
                         @endif
                     </div>
@@ -38,7 +38,6 @@
                     <div class="navigation d-none">{{$navigation .",". $level ."#".  $child->title }}</div>
                     <div class="sr d-none">{{ $child->sr }}</div>
                     <div class="parentId d-none">{{ $child->parent_id }}</div>
-                    <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
                     <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
                     <div class="user d-none">{{ auth()->user() ?? "" }}</div>
                     @auth()

@@ -39,7 +39,6 @@
                         <div class="sr d-none">{{ $child->sr }}</div>
                         <div class="parentId d-none">{{ $child->parent_id }}</div>
                         <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
-                        <div class="admin d-none">{{ auth()->user() ? auth()->user()->isAdmin() : "" }}</div>
                         <div class="user d-none">{{ auth()->user() ?? "" }}</div>
                         @auth()
                             <div class="userId d-none">{{ auth()->user()->userable->id ?? 0 }}</div>

@@ -36,18 +36,49 @@ class CategoryController extends Controller
             $allCategories = [];
             $categories = [];
             $excludedStatuses = ['Pending', 'Rejected'];
+            
             // Get authenticated user
             $user = Auth::user();
             // Check if the user is a temporary member
             if (Auth::check() && !empty($user) && $user->isMember() && $user->userable->is_approve == 0) {
                 $temporaryMember = $user->userable->name;
-                $categories = Tree::where([
-                    ['added_by', '=', $temporaryMember],
-                    ['status', '=', 'Approved'],
-                ])->orderBy('id', 'asc')->get();
-                $allCategories = Tree::pluck('title', 'id')->all();
+                
+                // Retrieve categories where parent_id is NULL and status is Approved, Pending, or NULL
+                $categories = Tree::whereNull('parent_id')
+                    ->where(function ($query) {
+                        $query->whereIn('status', ['Approved', 'Pending'])
+                            ->orWhereNull('status');
+                        })->orderBy('id', 'asc')
+                    ->get();
+
+                // Retrieve categories added by the temporary member with status Approved, Pending, or NULL
+                $allCategories = Tree::where('added_by', $temporaryMember)
+                    ->where(function ($query) {
+                        $query->whereIn('status', ['Approved', 'Pending'])
+                            ->orWhereNull('status');
+                        })
+                    ->pluck('title', 'id')
+                    ->all();
             }
-            // If the user is an admin or member
+            // Check if the user is a Admin
+            elseif(Auth::check() && !empty($user) && $user->isAdmin()) {
+                // Retrieve root categories (parent_id is NULL) where status is either Approved, Pending, or NULL
+                $categories = Tree::whereNull('parent_id')
+                    ->where(function ($query) {
+                        $query->whereIn('status', ['Approved', 'Pending'])
+                            ->orWhereNull('status');
+                    })
+                    ->orderBy('id', 'asc')
+                    ->get();
+
+                // Retrieve all categories with status Approved, Pending, or NULL, as an associative array (title by id)
+                $allCategories = Tree::where(function ($query) {
+                    $query->whereIn('status', ['Approved', 'Pending'])
+                        ->orWhereNull('status');
+                    })
+                    ->pluck('title', 'id')
+                    ->all();
+            }
             else  {
                 $categories = Tree::whereNull('parent_id')
                 ->where(function ($query) use ($excludedStatuses) {

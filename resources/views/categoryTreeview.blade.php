@@ -574,7 +574,7 @@
                                                 @endphp
                                                 <div class="dot2 d-flex align-items-center" onclick="getchilds({{ $category->id }},1, '{{ "1#". $category->title }}')">
                                                     @if(count($category->childs))
-                                                    <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}" aria-hidden="true"></i>
+                                                        <i class="fa fa-plus detail1 iicon " id="{{ $category->id }}" aria-hidden="true"></i>
                                                     @endif
                                                 </div>
                                                 <div id="{{ $category->title }}" onclick="setParentTitle('{{ $category->title }}')" class="ctitle list d-flex justify-content-between align-items-center">
@@ -598,25 +598,36 @@
                                                     @endif
                                                     @if(count($category->childs) == null)
                                                         <div class="d-flex">
-                                                            @if(auth()->check() && auth()->user()->isMember())
+                                                            @if(auth()->check() && auth()->user()->isMember() && $category->status != 'Rejected')
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
                                                                 <i class="fa fa-times-circle mx-2 delete"></i>
                                                             @endif
-                                                            @if(auth()->check() && (auth()->user()->isMember() && auth()->user()->userable->is_approve == 0))
+                                                            @if(auth()->check() && (auth()->user()->isMember() && auth()->user()->userable->is_approve == 0) && $category->status != 'Rejected')
                                                                 <i class="fa fa-edit mx-2 sedit"></i>
                                                             @endif
                                                         </div>
+                                                        @if(auth()->check() && (auth()->user()->isMember() && auth()->user()->userable->is_approve == 0) && $category->status === 'Pending')
+                                                            <span style="margin-right: 10px;">Status: 
+                                                                <span style="color: orange;">{{ $category->status }}</span>
+                                                            </span>
+                                                        @endif
+                                                        @if(auth()->check() && (auth()->user()->isMember() && auth()->user()->userable->is_approve == 0) && $category->status === 'Rejected')
+                                                            <span style="margin-right: 10px;">Status: 
+                                                                <span style="color: red;">{{ $category->status }}</span>
+                                                            </span>
+                                                        @endif
                                                     @endif
                                                 </div>
                                                 @if(!empty(auth()->user()) && auth()->user()->isAdmin())
                                                     <div>
-                                                        @if($category->status === 'pending')
+                                                        @if($category->status === 'Pending')
                                                             <span style="margin-right: 10px;">Status: 
                                                                 <span style="color: orange;">{{ $category->status }}</span>
                                                             </span>
                                                         @endif
                                                         @if($category->added_by)
-                                                            <span style="margin-right: 10px;">Added By: {{ $category->added_by }}
+                                                            <span style="margin-right: 10px;">Added By:
+                                                            <span style="color: orange;">{{ $category->added_by }}</span>
                                                         @endif
                                                     </div>
                                                 @endif
@@ -750,7 +761,7 @@
                                 text: item.title // Adjust as needed based on your response data
                             };
                         })
-                    };
+                    };  
                 },
                 cache: true
             },
