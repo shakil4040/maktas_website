@@ -170,6 +170,33 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/laravel-echo/1.11.0/echo.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const pusher = new Pusher("{{ env('PUSHER_APP_KEY') }}", {
+            cluster: "{{ env('PUSHER_APP_CLUSTER') }}",
+            encrypted: true
+        });
+
+        // Initialize Laravel Echo
+        const echo = new Echo({
+            broadcaster: 'pusher',
+            key: "{{ env('PUSHER_APP_KEY') }}",
+            cluster: "{{ env('PUSHER_APP_CLUSTER') }}",
+            forceTLS: true
+        });
+
+        // Listen to the job completion event
+        echo.channel('imports')
+            .listen('.ImportCompleted', (e) => {
+                Swal.fire({
+                    title: "Success!",
+                    text: e.message,
+                    icon: "success"
+                });
+            });
+    </script>
 @yield('scripts')
 </body>
 
