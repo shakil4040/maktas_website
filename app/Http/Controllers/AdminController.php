@@ -157,14 +157,19 @@ class AdminController extends Controller
     public function uploadFile(Request $request)
     {
         try {
+            // Set PHP configuration for large files and extended execution time
+            ini_set('max_execution_time', 36000);
+            ini_set('memory_limit', -1);
+
             // Validate that a file is provided in the request
             $this->validate($request, [
                 'file' => 'required|file',
             ]);
 
-            Excel::queueImport(new TreeDataImport, $request->file)
-                ->onConnection('database');
+            // Use queued import to handle large file upload (TreeDataImport should be defined)
+            Excel::queueImport(new TreeDataImport, $request->file);
 
+            // Flash a success message to the session and redirect to the upload page
             Session::flash('message', 'File uploaded and processing started successfully.');
             return Redirect::to('/dashboard/upload');
 

@@ -2,7 +2,6 @@
 
 namespace App\Imports;
 
-use App\Events\ImportCompleted;
 use App\Models\Detail;
 use App\Models\Easy;
 use App\Models\Mahol;
@@ -12,31 +11,37 @@ use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Maatwebsite\Excel\Concerns\Importable;
-use Maatwebsite\Excel\Concerns\RegistersEventListeners;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
-use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterImport;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\ToArray;
+use Illuminate\Support\MessageBag;
 
-class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHeadingRow, WithEvents
+class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHeadingRow
 {
-    use Importable, RegistersEventListeners;
     private $row;
     private array $courses;
+    /** @var MessageBag $creatorMsgBag */
+    private MessageBag $creatorMsgBag;
+    /** @var MessageBag $updaterMsgBag */
+    private MessageBag $updaterMsgBag;
+    /** @var MessageBag $errorsMsgBag */
+    private MessageBag $errorsMsgBag;
 
     private int $count = 1;
 
-    public static function afterImport(AfterImport $event): void
+    public function __construct()
     {
-        event(new ImportCompleted("Import Completed Successfully!"));
+        $this->creatorMsgBag = new MessageBag;
+        $this->updaterMsgBag = new MessageBag;
+        $this->errorsMsgBag  = new MessageBag;
     }
 
-    public function batchSize(): int
+    public static function afterImport(AfterImport $event)
     {
-        return 500; // Example batch size
+        Log::info('After import excel file');
     }
+
     /**
      * @param array $array
      */
@@ -101,7 +106,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                         $tree->parent()->associate($parentTitle ?? null);
                         $tree->structure = json_encode($structure[$index]);
                         $tree->levels = $row["levels"] ?? 0;
-                        $tree->added_by = \Auth::user()->username ?? NULL;
+                        $tree->added_by = \Auth::user()->name ?? NULL;
                         // if($row["title"] == "آپ  ﷺ  کے آباء واجداد") {
                         //     dd($row, $structure, $parentTitle, $row["titleStructure"], $tree);
                         // }
@@ -185,7 +190,7 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
 
     public function chunkSize(): int
     {
-        return 500;
+        return 30000;
     }
 
     public function startRow(): int
@@ -290,12 +295,5 @@ class TreeDataImport implements ToArray, ShouldQueue, WithChunkReading, WithHead
                 }
             }, 5);
         }
-    }
-
-    public function registerEvents(): array
-    {
-        return [
-            AfterImport::class => [self::class, 'afterImport']
-        ];
     }
 }
